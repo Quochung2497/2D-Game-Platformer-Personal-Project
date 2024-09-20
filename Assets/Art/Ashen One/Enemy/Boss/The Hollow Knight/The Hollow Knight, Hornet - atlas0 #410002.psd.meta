@@ -1,0 +1,3203 @@
+fileFormatVersion: 2
+guid: 3b5d7b5d96a808143b42141b9b1c61bf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 7244
+        width: 216
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ef7e2ac7081044fb1ac83a055de566
+      internalID: 1377546891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 7096
+        width: 364
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a321bb981c233c748a88bf5a9db2a36b
+      internalID: 1988720618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 6652
+        width: 268
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda624e52c0862e4c85d0929cf1da82a
+      internalID: 78508513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_9
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 6628
+        width: 368
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a36f27055062cb44bd9952a38a5d868
+      internalID: -1030964660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_13
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 6424
+        width: 364
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415c1196c7baa214dabbd2d2e7f743ba
+      internalID: 1701682639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_14
+      rect:
+        serializedVersion: 2
+        x: 5116
+        y: 6492
+        width: 340
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc46df4e3969934aacd8db190b1b45b
+      internalID: 1222310219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6052
+        width: 276
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea33b6c64401d5a4b8147af2ff8acf82
+      internalID: 1523408658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_21
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 5786
+        width: 424
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768dccdc2b692ef4098d3dca1869e1f1
+      internalID: 1520001056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_23
+      rect:
+        serializedVersion: 2
+        x: 6977
+        y: 6056
+        width: 554
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ec9791c61a2f1468160f091af3b5dd
+      internalID: -1655919578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_24
+      rect:
+        serializedVersion: 2
+        x: 7522
+        y: 6744
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eebf47e9181f794d811159a9b25c516
+      internalID: -2036686666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_26
+      rect:
+        serializedVersion: 2
+        x: 5116
+        y: 6264
+        width: 356
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276a4b1dbf6c2a648906faae88a739a0
+      internalID: 123836713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_37
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 5856
+        width: 344
+        height: 424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1496c677cdfb1aa459ed8626871b8f4a
+      internalID: -1481292464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_40
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 5973
+        width: 554
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2720fa70b4d464d44a3d0e0a9fb59984
+      internalID: -1002017300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_41
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 5616
+        width: 212
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57aed4bc551d06c41bbd7c1900aa4ee5
+      internalID: 218007713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_42
+      rect:
+        serializedVersion: 2
+        x: 6003
+        y: 6514
+        width: 391
+        height: 409
+      alignment: 9
+      pivot: {x: 0.50752777, y: 0.111328125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b38121ad329b943b971b18b94c4348
+      internalID: 1397038152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_47
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 5568
+        width: 376
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cbfc8764b96d547a7a845acc036dd8
+      internalID: -1203584896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_56
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 5832
+        width: 336
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd75cec3767fabc4a8180803855be22e
+      internalID: -453294706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_57
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 5856
+        width: 391
+        height: 409
+      alignment: 9
+      pivot: {x: 0.51151085, y: 0.14785013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5bc0cbbf3d40544ab9deef732a6fce
+      internalID: -2125316358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_59
+      rect:
+        serializedVersion: 2
+        x: 4315
+        y: 5879
+        width: 391
+        height: 409
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13684529}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e04f977acd1471418d8fdad2c29497d
+      internalID: 201604229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_62
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 5544
+        width: 364
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf243115e53b184aa13dabe0b3454c0
+      internalID: -460065342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_65
+      rect:
+        serializedVersion: 2
+        x: 4644
+        y: 6012
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd6437b6500b7649b1c4901e830ff03
+      internalID: -1508709613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_66
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 5984
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3f7a5e2600b7b418a241e1a4d9cade
+      internalID: -45455260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_68
+      rect:
+        serializedVersion: 2
+        x: 6284
+        y: 5564
+        width: 312
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba38cc4974ee594e9f831e1ce094749
+      internalID: 2102003075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_71
+      rect:
+        serializedVersion: 2
+        x: 5064
+        y: 5564
+        width: 316
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bb73917b0bc224da887f178a0c6656
+      internalID: 750468926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_77
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 5412
+        width: 388
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd355546ddb60b4cae9ccb3b7a96d0a
+      internalID: 1502026415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_78
+      rect:
+        serializedVersion: 2
+        x: 3436
+        y: 5608
+        width: 332
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3cfb80c05063447905bf487d5d6673
+      internalID: -904917191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_79
+      rect:
+        serializedVersion: 2
+        x: 4356
+        y: 5568
+        width: 388
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d451f2f6015faa449783e6b7faccd05
+      internalID: -800934401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_84
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 5260
+        width: 332
+        height: 556
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393de3f220cb5c0448ce3a8e844d16e6
+      internalID: -1374444999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_85
+      rect:
+        serializedVersion: 2
+        x: 5721
+        y: 5604
+        width: 391
+        height: 409
+      alignment: 9
+      pivot: {x: 0.49999875, y: 0.1038308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196635d0d9dfe3f4c8ecb98ef2005341
+      internalID: 674799731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_87
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 5340
+        width: 396
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c38d9754b1df924597accd8d09a32a4
+      internalID: -2099747018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_95
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 5324
+        width: 492
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2c94b65580bfa4198f4744155cfb7d
+      internalID: 1403376905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_98
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 4992
+        width: 212
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f03e3002b05eb647926ae93e4d714e6
+      internalID: 1536244091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_100
+      rect:
+        serializedVersion: 2
+        x: 5396
+        y: 5208
+        width: 324
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac07b64d78602c84bbad89ed66133c51
+      internalID: -199278956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_101
+      rect:
+        serializedVersion: 2
+        x: 6952
+        y: 5476
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8326cd21db9c17a4a81ffe211ed31071
+      internalID: 1884761934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_102
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 5280
+        width: 416
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb180e2eb8da4246bd7e28796ec5f75
+      internalID: -1301924767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_103
+      rect:
+        serializedVersion: 2
+        x: 4408
+        y: 5144
+        width: 332
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691ff168f9cd5284d80e3c5fe2e04e8b
+      internalID: -428572626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_104
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 5128
+        width: 296
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ced94fb8c536f45a699ae761211dd4
+      internalID: 1442520697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_108
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 4992
+        width: 424
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca1ec1dda0044c4ba942dfb62819d3f
+      internalID: -1798788018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_109
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 5404
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d2f82c842bb2a409a53576d5fa6fa8
+      internalID: -1051225927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_110
+      rect:
+        serializedVersion: 2
+        x: 7400
+        y: 4916
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df255ce9cb6a334c91ea08575150705
+      internalID: -1105726662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_112
+      rect:
+        serializedVersion: 2
+        x: 3068
+        y: 5036
+        width: 416
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19275bb9cd202eb43a8ab8f7bc89efca
+      internalID: 1753803933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_117
+      rect:
+        serializedVersion: 2
+        x: 5756
+        y: 4892
+        width: 328
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926ce6517d52049409931283332c3551
+      internalID: -1452956047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_119
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 5292
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa5a99916486e049b98ed2e19b52c68
+      internalID: -1886780402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_123
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 4888
+        width: 420
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c2c210ed4ece549857dece0315fb5c
+      internalID: -1238930596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_124
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4892
+        width: 408
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed41cb3bdf92634e8bfa6901001d78d
+      internalID: -749223823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_125
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 4680
+        width: 324
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5bfea5de0c24540a847f22769b8ea9
+      internalID: -1999798710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_126
+      rect:
+        serializedVersion: 2
+        x: 2654
+        y: 4144
+        width: 464
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379797fa5fe066648802f99806d1a1c2
+      internalID: -347231894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_127
+      rect:
+        serializedVersion: 2
+        x: 4548
+        y: 4524
+        width: 208
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ab8b8d84e5ec848bfd5f8d79fe3292
+      internalID: 837074189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_128
+      rect:
+        serializedVersion: 2
+        x: 4756
+        y: 4628
+        width: 324
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cfd9bbda83a174e833cfaa5f2a33d5
+      internalID: 312200716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_129
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 4412
+        width: 568
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd952c531c574e541b49bc06d23f38d6
+      internalID: -45070024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_130
+      rect:
+        serializedVersion: 2
+        x: 6160
+        y: 4620
+        width: 212
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1db6fc6c98e65245a2e7ac3b48c0924
+      internalID: 519982460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_131
+      rect:
+        serializedVersion: 2
+        x: 6944
+        y: 4476
+        width: 444
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c2b633e6b386a4f9f34a52d191d075
+      internalID: 1990862597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_133
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 4316
+        width: 412
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09943a351b46251449442764d1c5098c
+      internalID: 1140604856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_134
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 4364
+        width: 380
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fddeb574b4d9e14e92c782cfdf693b6
+      internalID: 1981174042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_135
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 4500
+        width: 516
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4610ff91a6c984694caa193068d7de
+      internalID: 546301197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_136
+      rect:
+        serializedVersion: 2
+        x: 4104
+        y: 4520
+        width: 440
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569acb490dcc8534692964868b35f5d6
+      internalID: -556005225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_139
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 4528
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9a91947f6fe6846bc2f1ce8c11773b
+      internalID: -1304922141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_140
+      rect:
+        serializedVersion: 2
+        x: 3123
+        y: 4156
+        width: 461
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cce9f7129fa9d545a8137cd4e964269
+      internalID: -413214771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_141
+      rect:
+        serializedVersion: 2
+        x: 6172
+        y: 3996
+        width: 216
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996e943392d157c4c829f20199540383
+      internalID: 472115881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_142
+      rect:
+        serializedVersion: 2
+        x: 6388
+        y: 4244
+        width: 556
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0896d76743ba984292e384191d5e405
+      internalID: 209298477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_144
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 3992
+        width: 456
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fe5bd651e8169429cee82d5b791db0
+      internalID: -1105506078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_147
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 4152
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b1d9c3f441a064287f8c6f04da1328
+      internalID: 653919985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_148
+      rect:
+        serializedVersion: 2
+        x: 3822
+        y: 3858
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10452a39d1dadd94483cc163fac7939c
+      internalID: -1855446933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_149
+      rect:
+        serializedVersion: 2
+        x: 5242
+        y: 3956
+        width: 544
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fab4dda0bed32f4cb7971f6bea651e4
+      internalID: -639261648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_155
+      rect:
+        serializedVersion: 2
+        x: 4687
+        y: 3544
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1270516bd66ced4182b830139064482
+      internalID: -1258687919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_156
+      rect:
+        serializedVersion: 2
+        x: 6188
+        y: 3368
+        width: 212
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcb2f482ecbab848aec48f0c432db1a
+      internalID: 991258111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_157
+      rect:
+        serializedVersion: 2
+        x: 8032
+        y: 3508
+        width: 160
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2896a3dc1e3c9aa4088031cc571b8c3b
+      internalID: 1451648454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_164
+      rect:
+        serializedVersion: 2
+        x: 6972
+        y: 3368
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb6e9685227b2447a35b1fe68b87382
+      internalID: -874777436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_171
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 3096
+        width: 428
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39d31d1f0b3ddd4dbf06dfec38ba8dc
+      internalID: 1067270933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_173
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 3386
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d5b0f31de3f9844a5445a8711f3748
+      internalID: 1566369254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_174
+      rect:
+        serializedVersion: 2
+        x: 5548
+        y: 3268
+        width: 388
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a207f369dd71d04ea10e89406d796ec
+      internalID: -435525726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_176
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 3192
+        width: 460
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2567e55d4f6b3ce4db495515e512cbf9
+      internalID: -698466975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_177
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 3000
+        width: 460
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91888c884fd48348976a0dab2233884
+      internalID: -1152781508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_179
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 2816
+        width: 216
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed7ab475d979834db4625127c6afe83
+      internalID: 1428639684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_181
+      rect:
+        serializedVersion: 2
+        x: 7520
+        y: 3056
+        width: 672
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0b1872f8fc63741b4d450f290affb5
+      internalID: -1594579049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_182
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2900
+        width: 524
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345bf0064ff89614ebae33420a2ac235
+      internalID: -131542251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_183
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 3280
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e608a3f14256af349a853ecb99575bf4
+      internalID: -1392801186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_185
+      rect:
+        serializedVersion: 2
+        x: 6208
+        y: 2744
+        width: 212
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951488d5c9ef20546acc2d182e95f536
+      internalID: -437809179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_187
+      rect:
+        serializedVersion: 2
+        x: 2804
+        y: 2884
+        width: 568
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aabe407e8e31aa428446e21ca0a577f
+      internalID: -1515609150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_188
+      rect:
+        serializedVersion: 2
+        x: 3372
+        y: 2880
+        width: 556
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9b6a92317757747a4de5a8a2bbc32c
+      internalID: 549283914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_190
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 3092
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b28377d34bcfa44b81445a55301034a
+      internalID: -904491396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_191
+      rect:
+        serializedVersion: 2
+        x: 6420
+        y: 3052
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdbead36e783b54984b4164b0cd935b
+      internalID: 241031383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_195
+      rect:
+        serializedVersion: 2
+        x: 4845
+        y: 2435
+        width: 455
+        height: 561
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6645f4b98d07e9e46b78d9082c7e5b89
+      internalID: -740494870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_199
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2316
+        width: 480
+        height: 580
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f7419bf9e9d45479a2cc49b394db34
+      internalID: -1028174152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_200
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 2520
+        width: 562
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24718f82be841e4fb7ce3e5c41d31b9
+      internalID: -1990634781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_207
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 2313
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e3bd9d7f629d94190251ea7d3417fd
+      internalID: -574281565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_209
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 2184
+        width: 212
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5159dc33cb66fae4dac3c8a1e63b0443
+      internalID: 399606906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_218
+      rect:
+        serializedVersion: 2
+        x: 6248
+        y: 2104
+        width: 208
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377ab127af6ee8648a07327471a4a7ba
+      internalID: 1754546682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_224
+      rect:
+        serializedVersion: 2
+        x: 6456
+        y: 2560
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4982f4d8fa906747b2815240d8a013c
+      internalID: 78058333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_228
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1896
+        width: 498
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b913d2e9ee1a34e9e6eb66f1083383
+      internalID: -1052166604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_237
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 2216
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44afb57799f14d74297f332b9fbbe244
+      internalID: 302110246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_245
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1568
+        width: 208
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838f96f5f1479284bbb337580b83f263
+      internalID: -2117144048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_247
+      rect:
+        serializedVersion: 2
+        x: 3992
+        y: 1484
+        width: 460
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca23a96ab7dd5f46a49f448d2a8e0e2
+      internalID: 474747807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_248
+      rect:
+        serializedVersion: 2
+        x: 7088
+        y: 1300
+        width: 452
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539c60ba5edbece46a0daf950ab74e7c
+      internalID: 1314882138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_249
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1380
+        width: 568
+        height: 516
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849b55c456500cd45a71b4fd871b3fb2
+      internalID: 1995239332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_252
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1360
+        width: 648
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c14093ad5ab0045bd98912b92e287c
+      internalID: 359681525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_256
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1664
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5c7c45c9b61b94ba993639aac6b20c
+      internalID: 1911754814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_257
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 932
+        width: 224
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333852b8bbb19d14d8e5ea001fbe9f1a
+      internalID: -950968564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_258
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1540
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce64bc6c94eb9140b208b74a3d958ea
+      internalID: -1307823345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_259
+      rect:
+        serializedVersion: 2
+        x: 5572
+        y: 1096
+        width: 672
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32eae398ce96fc44ea2889066aa36c46
+      internalID: 1215621803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_260
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 980
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6bebf8c84063c43b6c1e4fc6cdefcc
+      internalID: 1466756768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_264
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 928
+        width: 660
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e36fedcad02b7b48bb1dd23bade9a91
+      internalID: -1596416388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_265
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 904
+        width: 648
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c8175c5020b234392ecffabec8fcdc
+      internalID: -764556774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_266
+      rect:
+        serializedVersion: 2
+        x: 3652
+        y: 908
+        width: 660
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c906c2d96ef29af4591f257c8a2a020b
+      internalID: -486673149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_268
+      rect:
+        serializedVersion: 2
+        x: 5596
+        y: 572
+        width: 664
+        height: 520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc650ece01a1aaf48b4a7c20b9e636b9
+      internalID: -815870750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_269
+      rect:
+        serializedVersion: 2
+        x: 7116
+        y: 604
+        width: 460
+        height: 692
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4d4940ef436de4cb79fa9534b5061a
+      internalID: 371488267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_271
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 432
+        width: 555
+        height: 550
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26abe2c02264124a8b1fee8636ed950
+      internalID: 1522011238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_273
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 476
+        width: 656
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e9b872b9217a3419b8087f12f1fbf4
+      internalID: 959038291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_277
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 476
+        width: 664
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea31a7a70f89b64a9a5a955f01466f3
+      internalID: 1052087551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_278
+      rect:
+        serializedVersion: 2
+        x: 3756
+        y: 384
+        width: 704
+        height: 532
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9619b5b1820324db3a62f6720ea058
+      internalID: -1570161422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_287
+      rect:
+        serializedVersion: 2
+        x: 7148
+        y: 0
+        width: 620
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca589bf0e9fc144cbf39a0382566fab
+      internalID: -1546568173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_290
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 864
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5859ef5fab610784782c8fd29f15e8c3
+      internalID: -441588575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_308
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 120
+        width: 1844
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae6ab71cda63874d92bbcb913b06c0e
+      internalID: -1294771737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_310
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 84
+        width: 720
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0b909a32128694ba96b4a3ee61de4d
+      internalID: -738347918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_311
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 100
+        width: 720
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f18505a76ca6c04b8157f84888f68cb
+      internalID: 322759373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_313
+      rect:
+        serializedVersion: 2
+        x: 3752
+        y: 104
+        width: 1848
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2144f8a29f013854eab5ea89b647d6b2
+      internalID: -568996882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_2
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 471
+        width: 492
+        height: 533
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8425c54a73f5594aa78b2d80f7657f1
+      internalID: 1043641412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_3
+      rect:
+        serializedVersion: 2
+        x: 5163
+        y: 7066
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.51791334, y: 0.04813147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0318e88648168f848af26569e9f8f987
+      internalID: -1953863486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_4
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 4618
+        width: 552
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad1ca70d6b8cfc4fb205c6ca1a9ab0a
+      internalID: -1289326021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_5
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 7100
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.4940295, y: 0.051659945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd6acc3d57dc49499dbdf941680722f
+      internalID: 856650105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_7
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 6239
+        width: 425
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb715d43d5cfd049961e3135e8d6c3e
+      internalID: -1388359544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_8
+      rect:
+        serializedVersion: 2
+        x: 6115
+        y: 7122
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.467454, y: 0.029547302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4018d9d41fa8e44a93e1b73d614399f
+      internalID: 985549506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_10
+      rect:
+        serializedVersion: 2
+        x: 4403
+        y: 6727
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.50000185, y: 0.052478854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2f0022ca7a68a419489105a71f97b1
+      internalID: 568194630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_11
+      rect:
+        serializedVersion: 2
+        x: 4033
+        y: 6711
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.5059723, y: 0.06265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a6effd056b4f043af37628b6514a86
+      internalID: -1322950813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_12
+      rect:
+        serializedVersion: 2
+        x: 3642
+        y: 6705
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.5000009, y: 0.07282115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc57c6867ef3e0469304665ab796f22
+      internalID: 1280470462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_16
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 6700
+        width: 268
+        height: 471
+      alignment: 9
+      pivot: {x: 0.5118973, y: 0.08027406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f1f1fde46b5eb4e8662a281f4de7be
+      internalID: -98552752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_17
+      rect:
+        serializedVersion: 2
+        x: 5064
+        y: 1878
+        width: 554
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f52440f35bb9d142870b3f07f845a1c
+      internalID: -1459025233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_18
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 3633
+        width: 554
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b83195ce1b7a14d867e89fd26014eb
+      internalID: 1407938917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_19
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 4919
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa4abcbcf8568a4194fca7ee454e107
+      internalID: 191473662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_20
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 1745
+        width: 567
+        height: 569
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63164bfe63e124d4586e8f633c0d0607
+      internalID: 682538411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Hollow Knight, Hornet - atlas0 #410002_22
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 6764
+        width: 576
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0a1ca2e78f50d4dbe98a9dcdb66896
+      internalID: 437685151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      The Hollow Knight, Hornet - atlas0 #410002_0: 1377546891
+      The Hollow Knight, Hornet - atlas0 #410002_1: 1988720618
+      The Hollow Knight, Hornet - atlas0 #410002_10: 568194630
+      The Hollow Knight, Hornet - atlas0 #410002_100: -199278956
+      The Hollow Knight, Hornet - atlas0 #410002_101: 1884761934
+      The Hollow Knight, Hornet - atlas0 #410002_102: -1301924767
+      The Hollow Knight, Hornet - atlas0 #410002_103: -428572626
+      The Hollow Knight, Hornet - atlas0 #410002_104: 1442520697
+      The Hollow Knight, Hornet - atlas0 #410002_105: -432109129
+      The Hollow Knight, Hornet - atlas0 #410002_106: -2012259656
+      The Hollow Knight, Hornet - atlas0 #410002_107: -1770871123
+      The Hollow Knight, Hornet - atlas0 #410002_108: -1798788018
+      The Hollow Knight, Hornet - atlas0 #410002_109: -1051225927
+      The Hollow Knight, Hornet - atlas0 #410002_11: -1322950813
+      The Hollow Knight, Hornet - atlas0 #410002_110: -1105726662
+      The Hollow Knight, Hornet - atlas0 #410002_111: 462133674
+      The Hollow Knight, Hornet - atlas0 #410002_112: 1753803933
+      The Hollow Knight, Hornet - atlas0 #410002_113: 512825440
+      The Hollow Knight, Hornet - atlas0 #410002_114: 104303188
+      The Hollow Knight, Hornet - atlas0 #410002_115: -1726431147
+      The Hollow Knight, Hornet - atlas0 #410002_116: -1161753268
+      The Hollow Knight, Hornet - atlas0 #410002_117: -1452956047
+      The Hollow Knight, Hornet - atlas0 #410002_118: 795170631
+      The Hollow Knight, Hornet - atlas0 #410002_119: -1886780402
+      The Hollow Knight, Hornet - atlas0 #410002_12: 1280470462
+      The Hollow Knight, Hornet - atlas0 #410002_120: 2146536099
+      The Hollow Knight, Hornet - atlas0 #410002_121: -1506989515
+      The Hollow Knight, Hornet - atlas0 #410002_122: -471331102
+      The Hollow Knight, Hornet - atlas0 #410002_123: -1238930596
+      The Hollow Knight, Hornet - atlas0 #410002_124: -749223823
+      The Hollow Knight, Hornet - atlas0 #410002_125: -1999798710
+      The Hollow Knight, Hornet - atlas0 #410002_126: -347231894
+      The Hollow Knight, Hornet - atlas0 #410002_127: 837074189
+      The Hollow Knight, Hornet - atlas0 #410002_128: 312200716
+      The Hollow Knight, Hornet - atlas0 #410002_129: -45070024
+      The Hollow Knight, Hornet - atlas0 #410002_13: 1701682639
+      The Hollow Knight, Hornet - atlas0 #410002_130: 519982460
+      The Hollow Knight, Hornet - atlas0 #410002_131: 1990862597
+      The Hollow Knight, Hornet - atlas0 #410002_132: -578460396
+      The Hollow Knight, Hornet - atlas0 #410002_133: 1140604856
+      The Hollow Knight, Hornet - atlas0 #410002_134: 1981174042
+      The Hollow Knight, Hornet - atlas0 #410002_135: 546301197
+      The Hollow Knight, Hornet - atlas0 #410002_136: -556005225
+      The Hollow Knight, Hornet - atlas0 #410002_137: -615724186
+      The Hollow Knight, Hornet - atlas0 #410002_138: -167934137
+      The Hollow Knight, Hornet - atlas0 #410002_139: -1304922141
+      The Hollow Knight, Hornet - atlas0 #410002_14: 1222310219
+      The Hollow Knight, Hornet - atlas0 #410002_140: -413214771
+      The Hollow Knight, Hornet - atlas0 #410002_141: 472115881
+      The Hollow Knight, Hornet - atlas0 #410002_142: 209298477
+      The Hollow Knight, Hornet - atlas0 #410002_143: -2020631541
+      The Hollow Knight, Hornet - atlas0 #410002_144: -1105506078
+      The Hollow Knight, Hornet - atlas0 #410002_145: 2075764690
+      The Hollow Knight, Hornet - atlas0 #410002_146: 530767253
+      The Hollow Knight, Hornet - atlas0 #410002_147: 653919985
+      The Hollow Knight, Hornet - atlas0 #410002_148: -1855446933
+      The Hollow Knight, Hornet - atlas0 #410002_149: -639261648
+      The Hollow Knight, Hornet - atlas0 #410002_15: 1523408658
+      The Hollow Knight, Hornet - atlas0 #410002_150: -788214448
+      The Hollow Knight, Hornet - atlas0 #410002_151: 915958425
+      The Hollow Knight, Hornet - atlas0 #410002_152: 1048983033
+      The Hollow Knight, Hornet - atlas0 #410002_153: -1230368907
+      The Hollow Knight, Hornet - atlas0 #410002_154: -1004213892
+      The Hollow Knight, Hornet - atlas0 #410002_155: -1258687919
+      The Hollow Knight, Hornet - atlas0 #410002_156: 991258111
+      The Hollow Knight, Hornet - atlas0 #410002_157: 1451648454
+      The Hollow Knight, Hornet - atlas0 #410002_158: -1903556705
+      The Hollow Knight, Hornet - atlas0 #410002_159: -1165996367
+      The Hollow Knight, Hornet - atlas0 #410002_16: -98552752
+      The Hollow Knight, Hornet - atlas0 #410002_160: -1759516611
+      The Hollow Knight, Hornet - atlas0 #410002_161: 95589044
+      The Hollow Knight, Hornet - atlas0 #410002_162: -732172827
+      The Hollow Knight, Hornet - atlas0 #410002_163: -713258272
+      The Hollow Knight, Hornet - atlas0 #410002_164: -874777436
+      The Hollow Knight, Hornet - atlas0 #410002_165: 436348594
+      The Hollow Knight, Hornet - atlas0 #410002_166: -709829272
+      The Hollow Knight, Hornet - atlas0 #410002_167: -1913746945
+      The Hollow Knight, Hornet - atlas0 #410002_168: -67389675
+      The Hollow Knight, Hornet - atlas0 #410002_169: 2080289596
+      The Hollow Knight, Hornet - atlas0 #410002_17: -1459025233
+      The Hollow Knight, Hornet - atlas0 #410002_170: 1259803178
+      The Hollow Knight, Hornet - atlas0 #410002_171: 1067270933
+      The Hollow Knight, Hornet - atlas0 #410002_172: -1024120789
+      The Hollow Knight, Hornet - atlas0 #410002_173: 1566369254
+      The Hollow Knight, Hornet - atlas0 #410002_174: -435525726
+      The Hollow Knight, Hornet - atlas0 #410002_175: -1855374412
+      The Hollow Knight, Hornet - atlas0 #410002_176: -698466975
+      The Hollow Knight, Hornet - atlas0 #410002_177: -1152781508
+      The Hollow Knight, Hornet - atlas0 #410002_178: -1800820344
+      The Hollow Knight, Hornet - atlas0 #410002_179: 1428639684
+      The Hollow Knight, Hornet - atlas0 #410002_18: 1407938917
+      The Hollow Knight, Hornet - atlas0 #410002_180: 1625755998
+      The Hollow Knight, Hornet - atlas0 #410002_181: -1594579049
+      The Hollow Knight, Hornet - atlas0 #410002_182: -131542251
+      The Hollow Knight, Hornet - atlas0 #410002_183: -1392801186
+      The Hollow Knight, Hornet - atlas0 #410002_184: 676681393
+      The Hollow Knight, Hornet - atlas0 #410002_185: -437809179
+      The Hollow Knight, Hornet - atlas0 #410002_186: -52975797
+      The Hollow Knight, Hornet - atlas0 #410002_187: -1515609150
+      The Hollow Knight, Hornet - atlas0 #410002_188: 549283914
+      The Hollow Knight, Hornet - atlas0 #410002_189: -904753544
+      The Hollow Knight, Hornet - atlas0 #410002_19: 191473662
+      The Hollow Knight, Hornet - atlas0 #410002_190: -904491396
+      The Hollow Knight, Hornet - atlas0 #410002_191: 241031383
+      The Hollow Knight, Hornet - atlas0 #410002_192: -1478498862
+      The Hollow Knight, Hornet - atlas0 #410002_193: 262973593
+      The Hollow Knight, Hornet - atlas0 #410002_194: 957368941
+      The Hollow Knight, Hornet - atlas0 #410002_195: -740494870
+      The Hollow Knight, Hornet - atlas0 #410002_196: -1016297116
+      The Hollow Knight, Hornet - atlas0 #410002_197: -36610338
+      The Hollow Knight, Hornet - atlas0 #410002_198: 1290839496
+      The Hollow Knight, Hornet - atlas0 #410002_199: -1028174152
+      The Hollow Knight, Hornet - atlas0 #410002_2: 1043641412
+      The Hollow Knight, Hornet - atlas0 #410002_20: 682538411
+      The Hollow Knight, Hornet - atlas0 #410002_200: -1990634781
+      The Hollow Knight, Hornet - atlas0 #410002_201: -1823376197
+      The Hollow Knight, Hornet - atlas0 #410002_202: -1075927676
+      The Hollow Knight, Hornet - atlas0 #410002_203: -1309577456
+      The Hollow Knight, Hornet - atlas0 #410002_204: -976254209
+      The Hollow Knight, Hornet - atlas0 #410002_205: -1710557951
+      The Hollow Knight, Hornet - atlas0 #410002_206: -1711653759
+      The Hollow Knight, Hornet - atlas0 #410002_207: -574281565
+      The Hollow Knight, Hornet - atlas0 #410002_208: 682697012
+      The Hollow Knight, Hornet - atlas0 #410002_209: 399606906
+      The Hollow Knight, Hornet - atlas0 #410002_21: 1520001056
+      The Hollow Knight, Hornet - atlas0 #410002_210: 332281131
+      The Hollow Knight, Hornet - atlas0 #410002_211: 869448471
+      The Hollow Knight, Hornet - atlas0 #410002_212: -956489155
+      The Hollow Knight, Hornet - atlas0 #410002_213: -455004181
+      The Hollow Knight, Hornet - atlas0 #410002_214: 1214823490
+      The Hollow Knight, Hornet - atlas0 #410002_215: -1553458928
+      The Hollow Knight, Hornet - atlas0 #410002_216: -303134608
+      The Hollow Knight, Hornet - atlas0 #410002_217: -217080996
+      The Hollow Knight, Hornet - atlas0 #410002_218: 1754546682
+      The Hollow Knight, Hornet - atlas0 #410002_219: 1862143513
+      The Hollow Knight, Hornet - atlas0 #410002_22: 437685151
+      The Hollow Knight, Hornet - atlas0 #410002_220: -963865977
+      The Hollow Knight, Hornet - atlas0 #410002_221: 1946468837
+      The Hollow Knight, Hornet - atlas0 #410002_222: 1011600821
+      The Hollow Knight, Hornet - atlas0 #410002_223: -1507304399
+      The Hollow Knight, Hornet - atlas0 #410002_224: 78058333
+      The Hollow Knight, Hornet - atlas0 #410002_225: 2140705621
+      The Hollow Knight, Hornet - atlas0 #410002_226: -569403034
+      The Hollow Knight, Hornet - atlas0 #410002_227: 52723550
+      The Hollow Knight, Hornet - atlas0 #410002_228: -1052166604
+      The Hollow Knight, Hornet - atlas0 #410002_229: 1641702938
+      The Hollow Knight, Hornet - atlas0 #410002_23: -1655919578
+      The Hollow Knight, Hornet - atlas0 #410002_230: 997305188
+      The Hollow Knight, Hornet - atlas0 #410002_231: 1511044456
+      The Hollow Knight, Hornet - atlas0 #410002_232: 1941938822
+      The Hollow Knight, Hornet - atlas0 #410002_233: -93980781
+      The Hollow Knight, Hornet - atlas0 #410002_234: -1223082881
+      The Hollow Knight, Hornet - atlas0 #410002_235: 1034308979
+      The Hollow Knight, Hornet - atlas0 #410002_236: 1307271914
+      The Hollow Knight, Hornet - atlas0 #410002_237: 302110246
+      The Hollow Knight, Hornet - atlas0 #410002_238: 655389842
+      The Hollow Knight, Hornet - atlas0 #410002_239: 1733938184
+      The Hollow Knight, Hornet - atlas0 #410002_24: -2036686666
+      The Hollow Knight, Hornet - atlas0 #410002_240: -1218964131
+      The Hollow Knight, Hornet - atlas0 #410002_241: -1765325910
+      The Hollow Knight, Hornet - atlas0 #410002_242: -673182441
+      The Hollow Knight, Hornet - atlas0 #410002_243: -760046188
+      The Hollow Knight, Hornet - atlas0 #410002_244: -1610640151
+      The Hollow Knight, Hornet - atlas0 #410002_245: -2117144048
+      The Hollow Knight, Hornet - atlas0 #410002_246: -1832099805
+      The Hollow Knight, Hornet - atlas0 #410002_247: 474747807
+      The Hollow Knight, Hornet - atlas0 #410002_248: 1314882138
+      The Hollow Knight, Hornet - atlas0 #410002_249: 1995239332
+      The Hollow Knight, Hornet - atlas0 #410002_25: -73281884
+      The Hollow Knight, Hornet - atlas0 #410002_250: 62318070
+      The Hollow Knight, Hornet - atlas0 #410002_251: 1160815429
+      The Hollow Knight, Hornet - atlas0 #410002_252: 359681525
+      The Hollow Knight, Hornet - atlas0 #410002_253: -73789692
+      The Hollow Knight, Hornet - atlas0 #410002_254: 151997818
+      The Hollow Knight, Hornet - atlas0 #410002_255: -2118887168
+      The Hollow Knight, Hornet - atlas0 #410002_256: 1911754814
+      The Hollow Knight, Hornet - atlas0 #410002_257: -950968564
+      The Hollow Knight, Hornet - atlas0 #410002_258: -1307823345
+      The Hollow Knight, Hornet - atlas0 #410002_259: 1215621803
+      The Hollow Knight, Hornet - atlas0 #410002_26: 123836713
+      The Hollow Knight, Hornet - atlas0 #410002_260: 1466756768
+      The Hollow Knight, Hornet - atlas0 #410002_261: 2011221741
+      The Hollow Knight, Hornet - atlas0 #410002_262: -1862765845
+      The Hollow Knight, Hornet - atlas0 #410002_263: -1509006316
+      The Hollow Knight, Hornet - atlas0 #410002_264: -1596416388
+      The Hollow Knight, Hornet - atlas0 #410002_265: -764556774
+      The Hollow Knight, Hornet - atlas0 #410002_266: -486673149
+      The Hollow Knight, Hornet - atlas0 #410002_267: 1374131197
+      The Hollow Knight, Hornet - atlas0 #410002_268: -815870750
+      The Hollow Knight, Hornet - atlas0 #410002_269: 371488267
+      The Hollow Knight, Hornet - atlas0 #410002_27: -1349766100
+      The Hollow Knight, Hornet - atlas0 #410002_270: -1549932175
+      The Hollow Knight, Hornet - atlas0 #410002_271: 1522011238
+      The Hollow Knight, Hornet - atlas0 #410002_272: 359225327
+      The Hollow Knight, Hornet - atlas0 #410002_273: 959038291
+      The Hollow Knight, Hornet - atlas0 #410002_274: 805920505
+      The Hollow Knight, Hornet - atlas0 #410002_275: -1927968139
+      The Hollow Knight, Hornet - atlas0 #410002_276: -879320031
+      The Hollow Knight, Hornet - atlas0 #410002_277: 1052087551
+      The Hollow Knight, Hornet - atlas0 #410002_278: -1570161422
+      The Hollow Knight, Hornet - atlas0 #410002_279: -992349289
+      The Hollow Knight, Hornet - atlas0 #410002_28: 574467406
+      The Hollow Knight, Hornet - atlas0 #410002_280: 293518737
+      The Hollow Knight, Hornet - atlas0 #410002_281: -450070555
+      The Hollow Knight, Hornet - atlas0 #410002_282: -685144979
+      The Hollow Knight, Hornet - atlas0 #410002_283: 1595377229
+      The Hollow Knight, Hornet - atlas0 #410002_284: 62974161
+      The Hollow Knight, Hornet - atlas0 #410002_285: -1450520567
+      The Hollow Knight, Hornet - atlas0 #410002_286: 764990536
+      The Hollow Knight, Hornet - atlas0 #410002_287: -1546568173
+      The Hollow Knight, Hornet - atlas0 #410002_288: -13328733
+      The Hollow Knight, Hornet - atlas0 #410002_289: -603442603
+      The Hollow Knight, Hornet - atlas0 #410002_29: 1708848580
+      The Hollow Knight, Hornet - atlas0 #410002_290: -441588575
+      The Hollow Knight, Hornet - atlas0 #410002_291: 1593057069
+      The Hollow Knight, Hornet - atlas0 #410002_292: -1476373310
+      The Hollow Knight, Hornet - atlas0 #410002_293: -1156747049
+      The Hollow Knight, Hornet - atlas0 #410002_294: 1356400459
+      The Hollow Knight, Hornet - atlas0 #410002_295: 1059395927
+      The Hollow Knight, Hornet - atlas0 #410002_296: -491320586
+      The Hollow Knight, Hornet - atlas0 #410002_297: 954381308
+      The Hollow Knight, Hornet - atlas0 #410002_298: 755588669
+      The Hollow Knight, Hornet - atlas0 #410002_299: 1958243618
+      The Hollow Knight, Hornet - atlas0 #410002_3: -1953863486
+      The Hollow Knight, Hornet - atlas0 #410002_30: -1049546408
+      The Hollow Knight, Hornet - atlas0 #410002_300: -1766996032
+      The Hollow Knight, Hornet - atlas0 #410002_301: 319770057
+      The Hollow Knight, Hornet - atlas0 #410002_302: -366847940
+      The Hollow Knight, Hornet - atlas0 #410002_303: 175695694
+      The Hollow Knight, Hornet - atlas0 #410002_304: -954967904
+      The Hollow Knight, Hornet - atlas0 #410002_305: 2981573
+      The Hollow Knight, Hornet - atlas0 #410002_306: 1078372322
+      The Hollow Knight, Hornet - atlas0 #410002_307: 1720954168
+      The Hollow Knight, Hornet - atlas0 #410002_308: -1294771737
+      The Hollow Knight, Hornet - atlas0 #410002_309: 363644809
+      The Hollow Knight, Hornet - atlas0 #410002_31: -1450528545
+      The Hollow Knight, Hornet - atlas0 #410002_310: -738347918
+      The Hollow Knight, Hornet - atlas0 #410002_311: 322759373
+      The Hollow Knight, Hornet - atlas0 #410002_312: -1451427524
+      The Hollow Knight, Hornet - atlas0 #410002_313: -568996882
+      The Hollow Knight, Hornet - atlas0 #410002_314: 946419152
+      The Hollow Knight, Hornet - atlas0 #410002_315: 1736653528
+      The Hollow Knight, Hornet - atlas0 #410002_316: -1880995705
+      The Hollow Knight, Hornet - atlas0 #410002_317: 312002217
+      The Hollow Knight, Hornet - atlas0 #410002_318: 1700885784
+      The Hollow Knight, Hornet - atlas0 #410002_319: 687143066
+      The Hollow Knight, Hornet - atlas0 #410002_32: -1695019394
+      The Hollow Knight, Hornet - atlas0 #410002_320: 1742441144
+      The Hollow Knight, Hornet - atlas0 #410002_321: 1639065793
+      The Hollow Knight, Hornet - atlas0 #410002_322: 314111666
+      The Hollow Knight, Hornet - atlas0 #410002_323: 393115941
+      The Hollow Knight, Hornet - atlas0 #410002_324: 1494410013
+      The Hollow Knight, Hornet - atlas0 #410002_33: -1276465747
+      The Hollow Knight, Hornet - atlas0 #410002_34: 1949005515
+      The Hollow Knight, Hornet - atlas0 #410002_35: 1082444759
+      The Hollow Knight, Hornet - atlas0 #410002_36: 136271296
+      The Hollow Knight, Hornet - atlas0 #410002_37: -1481292464
+      The Hollow Knight, Hornet - atlas0 #410002_38: -1327186300
+      The Hollow Knight, Hornet - atlas0 #410002_39: 157194289
+      The Hollow Knight, Hornet - atlas0 #410002_4: -1289326021
+      The Hollow Knight, Hornet - atlas0 #410002_40: -1002017300
+      The Hollow Knight, Hornet - atlas0 #410002_41: 218007713
+      The Hollow Knight, Hornet - atlas0 #410002_42: 1397038152
+      The Hollow Knight, Hornet - atlas0 #410002_43: -1038465827
+      The Hollow Knight, Hornet - atlas0 #410002_44: -1195618047
+      The Hollow Knight, Hornet - atlas0 #410002_45: 1797831575
+      The Hollow Knight, Hornet - atlas0 #410002_46: -2130798138
+      The Hollow Knight, Hornet - atlas0 #410002_47: -1203584896
+      The Hollow Knight, Hornet - atlas0 #410002_48: -1820349206
+      The Hollow Knight, Hornet - atlas0 #410002_49: -1715030588
+      The Hollow Knight, Hornet - atlas0 #410002_5: 856650105
+      The Hollow Knight, Hornet - atlas0 #410002_50: -2123301838
+      The Hollow Knight, Hornet - atlas0 #410002_51: -1993425713
+      The Hollow Knight, Hornet - atlas0 #410002_52: -250127062
+      The Hollow Knight, Hornet - atlas0 #410002_53: 71107038
+      The Hollow Knight, Hornet - atlas0 #410002_54: 96436321
+      The Hollow Knight, Hornet - atlas0 #410002_55: -935040123
+      The Hollow Knight, Hornet - atlas0 #410002_56: -453294706
+      The Hollow Knight, Hornet - atlas0 #410002_57: -2125316358
+      The Hollow Knight, Hornet - atlas0 #410002_58: 1373240790
+      The Hollow Knight, Hornet - atlas0 #410002_59: 201604229
+      The Hollow Knight, Hornet - atlas0 #410002_6: 78508513
+      The Hollow Knight, Hornet - atlas0 #410002_60: -749605274
+      The Hollow Knight, Hornet - atlas0 #410002_61: -433365476
+      The Hollow Knight, Hornet - atlas0 #410002_62: -460065342
+      The Hollow Knight, Hornet - atlas0 #410002_63: -277531893
+      The Hollow Knight, Hornet - atlas0 #410002_64: 1107568035
+      The Hollow Knight, Hornet - atlas0 #410002_65: -1508709613
+      The Hollow Knight, Hornet - atlas0 #410002_66: -45455260
+      The Hollow Knight, Hornet - atlas0 #410002_67: 1536398596
+      The Hollow Knight, Hornet - atlas0 #410002_68: 2102003075
+      The Hollow Knight, Hornet - atlas0 #410002_69: 784782436
+      The Hollow Knight, Hornet - atlas0 #410002_7: -1388359544
+      The Hollow Knight, Hornet - atlas0 #410002_70: 1451827712
+      The Hollow Knight, Hornet - atlas0 #410002_71: 750468926
+      The Hollow Knight, Hornet - atlas0 #410002_72: 1687268924
+      The Hollow Knight, Hornet - atlas0 #410002_73: 611881519
+      The Hollow Knight, Hornet - atlas0 #410002_74: -147139243
+      The Hollow Knight, Hornet - atlas0 #410002_75: 890083969
+      The Hollow Knight, Hornet - atlas0 #410002_76: 1314677039
+      The Hollow Knight, Hornet - atlas0 #410002_77: 1502026415
+      The Hollow Knight, Hornet - atlas0 #410002_78: -904917191
+      The Hollow Knight, Hornet - atlas0 #410002_79: -800934401
+      The Hollow Knight, Hornet - atlas0 #410002_8: 985549506
+      The Hollow Knight, Hornet - atlas0 #410002_80: -2142732393
+      The Hollow Knight, Hornet - atlas0 #410002_81: -96462911
+      The Hollow Knight, Hornet - atlas0 #410002_82: -376183830
+      The Hollow Knight, Hornet - atlas0 #410002_83: -706039309
+      The Hollow Knight, Hornet - atlas0 #410002_84: -1374444999
+      The Hollow Knight, Hornet - atlas0 #410002_85: 674799731
+      The Hollow Knight, Hornet - atlas0 #410002_86: 81639949
+      The Hollow Knight, Hornet - atlas0 #410002_87: -2099747018
+      The Hollow Knight, Hornet - atlas0 #410002_88: 696421219
+      The Hollow Knight, Hornet - atlas0 #410002_89: -262050132
+      The Hollow Knight, Hornet - atlas0 #410002_9: -1030964660
+      The Hollow Knight, Hornet - atlas0 #410002_90: -2056882332
+      The Hollow Knight, Hornet - atlas0 #410002_91: 1444674417
+      The Hollow Knight, Hornet - atlas0 #410002_92: 479136226
+      The Hollow Knight, Hornet - atlas0 #410002_93: 1606513729
+      The Hollow Knight, Hornet - atlas0 #410002_94: -796445051
+      The Hollow Knight, Hornet - atlas0 #410002_95: 1403376905
+      The Hollow Knight, Hornet - atlas0 #410002_96: -1337025619
+      The Hollow Knight, Hornet - atlas0 #410002_97: 474902404
+      The Hollow Knight, Hornet - atlas0 #410002_98: 1536244091
+      The Hollow Knight, Hornet - atlas0 #410002_99: -1259011361
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
