@@ -1,0 +1,1128 @@
+fileFormatVersion: 2
+guid: 7e737048c2d2cc947ab56e817573b647
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 3496
+        width: 230
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebe0afbe577a0c4c961872e3d98969a
+      internalID: -2048175068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_1
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 3500
+        width: 228
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca000362dc34e440b806c086890cf11
+      internalID: 1681379465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_3
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 3042
+        width: 276
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464b700438ce9ff479bb099ff27726ee
+      internalID: 1649083043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_5
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 3112
+        width: 230
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67553cfe3851d04b9a2f3dd5bb59df7
+      internalID: 1822358053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_7
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 3070
+        width: 228
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0afb9a69bb8e1f4d943d5645763b6f7
+      internalID: -1529325383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 3060
+        width: 236
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e043957e7b1c88498879c7966a4c082
+      internalID: -706008147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_9
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 3062
+        width: 230
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ff3fe93c561224988d95273ec7a154
+      internalID: 2116908199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_10
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 3044
+        width: 266
+        height: 342
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644b7a1516c1b3b40af362c29845c130
+      internalID: 727438638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_17
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 3176
+        width: 6
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1bd45538f12dd40ace9a2b5c7ef12f
+      internalID: 672798121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_28
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 2685
+        width: 249
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bdb4da066efa04286f18a5023a1f1f
+      internalID: -2039807036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_30
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2724
+        width: 238
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f96839446093d14192dbfb300eb0042
+      internalID: 1726046107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_31
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 2714
+        width: 270
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2730bf600af859143a2a49d05926b880
+      internalID: -1301138472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_32
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 2718
+        width: 232
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd9eea468326444e80000ec2b68b0d0
+      internalID: -1850553638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_33
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 2712
+        width: 228
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddb51bfcd718d440ac0298eb71e050c
+      internalID: 951816491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_34
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2704
+        width: 256
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697dad17258f45d419981fec098ce77e
+      internalID: 1875672953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_36
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 2878
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5d29c9ec874ae44b2131c3b07053b0
+      internalID: -937213399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 2334
+        width: 302
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84fdabeec072ff4097cac8a626893b3
+      internalID: -677304454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_40
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 2240
+        width: 314
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7c2740acc95924083baf671abbc66c
+      internalID: -1850443774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_41
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 2230
+        width: 314
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6919b8f7df6de9542b9bbb0ddb8db1b8
+      internalID: -489504884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_42
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 2348
+        width: 254
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa5fc609a3b6c94d8133230a52471fb
+      internalID: 1986156477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_45
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2478
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab59bca48d7a2e43943998abad1cca3
+      internalID: 1441583333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1978
+        width: 226
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56673148e8fef6348b353a566fbf9056
+      internalID: -896428823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_51
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1878
+        width: 308
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a984fb0acca1e4ba17d34cfc543170
+      internalID: 443443509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_52
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1682
+        width: 232
+        height: 306
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25b12f3080b9aa4ebdcceeff15801a9
+      internalID: -1822978266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_53
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1642
+        width: 302
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a92e9fe7fd59e4995a0f7962faf6ff
+      internalID: 938702501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_54
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1612
+        width: 310
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f834c01740cf4448bc2f6fb3caa42e8
+      internalID: -68508661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_55
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 1838
+        width: 48
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fe3f5e0bc4a724eae32fa4cbfa0b39
+      internalID: -1217611784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_56
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1612
+        width: 304
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92e40d3d0e99eb4282eee10b9a6a686
+      internalID: -910727752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_57
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1148
+        width: 304
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8aee296a5d4f44293b9451e68975f0
+      internalID: -1263136526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_58
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1300
+        width: 222
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03db0d5579c10046a6ee163cd995bcf
+      internalID: -417573660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_59
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1376
+        width: 252
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d9d42a2517fb241b9fba22a5004659
+      internalID: -1339080759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_60
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 1358
+        width: 308
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841625cec784b2b4d9d9c5a7ad042e79
+      internalID: -1634637857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_61
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1376
+        width: 304
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cb8579b8232b349866439002280d6b
+      internalID: 538812220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_67
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 1236
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6569c06bec4489240b49f75d6688a036
+      internalID: -1026582266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_71
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 1004
+        width: 132
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b5ed4ceae519a4099d693920afa427
+      internalID: -815440913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_74
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 626
+        width: 499
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f56222468d00dc4aa10103a594c9712
+      internalID: 1135218116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_81
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 878
+        width: 134
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6aef3b24c1b4a4c9b83770808bd12e
+      internalID: 714472856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_83
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 880
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe33e79d39ffbd40a3b0fce966ba75e
+      internalID: -1930215735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_87
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 750
+        width: 146
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f929f0b09be6f1f4a8ac7cf6a5adb800
+      internalID: 687032274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 665
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524f25e34f526a847899161452702fb3
+      internalID: -1846193733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_93
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 618
+        width: 146
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88835dae1967b9f4c84ad5f608617a0b
+      internalID: 348270613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_94
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 0
+        width: 636
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de9fa664a54063499684bad5a0779f6
+      internalID: -974181484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ancient Mask, mask shards - atlas0 #011015_2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1
+        width: 661
+        height: 646
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e97285c8a24d7c44b3b80e8dbb926a3
+      internalID: 1741756400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ancient Mask, mask shards - atlas0 #011015_0: -2048175068
+      Ancient Mask, mask shards - atlas0 #011015_1: 1681379465
+      Ancient Mask, mask shards - atlas0 #011015_10: 727438638
+      Ancient Mask, mask shards - atlas0 #011015_11: -174556278
+      Ancient Mask, mask shards - atlas0 #011015_12: -612822230
+      Ancient Mask, mask shards - atlas0 #011015_13: 543482511
+      Ancient Mask, mask shards - atlas0 #011015_14: 815173437
+      Ancient Mask, mask shards - atlas0 #011015_15: 1751624146
+      Ancient Mask, mask shards - atlas0 #011015_16: 1872364422
+      Ancient Mask, mask shards - atlas0 #011015_17: 672798121
+      Ancient Mask, mask shards - atlas0 #011015_18: -318172656
+      Ancient Mask, mask shards - atlas0 #011015_19: 8189787
+      Ancient Mask, mask shards - atlas0 #011015_2: 1741756400
+      Ancient Mask, mask shards - atlas0 #011015_20: 1738991864
+      Ancient Mask, mask shards - atlas0 #011015_21: -252719596
+      Ancient Mask, mask shards - atlas0 #011015_22: -2115847986
+      Ancient Mask, mask shards - atlas0 #011015_23: 1696768649
+      Ancient Mask, mask shards - atlas0 #011015_24: 77819973
+      Ancient Mask, mask shards - atlas0 #011015_25: -88893159
+      Ancient Mask, mask shards - atlas0 #011015_26: -36630665
+      Ancient Mask, mask shards - atlas0 #011015_27: 1730814390
+      Ancient Mask, mask shards - atlas0 #011015_28: -2039807036
+      Ancient Mask, mask shards - atlas0 #011015_29: 1091307003
+      Ancient Mask, mask shards - atlas0 #011015_3: 1649083043
+      Ancient Mask, mask shards - atlas0 #011015_30: 1726046107
+      Ancient Mask, mask shards - atlas0 #011015_31: -1301138472
+      Ancient Mask, mask shards - atlas0 #011015_32: -1850553638
+      Ancient Mask, mask shards - atlas0 #011015_33: 951816491
+      Ancient Mask, mask shards - atlas0 #011015_34: 1875672953
+      Ancient Mask, mask shards - atlas0 #011015_35: 1868255899
+      Ancient Mask, mask shards - atlas0 #011015_36: -937213399
+      Ancient Mask, mask shards - atlas0 #011015_37: -1057538638
+      Ancient Mask, mask shards - atlas0 #011015_38: -677304454
+      Ancient Mask, mask shards - atlas0 #011015_39: 480990915
+      Ancient Mask, mask shards - atlas0 #011015_4: -458517743
+      Ancient Mask, mask shards - atlas0 #011015_40: -1850443774
+      Ancient Mask, mask shards - atlas0 #011015_41: -489504884
+      Ancient Mask, mask shards - atlas0 #011015_42: 1986156477
+      Ancient Mask, mask shards - atlas0 #011015_43: -634234805
+      Ancient Mask, mask shards - atlas0 #011015_44: 53758524
+      Ancient Mask, mask shards - atlas0 #011015_45: 1441583333
+      Ancient Mask, mask shards - atlas0 #011015_46: -676809714
+      Ancient Mask, mask shards - atlas0 #011015_47: -530921344
+      Ancient Mask, mask shards - atlas0 #011015_48: -33027549
+      Ancient Mask, mask shards - atlas0 #011015_49: -1088988208
+      Ancient Mask, mask shards - atlas0 #011015_5: 1822358053
+      Ancient Mask, mask shards - atlas0 #011015_50: -896428823
+      Ancient Mask, mask shards - atlas0 #011015_51: 443443509
+      Ancient Mask, mask shards - atlas0 #011015_52: -1822978266
+      Ancient Mask, mask shards - atlas0 #011015_53: 938702501
+      Ancient Mask, mask shards - atlas0 #011015_54: -68508661
+      Ancient Mask, mask shards - atlas0 #011015_55: -1217611784
+      Ancient Mask, mask shards - atlas0 #011015_56: -910727752
+      Ancient Mask, mask shards - atlas0 #011015_57: -1263136526
+      Ancient Mask, mask shards - atlas0 #011015_58: -417573660
+      Ancient Mask, mask shards - atlas0 #011015_59: -1339080759
+      Ancient Mask, mask shards - atlas0 #011015_6: -1048141774
+      Ancient Mask, mask shards - atlas0 #011015_60: -1634637857
+      Ancient Mask, mask shards - atlas0 #011015_61: 538812220
+      Ancient Mask, mask shards - atlas0 #011015_62: 625462429
+      Ancient Mask, mask shards - atlas0 #011015_63: -1414581277
+      Ancient Mask, mask shards - atlas0 #011015_64: 347271769
+      Ancient Mask, mask shards - atlas0 #011015_65: -1625040473
+      Ancient Mask, mask shards - atlas0 #011015_66: 1510581283
+      Ancient Mask, mask shards - atlas0 #011015_67: -1026582266
+      Ancient Mask, mask shards - atlas0 #011015_68: 26984468
+      Ancient Mask, mask shards - atlas0 #011015_69: -276749656
+      Ancient Mask, mask shards - atlas0 #011015_7: -1529325383
+      Ancient Mask, mask shards - atlas0 #011015_70: -2010819773
+      Ancient Mask, mask shards - atlas0 #011015_71: -815440913
+      Ancient Mask, mask shards - atlas0 #011015_72: 2027234358
+      Ancient Mask, mask shards - atlas0 #011015_73: 316923400
+      Ancient Mask, mask shards - atlas0 #011015_74: 1135218116
+      Ancient Mask, mask shards - atlas0 #011015_75: 1818160928
+      Ancient Mask, mask shards - atlas0 #011015_76: 1862468955
+      Ancient Mask, mask shards - atlas0 #011015_77: 742855492
+      Ancient Mask, mask shards - atlas0 #011015_78: 1304837523
+      Ancient Mask, mask shards - atlas0 #011015_79: 990667563
+      Ancient Mask, mask shards - atlas0 #011015_8: -706008147
+      Ancient Mask, mask shards - atlas0 #011015_80: -2054816081
+      Ancient Mask, mask shards - atlas0 #011015_81: 714472856
+      Ancient Mask, mask shards - atlas0 #011015_82: -1543036625
+      Ancient Mask, mask shards - atlas0 #011015_83: -1930215735
+      Ancient Mask, mask shards - atlas0 #011015_84: -898241688
+      Ancient Mask, mask shards - atlas0 #011015_85: -1571494637
+      Ancient Mask, mask shards - atlas0 #011015_86: -982169668
+      Ancient Mask, mask shards - atlas0 #011015_87: 687032274
+      Ancient Mask, mask shards - atlas0 #011015_88: 1515366223
+      Ancient Mask, mask shards - atlas0 #011015_89: 127410977
+      Ancient Mask, mask shards - atlas0 #011015_9: 2116908199
+      Ancient Mask, mask shards - atlas0 #011015_90: 2014040271
+      Ancient Mask, mask shards - atlas0 #011015_91: -1846193733
+      Ancient Mask, mask shards - atlas0 #011015_92: 1820871438
+      Ancient Mask, mask shards - atlas0 #011015_93: 348270613
+      Ancient Mask, mask shards - atlas0 #011015_94: -974181484
+      Ancient Mask, mask shards - atlas0 #011015_95: -967168568
+      Ancient Mask, mask shards - atlas0 #011015_96: 1077095546
+      Ancient Mask, mask shards - atlas0 #011015_97: 1792494279
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

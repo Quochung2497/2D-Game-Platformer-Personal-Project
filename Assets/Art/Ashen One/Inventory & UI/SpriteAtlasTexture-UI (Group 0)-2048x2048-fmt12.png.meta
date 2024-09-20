@@ -1,0 +1,2833 @@
+fileFormatVersion: 2
+guid: 552ae01e6c7b7af4e8a5393115f6e73c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1886
+        width: 128
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb2ae9622618f043a92721f1613ddd6
+      internalID: -239568642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1866
+        width: 165
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0857914d382a5f4a966649c57607f3e
+      internalID: -448755360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_2
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1929
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ae0adda397b6141ad8bbfc194a630a
+      internalID: 1713312816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1834
+        width: 88
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75a30ec37175874b848ac1841935a5f
+      internalID: 1381441606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1754
+        width: 372
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9801e2e313bcab48b644c2a0c0b63fc
+      internalID: -2054529195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_5
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1728
+        width: 118
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e50ea14896b1d43924cddcd5e59379
+      internalID: 1878287025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_6
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1633
+        width: 96
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33fea1bd14922f4bb502669004948c1
+      internalID: 471078968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_7
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1676
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996feb4a6c4557d4bbb11ff68f82562d
+      internalID: 1966520852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_8
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1744
+        width: 120
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f04d795cfd26b9468987e442008e39a
+      internalID: 525431588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_9
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1762
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8807798da33a0e4c864066eb5d8a345
+      internalID: -1886008602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_10
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1705
+        width: 125
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325210a7cd45f8b42bdf8a4f82abf98c
+      internalID: 1811590049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_11
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1747
+        width: 111
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b8adf5c1d9d824d873b393c8ebeb06
+      internalID: -148008530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1564
+        width: 134
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81abda75ccaf3b4e88265abb9455f04
+      internalID: -1048410358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1698
+        width: 372
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d911a54c24fc7744e840df88cb5e1803
+      internalID: 1071428097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_14
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1450
+        width: 181
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8866a1dbb1b6cb45ac86ead00aa0a22
+      internalID: -632920164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_15
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1607
+        width: 152
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45642bfad26e03543a525959bc3f200a
+      internalID: 782664757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_16
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1588
+        width: 87
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af51afc261596c447bf8bd2ab91bf083
+      internalID: -15096420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_17
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 1595
+        width: 86
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a928628c666184fac53b108025e211
+      internalID: 1707205190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_18
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1563
+        width: 128
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1831295536a883e468f978cd9f161300
+      internalID: -1470665431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_19
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1464
+        width: 84
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315684647e37d1d4c9ba0585e5a077fa
+      internalID: -10041086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_20
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1574
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3b5ea939a0e5a4db9bb027d549898c
+      internalID: -461896596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_21
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1347
+        width: 137
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c04670b32c169c44a8fe12987d3c242
+      internalID: 517645655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_22
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1600
+        width: 76
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b624c1727648448a9fb27c930cb21e
+      internalID: 485275800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_23
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 1548
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f362279b60fb94bb075667b5ddd5b6
+      internalID: -166389075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1416
+        width: 138
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0362bd28a7ea39f479a135e7d77a3863
+      internalID: 311577836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_25
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1477
+        width: 130
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bee204ef6f3af64bbb75f900d07fc58
+      internalID: 673637965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_26
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1274
+        width: 147
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c5a1ab6c8041a4eb5c329949ac77ba
+      internalID: 2077666657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_27
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1440
+        width: 140
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1b950f17b8c814fb6479682f414956
+      internalID: 1709867336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_28
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1365
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162f7d5148a240440824445763a88f92
+      internalID: -1596058265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_29
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1476
+        width: 127
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3277443bf15d634b975d3882f92eca9
+      internalID: 27714789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_30
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1362
+        width: 122
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c33f8a1232f38e4d822b4dc1a9d7900
+      internalID: -379203341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_31
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 1478
+        width: 89
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ae75764460e8c448bba9d865f79d4f
+      internalID: 1740269304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_32
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1468
+        width: 103
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67651368bc0d4d84b892980e92b7ca14
+      internalID: 1287338075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_33
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 1368
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4493e271576a74084a3df5e4327e54
+      internalID: 1887473498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_34
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1443
+        width: 136
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332667be4afd0064799a6d38ec47e29b
+      internalID: -2031409458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1216
+        width: 133
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d328c4a21542b194fb692d67f93bf2fb
+      internalID: 1845427636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_36
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1311
+        width: 146
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac22c72baa3c2234b94b20ecd0464e47
+      internalID: -779197510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_37
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1200
+        width: 147
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef75aa94f1457f344af172527aa4ab78
+      internalID: 127151018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_38
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1326
+        width: 145
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b778768533cef4ea86b6fb12af70e4
+      internalID: 343295392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_39
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1217
+        width: 135
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b06682d017b0db4298e6f381e71f204
+      internalID: -1334215585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_40
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1229
+        width: 255
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fb5e4a3ca30224a997d7a29a8b6147
+      internalID: 993209045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_41
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1249
+        width: 132
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606aa573db8370d4d93f9e905924bb2f
+      internalID: 982620247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_42
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 1267
+        width: 102
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be893a960adfdb144a91718ab52f00db
+      internalID: -369678432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_43
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1318
+        width: 231
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e726f95875f308f4f8b4f4b9d3dd5527
+      internalID: 764173303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_44
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 1223
+        width: 83
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed84434eb5a84534086a25f7001b34f3
+      internalID: 231936677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_45
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1136
+        width: 77
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ca761d5587d23499601856ca1b96bb
+      internalID: 1505899304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_46
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1168
+        width: 129
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a8387b5f8811d43889f527eb566557
+      internalID: 1022746667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_47
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1268
+        width: 64
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae6a879ca9b05f4789b0be5bdf51063
+      internalID: -1001287825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_48
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1269
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bef7ea0037a5914ab833ea2730b9881
+      internalID: -1503223393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_49
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 1269
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6706b481f7b40418f1e3ae389ec38a
+      internalID: 1802499359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_50
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 1206
+        width: 84
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed41bfdc172b0742a51720b655e607c
+      internalID: 572074123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1071
+        width: 136
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d37ca4560fc3ae44bcb8041097ec1ba
+      internalID: -181971773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_52
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1211
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef62383edde7b34b8ae0568a15d4160
+      internalID: 1873053139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_53
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 933
+        width: 157
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc3f374b851afc4daf062aba3c0733c
+      internalID: -962957109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_54
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1132
+        width: 129
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58b8730af4e22848a6b7d93e523753f
+      internalID: 284208958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_55
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1104
+        width: 129
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77432f63d18257d4a8efe6a523d1d6ba
+      internalID: -1630751690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_56
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1108
+        width: 124
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993359cb860887f44b87da38ef82bbc5
+      internalID: 292546087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_57
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1129
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e222c67e68925da428d3ba152cc7377f
+      internalID: -1138501080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_58
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1120
+        width: 109
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e923d0ae6fbb1840b8b5863b3a6759a
+      internalID: -1824791280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_59
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 892
+        width: 155
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb53277dc6a5e84f869d939f6801316
+      internalID: -785011360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_60
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1060
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf4d3c18d0de8a46b77d2276a80dadd
+      internalID: 426729454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_61
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1000
+        width: 120
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321bb4ec4a4ccd44b80afa57a0dd0452
+      internalID: 1041167638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_62
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1000
+        width: 133
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd4d55c058499744aaa515d8e5421bb
+      internalID: 347550806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_63
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 969
+        width: 152
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01be25f03feb4aa4e8468f86677401a3
+      internalID: -238096957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_64
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1112
+        width: 55
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ccd9d7f5e3d9642a0f635b0bc25afb
+      internalID: 770381233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_65
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 975
+        width: 139
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edc5c7799b782444b42cc5e7a46ede1
+      internalID: -1986707234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_66
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 995
+        width: 124
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfe786621a3dd24590c1d791beff575
+      internalID: -263579097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_67
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 991
+        width: 266
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a9cfe1ff1cb1949bf29443796cf412
+      internalID: 709297234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_68
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1055
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df7bf58e6bb2d041b201768aa88c24e
+      internalID: -767408124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_69
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1066
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b4aa9e82fb11c4d94ca357bf3d10ca
+      internalID: -568504283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_70
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1051
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2aa444f1c99f674d884c1f831f66153
+      internalID: 506998999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_71
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 988
+        width: 153
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f118d117e211a469d0b54ccb5b70c2
+      internalID: 331797893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 779
+        width: 142
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f5bb88cc5eb0a448609b2e7a236109
+      internalID: -956616030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_73
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 783
+        width: 159
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b18cd23d5806b4284a4b0e9dad9b3b
+      internalID: -1133992534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_74
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 910
+        width: 145
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefaced12eea12544a8e847ca2a80163
+      internalID: 1693187071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_75
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 463
+        width: 121
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26666f2c4a2e6494ea988a640be11ef1
+      internalID: 1768488184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_76
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 858
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09558a6e9a5e7c445be457a9bbbc51b6
+      internalID: 877597675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_77
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 856
+        width: 129
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa907e6deb98c6409141c696c8f8fa4
+      internalID: -1045077024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_78
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 852
+        width: 150
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dae771dbdee50b4ea3f4f2b834d517a
+      internalID: -903284627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_79
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 887
+        width: 132
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4887fcfa3534545ab49418d974f3fc
+      internalID: -885856071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_80
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 856
+        width: 136
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46b2aa386ae0b84cb4518dad2a87322
+      internalID: -485971174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_81
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 850
+        width: 145
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbf5a5f40c1d844099c4455a70bc99b
+      internalID: -89375038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_82
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 896
+        width: 110
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56275fe122db934b8857ee669877051
+      internalID: 684352358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_83
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 860
+        width: 138
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf709a0b91efc3488fbb5fcc840b60c
+      internalID: 1565720417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_84
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 369
+        width: 126
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6592996b70444344aba528a2c59d533
+      internalID: 871746132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_85
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 452
+        width: 123
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b41aed1f9609a418432ab3e330060d
+      internalID: 1900774670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_86
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 712
+        width: 138
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a078663e6118c204eb654319116bbd30
+      internalID: 1955120611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_87
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 759
+        width: 143
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2443e7429e6a4e2459cf230186488706
+      internalID: 772622450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_88
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 847
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fd564d16b0b4b47907868ed1fe3313
+      internalID: -428965349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_89
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 707
+        width: 141
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f544345a6ceaba4885b5db6d34a6d46
+      internalID: -1186006553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_90
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 707
+        width: 133
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6d8753ed4d08e4692d726fd201887a
+      internalID: 1558776070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_91
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 743
+        width: 136
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a80aab461858464494e71c4421c8a7b
+      internalID: -1473709005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_92
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 759
+        width: 173
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec99b6920119424295bb7882fba4cae
+      internalID: -1810664275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_93
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 730
+        width: 64
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfb80fa29bee0a489cdbf0904f46ba5
+      internalID: 925807668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_94
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 759
+        width: 173
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db787ff312e7f440a0860c45960026c
+      internalID: -605092751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_95
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 714
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8088364cd883d4683ddc82e5c00840
+      internalID: 839718236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_96
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 509
+        width: 388
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fc1c18ce5db3d44bd77fe1e5f74407
+      internalID: -1219549219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 473
+        width: 224
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15583bca53b068d4eac238242fa9579c
+      internalID: -222173924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_98
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 473
+        width: 264
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e13d6e2ab49c4146b94d2e1be5c3253
+      internalID: 1219615969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_99
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 455
+        width: 131
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5187876f1206a3a44a720131103d6941
+      internalID: -2041956795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_100
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 471
+        width: 158
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f4de0e515360942b0b999f53b1098c
+      internalID: 356882837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_101
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 550
+        width: 174
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f656e425047759f4e90819f10a3ef810
+      internalID: -1409690011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_102
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 457
+        width: 299
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cee52718574cb64591fc6c7b79fd053
+      internalID: -2066469064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_103
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 586
+        width: 167
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7078248eaea71de448b34fcc93e8f4d7
+      internalID: 1408553628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_104
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 588
+        width: 75
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce97a31227d3c584f98cc8d79dbd6ff8
+      internalID: 394480332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_105
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 525
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a22797d81792824b8f060e88fc0f1de
+      internalID: 1612152083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_106
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 317
+        width: 162
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0792c7c1230cc044b7d298b21c76c8a
+      internalID: -1046455448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_107
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 309
+        width: 748
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5c40f3d97802744b37180e7258e098
+      internalID: 1198031569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_108
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 257
+        width: 165
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcde1228fcf9354dbb9713c47c2a8e1
+      internalID: -448012533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_109
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 45
+        width: 121
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d82633d2c962e4c923e0cd3ed0f7e6
+      internalID: -413950239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_110
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 391
+        width: 98
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7483e68b5d38f4b9b985a143dcb352
+      internalID: -693990434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_111
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 391
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f33d307d043b7e43954cbba5295039b
+      internalID: -2054231347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_112
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 77
+        width: 108
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cea9ab32c969ac4a92e43b457c7c4c6
+      internalID: -1793688415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_113
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 2
+        width: 108
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f29669cc7454814eb7337e73355c81a
+      internalID: -1838447927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_114
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 231
+        width: 167
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef767e71543287409ddbcc4a134473c
+      internalID: 137577480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_115
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 386
+        width: 364
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701598bb119d91641bcc1d1ad4a658fb
+      internalID: -1904654950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_116
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1021
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae60b81189cc5574db62dce5ae127d0d
+      internalID: 1230772521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367e3b09678b432428a847fa11a8f8fd
+      internalID: -656692574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_118
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 260
+        width: 132
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667c29c69c15d4144ac6d7a84c64ed9b
+      internalID: 1660196439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_119
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 152
+        width: 162
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a2293a3768662428bc52db5264d99c
+      internalID: -340756319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_120
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 0
+        width: 207
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2843ff4a68f52848bcc7b2f321c441f
+      internalID: 1821222029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_121
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 2
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bcfbb9445ebe1448cf3ca7bc34f042
+      internalID: -405106728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_122
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 0
+        width: 174
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5895ad27ab3050047949c0a2dfae34ac
+      internalID: 1967782773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_0: -239568642
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_1: -448755360
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_10: 1811590049
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_100: 356882837
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_101: -1409690011
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_102: -2066469064
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_103: 1408553628
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_104: 394480332
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_105: 1612152083
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_106: -1046455448
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_107: 1198031569
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_108: -448012533
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_109: -413950239
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_11: -148008530
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_110: -693990434
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_111: -2054231347
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_112: -1793688415
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_113: -1838447927
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_114: 137577480
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_115: -1904654950
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_116: 1230772521
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_117: -656692574
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_118: 1660196439
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_119: -340756319
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_12: -1048410358
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_120: 1821222029
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_121: -405106728
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_122: 1967782773
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_13: 1071428097
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_14: -632920164
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_15: 782664757
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_16: -15096420
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_17: 1707205190
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_18: -1470665431
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_19: -10041086
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_2: 1713312816
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_20: -461896596
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_21: 517645655
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_22: 485275800
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_23: -166389075
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_24: 311577836
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_25: 673637965
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_26: 2077666657
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_27: 1709867336
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_28: -1596058265
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_29: 27714789
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_3: 1381441606
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_30: -379203341
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_31: 1740269304
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_32: 1287338075
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_33: 1887473498
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_34: -2031409458
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_35: 1845427636
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_36: -779197510
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_37: 127151018
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_38: 343295392
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_39: -1334215585
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_4: -2054529195
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_40: 993209045
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_41: 982620247
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_42: -369678432
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_43: 764173303
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_44: 231936677
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_45: 1505899304
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_46: 1022746667
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_47: -1001287825
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_48: -1503223393
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_49: 1802499359
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_5: 1878287025
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_50: 572074123
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_51: -181971773
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_52: 1873053139
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_53: -962957109
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_54: 284208958
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_55: -1630751690
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_56: 292546087
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_57: -1138501080
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_58: -1824791280
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_59: -785011360
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_6: 471078968
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_60: 426729454
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_61: 1041167638
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_62: 347550806
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_63: -238096957
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_64: 770381233
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_65: -1986707234
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_66: -263579097
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_67: 709297234
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_68: -767408124
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_69: -568504283
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_7: 1966520852
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_70: 506998999
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_71: 331797893
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_72: -956616030
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_73: -1133992534
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_74: 1693187071
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_75: 1768488184
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_76: 877597675
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_77: -1045077024
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_78: -903284627
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_79: -885856071
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_8: 525431588
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_80: -485971174
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_81: -89375038
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_82: 684352358
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_83: 1565720417
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_84: 871746132
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_85: 1900774670
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_86: 1955120611
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_87: 772622450
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_88: -428965349
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_89: -1186006553
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_9: -1886008602
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_90: 1558776070
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_91: -1473709005
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_92: -1810664275
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_93: 925807668
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_94: -605092751
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_95: 839718236
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_96: -1219549219
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_97: -222173924
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_98: 1219615969
+      SpriteAtlasTexture-UI (Group 0)-2048x2048-fmt12_99: -2041956795
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
