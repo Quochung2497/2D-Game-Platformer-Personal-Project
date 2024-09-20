@@ -1,0 +1,925 @@
+fileFormatVersion: 2
+guid: dcc6ef27ec284cd42a0f31664cc62f85
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 581
+        width: 83
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02092a6d25dfad4dab2b12402e84edd
+      internalID: -694284955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 580
+        width: 91
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efcb24dca9aa214ab21de92f0596954
+      internalID: 1968752284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 547
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f440db3029bd741a7a0681dda6f6a8
+      internalID: 2119819113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 497
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7698fcd27cd2169409e4d8e4ca1bd2e2
+      internalID: -1877740160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 407
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21272e1fcceac34fb9e03c87df5a94f
+      internalID: -1279729020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 463
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800eff6d79791fa46b0492d10ff9d791
+      internalID: -2032489359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_6
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 463
+        width: 83
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7dcc299a5becc40ad9a83f70e71642
+      internalID: 1363112742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_7
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 388
+        width: 91
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92b2cd1d7c15de4b93c6dafcc542e4b
+      internalID: 448079205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_8
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 394
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0850d1d4995132498f4d060b3f2b9f2
+      internalID: 343501675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 106
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106f196fb854cff41b7a41a5510498d1
+      internalID: -263293082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 304
+        width: 118
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f32de37e2b60c84a812222076b14f96
+      internalID: 467745091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_11
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 372
+        width: 91
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208e1d06327bfe7459b4ea50ef93bdf3
+      internalID: -606458162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_12
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 295
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31b844337bc3884aa71a5da177cbcf9
+      internalID: -742447222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_13
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 265
+        width: 64
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69db3d9109a76b24b802de79d4e590d2
+      internalID: -885809964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_14
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 267
+        width: 65
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d791a57fe3abc42b20347477bfc8cc
+      internalID: -1612656335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_15
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 342
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e433f813724663c46b4b35f6b342e932
+      internalID: 158056468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_16
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 259
+        width: 82
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d6619e8c4ceab4d96d38a2ec7587d5
+      internalID: 2042478027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 311
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f9e5ebca1322c47a7de4011be18e09
+      internalID: -6354216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_18
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 265
+        width: 115
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34d5b20dc04d8e448733c61206875d2
+      internalID: 1004974445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_19
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 210
+        width: 110
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8851732238712e4cbb906346935121e
+      internalID: 1743750801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 163
+        width: 137
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3c871fa851b8041b9a41e83fe86554
+      internalID: -990577080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_23
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 159
+        width: 73
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d107222dc9e0d45835422a6bea9f73
+      internalID: -453572513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_24
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 168
+        width: 106
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe73894cdc489b46a199c5d4a6b0a8e
+      internalID: 161426556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_25
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 168
+        width: 104
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61c7af6b77166c478668d062aca6485
+      internalID: -1986546418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_27
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 86
+        width: 90
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9937a6438456abf42a3ba7dcbc9e2c64
+      internalID: -105461692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 263
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4629d8bfd0d264fa11992768603678
+      internalID: -1655793829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_32
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 249
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b725246e07ba9234a8e092326b0ee5cf
+      internalID: -1586158909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_33
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 210
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3c426bc396c674599ea4340faef2ec
+      internalID: -1432389995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_35
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 61
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a776ad29c81854438703c0e3d0876ec
+      internalID: 1305668344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_37
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 14
+        width: 140
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f106a1376112e59499a7ed5e4cb9834b
+      internalID: -10586692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_21
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 166
+        width: 134
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc7650534600bb4d8fc76ec4bfc8dd0
+      internalID: 1273075039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_29
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 164
+        width: 69
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471576c05ae9d2b48a7728c15ed5b927
+      internalID: -2050836412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_26
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 307
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a767e06157ef874894ae26697196df3
+      internalID: 175651200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_22
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 133
+        width: 88
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11f2d314edca9a48ba401524924165e
+      internalID: -1543920637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_28
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 496
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbec04492247d74082cbefb8395b83e
+      internalID: 1903621147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight Shade Cloak and Void spell acquire - atlas0 #33811_31
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 414
+        width: 91
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30d92aac2b4fca49bfd6d4fb459429f
+      internalID: -1790644940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_0: -694284955
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_1: 1968752284
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_10: 467745091
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_11: -606458162
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_12: -742447222
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_13: -885809964
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_14: -1612656335
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_15: 158056468
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_16: 2042478027
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_17: -6354216
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_18: 1004974445
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_19: 1743750801
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_2: 2119819113
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_20: -990577080
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_21: 1273075039
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_22: -1543920637
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_23: -453572513
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_24: 161426556
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_25: -1986546418
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_26: 175651200
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_27: -105461692
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_28: 1903621147
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_29: -2050836412
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_3: -1877740160
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_30: -1655793829
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_31: -1790644940
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_32: -1586158909
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_33: -1432389995
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_34: 407389059
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_35: 1305668344
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_36: 869262629
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_37: -10586692
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_38: 213173467
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_39: 1825903749
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_4: -1279729020
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_40: 579435715
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_41: -1989624678
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_5: -2032489359
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_6: 1363112742
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_7: 448079205
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_8: 343501675
+      The Knight Shade Cloak and Void spell acquire - atlas0 #33811_9: -263293082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

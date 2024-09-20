@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Enemy
+  - Death Zone
+  - Wall
+  - Cell
+  - Roof
+  - Projectile
+  - Chain
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Attackable
+  - Player
+  - Wall
+  - Roof
+  - Decoration
+  - Projectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2774164139
+    locked: 0
+  - name: Midground
+    uniqueID: 107218659
+    locked: 0
+  - name: Foreground
+    uniqueID: 4240274939
+    locked: 0
+  - name: Projectile
+    uniqueID: 2718902383
+    locked: 0

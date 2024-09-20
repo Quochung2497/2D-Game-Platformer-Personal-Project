@@ -1,0 +1,525 @@
+fileFormatVersion: 2
+guid: 76707ee8ab7b59943a9cc8217d94ca93
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 902
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8fe3bb393ee0642b3d7aa935e43b54
+      internalID: -452366555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 805
+        width: 133
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c83d886d648474409d5aa38231753aa
+      internalID: -2130768168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_2
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 621
+        width: 288
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f257ebae074e0444d8f6f3aa74eea041
+      internalID: -197330315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_3
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 510
+        width: 154
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c8e052d5d91e542a01d679709f25e8
+      internalID: -232550007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_4
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 575
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb8ac9edc827314fba6d9f92cfe93e9
+      internalID: 106555544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_5
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 508
+        width: 133
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8d3837f67d0d34089b71d5a9704060
+      internalID: -69761088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 430
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dd553776ac7684b833dc89dd9c4747
+      internalID: -232905353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_7
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 365
+        width: 98
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3efd5dd7115cc459d5f23b0677b606
+      internalID: -709366315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_8
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 392
+        width: 98
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f5c34a15ea5d647b7e4220341bdb87
+      internalID: -1784313112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_9
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 373
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8db2dde079dee48a31bcd40c62c5ae
+      internalID: -1406105069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_10
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 269
+        width: 120
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e792af8af28c7de4eb4a21a01ecb8694
+      internalID: 900711534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_11
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 281
+        width: 94
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d645c81d5f9b064a810a49469df087a
+      internalID: 931732241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_12
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 152
+        width: 128
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e15a8da746069f4d9758abf09e806e9
+      internalID: -1406779562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_13
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 152
+        width: 68
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682a5239f3e71b4468206c287e20721e
+      internalID: 127170456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_14
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 148
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a9b339f37a04b429287167927a51aa
+      internalID: 374536374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_15
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 0
+        width: 73
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82b2431f4fca1444bd0abe8d47b5251
+      internalID: 1582905066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_18
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 475
+        width: 118
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc0009c0a4421148bca5f993e4a4dc1
+      internalID: 584375926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight item acquire animation - atlas0 #24306_19
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 392
+        width: 122
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458f06621e7d1b44996022cbd3ef9dc5
+      internalID: -21746139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      The Knight item acquire animation - atlas0 #24306_0: -452366555
+      The Knight item acquire animation - atlas0 #24306_1: -2130768168
+      The Knight item acquire animation - atlas0 #24306_10: 900711534
+      The Knight item acquire animation - atlas0 #24306_11: 931732241
+      The Knight item acquire animation - atlas0 #24306_12: -1406779562
+      The Knight item acquire animation - atlas0 #24306_13: 127170456
+      The Knight item acquire animation - atlas0 #24306_14: 374536374
+      The Knight item acquire animation - atlas0 #24306_15: 1582905066
+      The Knight item acquire animation - atlas0 #24306_16: 235717614
+      The Knight item acquire animation - atlas0 #24306_17: 1086862947
+      The Knight item acquire animation - atlas0 #24306_18: 584375926
+      The Knight item acquire animation - atlas0 #24306_19: -21746139
+      The Knight item acquire animation - atlas0 #24306_2: -197330315
+      The Knight item acquire animation - atlas0 #24306_3: -232550007
+      The Knight item acquire animation - atlas0 #24306_4: 106555544
+      The Knight item acquire animation - atlas0 #24306_5: -69761088
+      The Knight item acquire animation - atlas0 #24306_6: -232905353
+      The Knight item acquire animation - atlas0 #24306_7: -709366315
+      The Knight item acquire animation - atlas0 #24306_8: -1784313112
+      The Knight item acquire animation - atlas0 #24306_9: -1406105069
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
