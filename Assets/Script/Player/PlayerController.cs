@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     public Transform attackForwardPoint, UpAttackPoint, DownAttackPoint;
     public float SideAttackRange = 0.5f, UpAttackRange = 0.5f, DownAttackRange = 0.5f;
     [SerializeField] LayerMask attackableLayer;
-    [SerializeField] GameObject SideAtkEffect, UpAtkEffect, DownAtkEffect;
     [SerializeField] float damage;
     bool restoreTime;
     float restoreTimeSpeed;
@@ -116,6 +115,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioClip DieSound;
     private bool landingSoundPlayed;
+
+    [Header("Particles")]
+    public PlayerParticles PlayerParticles;
+    [Header("")]
 
     //unlocking 
     public bool unlockedWallJump;
@@ -450,24 +453,26 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Attack");
         int _recoilLeftOrRight = pState.lookingRight ? 1 : -1;
         Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilXSpeed);
-        StartCoroutine(attackCoroutine(attackeffectdelay, SideAtkEffect, transform, AtkInterval));
+        PlayerParticles.ForwardSlash();
+        StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     private void attackUp()
     {
         anim.SetTrigger("AttackUp");
         Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed);
-        StartCoroutine(attackCoroutine(attackeffectdelay, UpAtkEffect, transform, AtkInterval));
+        PlayerParticles.UpSlash();
+        StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     private void attackDown()
     {
         anim.SetTrigger("AttackDown");
         Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed);
-        StartCoroutine(attackCoroutine(attackeffectdelay, DownAtkEffect, transform, AtkInterval));
+        PlayerParticles.DownSlash();
+        StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
 
-    IEnumerator attackCoroutine(float effectdelay, GameObject gobj, Transform target, float atkInterval)
+    IEnumerator attackCoroutine(float effectdelay, float atkInterval)
     {
-        Instantiate(gobj, target);
         InputEnable = false;
         yield return new WaitForSeconds(effectdelay);
         InputEnable = true;
