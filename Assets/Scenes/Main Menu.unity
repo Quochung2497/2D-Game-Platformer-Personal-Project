@@ -6998,7 +6998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1147902410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12772,7 +12772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c4c8fc28f326549b82543acd6aef2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuselection: {fileID: 1316706577}
   menuButtons:
   - {fileID: 1351394962}
   - {fileID: 1242034831}
