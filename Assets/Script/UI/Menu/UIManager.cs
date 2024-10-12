@@ -12,12 +12,14 @@ public class UIManager : MonoBehaviour
 
     public VidPlayer videoplayer;
 
+    public UIcontroller uiController;
+
 
     [SerializeField] GameObject deathScreen, BlackScreen;
 
     [SerializeField] GameObject halfMana, fullMana;
 
-
+ 
 
     public enum ManaState
     {
@@ -41,6 +43,8 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         sceneFader = GetComponentInChildren<ScreenFader>();
+        
+        uiController = GetComponentInChildren<UIcontroller>();
     }
     public void SwitchMana(ManaState _manaState)
     {

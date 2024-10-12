@@ -23,13 +23,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxAirJumps;
     [SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
     private float gravity;
+    private bool JumpEffectDelay = false;
+    private bool hasJumped = false;
     [Space(5)]
 
     [Header("Ground Check Settings:")]
-    [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.2f;
-    [SerializeField] private float groundCheckX = 0.5f;
-    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform FootCheckPoint;
+    [SerializeField] private float FootCheckY = 0.2f;
+    [SerializeField] private float FootCheckX = 0.5f;
+    [SerializeField] private LayerMask whatIsGround, WhatIsWater;
     [Space(5)]
 
     [Header("Dash Settings")]
@@ -116,8 +118,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip DieSound;
     private bool landingSoundPlayed;
 
-    [Header("Particles")]
-    public PlayerParticles PlayerParticles;
+    [Header("VFX")]
+    [HideInInspector] public PlayerParticles PlayerParticles;
+    public Transform CharacterWaterVFX;
     [Header("")]
 
     //unlocking 
@@ -145,8 +148,6 @@ public class PlayerController : MonoBehaviour
     private bool canFlash = true;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
         GameObject.DontDestroyOnLoad(this.gameObject);
@@ -156,6 +157,7 @@ public class PlayerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         sr = GetComponent<SpriteRenderer>();
         audiosource = GetComponent<AudioSource>();
+        PlayerParticles = GetComponentInChildren<PlayerParticles>();
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = Mana;
@@ -355,6 +357,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
             anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+            PlayerParticles.WaterFootPrint();
         }
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
@@ -388,6 +391,7 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Dashing");
         audiosource.PlayOneShot(dashSound);
         Instantiate(StartdashEffect, transform.position, Quaternion.identity);
+        PlayerParticles.WaterSplash();
         gameObject.layer = LayerMask.NameToLayer("Decoration");
         yield return new WaitForSeconds(0.1f);
         float dashDirection = (transform.rotation.eulerAngles.y == 180f) ? -1f : 1f;
@@ -418,13 +422,12 @@ public class PlayerController : MonoBehaviour
         if (_exitDir.x != 0)
         {
             xAxis = _exitDir.x > 0 ? 1 : -1;
-            Move();
+            //Move();
         }
 
         Flip();
         yield return new WaitForSeconds(_delay);
         pState.Invincible = false;
-        pState.cutscenes = false;
     }
     void Attack()
     {
@@ -851,9 +854,9 @@ public class PlayerController : MonoBehaviour
 
     public bool Grounded()
     {
-        if (Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround))
+        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, whatIsGround)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround))
         {
             return true;
         }
@@ -862,7 +865,19 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
-
+    public bool IsOnWater()
+    {
+        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, WhatIsWater)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     void isFalling()
     {
 
@@ -923,22 +938,29 @@ public class PlayerController : MonoBehaviour
             pState.Jumping = false;
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
-        if (!pState.Jumping)
+        if (!pState.Jumping && !hasJumped)
         {
             if (JumpBufferCounter > 0 && CoyoteTimeCounter > 0)
             {
                 pState.Jumping = true;
 
+                hasJumped = true;
+
                 audiosource.PlayOneShot(jumpSound);
 
-                Instantiate(JumpEffect, transform.position, Quaternion.identity);
-
+                if(!JumpEffectDelay)
+                {
+                    Instantiate(JumpEffect, transform.position, Quaternion.identity);
+                    JumpEffectDelay = true;
+                }
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
             }
             else if (!Grounded() && AirJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && unlockedVarJump)
             {
                 pState.Jumping = true;
+
+                hasJumped = true;
 
                 audiosource.PlayOneShot(jumpSound);
 
@@ -950,6 +972,11 @@ public class PlayerController : MonoBehaviour
 
                 Instantiate(doubleJumpEffect, transform);
             }
+        }
+        if (Grounded())
+        {
+            hasJumped = false;
+            JumpEffectDelay = false;
         }
         anim.SetBool("Jumping", !Grounded());
     }

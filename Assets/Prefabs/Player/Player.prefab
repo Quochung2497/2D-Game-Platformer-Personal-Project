@@ -324,6 +324,37 @@ Transform:
   - {fileID: 1073293707862701093}
   m_Father: {fileID: 3429445972927670544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3262809088677028812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8817238109218901610}
+  m_Layer: 0
+  m_Name: CharacterVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8817238109218901610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3262809088677028812}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.6, z: -0.03050714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3429445972927670544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3667037339489845083
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +555,7 @@ Transform:
   - {fileID: 110672128272662640}
   - {fileID: 6005327705988311313}
   - {fileID: 6662632359114650328}
+  - {fileID: 8817238109218901610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7244107649504953331
@@ -610,7 +642,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028682515, y: 0}
+  m_Offset: {x: -0.02868253, y: 0.0052695274}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -621,7 +653,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56619036, y: 1.3177142}
+  m_Size: {x: 0.56619036, y: 1.3071752}
   m_EdgeRadius: 0
 --- !u!50 &3770298123993146888
 Rigidbody2D:
@@ -671,13 +703,16 @@ MonoBehaviour:
   JumpEffect: {fileID: 5202250261950961021, guid: d5916b5e06f0d6246982c7c4bd8d9ea7, type: 3}
   doubleJumpEffect: {fileID: 9185030995472778908, guid: 33b4bd250966df54da2b8a79a5934287, type: 3}
   landEffect: {fileID: 2696253892639602661, guid: 34897fca148dd104584ba2361aa613a9, type: 3}
-  groundCheckPoint: {fileID: 7405655363436250508}
-  groundCheckY: 0.2
-  groundCheckX: 0.1
+  FootCheckPoint: {fileID: 7405655363436250508}
+  FootCheckY: 0.2
+  FootCheckX: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  dashSpeed: 15
+  WhatIsWater:
+    serializedVersion: 2
+    m_Bits: 4096
+  dashSpeed: 12
   dashTime: 0.4
   dashCooldown: 0.3
   StartdashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
@@ -692,9 +727,6 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  SideAtkEffect: {fileID: 7962168380240106548, guid: f7712e84d54b94642b30c9d103f399ba, type: 3}
-  UpAtkEffect: {fileID: 7962168380240106548, guid: f7712e84d54b94642b30c9d103f399ba, type: 3}
-  DownAtkEffect: {fileID: 7962168380240106548, guid: f7712e84d54b94642b30c9d103f399ba, type: 3}
   damage: 1
   recoilXSpeed: 10
   recoilYSpeed: 10
@@ -738,7 +770,8 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: be3308b29db8e534b84fc528ba7be755, type: 3}
   hurtSound: {fileID: 8300000, guid: ba6b43d8316b06c49aeddfc185dbdf31, type: 3}
   DieSound: {fileID: 8300000, guid: 41fad549eeb6be944b26e98a1615a298, type: 3}
-  PlayerParticles: {fileID: 0}
+  PlayerParticles: {fileID: 528755393082319769}
+  CharacterWaterVFX: {fileID: 8817238109218901610}
   unlockedWallJump: 0
   unlockedDash: 0
   unlockedVarJump: 0
@@ -978,7 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7405655363436250508}
   m_Layer: 7
-  m_Name: Ground Check Point
+  m_Name: Foot Check Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5905,9 +5938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bddcab286a09442bda905e5a6756f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwordSlashForward: {fileID: 0}
-  SwordSlashUp: {fileID: 0}
-  SwordSlashDown: {fileID: 0}
+  SwordSlashForward: {fileID: 6829929683392508785}
+  SwordSlashUp: {fileID: 2171214915165705239}
+  SwordSlashDown: {fileID: 6323145537069971324}
+  WaterFootVFX: {fileID: 626172816631114874, guid: 7740fa38c051c21448f7649c69483e3b, type: 3}
+  WaterSplashVFX: {fileID: 145209462328433880, guid: 165d8a6d1ccb18848be6742261ab79cb, type: 3}
 --- !u!1001 &2590664472380499686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5970,6 +6005,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3249058424732226243, guid: 3733da96286a9364ca7b05e9b9e5457b, type: 3}
   m_PrefabInstance: {fileID: 2590664472380499686}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2171214915165705239 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4454719646860161777, guid: 3733da96286a9364ca7b05e9b9e5457b, type: 3}
+  m_PrefabInstance: {fileID: 2590664472380499686}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3016540618701032536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6027,6 +6067,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d8a6f260dd1544882e1eaaa98169a4, type: 3}
+--- !u!198 &6323145537069971324 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9087337059002137380, guid: 71d8a6f260dd1544882e1eaaa98169a4, type: 3}
+  m_PrefabInstance: {fileID: 3016540618701032536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8385309688649753231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6738085473726131927, guid: 71d8a6f260dd1544882e1eaaa98169a4, type: 3}
@@ -6132,5 +6177,10 @@ PrefabInstance:
 --- !u!4 &5483264538071824452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4603487365762306205, guid: 77df6532472b0e543a30307dcbd124d5, type: 3}
+  m_PrefabInstance: {fileID: 8357176045627418841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6829929683392508785 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3256788117403147176, guid: 77df6532472b0e543a30307dcbd124d5, type: 3}
   m_PrefabInstance: {fileID: 8357176045627418841}
   m_PrefabAsset: {fileID: 0}

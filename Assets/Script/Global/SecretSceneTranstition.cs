@@ -59,11 +59,6 @@ public class SecretSceneTranstition : MonoBehaviour
                 CheckShadeData();
                 PlayerController.Instance.Interact();
                 GlobalController.instance.transitionedFromScene = SceneManager.GetActiveScene().name;
-
-                PlayerController.Instance.pState.cutscenes = true;
-
-                PlayerController.Instance.pState.Invincible = true;
-
                 StartCoroutine(UIManager.Instance.sceneFader.FadeAndLoadScene(ScreenFader.FadeDirection.In, transitionTo));
 
 

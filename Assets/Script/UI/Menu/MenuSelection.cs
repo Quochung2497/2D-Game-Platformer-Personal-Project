@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,7 +12,8 @@ public class MenuSelection : MonoBehaviour
     public Button[] menuButtons;
     public CanvasGroup[] Menu;
     public GameObject leftBar, rightBar;  // Tham chiếu đến GameObject của Select Bar bên trái , phải
-    public GameObject StartFirstOption, OptionMenuFirst, ClosedOptionMenu;
+    public GameObject StartFirstOption, OptionMenuFirst, ClosedOptionMenu, NotificationButton, LoadGameButton;
+    public GameObject NotificationPanel;
     public float moveDistance = 10f; // Khoảng cách di chuyển
     public float speed = 1f; // Tốc độ di chuyển
     public int MenuState = 0;
@@ -257,7 +259,18 @@ public class MenuSelection : MonoBehaviour
     }
     public void LoadGame()
     {
-        SaveData.Instance.LoadPlayerData();
+        string playerDataPath = Application.persistentDataPath + "/save.player.data";
+        string benchDataPath = Application.persistentDataPath + "/save.bench.data";
+        if (File.Exists(playerDataPath) && File.Exists(benchDataPath))
+        { 
+            SaveData.Instance.LoadPlayerData(); 
+        }
+        else
+        {
+            NotificationPanel.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(NotificationButton);
+        }
     }
     void CheckMenuState()
     {
@@ -269,5 +282,11 @@ public class MenuSelection : MonoBehaviour
         {
             MenuState = 0;
         }
+    }
+    public void NotificationPanelOff()
+    {
+        NotificationPanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(LoadGameButton);
     }
 }

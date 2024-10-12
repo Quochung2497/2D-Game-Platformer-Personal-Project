@@ -25,7 +25,7 @@ TagManager:
   - Roof
   - Decoration
   - Projectile
-  - 
+  - DistortionEffect
   - 
   - 
   - 
@@ -60,4 +60,7 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 2718902383
+    locked: 0
+  - name: DistortionLayer
+    uniqueID: 2715474705
     locked: 0
