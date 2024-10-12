@@ -23,8 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxAirJumps;
     [SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
     private float gravity;
-    private bool JumpEffectDelay = false;
-    private bool hasJumped = false;
+    private int JumpEffectCreated = 0;
     [Space(5)]
 
     [Header("Ground Check Settings:")]
@@ -120,7 +119,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("VFX")]
     [HideInInspector] public PlayerParticles PlayerParticles;
-    public Transform CharacterWaterVFX;
     [Header("")]
 
     //unlocking 
@@ -930,6 +928,9 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         anim.SetBool("Landed", false);
         anim.ResetTrigger("DoubleJump");
+        JumpEffectCreated = 0;
+        PlayerParticles.JumpSplashCounted = 0;
+        PlayerParticles.DoubleJumpVfxCounted = 0;
     }
     void Jump()
     {
@@ -938,21 +939,22 @@ public class PlayerController : MonoBehaviour
             pState.Jumping = false;
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
-        if (!pState.Jumping && !hasJumped)
+        if (!pState.Jumping)
         {
             if (JumpBufferCounter > 0 && CoyoteTimeCounter > 0)
             {
                 pState.Jumping = true;
 
-                hasJumped = true;
-
                 audiosource.PlayOneShot(jumpSound);
 
-                if(!JumpEffectDelay)
-                {
+                if (JumpEffectCreated == 0)
+                { 
                     Instantiate(JumpEffect, transform.position, Quaternion.identity);
-                    JumpEffectDelay = true;
+                    JumpEffectCreated++;
                 }
+
+                PlayerParticles.WaterJumpVFX();
+
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
             }
@@ -960,23 +962,20 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                hasJumped = true;
-
                 audiosource.PlayOneShot(jumpSound);
 
                 AirJumpCounter++;
 
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
-
                 anim.SetTrigger("DoubleJump");
 
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+
+                PlayerParticles.WingVfx();
+
                 Instantiate(doubleJumpEffect, transform);
+
+                PlayerParticles.WaterJumpVFX();
             }
-        }
-        if (Grounded())
-        {
-            hasJumped = false;
-            JumpEffectDelay = false;
         }
         anim.SetBool("Jumping", !Grounded());
     }

@@ -261,6 +261,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0b2a034b23db45bf6bfaedaca7579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2565177220758544910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7197086892304011727}
+  m_Layer: 7
+  m_Name: DoubleJumpWingVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7197086892304011727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565177220758544910}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6662632359114650328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3043798831201997621
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,11 +380,11 @@ Transform:
   m_GameObject: {fileID: 3262809088677028812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -0.6, z: -0.03050714}
+  m_LocalPosition: {x: -0.456, y: 0.21199995, z: -0.03050714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3429445972927670544}
+  m_Father: {fileID: 6662632359114650328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3667037339489845083
 GameObject:
@@ -555,7 +586,6 @@ Transform:
   - {fileID: 110672128272662640}
   - {fileID: 6005327705988311313}
   - {fileID: 6662632359114650328}
-  - {fileID: 8817238109218901610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7244107649504953331
@@ -771,7 +801,6 @@ MonoBehaviour:
   hurtSound: {fileID: 8300000, guid: ba6b43d8316b06c49aeddfc185dbdf31, type: 3}
   DieSound: {fileID: 8300000, guid: 41fad549eeb6be944b26e98a1615a298, type: 3}
   PlayerParticles: {fileID: 528755393082319769}
-  CharacterWaterVFX: {fileID: 8817238109218901610}
   unlockedWallJump: 0
   unlockedDash: 0
   unlockedVarJump: 0
@@ -5905,7 +5934,7 @@ GameObject:
   - component: {fileID: 6662632359114650328}
   - component: {fileID: 528755393082319769}
   m_Layer: 7
-  m_Name: Player Particles
+  m_Name: Particles Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5920,10 +5949,12 @@ Transform:
   m_GameObject: {fileID: 8817172035074824528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.115, y: -0.224, z: 0}
+  m_LocalPosition: {x: -0.044, y: -0.812, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8817238109218901610}
+  - {fileID: 7197086892304011727}
   m_Father: {fileID: 3429445972927670544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &528755393082319769
@@ -5943,6 +5974,12 @@ MonoBehaviour:
   SwordSlashDown: {fileID: 6323145537069971324}
   WaterFootVFX: {fileID: 626172816631114874, guid: 7740fa38c051c21448f7649c69483e3b, type: 3}
   WaterSplashVFX: {fileID: 145209462328433880, guid: 165d8a6d1ccb18848be6742261ab79cb, type: 3}
+  WaterJumpSplashVFX: {fileID: 2423535953928786376, guid: 1db5c04ebec44f940a229f0c4a66cdb6, type: 3}
+  DoubleJumpWing: {fileID: 3273531615570944333, guid: 9cb3fd2281959d44ab9d13000683f1d0, type: 3}
+  CharacterWaterVFX: {fileID: 8817238109218901610}
+  DoubleWingPos: {fileID: 7197086892304011727}
+  JumpSplashCounted: 0
+  DoubleJumpVfxCounted: 0
 --- !u!1001 &2590664472380499686
 PrefabInstance:
   m_ObjectHideFlags: 0
