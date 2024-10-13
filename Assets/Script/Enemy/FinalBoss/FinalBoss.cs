@@ -148,7 +148,7 @@ public class FinalBoss : Enemy
         {
             rb.velocity = Vector2.zero;
         }
-
+        CanvasHealth();
     }
 
     public void Flip()
@@ -224,6 +224,18 @@ public class FinalBoss : Enemy
     {
         Shade existingShade = FindObjectOfType<Shade>();
         return existingShade != null;
+    }
+
+    void CanvasHealth()
+    {
+        if(!PlayerController.Instance.pState.alive)
+        {
+            CanvasHealthBar.SetActive(false);
+        }
+        /*else
+        {
+            CanvasHealthBar.SetActive(true);
+        }*/
     }
 
     IEnumerator BossCutscene()
