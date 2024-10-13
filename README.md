@@ -13,6 +13,7 @@ The game is currently in development, and this repository contains the project f
 - AI-controlled enemies with custom behaviors such as roaming, attacking, chasing.
 - Player health, mana, and ability system that unlock as the game progress.
 - Map and enviroment inspired by Hollow Knight.
+- Basic Audio design: dynamic background music for different levels.
 
 ### Technologies & Tool used
 - Unity LTS version 2022.3.24f1.
@@ -34,6 +35,19 @@ The game is currently in development, and this repository contains the project f
 ![MainMenu Screenshot](./Assets/Others/Images/Map3.png)
 - GameOver Scene
 ![MainMenu Screenshot](./Assets/Others/Images/GameOverScene4.png)
+
+### How to Play
+- Clone:
+  1.Clone this repository:
+    git clone https://github.com/Quochung2497/2D-Metroidvania-imitate-Hollow-knight-project.git
+  2.Open project in Unity LTS 2022.3.24f1.
+  3.Press Play in Unity Editor
+- Install:
+  - **Itch.io:** [Itch.io](https://quochung020497.itch.io/)
+
+### Future Plans & Updates
+
+### Resources
 For those interested in *Hollow Knight* sprites, you can find resources below:  
 - **Hollow Knight Sprites (Voidheart Edition) 1.4.3.2:** [Google Drive Link](https://drive.google.com/drive/folders/1lx02_w9TFTYdR3aggI1gbXcLr69roaNV)  
 - **Other Sprite Resources:** [Spriters-Resource](https://www.spriters-resource.com/pc_computer/hollowknight/)
