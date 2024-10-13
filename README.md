@@ -25,15 +25,15 @@ The game is currently in development, and this repository contains the project f
 - Main Menu UI
 ![MainMenu Screenshot](./Assets/Others/Images/MainMenu.png)
 - Tutorial Scene
-
+![MainMenu Screenshot](./Assets/Others/Images/TutorialScene.png)
 - Map 1
-
+![MainMenu Screenshot](./Assets/Others/Images/Map1.png)
 - Map 2
-
+![MainMenu Screenshot](./Assets/Others/Images/Map2.png)
 - Map 3
-
+![MainMenu Screenshot](./Assets/Others/Images/Map3.png)
 - GameOver Scene
-
+![MainMenu Screenshot](./Assets/Others/Images/GameOverScene4.png)
 For those interested in *Hollow Knight* sprites, you can find resources below:  
 - **Hollow Knight Sprites (Voidheart Edition) 1.4.3.2:** [Google Drive Link](https://drive.google.com/drive/folders/1lx02_w9TFTYdR3aggI1gbXcLr69roaNV)  
 - **Other Sprite Resources:** [Spriters-Resource](https://www.spriters-resource.com/pc_computer/hollowknight/)
