@@ -14,14 +14,14 @@ The game is currently in development, and this repository contains the project f
 - Player health, mana, and ability system that unlock as the game progress.
 - Map and enviroment inspired by Hollow Knight.
 - Basic Audio design: dynamic background music for different levels.
-
+-------------
 ### Technologies & Tool used
 - Unity LTS version 2022.3.24f1.
 - C#: Programming language for gameplay mechanics.
 - Aseprite: Sprite design and animation.
 - Adobe Photoshop: Image editing and asset creation.
 - Git: Version control system.
-
+-------------
 ### Ingame Screenshots
 - **Main Menu UI**
 ![MainMenu Screenshot](./Assets/Others/Images/MainMenu.png)
@@ -35,7 +35,7 @@ The game is currently in development, and this repository contains the project f
 ![MainMenu Screenshot](./Assets/Others/Images/Map3.png)
 - **GameOver Scene**
 ![MainMenu Screenshot](./Assets/Others/Images/GameOverScene4.png)
-
+-------------
 ### How to Play
 - **Clone:**
   - Clone this repository:
@@ -46,7 +46,7 @@ The game is currently in development, and this repository contains the project f
   - Press Play in Unity Editor
 - **Install:**
   - **Itch.io:** [download](https://quochung020497.itch.io/)
-
+-------------
 ### Future Plans & Updates
 - **Combat System Update:**
   - Introduce a talisman system that provides various buffs, debuffs, or special abilities.
@@ -70,7 +70,7 @@ The game is currently in development, and this repository contains the project f
 - **Optimization:**
   - Optimize game performance to ensure smoother gameplay, even on lower-end devices.
   - Reduce game file size efficiently without significantly compromising on visual or audio quality.
-
+-------------
 ### Resources
 For those interested in *Hollow Knight* sprites, you can find resources below:  
 - **Hollow Knight Sprites (Voidheart Edition) 1.4.3.2:** [Google Drive Link](https://drive.google.com/drive/folders/1lx02_w9TFTYdR3aggI1gbXcLr69roaNV)  
