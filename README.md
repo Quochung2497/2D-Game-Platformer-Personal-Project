@@ -23,7 +23,7 @@ The game is currently in development, and this repository contains the project f
 
 ### Ingame Screenshots
 - Main Menu UI
-
+![MainMenu Screenshot](./Assets/Others/Images/MainMenu.png)
 - Tutorial Scene
 
 - Map 1
