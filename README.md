@@ -70,6 +70,7 @@ The game is currently in development, and this repository contains the project f
 - **Optimization:**
   - Optimize game performance to ensure smoother gameplay, even on lower-end devices.
   - Reduce game file size efficiently without significantly compromising on visual or audio quality.
+
 ### Resources
 For those interested in *Hollow Knight* sprites, you can find resources below:  
 - **Hollow Knight Sprites (Voidheart Edition) 1.4.3.2:** [Google Drive Link](https://drive.google.com/drive/folders/1lx02_w9TFTYdR3aggI1gbXcLr69roaNV)  
