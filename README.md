@@ -45,7 +45,7 @@ The game is currently in development, and this repository contains the project f
   - Open project in Unity LTS 2022.3.24f1.
   - Press Play in Unity Editor
 - **Install:**
-  - **Itch.io:** [Itch.io](https://quochung020497.itch.io/)
+  - **Itch.io:** [download](https://quochung020497.itch.io/)
 
 ### Future Plans & Updates
 - **Combat System Update:**
