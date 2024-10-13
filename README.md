@@ -37,12 +37,14 @@ The game is currently in development, and this repository contains the project f
 ![MainMenu Screenshot](./Assets/Others/Images/GameOverScene4.png)
 
 ### How to Play
-- Clone:
-  1.Clone this repository:
+- **Clone:**
+  - Clone this repository:
+    ```
     git clone https://github.com/Quochung2497/2D-Metroidvania-imitate-Hollow-knight-project.git
-  2.Open project in Unity LTS 2022.3.24f1.
-  3.Press Play in Unity Editor
-- Install:
+    ```
+  - Open project in Unity LTS 2022.3.24f1.
+  - Press Play in Unity Editor
+- **Install:**
   - **Itch.io:** [Itch.io](https://quochung020497.itch.io/)
 
 ### Future Plans & Updates
