@@ -157,12 +157,28 @@ public class PlayerController : MonoBehaviour
         CharacterStart();
     }
 
-    // Update is called once per frame
     void Update()
     {
         HandleController();        
     }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
 
+    }
+    private void FixedUpdate()
+    {
+        if (pState.dashing || pState.healing || pState.cutscenes) return;
+        Recoil();
+    }
+    #region Start-Update
     private void CharacterStart()
     {
         GameObject.DontDestroyOnLoad(this.gameObject);
@@ -238,7 +254,6 @@ public class PlayerController : MonoBehaviour
             Recoil();
         }
     }
-
     void UpdateCameraYDampForPlayerFall()
     {
         if (rb.velocity.y < playerFallSpeedThreshold && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.hasLerpedYDamping)
@@ -251,41 +266,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CameraManager.instance.LerpYDamping(false));
         }
     }
-
-    IEnumerator Death()
-    {
-        pState.alive = false;
-        Time.timeScale = 1f;
-        audiosource.PlayOneShot(DieSound);
-        GameObject _bloodSpurtParticles = Instantiate(Blood, transform.position, Quaternion.identity);
-        Destroy(_bloodSpurtParticles, 1.5f);
-        anim.SetTrigger("isDead");
-        GlobalController.instance.DecreasePlayerScoreByHalf();
-        yield return new WaitForSeconds(1f);
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        GetComponent<BoxCollider2D>().enabled = false;
-        StartCoroutine(UIManager.Instance.ActivateDeathScreen());
-        yield return new WaitForSeconds(1f);
-        Instantiate(GlobalController.instance.shade, transform.position, Quaternion.identity);
-        SaveData.Instance.SavePlayerData();
-    }
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-
-    }
-    private void FixedUpdate()
-    {
-        if (pState.dashing || pState.healing || pState.cutscenes) return;
-        Recoil();
-    }
+    #endregion
+    #region Input
     void GetInput()
     {
         xAxis = Input.GetAxisRaw("Horizontal"); 
@@ -301,27 +283,8 @@ public class PlayerController : MonoBehaviour
             TakeDamage(10);
         }
     }
-    void ToggleMap()
-    {
-        if (openMap && !pState.dashing && !pState.healing && !pState.casting && !pState.cutscenes && !pState.Jumping && !pState.Falling && !pState.Invincible)
-        {
-            anim.SetBool("isOpenMap", true);
-            canMove = false;
-            UIManager.Instance.mapHandler.SetActive(true);
-        }
-        else
-        {
-            StartCoroutine(CloseMap());
-        }
-    }
-
-    IEnumerator CloseMap()
-    {
-        anim.SetBool("isOpenMap", false);
-        UIManager.Instance.mapHandler.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
-        canMove = true;
-    }
+    #endregion
+    #region Horizontal Movement
     public void Flip()
     {
         if (xAxis < 0 && isFacingRight)
@@ -383,6 +346,8 @@ public class PlayerController : MonoBehaviour
             anim.ResetTrigger("StopTrigger");
         }
     }
+    #endregion
+    #region Dash
     void StartDash()
     {
         if (Input.GetButtonDown("Dash") && canDash && !dashed)
@@ -421,27 +386,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-    public IEnumerator WalkIntoNewScene(Vector2 _exitDir, float _delay)
-    {
-        pState.Invincible = true;
-
-        //If exit direction is upwards
-        if (_exitDir.y > 0)
-        {
-            rb.velocity = jumpForce * _exitDir;
-        }
-
-        //If exit direction requires horizontal movement
-        if (_exitDir.x != 0)
-        {
-            xAxis = _exitDir.x > 0 ? 1 : -1;
-        }
-
-        Flip();
-        yield return new WaitForSeconds(_delay);
-        pState.Invincible = false;
-    }
-    #region TấnCông
+    #endregion
+    #region Attack
     void Attack()
     {
         float verticalDirection = Input.GetAxisRaw("Vertical");
@@ -499,7 +445,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("ThirdAtk");
             PlayerParticles.Combo3Slash();
-            comboStep = 0; // Reset combo sau đòn thứ ba
+            comboStep = 0;
         }
     }
     private void attackForward(int comboStep)
@@ -529,7 +475,7 @@ public class PlayerController : MonoBehaviour
         float recoilFinalSpeed = recoilXSpeed * recoilSpeedMultiplier; // Tính toán tốc độ hồi phản lực cuối cùng
         int _recoilLeftOrRight = pState.lookingRight ? 1 : -1;
         Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilFinalSpeed, finalDamage);
-        Debug.Log("Sat thuong gay ra la " + finalDamage);
+        //Debug.Log("Sat thuong gay ra la " + finalDamage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     private void attackUp()
@@ -591,7 +537,7 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
+    #region Recoil
     void Recoil()
     {
         if (pState.recoilingX)
@@ -655,7 +601,8 @@ public class PlayerController : MonoBehaviour
         stepsYRecoiled = 0;
         pState.recoilingY = false;
     }
-
+    #endregion
+    #region TakeDamage Respawn
     public void TakeDamage(float _damage)
     {
         if (pState.alive)
@@ -685,6 +632,24 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         yield return new WaitForSeconds(0.25f);
         pState.Invincible = false;
+    }
+
+    IEnumerator Death()
+    {
+        pState.alive = false;
+        Time.timeScale = 1f;
+        audiosource.PlayOneShot(DieSound);
+        GameObject _bloodSpurtParticles = Instantiate(Blood, transform.position, Quaternion.identity);
+        Destroy(_bloodSpurtParticles, 1.5f);
+        anim.SetTrigger("isDead");
+        GlobalController.instance.DecreasePlayerScoreByHalf();
+        yield return new WaitForSeconds(1f);
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        GetComponent<BoxCollider2D>().enabled = false;
+        StartCoroutine(UIManager.Instance.ActivateDeathScreen());
+        yield return new WaitForSeconds(1f);
+        Instantiate(GlobalController.instance.shade, transform.position, Quaternion.identity);
+        SaveData.Instance.SavePlayerData();
     }
     IEnumerator Flash()
     {
@@ -744,7 +709,28 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(_delay);
         restoreTime = true;
     }
-
+    public void Respawned()
+    {
+        if (!pState.alive)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            GetComponent<BoxCollider2D>().enabled = true;
+            pState.alive = true;
+            halfMana = true;
+            UIManager.Instance.SwitchMana(UIManager.ManaState.HalfMana);
+            Mana = 0;
+            Health = maxHealth;
+            anim.Play("AshenOne_Idle");
+        }
+    }
+    public void RestoreMana()
+    {
+        halfMana = false;
+        UIManager.Instance.SwitchMana(UIManager.ManaState.FullMana);
+    }
+    #endregion
+    #region CharacterSetting
     public int Health
     {
         get { return health; }
@@ -761,7 +747,71 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    public float Mana
+    {
+        get { return mana; }
+        set
+        {
+            //if mana stats change
+            if (mana != value)
+            {
+                if (!halfMana)
+                {
+                    mana = Mathf.Clamp(value, 0, 1);
+                }
+                else
+                {
+                    mana = Mathf.Clamp(value, 0, 0.5f);
+                }
+                manaStorage.fillAmount = Mana;
+            }
+        }
+    }
+    public bool Grounded()
+    {
+        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, whatIsGround)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool IsOnWater()
+    {
+        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, WhatIsWater)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private bool Walled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+    public void ResetToDefault()
+    {
+        halfMana = false;
+        Health = maxHealth;
+        Mana = 0.5f;
+        heartShards = 0;
 
+        unlockedWallJump = false;
+        unlockedDash = false;
+        unlockedVarJump = false;
+        unlockedHeal = false;
+        unlockedCastSpell = false;
+    }
+    #endregion
+    #region Heal
     void Heal()
     {
         if (Input.GetButton("Healing") && castOrHealTimer <= 0.05f && Health < maxHealth && Grounded() && !pState.dashing && !pState.Invincible && canMove && Mana >= manaDrainSpeed && !Walled())
@@ -803,28 +853,8 @@ public class PlayerController : MonoBehaviour
         Instantiate(HealedEffect, transform);
         yield return new WaitForSeconds(1f);
     }
-
-    public float Mana
-    {
-        get { return mana; }
-        set
-        {
-            //if mana stats change
-            if (mana != value)
-            {
-                if (!halfMana)
-                {
-                    mana = Mathf.Clamp(value, 0, 1);
-                }
-                else
-                {
-                    mana = Mathf.Clamp(value, 0, 0.5f);
-                }
-                manaStorage.fillAmount = Mana;
-            }
-        }
-    }
-
+    #endregion
+    #region CastSpell
     void CastSpell()
     {
         if (Input.GetButtonDown("CastSpell") && castOrHealTimer <= 0.05f && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !Walled())
@@ -919,33 +949,8 @@ public class PlayerController : MonoBehaviour
             _other.GetComponent<Enemy>().EnemyGetsHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
         }
     }
-
-    public bool Grounded()
-    {
-        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, whatIsGround)
-            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround)
-            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckX, 0, 0), Vector2.down, FootCheckY, whatIsGround))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public bool IsOnWater()
-    {
-        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, WhatIsWater)
-            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater)
-            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsWater))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    #endregion
+    #region Vertical Movement
     void isFalling()
     {
 
@@ -1072,7 +1077,54 @@ public class PlayerController : MonoBehaviour
             JumpBufferCounter--;
         }
     }
+    void WallSlide()
+    {
+        if (Walled() && !Grounded() && xAxis != 0)
+        {
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            anim.SetBool("isWallJump", false);
+            anim.SetBool("isWallSlide", true);
+        }
+        else
+        {
+            isWallSliding = false;
+            anim.SetBool("isWallSlide", false);
+        }
+    }
+    void WallJump()
+    {
+        if (isWallSliding)
+        {
+            isWallJumping = false;
+            wallJumpingDirection = !pState.lookingRight ? 1 : -1;
+            CancelInvoke(nameof(StopWallJumping));
+        }
 
+        if (Input.GetButtonDown("Jump") && isWallSliding)
+        {
+            audiosource.PlayOneShot(jumpSound);
+            isWallJumping = true;
+
+            anim.SetBool("isWallJump", true);
+            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+
+            dashed = false;
+            AirJumpCounter = 0;
+
+            pState.lookingRight = !pState.lookingRight;
+            transform.eulerAngles = new Vector2(transform.eulerAngles.x, 180);
+
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+    void StopWallJumping()
+    {
+        isWallJumping = false;
+        transform.eulerAngles = new Vector2(transform.eulerAngles.x, 0);
+    }
+    #endregion
+    #region Interact
     public void Interact()
     {
         if(Grounded() && Input.GetKeyDown(KeyCode.E) && !pState.casting && !pState.Falling && !pState.Jumping && !pState.Invincible  && !pState.dashing && !pState.healing)
@@ -1138,89 +1190,48 @@ public class PlayerController : MonoBehaviour
         }
         anim.ResetTrigger("Ending");
     }
-
-    public void Respawned()
+    public IEnumerator WalkIntoNewScene(Vector2 _exitDir, float _delay)
     {
-        if (!pState.alive)
+        pState.Invincible = true;
+
+        //If exit direction is upwards
+        if (_exitDir.y > 0)
         {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            GetComponent<BoxCollider2D>().enabled = true;
-            pState.alive = true;
-            halfMana = true;
-            UIManager.Instance.SwitchMana(UIManager.ManaState.HalfMana);
-            Mana = 0;
-            Health = maxHealth;
-            anim.Play("AshenOne_Idle");
+            rb.velocity = jumpForce * _exitDir;
         }
-    }
-    public void RestoreMana()
-    {
-        halfMana = false;
-        UIManager.Instance.SwitchMana(UIManager.ManaState.FullMana);
-    }
-    private bool Walled()
-    {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
-    }
 
-    void WallSlide()
-    {
-        if (Walled() && !Grounded() && xAxis != 0)
+        //If exit direction requires horizontal movement
+        if (_exitDir.x != 0)
         {
-            isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-            anim.SetBool("isWallJump", false);
-            anim.SetBool("isWallSlide", true);
+            xAxis = _exitDir.x > 0 ? 1 : -1;
+        }
+
+        Flip();
+        yield return new WaitForSeconds(_delay);
+        pState.Invincible = false;
+    }
+    #endregion
+    #region Map
+    void ToggleMap()
+    {
+        if (openMap && !pState.dashing && !pState.healing && !pState.casting && !pState.cutscenes && !pState.Jumping && !pState.Falling && !pState.Invincible)
+        {
+            anim.SetBool("isOpenMap", true);
+            canMove = false;
+            UIManager.Instance.mapHandler.SetActive(true);
         }
         else
         {
-            isWallSliding = false;
-            anim.SetBool("isWallSlide", false);
+            StartCoroutine(CloseMap());
         }
     }
-    void WallJump()
+
+    IEnumerator CloseMap()
     {
-        if (isWallSliding)
-        {
-            isWallJumping = false;
-            wallJumpingDirection = !pState.lookingRight ? 1 : -1;
-            CancelInvoke(nameof(StopWallJumping));
-        }
-
-        if (Input.GetButtonDown("Jump") && isWallSliding)
-        {
-            audiosource.PlayOneShot(jumpSound);
-            isWallJumping = true;
-
-            anim.SetBool("isWallJump", true);
-            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-
-            dashed = false;
-            AirJumpCounter = 0;
-
-            pState.lookingRight = !pState.lookingRight;
-            transform.eulerAngles = new Vector2(transform.eulerAngles.x, 180);
-
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
-        }
+        anim.SetBool("isOpenMap", false);
+        UIManager.Instance.mapHandler.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        canMove = true;
     }
-    void StopWallJumping()
-    {
-        isWallJumping = false;
-        transform.eulerAngles = new Vector2(transform.eulerAngles.x, 0);
-    }
-    public void ResetToDefault()
-    {
-        halfMana = false;
-        Health = maxHealth;
-        Mana = 0.5f;
-        heartShards = 0;
-
-        unlockedWallJump = false;
-        unlockedDash = false;
-        unlockedVarJump = false;
-        unlockedHeal = false;
-        unlockedCastSpell = false;
-    }
+    #endregion
 }
