@@ -8,6 +8,8 @@ public class PlayerParticles : MonoBehaviour
     [SerializeField] private ParticleSystem SwordSlashForward;
     [SerializeField] private ParticleSystem SwordSlashUp;
     [SerializeField] private ParticleSystem SwordSlashDown;
+    [SerializeField] private ParticleSystem SwordSlashCombo2;
+    [SerializeField] private ParticleSystem SwordSlashCombo3;
     [Header("WaterVfx")]
     [SerializeField] private GameObject WaterFootVFX, WaterSplashVFX, WaterJumpSplashVFX;
     [Header("WingVfx")]
@@ -36,6 +38,14 @@ public class PlayerParticles : MonoBehaviour
     public void DownSlash()
     {
         SwordSlashDown.Play();
+    }
+    public void Combo2Slash()
+    {
+        SwordSlashCombo2.Play();
+    }
+    public void Combo3Slash()
+    {
+        SwordSlashCombo3.Play();
     }
 
     public void WaterFootPrint()

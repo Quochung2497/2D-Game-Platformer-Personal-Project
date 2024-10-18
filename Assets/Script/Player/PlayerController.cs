@@ -42,22 +42,28 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
     [Header("Attack Settings")]
+    //attack
     [SerializeField] private float AtkInterval;
-    private float timeSinceAttack, attackeffectdelay = 0.1f;
-    private bool attack = false, attackable = true;
     public Transform attackForwardPoint, UpAttackPoint, DownAttackPoint;
     public float SideAttackRange = 0.5f, UpAttackRange = 0.5f, DownAttackRange = 0.5f;
+    private float timeSinceAttack, attackeffectdelay = 0.1f;
+    private bool attack = false, attackable = true;
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float damage;
+    //Combo
+    private int comboStep = 0;
+    [SerializeField] private float comboResetTime = 0.8f;
+
+    //Receive damage
     bool restoreTime;
     float restoreTimeSpeed;
     [Space(5)]
 
     [Header("Recoil Settings:")]
-    [SerializeField] private float recoilXSpeed = 20;
-    [SerializeField] private float recoilYSpeed = 20;
-    [SerializeField] private int recoilXSteps = 5;
-    [SerializeField] private int recoilYSteps = 5;
+    [SerializeField] private float recoilXSpeed;
+    [SerializeField] private float recoilYSpeed;
+    [SerializeField] private int recoilXSteps;
+    [SerializeField] private int recoilYSteps;
     private int stepsXRecoiled, stepsYRecoiled;
     [Space(5)]
 
@@ -148,6 +154,17 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        CharacterStart();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        HandleController();        
+    }
+
+    private void CharacterStart()
+    {
         GameObject.DontDestroyOnLoad(this.gameObject);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -169,21 +186,18 @@ public class PlayerController : MonoBehaviour
         {
             UIManager.Instance.SwitchMana(UIManager.ManaState.FullMana);
         }
-
         onHealthChangedCallback.Invoke();
-
         if (Health <= 0)
         {
             pState.alive = false;
             GlobalController.instance.RespawnPlayer();
         }
+        audiosource.volume = 0.5f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleController()
     {
-        audiosource.volume = 0.5f;
-        if(PauseMenuUI.Instance.GameIsPaused) { return; }
+        if (PauseMenuUI.Instance.GameIsPaused) { return; }
         if (pState.cutscenes) return;
         RestoreTimeScale();
         FlashWhileInvincible();
@@ -192,8 +206,8 @@ public class PlayerController : MonoBehaviour
         if (InputEnable && pState.alive)
         {
             if (unlockedHeal)
-            { 
-                Heal(); 
+            {
+                Heal();
             }
             if (!canMove || pState.healing) { return; }
             GetInput();
@@ -212,8 +226,8 @@ public class PlayerController : MonoBehaviour
             }
             UpdateJumpVariables();
             if (unlockedDash)
-            { 
-                StartDash(); 
+            {
+                StartDash();
             }
             if (unlockedCastSpell)
             {
@@ -224,6 +238,7 @@ public class PlayerController : MonoBehaviour
             Recoil();
         }
     }
+
     void UpdateCameraYDampForPlayerFall()
     {
         if (rb.velocity.y < playerFallSpeedThreshold && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.hasLerpedYDamping)
@@ -273,7 +288,7 @@ public class PlayerController : MonoBehaviour
     }
     void GetInput()
     {
-        xAxis = Input.GetAxisRaw("Horizontal");
+        xAxis = Input.GetAxisRaw("Horizontal"); 
         yAxis = Input.GetAxisRaw("Vertical");
         attack = Input.GetButtonDown("Attack");
         openMap = Input.GetKey(KeyCode.M);
@@ -420,69 +435,123 @@ public class PlayerController : MonoBehaviour
         if (_exitDir.x != 0)
         {
             xAxis = _exitDir.x > 0 ? 1 : -1;
-            //Move();
         }
 
         Flip();
         yield return new WaitForSeconds(_delay);
         pState.Invincible = false;
     }
+    #region TấnCông
     void Attack()
     {
         float verticalDirection = Input.GetAxisRaw("Vertical");
         timeSinceAttack += Time.deltaTime;
+        ResetCombo();
         if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting && !Walled())
         {
             timeSinceAttack = 0;
             audiosource.PlayOneShot(hitSound);
             if (verticalDirection > 0)
             {
-                attackUp();
+                anim.SetTrigger("AttackUp");
+                PlayerParticles.UpSlash();
             }
             else if (verticalDirection < 0 && !Grounded())
             {
-                attackDown();
+                anim.SetTrigger("AttackDown");
+                PlayerParticles.DownSlash();
             }
             else
             {
-                attackForward();
+                if (!Grounded())
+                {
+                    anim.SetTrigger("Attack");
+                    PlayerParticles.ForwardSlash();
+                    return;
+                } 
+                PerformCombo();
             }
         }
     }
-    private void attackForward()
+    private void ResetCombo()
     {
-        anim.SetTrigger("Attack");
+        if (timeSinceAttack > comboResetTime)
+        {
+            comboStep = 0;
+        }
+    }
+
+    private void PerformCombo()
+    {
+        if (comboStep == 0)
+        {
+            anim.SetTrigger("Attack");
+            PlayerParticles.ForwardSlash();
+            comboStep++;
+        }
+        else if (comboStep == 1  && timeSinceAttack < comboResetTime)
+        {
+            anim.SetTrigger("SecondAtk");
+            PlayerParticles.Combo2Slash();
+            comboStep++;
+        }
+        else if (comboStep == 2  && timeSinceAttack < comboResetTime)
+        {
+            anim.SetTrigger("ThirdAtk");
+            PlayerParticles.Combo3Slash();
+            comboStep = 0; // Reset combo sau đòn thứ ba
+        }
+    }
+    private void attackForward(int comboStep)
+    {
+        float finalDamageMultiplier = 1.0f; // Hệ số sát thương mặc định cho đòn đầu tiên
+        float recoilSpeedMultiplier = 1.0f; // Hệ số hồi phản lực mặc định cho đòn đầu tiên
+
+        // Thiết lập hệ số sát thương và hệ số hồi phản lực cho từng bước combo
+        if (comboStep == 1) // Đòn thứ nhất
+        {
+            finalDamageMultiplier = 1.0f;  // 100% sát thương
+            recoilSpeedMultiplier = 1.0f;  // Hệ số phản lực thông thường (không thay đổi)
+        }
+        else if (comboStep == 2) // Đòn thứ hai
+        {
+            finalDamageMultiplier = 1.25f;  // 125% sát thương
+            recoilSpeedMultiplier = 2.0f;   // Tăng tốc độ hồi phản lực (gấp đôi so với đòn đầu)
+        }
+        else if (comboStep == 3) // Đòn thứ ba
+        {
+            finalDamageMultiplier = 1.5f;  // 150% sát thương
+            recoilSpeedMultiplier = 4.0f;  // Tăng hồi phản lực rất mạnh (gấp 4 lần so với đòn đầu)
+        }
+
+        // Tăng sát thương dựa trên hệ số
+        float finalDamage = damage * finalDamageMultiplier; // Tính toán sát thương cuối cùng dựa trên hệ số combo
+        float recoilFinalSpeed = recoilXSpeed * recoilSpeedMultiplier; // Tính toán tốc độ hồi phản lực cuối cùng
         int _recoilLeftOrRight = pState.lookingRight ? 1 : -1;
-        Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilXSpeed);
-        PlayerParticles.ForwardSlash();
+        Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilFinalSpeed, finalDamage);
+        Debug.Log("Sat thuong gay ra la " + finalDamage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     private void attackUp()
     {
-        anim.SetTrigger("AttackUp");
-        Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed);
-        PlayerParticles.UpSlash();
+        Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed,damage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     private void attackDown()
     {
-        anim.SetTrigger("AttackDown");
-        Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed);
-        PlayerParticles.DownSlash();
+        Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed, damage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
 
     IEnumerator attackCoroutine(float effectdelay, float atkInterval)
     {
-        InputEnable = false;
         yield return new WaitForSeconds(effectdelay);
-        InputEnable = true;
         attackable = false;
         yield return new WaitForSeconds(atkInterval);
         attackable = true;
     }
 
-    void Hit(Transform _attackTransform, float _attackrange, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrength)
+    void Hit(Transform _attackTransform, float _attackrange, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrength, float damage)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapCircleAll(_attackTransform.position, _attackrange, attackableLayer);
         List<Enemy> hitEnemies = new List<Enemy>();
@@ -498,7 +567,7 @@ public class PlayerController : MonoBehaviour
             {
                 e.EnemyGetsHit(damage, _recoilDir, _recoilStrength);
                 hitEnemies.Add(e);
-                if (objectsToHit[i].CompareTag("Enemy")) //Them mana khi danh vao enemy
+                if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
                 }
@@ -520,6 +589,8 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(UpAttackPoint.position, UpAttackRange);
         Gizmos.DrawWireSphere(DownAttackPoint.position, DownAttackRange);
     }
+
+    #endregion
 
     void Recoil()
     {
@@ -659,7 +730,6 @@ public class PlayerController : MonoBehaviour
         Instantiate(HurtEffect, transform.position, Quaternion.identity);
         if (_delay > 0)
         {
-            //StopCoroutine(StartTimeAgain(_delay));
             StartCoroutine(StartTimeAgain(_delay));
         }
         else
