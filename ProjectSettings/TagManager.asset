@@ -12,6 +12,7 @@ TagManager:
   - Roof
   - Projectile
   - Chain
+  - Audio
   layers:
   - Default
   - TransparentFX

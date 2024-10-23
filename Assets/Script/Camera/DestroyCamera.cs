@@ -16,7 +16,7 @@ public class DestroyCamera : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (SceneManager.GetActiveScene().buildIndex == 6)
+        if (SceneManager.GetActiveScene().buildIndex == 7)
         {
             Destroy(gameObject);
         }

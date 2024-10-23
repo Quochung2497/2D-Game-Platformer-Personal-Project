@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
     [SerializeField] GameObject StartdashEffect, dashEffect;
-    private bool canDash = true, dashed;
+    public bool canDash = true, dashed;
     [Space(5)]
 
     [Header("Attack Settings")]
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
     public Transform attackForwardPoint, UpAttackPoint, DownAttackPoint;
     public float SideAttackRange = 0.5f, UpAttackRange = 0.5f, DownAttackRange = 0.5f;
     private float timeSinceAttack, attackeffectdelay = 0.1f;
-    private bool attack = false, attackable = true;
+    public bool attack = false, attackable = true;
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float damage;
     //Combo
@@ -113,14 +114,7 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
     [Header("Audio")]
-    [SerializeField] AudioClip landingSound;
-    [SerializeField] AudioClip jumpSound;
-    [SerializeField] AudioClip dashSound;
-    [SerializeField] AudioClip spellSideCastSound;
-    [SerializeField] AudioClip spellUpDownCastSound;
-    [SerializeField] AudioClip hitSound;
-    [SerializeField] AudioClip hurtSound;
-    [SerializeField] AudioClip DieSound;
+    AudioManager audioManager;
     private bool landingSoundPlayed;
 
     [Header("VFX")]
@@ -140,7 +134,6 @@ public class PlayerController : MonoBehaviour
     bool openMap;
     public Animator anim;
     private SpriteRenderer sr;
-    private AudioSource audiosource;
     public float fallThreshold = -12f;
     public bool canMove = true, InputEnable = true;
     public bool isFacingRight = true;
@@ -171,7 +164,7 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     private void FixedUpdate()
     {
@@ -187,7 +180,6 @@ public class PlayerController : MonoBehaviour
         currentFallSpeed = 0.0f;
         pState = GetComponent<PlayerStateList>();
         sr = GetComponent<SpriteRenderer>();
-        audiosource = GetComponent<AudioSource>();
         PlayerParticles = GetComponentInChildren<PlayerParticles>();
         gravity = rb.gravityScale;
         Mana = mana;
@@ -208,7 +200,6 @@ public class PlayerController : MonoBehaviour
             pState.alive = false;
             GlobalController.instance.RespawnPlayer();
         }
-        audiosource.volume = 0.5f;
     }
 
     private void HandleController()
@@ -367,7 +358,7 @@ public class PlayerController : MonoBehaviour
         attackable = false;
         InputEnable = false;
         anim.SetTrigger("Dashing");
-        audiosource.PlayOneShot(dashSound);
+        audioManager.PlayVfx(audioManager.vfx[1]);
         Instantiate(StartdashEffect, transform.position, Quaternion.identity);
         PlayerParticles.WaterSplash();
         gameObject.layer = LayerMask.NameToLayer("Decoration");
@@ -396,7 +387,7 @@ public class PlayerController : MonoBehaviour
         if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting && !Walled())
         {
             timeSinceAttack = 0;
-            audiosource.PlayOneShot(hitSound);
+            audioManager.PlayVfx(audioManager.vfx[0]);
             if (verticalDirection > 0)
             {
                 anim.SetTrigger("AttackUp");
@@ -607,7 +598,7 @@ public class PlayerController : MonoBehaviour
     {
         if (pState.alive)
         {
-            audiosource.PlayOneShot(hurtSound);
+            audioManager.PlayVfx(audioManager.vfx[2]);
             Health -= Mathf.RoundToInt(_damage);
             if (Health <= 0)
             {
@@ -638,7 +629,7 @@ public class PlayerController : MonoBehaviour
     {
         pState.alive = false;
         Time.timeScale = 1f;
-        audiosource.PlayOneShot(DieSound);
+        audioManager.PlayVfx(audioManager.vfx[5]);
         GameObject _bloodSpurtParticles = Instantiate(Blood, transform.position, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("isDead");
@@ -890,7 +881,7 @@ public class PlayerController : MonoBehaviour
         //side cast
         if (yAxis == 0 || (yAxis < 0 && Grounded()))
         {
-            audiosource.PlayOneShot(spellSideCastSound);
+            audioManager.PlayVfx(audioManager.vfx[6]);
             anim.SetBool("CastingSide", true);
             yield return new WaitForSeconds(0.15f);
             GameObject _SideSpell = Instantiate(sideSpell, attackForwardPoint.position, Quaternion.identity);
@@ -914,7 +905,7 @@ public class PlayerController : MonoBehaviour
         //up cast
         else if (yAxis > 0)
         {
-            audiosource.PlayOneShot(spellUpDownCastSound);
+            audioManager.PlayVfx(audioManager.vfx[7]);
             anim.SetBool("isCastingUp", true);
             yield return new WaitForSeconds(0.2f);
             Instantiate(upSpell, transform);
@@ -928,7 +919,7 @@ public class PlayerController : MonoBehaviour
         //down cast
         else if (yAxis < 0 && !Grounded())
         {
-            audiosource.PlayOneShot(spellUpDownCastSound);
+            audioManager.PlayVfx(audioManager.vfx[7]);
             anim.SetBool("CastingDown", true);
             yield return new WaitForSeconds(0.15f);
             InputEnable = false;
@@ -981,7 +972,7 @@ public class PlayerController : MonoBehaviour
                 if (!landingSoundPlayed)
                 {
                     landingSoundPlayed = true;
-                    audiosource.PlayOneShot(landingSound);
+                    audioManager.PlayVfx(audioManager.vfx[3]);
                 }
                 StartCoroutine(LandingDelayCoroutine());
             }
@@ -1020,7 +1011,7 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                audiosource.PlayOneShot(jumpSound);
+                audioManager.PlayVfx(audioManager.vfx[4]);
 
                 if (JumpEffectCreated == 0)
                 { 
@@ -1037,7 +1028,7 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                audiosource.PlayOneShot(jumpSound);
+                audioManager.PlayVfx(audioManager.vfx[4]);
 
                 AirJumpCounter++;
 
@@ -1103,7 +1094,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isWallSliding)
         {
-            audiosource.PlayOneShot(jumpSound);
+            audioManager.PlayVfx(audioManager.vfx[4]);
             isWallJumping = true;
 
             anim.SetBool("isWallJump", true);

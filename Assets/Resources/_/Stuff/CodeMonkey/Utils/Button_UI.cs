@@ -169,7 +169,7 @@ namespace CodeMonkey.Utils {
 
         /*
          * Class for temporarily intercepting a button action
-         * Useful for Tutorial disabling specific buttons
+         * Useful for TutorialBoard disabling specific buttons
          * */
         public class InterceptActionHandler {
 

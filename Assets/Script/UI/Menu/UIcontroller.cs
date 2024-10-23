@@ -9,7 +9,7 @@ public class UIcontroller : MonoBehaviour
     
     public void CheckScene()
     {
-        if(SceneManager.GetActiveScene().name == "Tutorial Map")
+        if(SceneManager.GetActiveScene().name == "TutorialBoard Map")
         {
             TurnOff();
         }

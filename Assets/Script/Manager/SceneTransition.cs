@@ -16,12 +16,12 @@ public class SceneTransition : MonoBehaviour
    
     private void Start()
     {
-            if (GlobalController.instance.transitionedFromScene == transitionTo)
-            {
-                PlayerController.Instance.transform.position = startPoint.position;
+        if (GlobalController.instance.transitionedFromScene == transitionTo)
+        {
+            PlayerController.Instance.transform.position = startPoint.position;
 
-                StartCoroutine(PlayerController.Instance.WalkIntoNewScene(exitDirection, exitTime));
-            }
+            StartCoroutine(PlayerController.Instance.WalkIntoNewScene(exitDirection, exitTime));
+        }
         UIManager.Instance.uiController.CheckScene();
         StartCoroutine(UIManager.Instance.sceneFader.Fade(ScreenFader.FadeDirection.Out));
     }
@@ -29,10 +29,15 @@ public class SceneTransition : MonoBehaviour
     {
         if (_other.CompareTag("Player"))
         {
-            CheckShadeData();
-            GlobalController.instance.transitionedFromScene = SceneManager.GetActiveScene().name;
-            StartCoroutine(UIManager.Instance.sceneFader.FadeAndLoadScene(ScreenFader.FadeDirection.In, transitionTo));
+            MoveToNextScene();
         }
+    }
+
+    private void MoveToNextScene()
+    {
+        CheckShadeData();
+        GlobalController.instance.transitionedFromScene = SceneManager.GetActiveScene().name;
+        StartCoroutine(UIManager.Instance.sceneFader.FadeAndLoadScene(ScreenFader.FadeDirection.In, transitionTo));
     }
     void CheckShadeData()
     {

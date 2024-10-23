@@ -47,8 +47,11 @@ public class WindSpawner : MonoBehaviour
             // Chọn prefab ngẫu nhiên để spawn
             int randomPrefabIndex = Random.Range(0, windPrefab.Length);
 
+            Vector3 randomSpawnPosition = spawnPos[randomPosIndex].transform.position;
+            randomSpawnPosition.x += Random.Range(-6f, 6f); // Random từ -6 đến 6 cho trục x
+            randomSpawnPosition.y += Random.Range(1f, 3f);  // Random từ 1 đến 3 cho trục y
             // Instantiate windPrefab tại vị trí đã chọn
-            Instantiate(windPrefab[randomPrefabIndex], spawnPos[randomPosIndex].transform.position, Quaternion.Euler(0, 180, 0));
+            Instantiate(windPrefab[randomPrefabIndex], randomSpawnPosition, Quaternion.Euler(0, 180, 0));
 
             // Tạo khoảng thời gian trễ ngẫu nhiên giữa mỗi lần spawn
             float randomDelay = Random.Range(0.2f, 1f);

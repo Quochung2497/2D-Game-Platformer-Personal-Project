@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _GradientNoiseScale: 30
+    - _GradientNoiseScale: 15
     m_Colors:
     - _DistortionColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 0.69411767}
     - _DistortionPower: {r: 0.01, g: 0.01, b: 0, a: 0}
