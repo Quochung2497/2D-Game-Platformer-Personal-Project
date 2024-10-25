@@ -782,7 +782,7 @@ MonoBehaviour:
   manaDrainSpeed: 0.25
   manaGain: 0.1
   halfMana: 0
-  manaSpellCost: 0.01
+  manaSpellCost: 0.3
   timeBetweenCast: 0.5
   spellDamage: 2
   downSpellForce: 10

@@ -23,14 +23,14 @@ public class FinalBoss_Bend : StateMachineBehaviour
         {
             FinalBoss.Instance.Flip();
             Vector2 _newPos = Vector2.MoveTowards(rb.position, FinalBoss.Instance.moveToPosition,
-            FinalBoss.Instance.speed * 6 * Time.fixedDeltaTime);
+            FinalBoss.Instance.speed * 5 * Time.fixedDeltaTime);
             rb.MovePosition(_newPos);
 
             if (FinalBoss.Instance.TouchedWall())
             {
                 FinalBoss.Instance.moveToPosition.x = rb.position.x;
                 _newPos = Vector2.MoveTowards(rb.position, FinalBoss.Instance.moveToPosition,
-                FinalBoss.Instance.speed * 6 * Time.fixedDeltaTime);
+                FinalBoss.Instance.speed * 5 * Time.fixedDeltaTime);
             }
 
             float _distance = Vector2.Distance(rb.position, _newPos);
