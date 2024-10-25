@@ -272,8 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 3
-  recoilLength: 1.5
-  recoilFactor: 1
+  recoilLength: 0.2
+  recoilFactor: 0.15
   isRecoiling: 0
   speed: 1
   Blood: {fileID: 1369787392730165180, guid: 4787ebf6f01341f46920ec51ac6006c6, type: 3}

@@ -518,7 +518,7 @@ AudioSource:
   m_GameObject: {fileID: 3914196442026324371}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 3b1520f71b8fa7d489ed0bbb6214f6bd, type: 2}
+  OutputAudioMixerGroup: {fileID: 3303744780252718926, guid: 3b1520f71b8fa7d489ed0bbb6214f6bd, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   maxHealth: 0
-  recoilLength: 1
+  recoilLength: 0.5
   recoilFactor: 0.5
   isRecoiling: 0
   speed: 3
@@ -664,7 +664,7 @@ MonoBehaviour:
   DownAttackTransform: {fileID: 3390363600348903924}
   DownAttackArea: 1.5
   attackRange: 4
-  attackTimer: 3
+  attackTimer: 1.5
   Slash3Sound: {fileID: 0}
   Parrysound: {fileID: 0}
   Intro: {fileID: 0}
@@ -1882,7 +1882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8855286299989085200}
   - component: {fileID: 6487964246605936918}
-  - component: {fileID: 5909452964962157941}
   m_Layer: 6
   m_Name: Ease Health Bar
   m_TagString: Untagged
@@ -1962,20 +1961,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5909452964962157941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8537536817201791799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01816cf132e0074280fa50098fe96c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthslider: {fileID: 0}
-  Easehealthslider: {fileID: 0}
 --- !u!1 &8687122881087149734
 GameObject:
   m_ObjectHideFlags: 0

@@ -748,6 +748,8 @@ MonoBehaviour:
   dashCooldown: 0.3
   StartdashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
   dashEffect: {fileID: 8537092978754957369, guid: c7633aa6b93ee8d4d9541c126474825e, type: 3}
+  canDash: 1
+  dashed: 0
   AtkInterval: 0.3
   attackForwardPoint: {fileID: 6418111516938531104}
   UpAttackPoint: {fileID: 7292846981766641607}
@@ -755,6 +757,8 @@ MonoBehaviour:
   SideAttackRange: 0.56
   UpAttackRange: 0.56
   DownAttackRange: 0.56
+  attack: 0
+  attackable: 1
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -794,14 +798,6 @@ MonoBehaviour:
     m_Bits: 256
   wallJumpingDuration: 0.1
   wallJumpingPower: {x: 15, y: 15}
-  landingSound: {fileID: 8300000, guid: 005a8ba8383977f48a14d8778eb0b3e6, type: 3}
-  jumpSound: {fileID: 8300000, guid: 963868c803b04c94c936de8dc942e679, type: 3}
-  dashSound: {fileID: 8300000, guid: d91e514acd3f829448631de70ab44dbf, type: 3}
-  spellSideCastSound: {fileID: 8300000, guid: 11087646f5d24a547b9f34add8d8250a, type: 3}
-  spellUpDownCastSound: {fileID: 8300000, guid: 6f9d3bd2cecd54347bbd5d9c34c59e63, type: 3}
-  hitSound: {fileID: 8300000, guid: be3308b29db8e534b84fc528ba7be755, type: 3}
-  hurtSound: {fileID: 8300000, guid: ba6b43d8316b06c49aeddfc185dbdf31, type: 3}
-  DieSound: {fileID: 8300000, guid: 41fad549eeb6be944b26e98a1615a298, type: 3}
   PlayerParticles: {fileID: 528755393082319769}
   unlockedWallJump: 0
   unlockedDash: 0
@@ -5968,6 +5964,7 @@ MonoBehaviour:
   WaterSplashVFX: {fileID: 145209462328433880, guid: 165d8a6d1ccb18848be6742261ab79cb, type: 3}
   WaterJumpSplashVFX: {fileID: 2423535953928786376, guid: 1db5c04ebec44f940a229f0c4a66cdb6, type: 3}
   DoubleJumpWing: {fileID: 3273531615570944333, guid: 9cb3fd2281959d44ab9d13000683f1d0, type: 3}
+  EnemyVfx: {fileID: 5864984999101985276, guid: 0a827ad5d1c689645b31de8f78fa0659, type: 3}
   CharacterWaterVFX: {fileID: 8817238109218901610}
   DoubleWingPos: {fileID: 7197086892304011727}
   JumpSplashCounted: 0

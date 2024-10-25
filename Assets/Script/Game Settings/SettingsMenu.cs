@@ -49,15 +49,15 @@ public class SettingsMenu : MonoBehaviour
         }
     }
    
-    private void Update()
+    /*private void Update()
     {
-        if (MenuSelection.instance.MenuState == 1)
+        if (MenuController.Handle)
         {
             HandleInput();
         }
-    }
+    }*/
 
-    void HandleInput()
+    public void HandleInput()
     {
            
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0))
@@ -90,7 +90,7 @@ public class SettingsMenu : MonoBehaviour
             {
                 if (!onSubPanel)
                 {
-                    MenuSelection.instance.FadeToMenu();
+                    MenuController.instance.ReturnToPreviousState();
                 }
                 else
                 {
@@ -181,7 +181,7 @@ public class SettingsMenu : MonoBehaviour
             currentButtonIndex = Index; // Ghi lại nút hiện tại
             FirstTime = false;
         }*/
-        if (MenuSelection.instance.MenuState == 1)
+        //if (MenuController.instance.MenuState == Menu)
         {
             ShrinkAllButtons(Index); // Thu gọn tất cả ngoại trừ nút đang chọn
             currentButtonIndex = Index; // Ghi lại nút hiện tại
@@ -220,19 +220,19 @@ public class SettingsMenu : MonoBehaviour
             StartCoroutine(FadeOut(SubMenu[currentPanel], 0.5f));
             StartCoroutine(FadeIn(SubMenu[newPanelIndex], 0.5f)); // Fade in panel mới
             currentPanel = newPanelIndex; // Cập nhật lại nút hiện tại
-            onSubPanel = true;
         }
-        else
+        /*else
         {
-            /*
+            
             if(currentButtonIndex != -1)
             {
                 //currentButtonIndex = lastButton;
                 StartCoroutine(FadeOut(SubMenu[currentPanel], 0.5f, 0.5f));
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(menuButtons[currentButtonIndex]);
-            }*/
-        }
+            }
+        }*/
+        onSubPanel = true;
     }
     //Dùng để fix di chuyển bằng analog
     /*

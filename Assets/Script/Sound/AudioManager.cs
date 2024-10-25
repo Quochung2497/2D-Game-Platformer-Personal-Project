@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
     [Header("----------Audio Source---------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource vfxSource;
@@ -21,15 +23,22 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         SelectTheme();
-        musicSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        //DontDestroyOnLoad(gameObject);
     }
-    private void SelectTheme()
+
+    public void SelectTheme()
     {
         string currentScene = SceneManager.GetActiveScene().name;
         if(currentScene == "Main Menu")
@@ -50,7 +59,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (currentScene == "Map 3")
         {
-            musicSource.clip = theme[4];
+            musicSource.clip = null;
         }
         else if (currentScene == "Map 4")
         {
@@ -60,6 +69,8 @@ public class AudioManager : MonoBehaviour
         {
             musicSource.clip = theme[6];
         }
+        if (musicSource.clip != null)
+        { musicSource.Play(); }
     }
     public void PlayVfx(AudioClip audioclip)
     {

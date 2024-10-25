@@ -15,17 +15,15 @@ public class PlayerParticles : MonoBehaviour
     [Header("WingVfx")]
     [SerializeField] private GameObject DoubleJumpWing;
 
+    [Header("HitObjectEffect")]
+    [SerializeField] private ParticleSystem EnemyVfx;
+
     [Header("Variables")]
     [SerializeField] private Transform CharacterWaterVFX;
     [SerializeField] private Transform DoubleWingPos;
     private float FootEffectDelay;
     public int JumpSplashCounted = 0;
     public int DoubleJumpVfxCounted = 0;
-
-    private void start()
-    {
-        
-    }
 
     public void ForwardSlash()
     {
@@ -72,7 +70,7 @@ public class PlayerParticles : MonoBehaviour
             }
         }
     }
-    public void WaterJumpVFX()
+    public void WaterJumpVfx()
     {
         if(PlayerController.Instance.IsOnWater() && PlayerController.Instance.rb.velocity.y > 0)
         {
@@ -94,5 +92,10 @@ public class PlayerParticles : MonoBehaviour
                 DoubleJumpVfxCounted++;
             }
         }
+    }
+
+    public void HitEnemyVfx()
+    {
+        Instantiate(EnemyVfx, PlayerController.Instance.attackForwardPoint.transform.position, Quaternion.identity);
     }
 }

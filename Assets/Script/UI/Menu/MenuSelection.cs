@@ -16,7 +16,7 @@ public class MenuSelection : MonoBehaviour
     public GameObject NotificationPanel;
     public float moveDistance = 10f; // Khoảng cách di chuyển
     public float speed = 1f; // Tốc độ di chuyển
-    public int MenuState = 0;
+    //public int MenuState = 0;
     //Biến toàn cục
     public int currentIndex = 0;
     private float inputDelay = 0.2f; // Thời gian chờ giữa các lần nhận input từ analog stick
@@ -65,13 +65,13 @@ public class MenuSelection : MonoBehaviour
     void Update()
     {
 
-        if (MenuState == 0)
+        /*if (MenuState == 0)
         { 
             HandleInput(); 
-        }
+        }*/
     }
 
-    void HandleInput()
+    public void HandleInput()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float dPagInput = Input.GetAxis("7th axis");
@@ -214,10 +214,11 @@ public class MenuSelection : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(OptionMenuFirst);
+            MenuController.instance.SettingsMenu();
         }
         left.SetBool("Click", false);
         right.SetBool("Click", false);
-        CheckMenuState();
+        //CheckMenuState();
         yield return null;
     }
 
@@ -231,7 +232,7 @@ public class MenuSelection : MonoBehaviour
         }
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-        CheckMenuState();
+        //CheckMenuState();
         yield return null;
     }
     public void FadeToMenu()
@@ -246,7 +247,7 @@ public class MenuSelection : MonoBehaviour
         {
             StartCoroutine(FadeOut(Menu[3], 0.5f));
         }
-        MenuState = 0;
+        //MenuState = 0;
         StartCoroutine(FadeIn(Menu[1], 0.5f));
     }
 
@@ -272,7 +273,7 @@ public class MenuSelection : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(NotificationButton);
         }
     }
-    void CheckMenuState()
+    /*void CheckMenuState()
     {
         if (Menu[2].alpha == 1f)
         {
@@ -282,7 +283,7 @@ public class MenuSelection : MonoBehaviour
         {
             MenuState = 0;
         }
-    }
+    }*/
     public void NotificationPanelOff()
     {
         NotificationPanel.SetActive(false);

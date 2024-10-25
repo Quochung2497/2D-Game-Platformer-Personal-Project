@@ -261,8 +261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.3, y: 103.6}
-  m_SizeDelta: {x: 620, y: 99.91}
+  m_AnchoredPosition: {x: 17.3, y: 86.27}
+  m_SizeDelta: {x: 620, y: 134.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222518432
 MonoBehaviour:
@@ -284,9 +284,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hi\u1EC7n \u0111ang trong giai \u0111o\u1EA1n ph\xE1t tri\u1EC3n c\xE1c
-    t\xEDnh n\u0103ng v\xE0 t\xEDch h\u1EE3p \u0111i\u1EC1u khi\u1EC3n b\u1EB1ng
-    tay c\u1EA7m ( test tr\xEAn dualsense 5)"
+  m_text: "Hi\u1EC7n v\u1EABn trong giai \u0111o\u1EA1n ph\xE1t tri\u1EC3n v\xE0
+    t\u01B0\u01A1ng lai s\u1EBD t\xEDch h\u1EE3p th\xEAm \u0111i\u1EC1u khi\u1EC3n
+    cho tay c\u1EA7m"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5839754001420b74396a33f914f0b753, type: 2}
   m_sharedMaterial: {fileID: 1407728260462230126, guid: 5839754001420b74396a33f914f0b753, type: 2}
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -449,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &800466453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1055833428
 RectTransform:
   m_ObjectHideFlags: 0

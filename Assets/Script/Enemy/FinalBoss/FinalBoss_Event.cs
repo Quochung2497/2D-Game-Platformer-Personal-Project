@@ -135,4 +135,12 @@ public class FinalBoss_Event : MonoBehaviour
     {
         FinalBoss.Instance.PlayBarrageSound();
     }
+    void BeginParry()
+    {
+        FinalBoss.Instance.StartParry();
+    }
+    void EndParry()
+    {
+        FinalBoss.Instance.StopParry();
+    }
 }

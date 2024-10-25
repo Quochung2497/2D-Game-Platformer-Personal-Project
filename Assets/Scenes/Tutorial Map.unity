@@ -215,8 +215,8 @@ Transform:
   m_GameObject: {fileID: 68791482}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 4.3, y: 0.33000016, z: 1.63}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.36, y: -0.02, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1771343574}
@@ -262,7 +262,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1520803157
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &83166383
 GameObject:
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!20 &100965067 stripped
 Camera:
@@ -6140,7 +6140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.4, y: 0.1}
+  parallaxMultiplier: {x: 0.1, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &512371729
 GameObject:
@@ -7260,7 +7260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &880560614
 GameObject:
@@ -7434,7 +7434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &897365303
 GameObject:
@@ -7463,8 +7463,8 @@ Transform:
   m_GameObject: {fileID: 897365303}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 4.34, y: 2.4200003, z: 1.63}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.97, y: 3.72, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1771343574}
@@ -12520,7 +12520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.4, y: 0.1}
+  parallaxMultiplier: {x: 0.1, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &969913883
 GameObject:
@@ -13406,7 +13406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1147253885
 GameObject:
@@ -13578,6 +13578,10 @@ PrefabInstance:
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: unlockedVarJump
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: JumpBufferFrames
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3429445972927670544, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13801,7 +13805,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1520803157
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 60544a86e5a1f4d4585a3e7ca134af8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6313726}
   m_FlipX: 1
@@ -13825,7 +13829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1223743124
 GameObject:
@@ -14090,7 +14094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.4, y: 0.1}
+  parallaxMultiplier: {x: 0.1, y: 0.1}
   InfiniteScrolling: 0
 --- !u!4 &1287108216 stripped
 Transform:
@@ -14194,7 +14198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1315051684
 GameObject:
@@ -15386,7 +15390,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -15518,17 +15522,17 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -15558,9 +15562,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 1}
+      maxColor: {r: 0.254717, g: 0.24870951, b: 0.24870951, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.0039215684, g: 0.30713257, b: 1, a: 1}
@@ -16002,7 +16006,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 20
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -20190,7 +20194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.05}
+  parallaxMultiplier: {x: 0, y: 0}
   InfiniteScrolling: 0
 --- !u!1 &1964731767
 GameObject:
@@ -20289,7 +20293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.3, y: 0.1}
+  parallaxMultiplier: {x: 0.2, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1974244398
 GameObject:
@@ -20604,6 +20608,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4965959066648155300, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -498
+      objectReference: {fileID: 0}
     - target: {fileID: 5107697271797661820, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20742,8 +20750,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1771343574}
     m_Modifications:
     - target: {fileID: 779001012917034423, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 779001012917034423, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 779001012917034423, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 779001012917034423, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
@@ -20754,16 +20770,20 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5996018830679656576, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996018830679656576, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.91
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 5996018830679656576, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.26
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 5996018830679656576, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.63
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5996018830679656576, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20800,6 +20820,10 @@ PrefabInstance:
     - target: {fileID: 8253314592544725013, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
       propertyPath: m_Name
       value: Cloud_Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253314592544725013, guid: 5bfc3f01cfb50194fa7ad3dbefcfca59, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

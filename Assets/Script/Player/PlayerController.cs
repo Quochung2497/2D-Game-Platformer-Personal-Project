@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
     [Header("Audio")]
-    AudioManager audioManager;
     private bool landingSoundPlayed;
 
     [Header("VFX")]
@@ -164,7 +163,6 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     private void FixedUpdate()
     {
@@ -358,7 +356,7 @@ public class PlayerController : MonoBehaviour
         attackable = false;
         InputEnable = false;
         anim.SetTrigger("Dashing");
-        audioManager.PlayVfx(audioManager.vfx[1]);
+        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[1]);
         Instantiate(StartdashEffect, transform.position, Quaternion.identity);
         PlayerParticles.WaterSplash();
         gameObject.layer = LayerMask.NameToLayer("Decoration");
@@ -387,7 +385,7 @@ public class PlayerController : MonoBehaviour
         if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting && !Walled())
         {
             timeSinceAttack = 0;
-            audioManager.PlayVfx(audioManager.vfx[0]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[0]);
             if (verticalDirection > 0)
             {
                 anim.SetTrigger("AttackUp");
@@ -507,6 +505,7 @@ public class PlayerController : MonoBehaviour
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
+                    PlayerParticles.HitEnemyVfx();
                 }
             }
             else if(obj)
@@ -598,7 +597,7 @@ public class PlayerController : MonoBehaviour
     {
         if (pState.alive)
         {
-            audioManager.PlayVfx(audioManager.vfx[2]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[2]);
             Health -= Mathf.RoundToInt(_damage);
             if (Health <= 0)
             {
@@ -629,7 +628,7 @@ public class PlayerController : MonoBehaviour
     {
         pState.alive = false;
         Time.timeScale = 1f;
-        audioManager.PlayVfx(audioManager.vfx[5]);
+        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[5]);
         GameObject _bloodSpurtParticles = Instantiate(Blood, transform.position, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("isDead");
@@ -881,7 +880,7 @@ public class PlayerController : MonoBehaviour
         //side cast
         if (yAxis == 0 || (yAxis < 0 && Grounded()))
         {
-            audioManager.PlayVfx(audioManager.vfx[6]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[6]);
             anim.SetBool("CastingSide", true);
             yield return new WaitForSeconds(0.15f);
             GameObject _SideSpell = Instantiate(sideSpell, attackForwardPoint.position, Quaternion.identity);
@@ -905,7 +904,7 @@ public class PlayerController : MonoBehaviour
         //up cast
         else if (yAxis > 0)
         {
-            audioManager.PlayVfx(audioManager.vfx[7]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[7]);
             anim.SetBool("isCastingUp", true);
             yield return new WaitForSeconds(0.2f);
             Instantiate(upSpell, transform);
@@ -919,7 +918,7 @@ public class PlayerController : MonoBehaviour
         //down cast
         else if (yAxis < 0 && !Grounded())
         {
-            audioManager.PlayVfx(audioManager.vfx[7]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[7]);
             anim.SetBool("CastingDown", true);
             yield return new WaitForSeconds(0.15f);
             InputEnable = false;
@@ -972,7 +971,7 @@ public class PlayerController : MonoBehaviour
                 if (!landingSoundPlayed)
                 {
                     landingSoundPlayed = true;
-                    audioManager.PlayVfx(audioManager.vfx[3]);
+                    AudioManager.instance.PlayVfx(AudioManager.instance.vfx[3]);
                 }
                 StartCoroutine(LandingDelayCoroutine());
             }
@@ -1011,7 +1010,7 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                audioManager.PlayVfx(audioManager.vfx[4]);
+                AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
 
                 if (JumpEffectCreated == 0)
                 { 
@@ -1019,7 +1018,7 @@ public class PlayerController : MonoBehaviour
                     JumpEffectCreated++;
                 }
 
-                PlayerParticles.WaterJumpVFX();
+                PlayerParticles.WaterJumpVfx();
 
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
@@ -1028,7 +1027,7 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                audioManager.PlayVfx(audioManager.vfx[4]);
+                AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
 
                 AirJumpCounter++;
 
@@ -1040,7 +1039,7 @@ public class PlayerController : MonoBehaviour
 
                 Instantiate(doubleJumpEffect, transform);
 
-                PlayerParticles.WaterJumpVFX();
+                PlayerParticles.WaterJumpVfx();
             }
         }
         anim.SetBool("Jumping", !Grounded());
@@ -1094,7 +1093,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isWallSliding)
         {
-            audioManager.PlayVfx(audioManager.vfx[4]);
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
             isWallJumping = true;
 
             anim.SetBool("isWallJump", true);

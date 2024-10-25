@@ -22,7 +22,7 @@ public class FinalBoss : Enemy
     public float attackTimer;
 
 
-    //Audio
+    [Header("Audio")]
     public AudioClip Slash3Sound, Parrysound, Intro, DiveSound, DashSound, bounceSound, barrageOutbreakSound;
 
 
@@ -323,7 +323,7 @@ public class FinalBoss : Enemy
     }
     public void AttackHandler()
     {
-        float lungeRange = attackRange + 2f;
+        float lungeRange = attackRange;
         float playerDistance = Vector2.Distance(PlayerController.Instance.transform.position, rb.position);
         float xDifference = PlayerController.Instance.transform.position.x - transform.position.x;
         float yDifference = PlayerController.Instance.transform.position.y - transform.position.y;
@@ -533,7 +533,7 @@ public class FinalBoss : Enemy
         yield return new WaitForSeconds(0.3f);
         //SlashAngle();
         attackable = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         _animator.ResetTrigger("Slash");
         Flip();
         attackable = false;
@@ -541,7 +541,7 @@ public class FinalBoss : Enemy
         yield return new WaitForSeconds(0.3f);
         //SlashAngle();
         attackable = true;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.2f);
         _animator.ResetTrigger("Slash 2");
         Flip();
         attackable = false;
@@ -549,7 +549,7 @@ public class FinalBoss : Enemy
         yield return new WaitForSeconds(0.3f);
         //SlashAngle();
         attackable = true;
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.3f);
         _animator.ResetTrigger("Slash 3");
 
         ResetAllAttacks();
@@ -564,7 +564,7 @@ public class FinalBoss : Enemy
         yield return new WaitForSeconds(0.1f);
         _animator.ResetTrigger("Parried");
         _animator.SetTrigger("Slash 3");
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(0.3f);
         _animator.ResetTrigger("Slash 3");
         //_animator.SetTrigger("Idle");
 
@@ -573,24 +573,30 @@ public class FinalBoss : Enemy
     }
     IEnumerator Parry()
     {
-        Debug.Log("Starting Parry coroutine. parrying = true");
-        attacking = true;
-        rb.velocity = Vector2.zero;
         _animator.SetBool("Parry", true);
         yield return new WaitForSeconds(1f);
         _animator.SetBool("Parry", false);
+    }
+
+    public void StartParry()
+    {
+        Debug.Log("Starting Parry coroutine. parrying = true");
+        attacking = true;
+        rb.velocity = Vector2.zero;
+    }
+
+    public void StopParry()
+    {
         parrying = false;
         Debug.Log("Ending Parry coroutine. parrying = false");
         ResetAllAttacks();
     }
+
     public override void AttackPlayer()
     {
         PlayerController.Instance.TakeDamage(damage);
     }
-    public override void Turn()
-    {
-
-    }
+    public override void Turn() {}
     public override void EnemyGetsHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         if (attackable && alive)
@@ -613,8 +619,12 @@ public class FinalBoss : Enemy
 
                     if (currentEnemyState != EnemyStates.FinalBoss_Stage4 && currentEnemyState != EnemyStates.FinalBoss_Stage3 && health >0)
                     {
-                        ResetAllAttacks(); //cancel any current attack to avoid bugs 
-                        StartCoroutine(Parry());
+                        int randomParry = Random.Range(1, 4);
+                        if (randomParry >= 3)
+                        {
+                            ResetAllAttacks();
+                            StartCoroutine(Parry());
+                        }
                     }
 
                 }

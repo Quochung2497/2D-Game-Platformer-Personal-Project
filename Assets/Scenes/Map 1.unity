@@ -28750,6 +28750,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 53471629}
     m_Modifications:
+    - target: {fileID: 296654331959703194, guid: 3fcbf469eed1b0147a2fc84c1a9aacfe, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 296654331959703194, guid: 3fcbf469eed1b0147a2fc84c1a9aacfe, type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2702298816743374076, guid: 3fcbf469eed1b0147a2fc84c1a9aacfe, type: 3}
       propertyPath: m_Name
       value: Fly_Insect
@@ -28952,7 +28960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: damage
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: manaGain
