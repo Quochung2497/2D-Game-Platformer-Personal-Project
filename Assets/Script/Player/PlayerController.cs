@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using System.IO;
 
 public class PlayerController : MonoBehaviour
 {
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
         Mana = mana;
         manaStorage.fillAmount = Mana;
         Health = maxHealth;
-        SaveData.Instance.LoadPlayerData();
+        CheckSave();
         if (halfMana)
         {
             UIManager.Instance.SwitchMana(UIManager.ManaState.HalfMana);
@@ -200,6 +201,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CheckSave()
+    {
+        string playerDataPath = Application.persistentDataPath + "/save.player.data";
+        if (File.Exists(playerDataPath))
+        {
+            SaveData.Instance.LoadPlayerData();
+        }
+        else
+        {
+            ResetToDefault();
+        }
+    }
     private void HandleController()
     {
         if (PauseMenuUI.Instance.GameIsPaused) { return; }
@@ -505,7 +518,7 @@ public class PlayerController : MonoBehaviour
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
-                    PlayerParticles.HitEnemyVfx();
+                    PlayerParticles.HitEnemyVfx(_attackTransform);
                 }
             }
             else if(obj)
@@ -799,6 +812,8 @@ public class PlayerController : MonoBehaviour
         unlockedVarJump = false;
         unlockedHeal = false;
         unlockedCastSpell = false;
+
+        GlobalController.instance.playerScore = 0;
     }
     #endregion
     #region Heal

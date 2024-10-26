@@ -94,8 +94,8 @@ public class PlayerParticles : MonoBehaviour
         }
     }
 
-    public void HitEnemyVfx()
+    public void HitEnemyVfx(Transform direction)
     {
-        Instantiate(EnemyVfx, PlayerController.Instance.attackForwardPoint.transform.position, Quaternion.identity);
+         Instantiate(EnemyVfx, direction.position, Quaternion.identity);
     }
 }
