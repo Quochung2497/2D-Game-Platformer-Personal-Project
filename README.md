@@ -40,7 +40,7 @@ The game is currently in development, and this repository contains the project f
 - **Clone:**
   - Clone this repository:
     ```
-    git clone https://github.com/Quochung2497/2D-Metroidvania-imitate-Hollow-knight-project.git
+    git clone https://github.com/Quochung2497/2D-Game-Platformer-Personal-Project.git
     ```
   - Open project in Unity LTS 2022.3.24f1.
   - Press Play in Unity Editor
