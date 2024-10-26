@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
 using System.IO;
+using static Unity.VisualScripting.Member;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,7 +25,6 @@ public class PlayerController : MonoBehaviour
     public int AirJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
     [SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
-    private float gravity;
     private int JumpEffectCreated = 0;
     [Space(5)]
 
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown;
     [SerializeField] GameObject StartdashEffect, dashEffect;
     public bool canDash = true, dashed;
+    private float gravity;
     [Space(5)]
 
     [Header("Attack Settings")]
@@ -109,9 +110,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float wallJumpingDuration;
     [SerializeField] private Vector2 wallJumpingPower;
-    float wallJumpingDirection;
-    bool isWallSliding;
-    bool isWallJumping;
+    private float wallJumpingDirection;
+    private float TimeSinceLastJump = 0;
+
     [Space(5)]
 
     [Header("Audio")]
@@ -138,7 +139,6 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true, InputEnable = true;
     public bool isFacingRight = true;
     [SerializeField] private float _maxFallSpeed = -50f;
-    public float fallSpeedIncrease = -2.0f;
     private float currentFallSpeed;
     public static PlayerController Instance;
     [HideInInspector] public PlayerStateList pState;
@@ -230,11 +230,13 @@ public class PlayerController : MonoBehaviour
             if (!canMove || pState.healing) { return; }
             GetInput();
             ToggleMap();
-            if (!isWallJumping)
+            if (!pState.isWallJumping && !pState.isWallSliding)
             {
                 Move();
                 Flip();
                 Jump();
+                UpdateJumpVariables();
+                isFalling();
             }
             if (openMap) { return; }
             if (unlockedWallJump)
@@ -242,7 +244,6 @@ public class PlayerController : MonoBehaviour
                 WallSlide();
                 WallJump();
             }
-            UpdateJumpVariables();
             if (unlockedDash)
             {
                 StartDash();
@@ -251,7 +252,6 @@ public class PlayerController : MonoBehaviour
             {
                 CastSpell();
             }
-            isFalling();
             Attack();
             Recoil();
         }
@@ -959,29 +959,21 @@ public class PlayerController : MonoBehaviour
     void isFalling()
     {
 
-        if (rb.velocity.y < fallThreshold && !Grounded() && !Walled())
+        if (rb.velocity.y < fallThreshold && !Grounded())
         {
             pState.Falling = true;
             attackable = false;
             anim.SetBool("Landing", true);
             anim.SetBool("Landed", false);
-            if (currentFallSpeed > _maxFallSpeed)
-            {
-                currentFallSpeed += fallSpeedIncrease * Time.deltaTime;
-            }
-            else
-            {
-                currentFallSpeed = _maxFallSpeed;
-            }
-            rb.velocity = new Vector2(rb.velocity.x, currentFallSpeed);
+            CalculateFallSpeed();
         }
         else if (Grounded())
         {
             pState.Falling = false;
             attackable = true;
-            if (anim.GetBool("Landing"))
+            if (anim.GetBool("Landing") || anim.GetBool("isWallJump"))
             {
-                anim.SetBool("Landing", false);
+                HandleFallingAnim();
                 anim.SetBool("Landed", true);
                 if (!landingSoundPlayed)
                 {
@@ -998,7 +990,30 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    IEnumerator LandingDelayCoroutine()
+    private void HandleFallingAnim()
+    {
+        if(anim.GetBool("Landing"))
+        {
+            anim.SetBool("Landing", false);
+        }
+        else if(anim.GetBool("isWallJump"))
+        {
+            anim.SetBool("isWallJump", false);
+        }
+    }
+    private void CalculateFallSpeed()
+    {
+        if (currentFallSpeed > _maxFallSpeed)
+        {
+            currentFallSpeed += _maxFallSpeed * Time.deltaTime;
+        }
+        else
+        {
+            currentFallSpeed = _maxFallSpeed;
+        }
+        rb.velocity = new Vector2(rb.velocity.x, currentFallSpeed);
+    }
+    private IEnumerator LandingDelayCoroutine()
     {
         canMove = false;
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -1012,12 +1027,12 @@ public class PlayerController : MonoBehaviour
         PlayerParticles.JumpSplashCounted = 0;
         PlayerParticles.DoubleJumpVfxCounted = 0;
     }
-    void Jump()
+    private void Jump()
     {
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             pState.Jumping = false;
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            isFalling();
         }
         if (!pState.Jumping)
         {
@@ -1038,7 +1053,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
             }
-            else if (!Grounded() && AirJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && unlockedVarJump)
+            else if (!Grounded() && AirJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && unlockedVarJump && !Walled())
             {
                 pState.Jumping = true;
 
@@ -1059,7 +1074,7 @@ public class PlayerController : MonoBehaviour
         }
         anim.SetBool("Jumping", !Grounded());
     }
-    void UpdateJumpVariables()
+    private void UpdateJumpVariables()
     {
         if (Grounded())
         {
@@ -1082,52 +1097,56 @@ public class PlayerController : MonoBehaviour
             JumpBufferCounter--;
         }
     }
-    void WallSlide()
+    private void WallSlide()
     {
         if (Walled() && !Grounded() && xAxis != 0)
         {
-            isWallSliding = true;
+            pState.isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
             anim.SetBool("isWallJump", false);
             anim.SetBool("isWallSlide", true);
         }
         else
         {
-            isWallSliding = false;
+            pState.isWallSliding = false;
             anim.SetBool("isWallSlide", false);
         }
     }
-    void WallJump()
+    private void WallJump()
     {
-        if (isWallSliding)
+        if (TimeSinceLastJump > 0)
         {
-            isWallJumping = false;
-            wallJumpingDirection = !pState.lookingRight ? 1 : -1;
-            CancelInvoke(nameof(StopWallJumping));
+            TimeSinceLastJump -= Time.deltaTime;
+            pState.isWallJumping = false;
+        }
+        if (pState.isWallSliding)
+        {
+            pState.isWallJumping = false;                 // Tắt trạng thái nhảy tường
+            wallJumpingDirection = !pState.lookingRight ? 1 : -1; // Xác định hướng nhảy tường dựa trên hướng nhìn của nhân vật
         }
 
-        if (Input.GetButtonDown("Jump") && isWallSliding)
+        // Khi nhấn phím nhảy trong khi trượt tường
+        if (Input.GetButtonDown("Jump") && pState.isWallSliding && TimeSinceLastJump <= 0)
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
-            isWallJumping = true;
+            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]); // Phát âm thanh nhảy
+            pState.isWallJumping = true;                  // Đặt trạng thái nhảy tường
+            anim.SetBool("isWallJump", true);      // Bật hoạt ảnh nhảy tường
 
-            anim.SetBool("isWallJump", true);
-            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            Vector2 force = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            if (Mathf.Sign(rb.velocity.x) != Mathf.Sign(force.x))  // Ngược chiều di chuyển so với lực nhảy tường
+                force.x -= rb.velocity.x;
 
-            dashed = false;
-            AirJumpCounter = 0;
+            if (rb.velocity.y < 0)  // Nếu đang rơi, điều chỉnh lực nhảy tường để đảm bảo đủ độ cao
+                force.y -= rb.velocity.y;
 
-            pState.lookingRight = !pState.lookingRight;
-            transform.eulerAngles = new Vector2(transform.eulerAngles.x, 180);
+            // Thêm lực nhảy tường cho nhân vật
+            rb.AddForce(force, ForceMode2D.Impulse);
 
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+            dashed = false;                        // Đặt lại trạng thái đã nhảy
+            TimeSinceLastJump = wallJumpingDuration;
         }
     }
-    void StopWallJumping()
-    {
-        isWallJumping = false;
-        transform.eulerAngles = new Vector2(transform.eulerAngles.x, 0);
-    }
+
     #endregion
     #region Interact
     public void Interact()

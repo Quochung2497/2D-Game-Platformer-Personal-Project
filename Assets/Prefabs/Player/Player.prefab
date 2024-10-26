@@ -791,13 +791,13 @@ MonoBehaviour:
   downSpell: {fileID: 885531506704225854}
   downSpellEffect: {fileID: 7358468442003816612}
   playerFallSpeedThreshold: -4
-  wallSlidingSpeed: 2
+  wallSlidingSpeed: 1
   wallCheck: {fileID: 3973386348351019842}
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
-  wallJumpingDuration: 0.1
-  wallJumpingPower: {x: 15, y: 15}
+  wallJumpingDuration: 0.3
+  wallJumpingPower: {x: 30, y: 15}
   PlayerParticles: {fileID: 528755393082319769}
   unlockedWallJump: 0
   unlockedDash: 0
@@ -812,7 +812,6 @@ MonoBehaviour:
   InputEnable: 1
   isFacingRight: 0
   _maxFallSpeed: -40
-  fallSpeedIncrease: -10
   pState: {fileID: 0}
 --- !u!95 &1684099866923776
 Animator:
@@ -858,6 +857,8 @@ MonoBehaviour:
   cutscenes: 0
   Falling: 0
   alive: 1
+  isWallSliding: 0
+  isWallJumping: 0
 --- !u!114 &3764757373991797494
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,4 +14,6 @@ public class PlayerStateList : MonoBehaviour
     public bool cutscenes = false;
     public bool Falling = false;
     public bool alive;
+    public bool isWallSliding;
+    public bool isWallJumping;
 }

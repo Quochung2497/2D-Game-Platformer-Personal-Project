@@ -15,8 +15,12 @@ public class MenuController : MonoBehaviour
 
     public static MenuController instance;
 
+    [Header("MainMenu")]
     public CanvasGroup PressAnyCanvasGroup;
     public CanvasGroup mainMenuCanvasGroup;
+    public CanvasGroup CreditCanvasGroup;
+
+    [Header("SettingMenu")]
     public CanvasGroup settingsMenuCanvasGroup;
     
     private MenuState currentMenuState;
@@ -52,7 +56,7 @@ public class MenuController : MonoBehaviour
         {
             case MenuState.MainMenu:
                 // Kiểm tra nếu menuSelection đang hoạt động
-                if (Menu != null && mainMenuCanvasGroup.alpha == 1 || PressAnyCanvasGroup.alpha == 1)
+                if (Menu != null && mainMenuCanvasGroup.alpha == 1 || PressAnyCanvasGroup.alpha == 1 || CreditCanvasGroup.alpha == 1)
                 {
                     Menu.HandleInput();  // Xử lý input cho MenuSelection
                 }

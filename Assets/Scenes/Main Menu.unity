@@ -8622,6 +8622,7 @@ MonoBehaviour:
   settingMenu: {fileID: 2062056394}
   PressAnyCanvasGroup: {fileID: 206117454}
   mainMenuCanvasGroup: {fileID: 1779635450}
+  CreditCanvasGroup: {fileID: 1727216238}
   settingsMenuCanvasGroup: {fileID: 2062056393}
 --- !u!1 &1309787372
 GameObject:
