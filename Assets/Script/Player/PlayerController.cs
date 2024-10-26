@@ -185,34 +185,11 @@ public class PlayerController : MonoBehaviour
         manaStorage.fillAmount = Mana;
         Health = maxHealth;
         CheckSave();
-        if (halfMana)
-        {
-            UIManager.Instance.SwitchMana(UIManager.ManaState.HalfMana);
-        }
-        else
-        {
-            UIManager.Instance.SwitchMana(UIManager.ManaState.FullMana);
-        }
+        CheckMana();
         onHealthChangedCallback.Invoke();
-        if (Health <= 0)
-        {
-            pState.alive = false;
-            GlobalController.instance.RespawnPlayer();
-        }
+        CheckHealth();
     }
 
-    private void CheckSave()
-    {
-        string playerDataPath = Application.persistentDataPath + "/save.player.data";
-        if (File.Exists(playerDataPath))
-        {
-            SaveData.Instance.LoadPlayerData();
-        }
-        else
-        {
-            ResetToDefault();
-        }
-    }
     private void HandleController()
     {
         if (PauseMenuUI.Instance.GameIsPaused) { return; }
@@ -268,85 +245,142 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CameraManager.instance.LerpYDamping(false));
         }
     }
+    private void CheckMana()
+    {
+        if (halfMana)
+        {
+            UIManager.Instance.SwitchMana(UIManager.ManaState.HalfMana);
+        }
+        else
+        {
+            UIManager.Instance.SwitchMana(UIManager.ManaState.FullMana);
+        }
+    }
+
+    private void CheckHealth()
+    {
+        if (Health <= 0)
+        {
+            pState.alive = false;
+            GlobalController.instance.RespawnPlayer();
+        }
+    }
+
+    private void CheckSave()
+    {
+        string playerDataPath = Application.persistentDataPath + "/save.player.data";
+        if (File.Exists(playerDataPath))
+        {
+            SaveData.Instance.LoadPlayerData();
+        }
+        else
+        {
+            ResetToDefault();
+        }
+    }
     #endregion
     #region Input
-    void GetInput()
+    private void GetInput()
     {
-        xAxis = Input.GetAxisRaw("Horizontal"); 
-        yAxis = Input.GetAxisRaw("Vertical");
-        attack = Input.GetButtonDown("Attack");
-        openMap = Input.GetKey(KeyCode.M);
-        if (Input.GetButtonDown("CastSpell")|| Input.GetButtonDown("Healing"))
+        xAxis = Input.GetAxisRaw("Horizontal"); // Nhận đầu vào di chuyển ngang (trái: -1, phải: 1, không có đầu vào: 0).
+        yAxis = Input.GetAxisRaw("Vertical"); // Nhận đầu vào di chuyển dọc (tương tự ngang).
+        attack = Input.GetButtonDown("Attack"); // Kiểm tra nếu nút "Attack" vừa được nhấn.
+        openMap = Input.GetKey(KeyCode.M); // Kiểm tra nếu phím "M" (mở bản đồ) đang được giữ.
+
+        // Tăng thời gian đếm nếu nhấn nút cast hoặc heal
+        if (Input.GetButtonDown("CastSpell") || Input.GetButtonDown("Healing"))
         {
-            castOrHealTimer += Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            TakeDamage(10);
+            castOrHealTimer += Time.deltaTime; // Tăng thời gian đếm theo thời gian mỗi khung hình.
         }
     }
     #endregion
     #region Horizontal Movement
+    // Phương thức đảo hướng của nhân vật dựa trên đầu vào
     public void Flip()
     {
+        // Nếu di chuyển sang trái trong khi đang đối diện sang phải, lật hướng của nhân vật
         if (xAxis < 0 && isFacingRight)
         {
-            Turn();
+            Turn(); // Gọi phương thức để lật hướng
+
+            // Nếu nhân vật đang đứng trên mặt đất, kích hoạt hoạt ảnh xoay
             if (Grounded())
             {
                 anim.SetTrigger("Rotating");
             }
         }
+        // Nếu di chuyển sang phải trong khi đang đối diện sang trái, lật hướng của nhân vật
         else if (xAxis > 0 && !isFacingRight)
         {
             Turn();
+
+            // Kích hoạt hoạt ảnh xoay nếu nhân vật đang đứng trên mặt đất
             if (Grounded())
             {
                 anim.SetTrigger("Rotating");
             }
         }
-
     }
+
+    // Phương thức thực hiện xoay nhân vật theo chiều ngang
     private void Turn()
     {
+        // Kiểm tra nếu nhân vật đang đối diện sang phải
         if (isFacingRight)
         {
+            // Xoay nhân vật sang trái (180 độ trên trục Y)
             Vector3 rotator = new Vector3(transform.rotation.x, 180, transform.rotation.z);
             Rotation(rotator);
+            pState.lookingRight = false; // Cập nhật trạng thái hướng của nhân vật
         }
         else
         {
+            // Xoay nhân vật sang phải (0 độ trên trục Y)
             Vector3 rotator = new Vector3(transform.rotation.x, 0, transform.rotation.z);
             Rotation(rotator);
+            pState.lookingRight = true;
         }
     }
+
+    // Áp dụng xoay và cập nhật trạng thái hướng của nhân vật
     private void Rotation(Vector3 rotator)
     {
-        transform.rotation = Quaternion.Euler(rotator);
-        isFacingRight = !isFacingRight;
-        pState.lookingRight = false;
+        transform.rotation = Quaternion.Euler(rotator); // Thực hiện xoay nhân vật.
+        isFacingRight = !isFacingRight; // Đảo hướng của nhân vật
     }
+
+    // Điều khiển chuyển động của nhân vật dựa trên đầu vào và trạng thái hiện tại
     private void Move()
     {
+        // Nếu đang hồi máu hoặc không thể di chuyển, dừng chuyển động theo cả hai chiều
         if (pState.healing || !canMove)
         {
-            rb.velocity = new Vector2(0, 0);
+            rb.velocity = new Vector2(0, 0); // Đặt vận tốc về 0.
         }
+
+        // Nếu có thể di chuyển
         if (canMove)
         {
+            // Đặt vận tốc ngang của nhân vật dựa trên đầu vào, giữ nguyên vận tốc dọc
             rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
+
+            // Nếu nhân vật đang di chuyển và đứng trên mặt đất, bật hoạt ảnh đi bộ
             anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+
+            // Kích hoạt hiệu ứng hạt (particle) khi đi trên nước, nếu có
             PlayerParticles.WaterFootPrint();
         }
+
+        // Nếu không có đầu vào di chuyển ngang, dừng hoạt ảnh đi bộ và thiết lập lại các trigger
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            anim.SetTrigger("StopTrigger");
-            anim.ResetTrigger("Rotating");
-            anim.SetBool("Walking", false);
+            anim.SetTrigger("StopTrigger"); // Kích hoạt hoạt ảnh dừng
+            anim.ResetTrigger("Rotating"); // Thiết lập lại trigger xoay
+            anim.SetBool("Walking", false); // Tắt hoạt ảnh đi bộ
         }
         else
         {
-            anim.ResetTrigger("StopTrigger");
+            anim.ResetTrigger("StopTrigger"); // Thiết lập lại trigger dừng nếu đang di chuyển
         }
     }
     #endregion
