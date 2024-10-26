@@ -307,23 +307,17 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    void Turn()
+    private void Turn()
     {
         if (isFacingRight)
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 180, transform.rotation.z);
             Rotation(rotator);
-            /*transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = !isFacingRight;
-            pState.lookingRight = false;*/
         }
         else
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 0, transform.rotation.z);
             Rotation(rotator);
-            /*transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = !isFacingRight;
-            pState.lookingRight = true;*/
         }
     }
     private void Rotation(Vector3 rotator)
@@ -332,7 +326,7 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
         pState.lookingRight = false;
     }
-    void Move()
+    private void Move()
     {
         if (pState.healing || !canMove)
         {
@@ -357,7 +351,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
     #region Dash
-    void StartDash()
+    private void StartDash()
     {
         if (Input.GetButtonDown("Dash") && canDash && !dashed)
         {
@@ -369,7 +363,7 @@ public class PlayerController : MonoBehaviour
             dashed = false;
         }
     }
-    IEnumerator Dash() //the dash action the player performs
+    private IEnumerator Dash() //the dash action the player performs
     {
         canDash = false;
         pState.dashing = true;
@@ -397,7 +391,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
     #region Attack
-    void Attack()
+    private void Attack()
     {
         float verticalDirection = Input.GetAxisRaw("Vertical");
         timeSinceAttack += Time.deltaTime;
@@ -498,7 +492,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
 
-    IEnumerator attackCoroutine(float effectdelay, float atkInterval)
+    private IEnumerator attackCoroutine(float effectdelay, float atkInterval)
     {
         yield return new WaitForSeconds(effectdelay);
         attackable = false;
@@ -548,7 +542,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
     #region Recoil
-    void Recoil()
+    private void Recoil()
     {
         if (pState.recoilingX)
         {
@@ -601,12 +595,12 @@ public class PlayerController : MonoBehaviour
             StopRecoilY();
         }
     }
-    void StopRecoilX()
+    private void StopRecoilX()
     {
         stepsXRecoiled = 0;
         pState.recoilingX = false;
     }
-    void StopRecoilY()
+    private void StopRecoilY()
     {
         stepsYRecoiled = 0;
         pState.recoilingY = false;
@@ -630,7 +624,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    IEnumerator StopTakingDamage()
+    private IEnumerator StopTakingDamage()
     {
         pState.Invincible = true;
         canMove = false;
@@ -644,7 +638,7 @@ public class PlayerController : MonoBehaviour
         pState.Invincible = false;
     }
 
-    IEnumerator Death()
+    private IEnumerator Death()
     {
         pState.alive = false;
         Time.timeScale = 1f;
@@ -661,7 +655,7 @@ public class PlayerController : MonoBehaviour
         Instantiate(GlobalController.instance.shade, transform.position, Quaternion.identity);
         SaveData.Instance.SavePlayerData();
     }
-    IEnumerator Flash()
+    private IEnumerator Flash()
     {
         sr.enabled = !sr.enabled;
         canFlash = false;
@@ -669,7 +663,7 @@ public class PlayerController : MonoBehaviour
         canFlash = true;
     }
 
-    void FlashWhileInvincible()
+    private void FlashWhileInvincible()
     {
         if (pState.Invincible && !pState.cutscenes)
         {
@@ -684,7 +678,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void RestoreTimeScale()
+    private void RestoreTimeScale()
     {
         if (restoreTime)
         {
@@ -714,7 +708,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = _newTimeScale;
     }
 
-    IEnumerator StartTimeAgain(float _delay)
+    private IEnumerator StartTimeAgain(float _delay)
     {
         yield return new WaitForSecondsRealtime(_delay);
         restoreTime = true;
@@ -963,15 +957,13 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
     #region Vertical Movement
-    void isFalling()
+    private void isFalling()
     {
-
         if (rb.velocity.y < fallThreshold && !Grounded())
         {
             pState.Falling = true;
             attackable = false;
             anim.SetBool("Landing", true);
-            anim.SetBool("Landed", false);
             CalculateFallSpeed();
         }
         else if (Grounded())

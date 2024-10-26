@@ -147,7 +147,7 @@ public abstract class Enemy : MonoBehaviour
             AttackPlayer();
             if (PlayerController.Instance.pState.alive)
             {
-                PlayerController.Instance.HitStopTime(0, 5, 0.25f);
+                PlayerController.Instance.HitStopTime(0.1f, 10, 0.25f);
             }
         }
         else if (layerName == "Attackable" && health > 0)

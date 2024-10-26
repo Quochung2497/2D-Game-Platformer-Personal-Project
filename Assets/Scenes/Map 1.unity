@@ -28720,7 +28720,7 @@ PrefabInstance:
       objectReference: {fileID: 8541813689161110941, guid: f7712e84d54b94642b30c9d103f399ba, type: 3}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: fallThreshold
-      value: -12
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: manaDrainSpeed
@@ -28740,7 +28740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: wallJumpingPower.x
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: wallJumpingPower.y
@@ -28748,7 +28748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: wallJumpingDuration
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: manaSprites.Array.data[16]
