@@ -796,7 +796,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
-  wallJumpingDuration: 0.3
+  wallJumpingDuration: 0.25
   wallJumpingPower: {x: 30, y: 15}
   PlayerParticles: {fileID: 528755393082319769}
   unlockedWallJump: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
   EndingEffect: {fileID: 1871826014716049489}
   rb: {fileID: 0}
   anim: {fileID: 0}
-  fallThreshold: -12
+  fallThreshold: -15
   canMove: 1
   InputEnable: 1
   isFacingRight: 0

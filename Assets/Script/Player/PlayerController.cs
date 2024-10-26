@@ -291,7 +291,6 @@ public class PlayerController : MonoBehaviour
     {
         if (xAxis < 0 && isFacingRight)
         {
-            //transform.eulerAngles = new Vector2(0, 180);
             Turn();
             if (Grounded())
             {
@@ -300,30 +299,38 @@ public class PlayerController : MonoBehaviour
         }
         else if (xAxis > 0 && !isFacingRight)
         {
-            //transform.eulerAngles = new Vector2(0, 0);
             Turn();
             if (Grounded())
             {
                 anim.SetTrigger("Rotating");
             }
         }
+
     }
     void Turn()
     {
         if (isFacingRight)
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 180, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
+            Rotation(rotator);
+            /*transform.rotation = Quaternion.Euler(rotator);
             isFacingRight = !isFacingRight;
-            pState.lookingRight = false;
+            pState.lookingRight = false;*/
         }
         else
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 0, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
+            Rotation(rotator);
+            /*transform.rotation = Quaternion.Euler(rotator);
             isFacingRight = !isFacingRight;
-            pState.lookingRight = true;
+            pState.lookingRight = true;*/
         }
+    }
+    private void Rotation(Vector3 rotator)
+    {
+        transform.rotation = Quaternion.Euler(rotator);
+        isFacingRight = !isFacingRight;
+        pState.lookingRight = false;
     }
     void Move()
     {
