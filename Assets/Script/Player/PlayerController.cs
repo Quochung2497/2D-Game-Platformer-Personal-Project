@@ -1003,7 +1003,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
         Instantiate(landEffect, transform);
-        yield return new WaitForSecondsRealtime(0.15f);
+        yield return new WaitForSecondsRealtime(0.1f);
         currentFallSpeed = 0.0f;
         canMove = true;
         anim.SetBool("Landed", false);

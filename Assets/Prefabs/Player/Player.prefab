@@ -790,7 +790,7 @@ MonoBehaviour:
   upSpell: {fileID: 6018520124437891003, guid: 672e703d873767a4d80c0d6604850bad, type: 3}
   downSpell: {fileID: 885531506704225854}
   downSpellEffect: {fileID: 7358468442003816612}
-  playerFallSpeedThreshold: -10
+  playerFallSpeedThreshold: -4
   wallSlidingSpeed: 2
   wallCheck: {fileID: 3973386348351019842}
   wallLayer:
