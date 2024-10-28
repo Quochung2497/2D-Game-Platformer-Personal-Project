@@ -743,10 +743,10 @@ MonoBehaviour:
   WhatIsWater:
     serializedVersion: 2
     m_Bits: 4096
-  dashSpeed: 12
-  dashTime: 0.4
-  dashCooldown: 0.3
-  StartdashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
+  dashSpeed: 13
+  dashTime: 0.2
+  dashCooldown: 0.4
+  startDashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
   dashEffect: {fileID: 8537092978754957369, guid: c7633aa6b93ee8d4d9541c126474825e, type: 3}
   canDash: 1
   dashed: 0
@@ -796,8 +796,8 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
-  wallJumpingDuration: 0.25
-  wallJumpingPower: {x: 30, y: 15}
+  wallJumpingDuration: 0.3
+  wallJumpingPower: {x: 25, y: 18}
   PlayerParticles: {fileID: 528755393082319769}
   unlockedWallJump: 0
   unlockedDash: 0
@@ -811,7 +811,7 @@ MonoBehaviour:
   canMove: 1
   InputEnable: 1
   isFacingRight: 0
-  _maxFallSpeed: -40
+  _maxFallSpeed: -50
   pState: {fileID: 0}
 --- !u!95 &1684099866923776
 Animator:

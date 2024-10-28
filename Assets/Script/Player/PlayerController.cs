@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
-    [SerializeField] GameObject StartdashEffect, dashEffect;
+    [SerializeField] GameObject startDashEffect, dashEffect;
     public bool canDash = true, dashed;
     private float gravity;
     [Space(5)]
@@ -213,7 +213,6 @@ public class PlayerController : MonoBehaviour
                 Flip();
                 Jump();
                 UpdateJumpVariables();
-                isFalling();
             }
             if (openMap) { return; }
             if (unlockedWallJump)
@@ -229,6 +228,7 @@ public class PlayerController : MonoBehaviour
             {
                 CastSpell();
             }
+            isFalling();
             Attack();
             Recoil();
         }
@@ -397,29 +397,67 @@ public class PlayerController : MonoBehaviour
             dashed = false;
         }
     }
-    private IEnumerator Dash() //the dash action the player performs
+    private IEnumerator Dash()
+    {
+        PrepareDash();
+        yield return new WaitForSeconds(0.1f);
+
+        ExecuteDash();
+        yield return new WaitForSeconds(0.1f);
+
+        StartCoroutine(EndDash());
+    }
+
+    private void PrepareDash()
     {
         canDash = false;
         pState.dashing = true;
         attackable = false;
         InputEnable = false;
         anim.SetTrigger("Dashing");
-        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[1]);
-        Instantiate(StartdashEffect, transform.position, Quaternion.identity);
-        PlayerParticles.WaterSplash();
-        gameObject.layer = LayerMask.NameToLayer("Decoration");
-        yield return new WaitForSeconds(0.1f);
-        float dashDirection = (transform.rotation.eulerAngles.y == 180f) ? -1f : 1f;
+
+        PlayDashEffects();
+        ChangeLayer("Decoration");
+    }
+
+    private void ExecuteDash()
+    {
+        float dashDirection = GetDirection();
         rb.gravityScale = 0;
         rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
         Instantiate(dashEffect, transform);
-        yield return new WaitForSeconds(0.2f);
-        gameObject.layer = LayerMask.NameToLayer("Player");
+    }
+
+    private IEnumerator EndDash()
+    {
+        ChangeLayer("Player");
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = gravity;
         pState.dashing = false;
         InputEnable = true;
         attackable = true;
+        StartCoroutine(DashCooldown());
+    }
+
+    private float GetDirection()
+    {
+        return (transform.rotation.eulerAngles.y == 180f) ? -1f : 1f;
+    }
+
+    private void PlayDashEffects()
+    {
+        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[1]);
+        Instantiate(startDashEffect, transform.position, Quaternion.identity);
+        PlayerParticles.WaterSplash();
+    }
+
+    private void ChangeLayer(string layerName)
+    {
+        gameObject.layer = LayerMask.NameToLayer(layerName);
+    }
+
+    private IEnumerator DashCooldown()
+    {
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
@@ -1045,6 +1083,7 @@ public class PlayerController : MonoBehaviour
             currentFallSpeed = _maxFallSpeed;
         }
         rb.velocity = new Vector2(rb.velocity.x, currentFallSpeed);
+        Debug.Log(currentFallSpeed);
     }
     private IEnumerator LandingDelayCoroutine()
     {
@@ -1135,6 +1174,7 @@ public class PlayerController : MonoBehaviour
         if (Walled() && !Grounded() && xAxis != 0)
         {
             pState.isWallSliding = true;
+            currentFallSpeed = 0;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
             anim.SetBool("isWallJump", false);
             anim.SetBool("isWallSlide", true);
