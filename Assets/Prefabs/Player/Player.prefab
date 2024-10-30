@@ -554,9 +554,9 @@ GameObject:
   - component: {fileID: 3366252868761052746}
   - component: {fileID: 1684099866923776}
   - component: {fileID: 1936523142017604270}
-  - component: {fileID: 3764757373991797494}
   - component: {fileID: 574126755523106118}
-  - component: {fileID: 8802523316125677817}
+  - component: {fileID: 4550796989415121664}
+  - component: {fileID: 3764757373991797494}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -796,7 +796,6 @@ MonoBehaviour:
     m_Bits: 256
   wallJumpingDuration: 0.3
   wallJumpingPower: {x: 25, y: 18}
-  PlayerParticles: {fileID: 528755393082319769}
   unlockedWallJump: 0
   unlockedDash: 0
   unlockedVarJump: 0
@@ -857,6 +856,50 @@ MonoBehaviour:
   alive: 1
   isWallSliding: 0
   isWallJumping: 0
+--- !u!114 &574126755523106118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595812590323016639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6460ddc02d35a714fbccaeb6a7e40928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4550796989415121664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595812590323016639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6acbc0e73079b44fb928cdb24dda5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwordSlashForward: {fileID: 6829929683392508785}
+  SwordSlashUp: {fileID: 2171214915165705239}
+  SwordSlashDown: {fileID: 6323145537069971324}
+  SwordSlashCombo2: {fileID: 667253276055551632}
+  SwordSlashCombo3: {fileID: 2303609721849156079}
+  WaterFootVFX: {fileID: 626172816631114874, guid: 7740fa38c051c21448f7649c69483e3b, type: 3}
+  WaterSplashVFX: {fileID: 145209462328433880, guid: 165d8a6d1ccb18848be6742261ab79cb, type: 3}
+  WaterJumpSplashVFX: {fileID: 2423535953928786376, guid: 1db5c04ebec44f940a229f0c4a66cdb6, type: 3}
+  wallJumpVfx: {fileID: 9070462089008766192, guid: 9f1590c0cb640b74d824aba95bd30ad1, type: 3}
+  JumpEffect: {fileID: 5202250261950961021, guid: d5916b5e06f0d6246982c7c4bd8d9ea7, type: 3}
+  doubleJumpEffect: {fileID: 9185030995472778908, guid: 33b4bd250966df54da2b8a79a5934287, type: 3}
+  landEffect: {fileID: 2696253892639602661, guid: 34897fca148dd104584ba2361aa613a9, type: 3}
+  startDashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
+  dashEffect: {fileID: 2282824493544517400, guid: 87f37c7444ca9504aa7b78d065b89799, type: 3}
+  DoubleJumpWing: {fileID: 3273531615570944333, guid: 9cb3fd2281959d44ab9d13000683f1d0, type: 3}
+  leafVfx: {fileID: 434810991120177709, guid: e9ad7876ce2ce80468fb9b859ec25381, type: 3}
+  leafInterval: 0.1
+  spawnFrom: 1
+  spawnTo: 5
+  EnemyVfx: {fileID: 5864984999101985276, guid: 0a827ad5d1c689645b31de8f78fa0659, type: 3}
 --- !u!114 &3764757373991797494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,114 +950,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &574126755523106118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595812590323016639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6460ddc02d35a714fbccaeb6a7e40928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!82 &8802523316125677817
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595812590323016639}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 3b1520f71b8fa7d489ed0bbb6214f6bd, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &8333455999254055908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5954,26 +5889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bddcab286a09442bda905e5a6756f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwordSlashForward: {fileID: 6829929683392508785}
-  SwordSlashUp: {fileID: 2171214915165705239}
-  SwordSlashDown: {fileID: 6323145537069971324}
-  SwordSlashCombo2: {fileID: 667253276055551632}
-  SwordSlashCombo3: {fileID: 2303609721849156079}
-  WaterFootVFX: {fileID: 626172816631114874, guid: 7740fa38c051c21448f7649c69483e3b, type: 3}
-  WaterSplashVFX: {fileID: 145209462328433880, guid: 165d8a6d1ccb18848be6742261ab79cb, type: 3}
-  WaterJumpSplashVFX: {fileID: 2423535953928786376, guid: 1db5c04ebec44f940a229f0c4a66cdb6, type: 3}
-  wallJumpVfx: {fileID: 9070462089008766192, guid: 9f1590c0cb640b74d824aba95bd30ad1, type: 3}
-  startDashEffect: {fileID: 7772795208975493174, guid: 95506e9847069f54a82e04019aed1bc6, type: 3}
-  dashEffect: {fileID: 2282824493544517400, guid: 87f37c7444ca9504aa7b78d065b89799, type: 3}
-  DoubleJumpWing: {fileID: 3273531615570944333, guid: 9cb3fd2281959d44ab9d13000683f1d0, type: 3}
-  leafVfx: {fileID: 434810991120177709, guid: e9ad7876ce2ce80468fb9b859ec25381, type: 3}
-  leafInterval: 0.1
-  spawnFrom: 2
-  spawnTo: 5
-  EnemyVfx: {fileID: 5864984999101985276, guid: 0a827ad5d1c689645b31de8f78fa0659, type: 3}
   CharacterWaterVFX: {fileID: 8817238109218901610}
   DoubleWingPos: {fileID: 7197086892304011727}
-  JumpSplashCounted: 0
+  JumpEffectCounted: 0
   DoubleJumpVfxCounted: 0
 --- !u!1001 &2590664472380499686
 PrefabInstance:

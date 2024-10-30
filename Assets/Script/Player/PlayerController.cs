@@ -24,12 +24,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime;
     public int AirJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
-    [SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
-    private int JumpEffectCreated = 0;
+    //[SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
     [Space(5)]
 
     [Header("Ground Check Settings:")]
-    [SerializeField] private Transform FootCheckPoint;
+    public Transform FootCheckPoint;
     [SerializeField] private float FootCheckY = 0.2f;
     [SerializeField] private float FootCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround, WhatIsWater;
@@ -118,7 +117,8 @@ public class PlayerController : MonoBehaviour
     private bool landingSoundPlayed;
 
     [Header("VFX")]
-    [HideInInspector] public PlayerParticles PlayerParticles;
+    private ParticlesController PlayerParticles;
+    private ParticlesEffect playerEffect;
     [Header("")]
 
     //unlocking 
@@ -178,14 +178,16 @@ public class PlayerController : MonoBehaviour
         currentFallSpeed = 0.0f;
         pState = GetComponent<PlayerStateList>();
         sr = GetComponent<SpriteRenderer>();
-        PlayerParticles = GetComponentInChildren<PlayerParticles>();
+        PlayerParticles = GetComponentInChildren<ParticlesController>();
+        playerEffect = GetComponent<ParticlesEffect>();
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = Mana;
         Health = maxHealth;
         CheckSave();
         CheckMana();
-        onHealthChangedCallback.Invoke();
+        if(onHealthChangedCallback != null)
+            onHealthChangedCallback.Invoke();
         CheckHealth();
     }
 
@@ -366,8 +368,8 @@ public class PlayerController : MonoBehaviour
             // Nếu nhân vật đang di chuyển và đứng trên mặt đất, bật hoạt ảnh đi bộ
             anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
 
-            // Kích hoạt hiệu ứng hạt (particle) khi đi trên nước, nếu có
-            PlayerParticles.WaterFootPrint();
+            // Kích hoạt hiệu ứng hạt (particle) khi đi trên nước hoặc trên đất
+            PlayerParticles.FootPrint();
         }
 
         // Nếu không có đầu vào di chuyển ngang, dừng hoạt ảnh đi bộ và thiết lập lại các trigger
@@ -424,7 +426,7 @@ public class PlayerController : MonoBehaviour
         int dashDirection = GetDirection();
         rb.gravityScale = 0;
         rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
-        PlayerParticles.DashVfx();
+        Instantiate(playerEffect.dashEffect, transform);
     }
 
     private IEnumerator EndDash()
@@ -448,8 +450,7 @@ public class PlayerController : MonoBehaviour
         int vfxDirection = GetDirection();
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[1]);
         Quaternion rotation = vfxDirection == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
-        PlayerParticles.StartDashVfx(FootCheckPoint, rotation);
-        PlayerParticles.WaterSplash();
+        PlayerParticles.StartDashEffect(rotation);
     }
 
     private void ChangeLayer(string layerName)
@@ -476,19 +477,19 @@ public class PlayerController : MonoBehaviour
             if (verticalDirection > 0)
             {
                 anim.SetTrigger("AttackUp");
-                PlayerParticles.UpSlash();
+                playerEffect.SwordSlashUp.Play();
             }
             else if (verticalDirection < 0 && !Grounded())
             {
                 anim.SetTrigger("AttackDown");
-                PlayerParticles.DownSlash();
+                playerEffect.SwordSlashDown.Play();
             }
             else
             {
                 if (!Grounded())
                 {
                     anim.SetTrigger("Attack");
-                    PlayerParticles.ForwardSlash();
+                    playerEffect.SwordSlashForward.Play();
                     return;
                 } 
                 PerformCombo();
@@ -508,19 +509,19 @@ public class PlayerController : MonoBehaviour
         if (comboStep == 0)
         {
             anim.SetTrigger("Attack");
-            PlayerParticles.ForwardSlash();
+            playerEffect.SwordSlashForward.Play();
             comboStep++;
         }
         else if (comboStep == 1  && timeSinceAttack < comboResetTime)
         {
             anim.SetTrigger("SecondAtk");
-            PlayerParticles.Combo2Slash();
+            playerEffect.SwordSlashCombo2.Play();
             comboStep++;
         }
         else if (comboStep == 2  && timeSinceAttack < comboResetTime)
         {
             anim.SetTrigger("ThirdAtk");
-            PlayerParticles.Combo3Slash();
+            playerEffect.SwordSlashCombo3.Play();
             comboStep = 0;
         }
     }
@@ -592,7 +593,7 @@ public class PlayerController : MonoBehaviour
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
-                    PlayerParticles.HitEnemyVfx(_attackTransform);
+                    Instantiate(playerEffect.EnemyVfx, _attackTransform.position, Quaternion.identity);
                 }
             }
             else if(obj)
@@ -1035,7 +1036,6 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.y < fallThreshold && !Grounded())
         {
             pState.Falling = true;
-            attackable = false;
             anim.SetBool("Landing", true);
             CalculateFallSpeed();
         }
@@ -1046,7 +1046,8 @@ public class PlayerController : MonoBehaviour
             if (anim.GetBool("Landing") || anim.GetBool("isWallJump"))
             {
                 HandleFallingAnim();
-                anim.SetBool("Landed", true);
+                anim.SetBool("Landing", false);
+                currentFallSpeed = 0.0f;
                 if (!landingSoundPlayed)
                 {
                     landingSoundPlayed = true;
@@ -1056,8 +1057,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                anim.SetBool("Landing", false);
-                anim.SetBool("Landed", false);
                 landingSoundPlayed = false;
             }
         }
@@ -1090,15 +1089,10 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        Instantiate(landEffect, FootCheckPoint.transform.position,Quaternion.identity);
+        Instantiate(playerEffect.landEffect, FootCheckPoint.transform.position,Quaternion.identity);
         yield return new WaitForSecondsRealtime(0.1f);
-        currentFallSpeed = 0.0f;
         canMove = true;
-        anim.SetBool("Landed", false);
         anim.ResetTrigger("DoubleJump");
-        JumpEffectCreated = 0;
-        PlayerParticles.JumpSplashCounted = 0;
-        PlayerParticles.DoubleJumpVfxCounted = 0;
     }
     private void Jump()
     {
@@ -1115,13 +1109,7 @@ public class PlayerController : MonoBehaviour
 
                 AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
 
-                if (JumpEffectCreated == 0)
-                { 
-                    Instantiate(JumpEffect, FootCheckPoint.transform.position, Quaternion.identity);
-                    JumpEffectCreated++;
-                }
-
-                PlayerParticles.WaterJumpVfx();
+                PlayerParticles.JumpVfx();
 
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 
@@ -1140,9 +1128,8 @@ public class PlayerController : MonoBehaviour
 
                 PlayerParticles.WingVfx();
 
-                Instantiate(doubleJumpEffect, transform);
+                Instantiate(playerEffect.doubleJumpEffect, transform);
 
-                PlayerParticles.WaterJumpVfx();
             }
         }
         anim.SetBool("Jumping", !Grounded());
@@ -1156,6 +1143,10 @@ public class PlayerController : MonoBehaviour
             pState.Jumping = false;
 
             AirJumpCounter = 0;
+
+            PlayerParticles.DoubleJumpVfxCounted = 0;
+
+            //JumpEffectCreated = 0;
         }
         else
         {
@@ -1203,23 +1194,29 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && pState.isWallSliding && TimeSinceLastJump <= 0)
         {
             AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]); // Phát âm thanh nhảy
+
             pState.isWallJumping = true;                  // Đặt trạng thái nhảy tường
+
             anim.SetBool("isWallJump", true);      // Bật hoạt ảnh nhảy tường
 
             Vector2 force = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+
             if (Mathf.Sign(rb.velocity.x) != Mathf.Sign(force.x))  // Ngược chiều di chuyển so với lực nhảy tường
                 force.x -= rb.velocity.x;
 
             if (rb.velocity.y < 0)  // Nếu đang rơi, điều chỉnh lực nhảy tường để đảm bảo đủ độ cao
                 force.y -= rb.velocity.y;
 
-            // Thêm lực nhảy tường cho nhân vật
             rb.AddForce(force, ForceMode2D.Impulse);
+
             int vfxdirection = onWallDirection();
+
             Quaternion rotation = vfxdirection == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
-            PlayerParticles.PlayVfx(PlayerParticles.wallJumpVfx, wallCheckPoint, rotation);
+
+            Instantiate(playerEffect.wallJumpVfx, wallCheckPoint.transform.position, rotation);
 
             dashed = false;                        // Đặt lại trạng thái đã nhảy
+
             TimeSinceLastJump = wallJumpingDuration;
         }
     }
