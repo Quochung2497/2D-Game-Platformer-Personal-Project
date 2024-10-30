@@ -24,14 +24,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime;
     public int AirJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
-    //[SerializeField] GameObject JumpEffect, doubleJumpEffect, landEffect;
     [Space(5)]
 
     [Header("Ground Check Settings:")]
     public Transform FootCheckPoint;
     [SerializeField] private float FootCheckY = 0.2f;
     [SerializeField] private float FootCheckX = 0.5f;
-    [SerializeField] private LayerMask whatIsGround, WhatIsWater;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private LayerMask WhatIsWater;
     [Space(5)]
 
     [Header("Dash Settings")]

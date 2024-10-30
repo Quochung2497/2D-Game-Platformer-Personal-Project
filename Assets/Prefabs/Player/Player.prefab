@@ -731,9 +731,6 @@ MonoBehaviour:
   coyoteTime: 0.05
   AirJumpCounter: 0
   maxAirJumps: 1
-  JumpEffect: {fileID: 5202250261950961021, guid: d5916b5e06f0d6246982c7c4bd8d9ea7, type: 3}
-  doubleJumpEffect: {fileID: 9185030995472778908, guid: 33b4bd250966df54da2b8a79a5934287, type: 3}
-  landEffect: {fileID: 2696253892639602661, guid: 34897fca148dd104584ba2361aa613a9, type: 3}
   FootCheckPoint: {fileID: 7405655363436250508}
   FootCheckY: 0.2
   FootCheckX: 0.5
@@ -742,7 +739,7 @@ MonoBehaviour:
     m_Bits: 8
   WhatIsWater:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 4112
   dashSpeed: 13
   dashTime: 0.2
   dashCooldown: 0.4
