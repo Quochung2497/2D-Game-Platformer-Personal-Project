@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 9040441713986348426}
-  vfxSource: {fileID: 4742170646406794750}
+  sfxSource: {fileID: 4742170646406794750}
   foleySource: {fileID: 0}
   uiSource: {fileID: 0}
   theme:
@@ -313,7 +313,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7101abd306d1a6f4a8f51e170012b2aa, type: 3}
   - {fileID: 8300000, guid: ffe421ede3dd9b54f9836b555a8778e0, type: 3}
   - {fileID: 8300000, guid: 41e0dc78aedf36b47b84ccec1b9f93ae, type: 3}
-  vfx:
+  sfx:
   - {fileID: 8300000, guid: be3308b29db8e534b84fc528ba7be755, type: 3}
   - {fileID: 8300000, guid: d91e514acd3f829448631de70ab44dbf, type: 3}
   - {fileID: 8300000, guid: ba6b43d8316b06c49aeddfc185dbdf31, type: 3}

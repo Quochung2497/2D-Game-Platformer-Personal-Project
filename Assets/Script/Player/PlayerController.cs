@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
-    [SerializeField] GameObject startDashEffect, dashEffect;
     public bool canDash = true, dashed;
     private float gravity;
     [Space(5)]
@@ -58,8 +57,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float comboResetTime = 0.8f;
 
     //Receive damage
-    bool restoreTime;
-    float restoreTimeSpeed;
+    private bool restoreTime;
+    private float restoreTimeSpeed;
     [Space(5)]
 
     [Header("Recoil Settings:")]
@@ -78,7 +77,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject Blood, HurtEffect;
     public delegate void OnHealthChangedDelegate();
     [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
-    float healTimer;
+    private float healTimer;
     [SerializeField] float timeToHeal;
     [SerializeField] GameObject HealedEffect, HealingEffect;
     [Space(5)]
@@ -99,14 +98,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float spellDamage; //upspellexplosion and downspell
     [SerializeField] float downSpellForce; // desolate dive only
     [SerializeField] GameObject sideSpell, upSpell, downSpell, downSpellEffect;
-    float castOrHealTimer;
+    private float castOrHealTimer;
     [Space(5)]
     [Header("Camera Stuff")]
     [SerializeField] private float playerFallSpeedThreshold = -10;
 
     [Header("Wall Jump Settings")]
     [SerializeField] private float wallSlidingSpeed = 2f;
-    [SerializeField] private Transform wallCheck;
+    [SerializeField] private Transform wallCheckPoint;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float wallJumpingDuration;
     [SerializeField] private Vector2 wallJumpingPower;
@@ -132,7 +131,7 @@ public class PlayerController : MonoBehaviour
     public GameObject EndingEffect;
     [HideInInspector] public Rigidbody2D rb;
     private float xAxis, yAxis;
-    bool openMap;
+    private bool openMap;
     public Animator anim;
     private SpriteRenderer sr;
     public float fallThreshold = -12f;
@@ -422,10 +421,10 @@ public class PlayerController : MonoBehaviour
 
     private void ExecuteDash()
     {
-        float dashDirection = GetDirection();
+        int dashDirection = GetDirection();
         rb.gravityScale = 0;
         rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
-        Instantiate(dashEffect, transform);
+        PlayerParticles.DashVfx();
     }
 
     private IEnumerator EndDash()
@@ -439,15 +438,17 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DashCooldown());
     }
 
-    private float GetDirection()
+    private int GetDirection()
     {
-        return (transform.rotation.eulerAngles.y == 180f) ? -1f : 1f;
+        return pState.lookingRight? 1 : -1;
     }
 
     private void PlayDashEffects()
     {
-        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[1]);
-        Instantiate(startDashEffect, transform.position, Quaternion.identity);
+        int vfxDirection = GetDirection();
+        AudioManager.instance.PlaySfx(AudioManager.instance.sfx[1]);
+        Quaternion rotation = vfxDirection == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+        PlayerParticles.StartDashVfx(FootCheckPoint, rotation);
         PlayerParticles.WaterSplash();
     }
 
@@ -471,7 +472,7 @@ public class PlayerController : MonoBehaviour
         if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting && !Walled())
         {
             timeSinceAttack = 0;
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[0]);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[0]);
             if (verticalDirection > 0)
             {
                 anim.SetTrigger("AttackUp");
@@ -548,7 +549,7 @@ public class PlayerController : MonoBehaviour
         // Tăng sát thương dựa trên hệ số
         float finalDamage = damage * finalDamageMultiplier; // Tính toán sát thương cuối cùng dựa trên hệ số combo
         float recoilFinalSpeed = recoilXSpeed * recoilSpeedMultiplier; // Tính toán tốc độ hồi phản lực cuối cùng
-        int _recoilLeftOrRight = pState.lookingRight ? 1 : -1;
+        int _recoilLeftOrRight = GetDirection();
         Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilFinalSpeed, finalDamage);
         //Debug.Log("Sat thuong gay ra la " + finalDamage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
@@ -683,7 +684,7 @@ public class PlayerController : MonoBehaviour
     {
         if (pState.alive)
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[2]);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[2]);
             Health -= Mathf.RoundToInt(_damage);
             if (Health <= 0)
             {
@@ -714,7 +715,7 @@ public class PlayerController : MonoBehaviour
     {
         pState.alive = false;
         Time.timeScale = 1f;
-        AudioManager.instance.PlayVfx(AudioManager.instance.vfx[5]);
+        AudioManager.instance.PlaySfx(AudioManager.instance.sfx[5]);
         GameObject _bloodSpurtParticles = Instantiate(Blood, transform.position, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("isDead");
@@ -871,7 +872,7 @@ public class PlayerController : MonoBehaviour
     }
     private bool Walled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        return Physics2D.OverlapCircle(wallCheckPoint.position, 0.2f, wallLayer);
     }
     public void ResetToDefault()
     {
@@ -968,7 +969,7 @@ public class PlayerController : MonoBehaviour
         //side cast
         if (yAxis == 0 || (yAxis < 0 && Grounded()))
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[6]);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[6]);
             anim.SetBool("CastingSide", true);
             yield return new WaitForSeconds(0.15f);
             GameObject _SideSpell = Instantiate(sideSpell, attackForwardPoint.position, Quaternion.identity);
@@ -992,7 +993,7 @@ public class PlayerController : MonoBehaviour
         //up cast
         else if (yAxis > 0)
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[7]);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
             anim.SetBool("isCastingUp", true);
             yield return new WaitForSeconds(0.2f);
             Instantiate(upSpell, transform);
@@ -1006,7 +1007,7 @@ public class PlayerController : MonoBehaviour
         //down cast
         else if (yAxis < 0 && !Grounded())
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[7]);
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
             anim.SetBool("CastingDown", true);
             yield return new WaitForSeconds(0.15f);
             InputEnable = false;
@@ -1049,7 +1050,7 @@ public class PlayerController : MonoBehaviour
                 if (!landingSoundPlayed)
                 {
                     landingSoundPlayed = true;
-                    AudioManager.instance.PlayVfx(AudioManager.instance.vfx[3]);
+                    AudioManager.instance.PlaySfx(AudioManager.instance.sfx[3]);
                 }
                 StartCoroutine(LandingDelayCoroutine());
             }
@@ -1089,7 +1090,7 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        Instantiate(landEffect, transform);
+        Instantiate(landEffect, FootCheckPoint.transform.position,Quaternion.identity);
         yield return new WaitForSecondsRealtime(0.1f);
         currentFallSpeed = 0.0f;
         canMove = true;
@@ -1112,11 +1113,11 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
+                AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
 
                 if (JumpEffectCreated == 0)
                 { 
-                    Instantiate(JumpEffect, transform.position, Quaternion.identity);
+                    Instantiate(JumpEffect, FootCheckPoint.transform.position, Quaternion.identity);
                     JumpEffectCreated++;
                 }
 
@@ -1129,7 +1130,7 @@ public class PlayerController : MonoBehaviour
             {
                 pState.Jumping = true;
 
-                AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]);
+                AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
 
                 AirJumpCounter++;
 
@@ -1195,13 +1196,13 @@ public class PlayerController : MonoBehaviour
         if (pState.isWallSliding)
         {
             pState.isWallJumping = false;                 // Tắt trạng thái nhảy tường
-            wallJumpingDirection = !pState.lookingRight ? 1 : -1; // Xác định hướng nhảy tường dựa trên hướng nhìn của nhân vật
+            wallJumpingDirection = onWallDirection(); // Xác định hướng nhảy tường dựa trên hướng nhìn của nhân vật
         }
 
         // Khi nhấn phím nhảy trong khi trượt tường
         if (Input.GetButtonDown("Jump") && pState.isWallSliding && TimeSinceLastJump <= 0)
         {
-            AudioManager.instance.PlayVfx(AudioManager.instance.vfx[4]); // Phát âm thanh nhảy
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]); // Phát âm thanh nhảy
             pState.isWallJumping = true;                  // Đặt trạng thái nhảy tường
             anim.SetBool("isWallJump", true);      // Bật hoạt ảnh nhảy tường
 
@@ -1214,10 +1215,18 @@ public class PlayerController : MonoBehaviour
 
             // Thêm lực nhảy tường cho nhân vật
             rb.AddForce(force, ForceMode2D.Impulse);
+            int vfxdirection = onWallDirection();
+            Quaternion rotation = vfxdirection == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+            PlayerParticles.PlayVfx(PlayerParticles.wallJumpVfx, wallCheckPoint, rotation);
 
             dashed = false;                        // Đặt lại trạng thái đã nhảy
             TimeSinceLastJump = wallJumpingDuration;
         }
+    }
+    
+    private int onWallDirection()
+    {
+        return !pState.lookingRight ? 1 : -1;
     }
 
     #endregion

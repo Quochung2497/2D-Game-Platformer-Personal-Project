@@ -9,13 +9,13 @@ public class AudioManager : MonoBehaviour
 
     [Header("----------Audio Source---------")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource vfxSource;
+    [SerializeField] AudioSource sfxSource;
     [SerializeField] AudioSource foleySource;
     [SerializeField] AudioSource uiSource;
 
     [Header("----------Audio Clip---------")]
     public AudioClip[] theme;
-    public AudioClip[] vfx;
+    public AudioClip[] sfx;
     public AudioClip[] Enviroment;
     public AudioClip[] Enemy;
     public AudioClip Click;
@@ -72,9 +72,16 @@ public class AudioManager : MonoBehaviour
         if (musicSource.clip != null)
         { musicSource.Play(); }
     }
-    public void PlayVfx(AudioClip audioclip)
+    public void PlaySfx(AudioClip audioclip)
     {
-        vfxSource.PlayOneShot(audioclip);
+        if (audioclip != null)
+        { 
+            sfxSource.PlayOneShot(audioclip); 
+        }
+        else
+        {
+            Debug.Log("null");
+        }
     }
     public void PlayFoley(AudioClip audioclip)
     {

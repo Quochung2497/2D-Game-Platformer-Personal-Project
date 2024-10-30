@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85b6bd154c226a94ebad025ea2f5e6dc
+guid: c37a699c668af1b4baa3b3983d111afa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +107,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -147,7 +147,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player_dash_v1.0_0
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 152
+        width: 115
+        height: 237
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886109f233d42fb47bc7b50dad88683e
+      internalID: 1744078546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_dash_v1.0_2
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 150
+        width: 259
+        height: 238
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6423ca5f419e9409c27d3feeebafdc
+      internalID: -131123633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_dash_v1.0_4
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 191
+        width: 213
+        height: 174
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523a11994ab46ec40bf76a07c31343a4
+      internalID: 1795312035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_dash_v1.0_5
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 181
+        width: 293
+        height: 171
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93f3c2cfd565924a8d75ec05b0960ad
+      internalID: 720101192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_dash_v1.0_6
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 142
+        width: 357
+        height: 230
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca55b918911488e4da7d9f123ee9f30a
+      internalID: 1830474988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_dash_v1.0_7
+      rect:
+        serializedVersion: 2
+        x: 2597
+        y: 157
+        width: 306
+        height: 196
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c83c2881f99e1544b15608684c4dc5a
+      internalID: -537550892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +284,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_dash_v1.0_0: 1744078546
+      Player_dash_v1.0_1: 536338877
+      Player_dash_v1.0_10: -611791601
+      Player_dash_v1.0_11: -274804159
+      Player_dash_v1.0_12: 355260884
+      Player_dash_v1.0_2: -131123633
+      Player_dash_v1.0_3: 76031173
+      Player_dash_v1.0_4: 1795312035
+      Player_dash_v1.0_5: 720101192
+      Player_dash_v1.0_6: 1830474988
+      Player_dash_v1.0_7: -537550892
+      Player_dash_v1.0_8: -821676291
+      Player_dash_v1.0_9: -607939777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
