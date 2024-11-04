@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class FinalBoss_Idle : StateMachineBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D finabossRb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb = animator.GetComponent<Rigidbody2D>();
+        finabossRb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb.velocity = Vector2.zero;
+        finabossRb.velocity = Vector2.zero;
         RunToPlayer(animator);
 
         if (FinalBoss.Instance.attackCountdown <= 0)
@@ -25,12 +25,12 @@ public class FinalBoss_Idle : StateMachineBehaviour
 
         if (!FinalBoss.Instance.Grounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, -25); //if knight is not grounded, fall to ground
+            finabossRb.velocity = new Vector2(finabossRb.velocity.x, -25); //if knight is not grounded, fall to ground
         }
     }
     void RunToPlayer(Animator animator)
     {
-        if (Vector2.Distance(PlayerController.Instance.transform.position, rb.position) >= FinalBoss.Instance.attackRange)
+        if (Vector2.Distance(PlayerController.Instance.transform.position, finabossRb.position) >= FinalBoss.Instance.attackRange)
         {
             animator.SetBool("Run", true);
         }

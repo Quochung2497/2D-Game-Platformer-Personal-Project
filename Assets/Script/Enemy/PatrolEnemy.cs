@@ -41,11 +41,11 @@ public class PatrolEnemy : Enemy
                     }
                     if (transform.localScale.x > 0)
                     {
-                        rb.velocity = new Vector2(speed, rb.velocity.y);
+                        enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
                     }
                     else
                     {
-                        rb.velocity = new Vector2(-speed, rb.velocity.y);
+                        enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
                     }
                     if (_dist < detectDistance && Physics2D.Raycast(transform.position + _ledgeCheckStart, Vector2.down, ledgeCheckY, whatIsGround)
                         || Physics2D.Raycast(transform.position, _wallCheckDir, ledgeCheckX, whatIsGround))
@@ -82,7 +82,7 @@ public class PatrolEnemy : Enemy
                     {
                         Flip();
                         {
-                            rb.velocity = new Vector2(0, 0);
+                            enemyRb.velocity = new Vector2(0, 0);
                         }
                     }
                     if (_dist > detectDistance)
@@ -116,7 +116,7 @@ public class PatrolEnemy : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -124,7 +124,7 @@ public class PatrolEnemy : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
         }
     }
     public override void EnemyGetsHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
@@ -135,7 +135,7 @@ public class PatrolEnemy : Enemy
             audioSource.PlayOneShot(hurtSound);
             GameObject _orangeBlood = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(_orangeBlood, 2.5f);
-            rb.velocity = _hitForce * recoilFactor * _hitDirection;
+            enemyRb.velocity = _hitForce * recoilFactor * _hitDirection;
             isRecoiling = true;
             _isMovable = false;
             StartCoroutine(hurtCoroutine());
@@ -174,7 +174,7 @@ public class PatrolEnemy : Enemy
         Vector2 newVelocity;
         newVelocity.x = 0;
         newVelocity.y = 0;
-        rb.velocity = newVelocity;
+        enemyRb.velocity = newVelocity;
 
         gameObject.layer = LayerMask.NameToLayer("Decoration");
         StartCoroutine(fadeCoroutine());

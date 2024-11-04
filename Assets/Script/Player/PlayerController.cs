@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (pState.dashing || pState.healing || pState.cutscenes) return;
+        if (pState.dashing || pState.healing || pState.cutscenes || pState.casting) return;
         Recoil();
     }
     #region Start-Update
@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
             {
                 CastSpell();
             }
-            isFalling();
+            isFalling(); 
             Attack();
             Recoil();
         }
@@ -354,7 +354,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         // Nếu đang hồi máu hoặc không thể di chuyển, dừng chuyển động theo cả hai chiều
-        if (pState.healing || !canMove)
+        if (pState.healing || !canMove || pState.casting)
         {
             rb.velocity = new Vector2(0, 0); // Đặt vận tốc về 0.
         }
@@ -404,7 +404,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         ExecuteDash();
-        yield return new WaitForSeconds(0.1f);
 
         StartCoroutine(EndDash());
     }
@@ -426,14 +425,16 @@ public class PlayerController : MonoBehaviour
         int dashDirection = GetDirection();
         rb.gravityScale = 0;
         rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
+        Debug.Log("Dash started - gravityScale: " + rb.gravityScale);
         Instantiate(playerEffect.dashEffect, transform);
     }
 
     private IEnumerator EndDash()
     {
-        ChangeLayer("Player");
         yield return new WaitForSeconds(dashTime);
+        ChangeLayer("Player");
         rb.gravityScale = gravity;
+        Debug.Log("Dash ended - gravityScale: " + rb.gravityScale);
         pState.dashing = false;
         InputEnable = true;
         attackable = true;
@@ -470,7 +471,7 @@ public class PlayerController : MonoBehaviour
         float verticalDirection = Input.GetAxisRaw("Vertical");
         timeSinceAttack += Time.deltaTime;
         ResetCombo();
-        if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting && !Walled())
+        if (attack && timeSinceAttack >= AtkInterval && attackable && !pState.casting)
         {
             timeSinceAttack = 0;
             AudioManager.instance.PlaySfx(AudioManager.instance.sfx[0]);
@@ -593,7 +594,10 @@ public class PlayerController : MonoBehaviour
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
-                    Instantiate(playerEffect.EnemyVfx, _attackTransform.position, Quaternion.identity);
+                    int direction = GetDirection();
+                    int randomZrotation = Random.Range(5, 25);
+                    Quaternion rotation = direction == 1 ? Quaternion.Euler(0, 0, randomZrotation) : Quaternion.Euler(0, 180, randomZrotation);
+                    Instantiate(playerEffect.enemyVfx, _attackTransform.position, rotation);
                 }
             }
             else if(obj)
@@ -954,8 +958,7 @@ public class PlayerController : MonoBehaviour
         if (Grounded())
         {
             //disable downspell if on the ground
-            downSpell.SetActive(false);
-            downSpellEffect.SetActive(false);
+            DisableDownSpell();
         }
         //if down spell is active, force player down until grounded
         if (downSpell.activeInHierarchy)
@@ -967,59 +970,90 @@ public class PlayerController : MonoBehaviour
     IEnumerator CastCoroutine()
     {
         Mana -= manaSpellCost;
-        //side cast
-        if (yAxis == 0 || (yAxis < 0 && Grounded()))
+        if (IsCastingSideSpell())
         {
-            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[6]);
-            anim.SetBool("CastingSide", true);
-            yield return new WaitForSeconds(0.15f);
-            GameObject _SideSpell = Instantiate(sideSpell, attackForwardPoint.position, Quaternion.identity);
-
-            //flip fireball
-            if (pState.lookingRight)
-            {
-                _SideSpell.transform.eulerAngles = Vector3.zero;
-            }
-            else
-            {
-                _SideSpell.transform.eulerAngles = new Vector2(_SideSpell.transform.eulerAngles.x, 180);
-            }
-            pState.recoilingX = true;
-            InputEnable = false;
-            yield return new WaitForSeconds(0.35f);
-            InputEnable = true;
-            anim.SetBool("CastingSide", false);
+            yield return CastSideSpell();
         }
-
-        //up cast
-        else if (yAxis > 0)
+        else if (IsCastingUpSpell())
         {
-            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
-            anim.SetBool("isCastingUp", true);
-            yield return new WaitForSeconds(0.2f);
-            Instantiate(upSpell, transform);
-            rb.velocity = Vector2.zero;
-            InputEnable = false;
-            yield return new WaitForSeconds(0.35f);
-            InputEnable = true;
-            anim.SetBool("isCastingUp", false);
+            yield return CastUpSpell();
         }
-
-        //down cast
-        else if (yAxis < 0 && !Grounded())
+        else if (IsCastingDownSpell())
         {
-            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
-            anim.SetBool("CastingDown", true);
-            yield return new WaitForSeconds(0.15f);
-            InputEnable = false;
-            downSpell.SetActive(true);
-            downSpellEffect.SetActive(true);
-            yield return new WaitForSeconds(0.35f);
-            InputEnable = true;
-            anim.SetBool("CastingDown", false);
+            yield return CastDownSpell();
         }
+    }
+    private bool IsCastingSideSpell() => yAxis == 0 || (yAxis < 0 && Grounded());
 
+    private bool IsCastingUpSpell() => yAxis > 0;
+
+    private bool IsCastingDownSpell() => yAxis < 0 && !Grounded();
+
+    IEnumerator CastSideSpell()
+    {
+        AudioManager.instance.PlaySfx(AudioManager.instance.sfx[6]);
+        anim.SetBool("CastingSide", true);
+        int direction = GetDirection();
+        Quaternion rotation = direction == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+        Instantiate(playerEffect.StartSideCastVfx,wallCheckPoint.position,rotation);
+        yield return new WaitForSeconds(0.2f);
+        HandleGravity(true);
+        Instantiate(sideSpell, attackForwardPoint.position, rotation);
+
+        yield return CompleteCasting("CastingSide");
+    }
+
+    IEnumerator CastUpSpell()
+    {
+        AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
+        anim.SetBool("isCastingUp", true);
+
+        yield return new WaitForSeconds(0.2f);
+        HandleGravity(true);
+        Instantiate(upSpell, UpAttackPoint.transform);
+
+        yield return CompleteCasting("isCastingUp");
+    }
+
+    IEnumerator CastDownSpell()
+    {
+        AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
+        anim.SetBool("CastingDown", true);
+        yield return new WaitForSeconds(0.15f);
+
+        downSpell.SetActive(true);
+        downSpellEffect.SetActive(true);
+
+        yield return CompleteCasting("CastingDown");
+    }
+
+    IEnumerator CompleteCasting(string animationBoolName)
+    {
+        InputEnable = false;
+        yield return new WaitForSeconds(0.35f);
+        InputEnable = true;
         pState.casting = false;
+        anim.SetBool(animationBoolName, false);
+        HandleGravity(false);
+    }
+
+    private void DisableDownSpell()
+    {
+        downSpell.SetActive(false);
+        downSpellEffect.SetActive(false);
+    }
+
+    private void HandleGravity(bool disableGravity)
+    {
+        if(true)
+        {
+            rb.gravityScale = 0;
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.gravityScale = gravity;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D _other) //for up and down cast spell
@@ -1083,7 +1117,6 @@ public class PlayerController : MonoBehaviour
             currentFallSpeed = _maxFallSpeed;
         }
         rb.velocity = new Vector2(rb.velocity.x, currentFallSpeed);
-        Debug.Log(currentFallSpeed);
     }
     private IEnumerator LandingDelayCoroutine()
     {
@@ -1109,7 +1142,11 @@ public class PlayerController : MonoBehaviour
 
                 AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
 
-                PlayerParticles.JumpVfx();
+                int direction = GetDirection();
+
+                Quaternion rotation = direction == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+
+                PlayerParticles.JumpVfx(rotation);
 
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
 

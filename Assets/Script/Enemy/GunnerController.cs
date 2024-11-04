@@ -32,7 +32,7 @@ public class GunnerController : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Gunner_Idle:
-                    rb.velocity = new Vector2(0, 0);
+                    enemyRb.velocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Gunner_Attack);
@@ -93,7 +93,7 @@ public class GunnerController : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -101,7 +101,7 @@ public class GunnerController : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
         }
     }
     private IEnumerator fadeCoroutine()
@@ -132,7 +132,7 @@ public class GunnerController : Enemy
         {
             audioSource.PlayOneShot(deathSound);
             _animator.SetTrigger("Death");
-            rb.gravityScale = 6f;
+            enemyRb.gravityScale = 6f;
             gameObject.layer = LayerMask.NameToLayer("Decoration");
             StartCoroutine(fadeCoroutine());
         }

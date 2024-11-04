@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 185712047318305089}
   - component: {fileID: 2307602720812486679}
   - component: {fileID: 6093135140181278961}
+  - component: {fileID: 2635873197908345544}
   m_Layer: 0
   m_Name: SideSpellCast
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 107218659
   m_SortingLayer: 2
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 1231385859, guid: 024dd71025944164e82d6183b4275be1, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 1074429762, guid: b95d594e94c20164d872b4719e89c9b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,18 +141,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006932378, y: -0.000000059604645}
+  m_Offset: {x: -0.86708593, y: 0.01432246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.21, y: 2.67}
+    pivot: {x: 1, y: 0.5}
+    oldSize: {x: 2.1521018, y: 1.08}
     newSize: {x: 1.93, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6249769, y: 1.3358947}
+  m_Size: {x: 1.5804024, y: 1.0207998}
   m_EdgeRadius: 0
 --- !u!114 &6093135140181278961
 MonoBehaviour:
@@ -167,5 +168,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   hitForce: 3
-  speed: 15
+  speed: 25
   lifetime: 2
+  HitEnemySplashEffect: {fileID: 3227951610469796732, guid: 76074f652c92c3441bbf9e8d5bb5319b, type: 3}
+  HitObjectSplashEffect: {fileID: 6271839846001733634, guid: 8a97a3d4f3cc4284fbf3acd24efa8138, type: 3}
+--- !u!50 &2635873197908345544
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161203769496979086}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

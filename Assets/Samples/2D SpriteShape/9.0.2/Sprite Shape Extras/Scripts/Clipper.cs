@@ -1722,7 +1722,7 @@ namespace ExtrasClipperLib
 
                 if (lb == null || rb == null) continue;
 
-                //if output polygons share an Edge with a horizontal rb, they'll need joining later ...
+                //if output polygons share an Edge with a horizontal enemyRb, they'll need joining later ...
                 if (Op1 != null && IsHorizontal(rb) &&
                     m_GhostJoins.Count > 0 && rb.WindDelta != 0)
                 {

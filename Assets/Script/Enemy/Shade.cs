@@ -19,7 +19,7 @@ public class Shade : Enemy
         {
             Instance = this;
         }
-        Debug.Log("shade spawned");
+        //Debug.Log("shade spawned");
         SaveData.Instance.SaveShadeData();
     }
     protected override void Start()
@@ -35,7 +35,7 @@ public class Shade : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Shade_Idle:
-                    rb.velocity = new Vector2(0, 0);
+                    enemyRb.velocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Shade_Chase);
@@ -45,13 +45,13 @@ public class Shade : Enemy
                 case EnemyStates.Shade_Chase:
                     if (!PlayerController.Instance.pState.Invincible)
                     {
-                        rb.MovePosition(Vector2.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * speed));
+                        enemyRb.MovePosition(Vector2.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * speed));
                         Flip();
                     }
                     else
                     {
                         Flip();
-                        rb.velocity = new Vector2 (0, 0);
+                        enemyRb.velocity = new Vector2 (0, 0);
                     }
                     if (_dist > detectDistance)
                     {
@@ -82,7 +82,7 @@ public class Shade : Enemy
             Instantiate(HurtEffect, transform.position, Quaternion.identity);
             GameObject _orangeBlood = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(_orangeBlood, 2.5f);
-            rb.velocity = _hitForce * recoilFactor * _hitDirection;
+            enemyRb.velocity = _hitForce * recoilFactor * _hitDirection;
             isRecoiling = true;
         }
         if (health > 0)
@@ -149,7 +149,7 @@ public class Shade : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -157,7 +157,7 @@ public class Shade : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
         }
     }
     // Update is called once per frame

@@ -133,7 +133,7 @@ public class FinalBoss : Enemy
         ActiveBoss();
         if (isGravity)
         {
-            rb.gravityScale = 6f;
+            enemyRb.gravityScale = 6f;
         }
         base.Update();
         if (health <= 0 && alive)
@@ -146,7 +146,7 @@ public class FinalBoss : Enemy
         }
         if (stunned)
         {
-            rb.velocity = Vector2.zero;
+            enemyRb.velocity = Vector2.zero;
         }
         CanvasHealth();
     }
@@ -324,7 +324,7 @@ public class FinalBoss : Enemy
     public void AttackHandler()
     {
         float lungeRange = attackRange;
-        float playerDistance = Vector2.Distance(PlayerController.Instance.transform.position, rb.position);
+        float playerDistance = Vector2.Distance(PlayerController.Instance.transform.position, enemyRb.position);
         float xDifference = PlayerController.Instance.transform.position.x - transform.position.x;
         float yDifference = PlayerController.Instance.transform.position.y - transform.position.y;
         if (currentEnemyState == EnemyStates.FinalBoss_Stage1)
@@ -502,7 +502,7 @@ public class FinalBoss : Enemy
         Flip();
         attacking = true;
         attackable = false;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         _animator.SetTrigger("UpSlash");
         yield return new WaitForSeconds(1f);
         attackable = true;
@@ -513,7 +513,7 @@ public class FinalBoss : Enemy
     {
         Flip();
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         attackable = false;
         _animator.SetTrigger("DownSlash");
         yield return new WaitForSeconds(1f);
@@ -526,7 +526,7 @@ public class FinalBoss : Enemy
     {
         Flip();
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
 
         attackable = false;
         _animator.SetTrigger("Slash");
@@ -558,7 +558,7 @@ public class FinalBoss : Enemy
     {
         Flip();
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
 
         _animator.SetTrigger("Parried");
         yield return new WaitForSeconds(0.1f);
@@ -582,7 +582,7 @@ public class FinalBoss : Enemy
     {
         Debug.Log("Starting Parry coroutine. parrying = true");
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
     }
 
     public void StopParry()
@@ -674,7 +674,7 @@ public class FinalBoss : Enemy
         Debug.Log("Calling DiveAttackJump at: " + Time.time);
         attacking = true;
         attackable = false;
-        moveToPosition = new Vector2(PlayerController.Instance.transform.position.x, rb.position.y + 5);
+        moveToPosition = new Vector2(PlayerController.Instance.transform.position.x, enemyRb.position.y + 5);
         diveAttack = true;
         _animator.SetBool("Jump", true);
     }
@@ -722,7 +722,7 @@ public class FinalBoss : Enemy
     void BarrageBendDown()
     {
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         Flip();
         barrageAttack = true;
         attackable = false;
@@ -731,7 +731,7 @@ public class FinalBoss : Enemy
 
     public IEnumerator Barrage()
     {
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         GameObject Effect = Instantiate(BarrageEffect, transform);
         float _currentAngle = 20f;
         for (int i = 0; i < 10; i++)
@@ -760,9 +760,9 @@ public class FinalBoss : Enemy
     void OutbreakBendDown()
     {
         attacking = true;
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         attackable = false;
-        moveToPosition = new Vector2(transform.position.x, rb.position.y + 3);
+        moveToPosition = new Vector2(transform.position.x, enemyRb.position.y + 3);
         outbreakAttack = true;
         _animator.SetTrigger("BendDown");
     }
@@ -771,7 +771,7 @@ public class FinalBoss : Enemy
         yield return new WaitForSeconds(1f);
         _animator.SetBool("Cast", true);
 
-        rb.velocity = Vector2.zero;
+        enemyRb.velocity = Vector2.zero;
         GameObject Effect = Instantiate(outBreakEffect, transform);
         for (int i = 0; i < 30; i++)
         {
@@ -783,9 +783,9 @@ public class FinalBoss : Enemy
         }
         yield return new WaitForSeconds(0.1f);
         box.enabled = true;
-        rb.constraints = RigidbodyConstraints2D.None;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rb.velocity = new Vector2(rb.velocity.x, -3);
+        enemyRb.constraints = RigidbodyConstraints2D.None;
+        enemyRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        enemyRb.velocity = new Vector2(enemyRb.velocity.x, -3);
         attackable = true;  
         yield return new WaitForSeconds(0.1f);
         _animator.SetBool("Cast", false);
@@ -814,8 +814,8 @@ public class FinalBoss : Enemy
     public void BounceBendDown()
     {
         attackable = false;
-        rb.velocity = Vector2.zero;
-        moveToPosition = new Vector2(PlayerController.Instance.transform.position.x, rb.position.y + 5);
+        enemyRb.velocity = Vector2.zero;
+        moveToPosition = new Vector2(PlayerController.Instance.transform.position.x, enemyRb.position.y + 5);
         bounceAttack = true;
         _animator.SetTrigger("BendDown");
     }
@@ -840,7 +840,7 @@ public class FinalBoss : Enemy
     {
         ResetAllAttacks();
         alive = false;
-        rb.velocity = new Vector2(rb.velocity.x, -7);
+        enemyRb.velocity = new Vector2(enemyRb.velocity.x, -7);
         _animator.SetTrigger("Die");
     }
 

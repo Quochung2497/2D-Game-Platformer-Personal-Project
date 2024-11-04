@@ -24,15 +24,15 @@ public class ParticlesController : MonoBehaviour
     public void FootPrint()
     {
         FootEffectDelay += Time.deltaTime;
-        if (FootEffectDelay >= 0.2f && PlayerController.Instance.rb.velocity.x != 0 && PlayerController.Instance.Grounded())
+        if (PlayerController.Instance.rb.velocity.x != 0 && PlayerController.Instance.Grounded() && FootEffectDelay >= 0.2f)
         {
             if (PlayerController.Instance.IsOnWater())
             {
                 Instantiate(particlesEffect.WaterFootVFX, CharacterWaterVFX.transform.position, Quaternion.identity);
             }
-            else
+            else if (!PlayerController.Instance.IsOnWater())
             {
-                Debug.Log("OnGround");
+                particlesEffect.moveVfx.Play();
             }
             FootEffectDelay = 0;
         }
@@ -48,7 +48,7 @@ public class ParticlesController : MonoBehaviour
             Instantiate(particlesEffect.startDashEffect, PlayerController.Instance.FootCheckPoint.transform.position, rotation);
         }
     }
-    public void JumpVfx()
+    public void JumpVfx(Quaternion rotation)
     {
         if (PlayerController.Instance.rb.velocity.y > 0)
         {
@@ -60,7 +60,7 @@ public class ParticlesController : MonoBehaviour
                 }
                 else if(PlayerController.Instance.Grounded())
                 {
-                    Instantiate(particlesEffect.JumpEffect, PlayerController.Instance.FootCheckPoint.transform.position, Quaternion.identity);
+                    Instantiate(particlesEffect.JumpEffect, PlayerController.Instance.FootCheckPoint.transform.position, rotation);
                 }
                 JumpEffectCounted++;
             }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FinalBoss_Run : StateMachineBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D finalbossRb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb = animator.GetComponent<Rigidbody2D>();
+        finalbossRb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,16 +27,16 @@ public class FinalBoss_Run : StateMachineBehaviour
         if (FinalBoss.Instance.Grounded())
         {
             FinalBoss.Instance.Flip();
-            Vector2 _target = new Vector2(PlayerController.Instance.transform.position.x, rb.position.y);
-            Vector2 _newPos = Vector2.MoveTowards(rb.position, _target, FinalBoss.Instance.runSpeed * Time.fixedDeltaTime);
-            rb.MovePosition(_newPos);
+            Vector2 _target = new Vector2(PlayerController.Instance.transform.position.x, finalbossRb.position.y);
+            Vector2 _newPos = Vector2.MoveTowards(finalbossRb.position, _target, FinalBoss.Instance.runSpeed * Time.fixedDeltaTime);
+            finalbossRb.MovePosition(_newPos);
 
         }
         else
         {
-            rb.velocity = new Vector2(rb.velocity.x, -25); //if knight is not grounded, fall to ground
+            finalbossRb.velocity = new Vector2(finalbossRb.velocity.x, -25); //if knight is not grounded, fall to ground
         }
-        if (Vector2.Distance(PlayerController.Instance.transform.position, rb.position) <= FinalBoss.Instance.attackRange)
+        if (Vector2.Distance(PlayerController.Instance.transform.position, finalbossRb.position) <= FinalBoss.Instance.attackRange)
         {
             animator.SetBool("Run", false);
         }

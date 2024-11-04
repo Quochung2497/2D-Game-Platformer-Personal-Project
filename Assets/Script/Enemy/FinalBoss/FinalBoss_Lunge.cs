@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FinalBoss_Lunge : StateMachineBehaviour
 {
-    Rigidbody2D rb;
+    Rigidbody2D finalbossRb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb = animator.GetComponent<Rigidbody2D>();
+        finalbossRb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb.gravityScale = 0;
+        finalbossRb.gravityScale = 0;
         int _dir = FinalBoss.Instance.facingRight ? 1 : -1;
-        rb.velocity = new Vector2(_dir * (FinalBoss.Instance.speed * 5), 0f);
+        finalbossRb.velocity = new Vector2(_dir * (FinalBoss.Instance.speed * 5), 0f);
 
-        if (Vector2.Distance(PlayerController.Instance.transform.position, rb.position) <= FinalBoss.Instance.attackRange &&
+        if (Vector2.Distance(PlayerController.Instance.transform.position, finalbossRb.position) <= FinalBoss.Instance.attackRange &&
             !FinalBoss.Instance.damagedPlayer && !PlayerController.Instance.pState.Invincible)
         {
             PlayerController.Instance.TakeDamage(FinalBoss.Instance.damage);
@@ -30,7 +30,7 @@ public class FinalBoss_Lunge : StateMachineBehaviour
         }
         if(FinalBoss.Instance.TouchedWall())
         {
-            rb.velocity = new Vector2 (0,0);
+            finalbossRb.velocity = new Vector2 (0,0);
             animator.SetBool("Lunge", false);
             FinalBoss.Instance.damagedPlayer = false;
             FinalBoss.Instance.Flip();

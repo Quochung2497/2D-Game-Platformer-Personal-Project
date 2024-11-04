@@ -61,7 +61,7 @@ public struct SaveData
             writer.Write(benchPos.x);
             writer.Write(benchPos.y);
         }
-        UnityEngine.Debug.Log("Saved Bench data: " + benchSceneName + " at " + benchPos);
+        //UnityEngine.Debug.Log("Saved Bench data: " + benchSceneName + " at " + benchPos);
     }
     public void LoadBench()
     {
@@ -135,7 +135,7 @@ public struct SaveData
             string lastScene = SceneManager.GetActiveScene().name;
             writer.Write(lastScene);
         }
-        UnityEngine.Debug.Log("Đã lưu dữ liệu người chơi");
+       // UnityEngine.Debug.Log("Đã lưu dữ liệu người chơi");
 
 
     }
@@ -201,7 +201,7 @@ public struct SaveData
                 PlayerController.Instance.unlockedHeal = playerUnlockedHeal;
                 PlayerController.Instance.unlockedCastSpell = playerUnlockedCast;
 
-                UnityEngine.Debug.Log("Đã tải dữ liệu người chơi thành công");
+                //UnityEngine.Debug.Log("Đã tải dữ liệu người chơi thành công");
                 GlobalController.instance.LoadPlayerScore();
             }
         }
@@ -263,7 +263,7 @@ public struct SaveData
                 float rotationW = reader.ReadSingle();
                 shadeRot = new Quaternion(rotationX, rotationY, rotationZ, rotationW);
             }
-            UnityEngine.Debug.Log("Saved Bench data");
+            //UnityEngine.Debug.Log("Saved Bench data");
         }
         else
         {

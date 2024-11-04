@@ -20,7 +20,7 @@ public abstract class Enemy : MonoBehaviour
     public int scoreValue;
     //References
     protected float recoilTimer;
-    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D enemyRb;
     protected Transform _playerTransform;
     protected Transform _transform;
     [HideInInspector] public Animator _animator;
@@ -84,7 +84,7 @@ public abstract class Enemy : MonoBehaviour
     }
     protected virtual void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        enemyRb = GetComponent<Rigidbody2D>();
         _playerTransform = GlobalController.instance.player.GetComponent<Transform>();
         _transform = gameObject.GetComponent<Transform>();
         _animator = gameObject.GetComponent<Animator>();
@@ -125,7 +125,7 @@ public abstract class Enemy : MonoBehaviour
             audioSource.PlayOneShot(hurtSound);
             GameObject _orangeBlood = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(_orangeBlood, 2.5f);
-            rb.velocity = _hitForce * recoilFactor * _hitDirection;
+            enemyRb.velocity = _hitForce * recoilFactor * _hitDirection;
             isRecoiling = true;
         }
     }
@@ -147,7 +147,7 @@ public abstract class Enemy : MonoBehaviour
             AttackPlayer();
             if (PlayerController.Instance.pState.alive)
             {
-                PlayerController.Instance.HitStopTime(0.1f, 10, 0.25f);
+                PlayerController.Instance.HitStopTime(0f, 8, 0.4f);
             }
         }
         else if (layerName == "Attackable" && health > 0)

@@ -21,7 +21,7 @@ public class Flying_Insect : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Insect_Idle:
-                    rb.velocity = new Vector2(0, 0);
+                    enemyRb.velocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Insect_Chase);
@@ -31,13 +31,13 @@ public class Flying_Insect : Enemy
                 case EnemyStates.Insect_Chase:
                     if (!PlayerController.Instance.pState.Invincible)
                     {
-                        rb.MovePosition(Vector2.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * speed));
+                        enemyRb.MovePosition(Vector2.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * speed));
                         Flip();
                     }
                     else
                     {
                         Flip();
-                        rb.velocity = new Vector2(0, 0);
+                        enemyRb.velocity = new Vector2(0, 0);
                     }
                     if (_dist > detectDistance)
                     {
@@ -108,7 +108,7 @@ public class Flying_Insect : Enemy
         {
             audioSource.PlayOneShot(deathSound);
             _animator.SetTrigger("Death");
-            rb.gravityScale = 6f;
+            enemyRb.gravityScale = 6f;
             gameObject.layer = LayerMask.NameToLayer("Decoration");
             StartCoroutine(fadeCoroutine());
         }
@@ -126,7 +126,7 @@ public class Flying_Insect : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -134,7 +134,7 @@ public class Flying_Insect : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
         }
     }
     // Update is called once per frame

@@ -37,7 +37,7 @@ public class FinalBoss_Bend : StateMachineBehaviour
             if (_distance < 0.1f)
             {
                 FinalBoss.Instance.box.enabled = false;
-                FinalBoss.Instance.rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                FinalBoss.Instance.enemyRb.constraints = RigidbodyConstraints2D.FreezePosition;
             }
         }
     }

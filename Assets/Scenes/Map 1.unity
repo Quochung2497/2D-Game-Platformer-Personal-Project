@@ -15094,7 +15094,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0005722046, y: 0.0029568672}
+  m_Offset: {x: 0.089344025, y: 0.0029568672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15105,7 +15105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26981354, y: 11.02451}
+  m_Size: {x: 1.2928162, y: 11.02451}
   m_EdgeRadius: 0
 --- !u!212 &1182006368
 SpriteRenderer:
@@ -19451,7 +19451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1543205748}
   - component: {fileID: 1543205750}
-  - component: {fileID: 1543205749}
   m_Layer: 8
   m_Name: Wall (5)
   m_TagString: Wall
@@ -19474,51 +19473,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1008202740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1543205749
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543205747}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0005722046, y: 0.0029568672}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 1.92}
-    newSize: {x: 0.25, y: 11}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.26981354, y: 11.02451}
-  m_EdgeRadius: 0
 --- !u!212 &1543205750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28662,6 +28616,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 267928575564186341, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267928575564186341, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd0a54257be6bd3438d6e07e8ebf8526, type: 2}
     - target: {fileID: 528755393082319769, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: SwordSlashUp
       value: 
@@ -28674,6 +28636,10 @@ PrefabInstance:
       propertyPath: SwordSlashForward
       value: 
       objectReference: {fileID: 4387795518490415357}
+    - target: {fileID: 885531506704225854, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3089374999271944595, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 1024
@@ -28685,6 +28651,10 @@ PrefabInstance:
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: damage
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: dashTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: manaGain
@@ -28883,7 +28853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 544882025290086054, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1637948745921414253, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
       propertyPath: m_Enabled

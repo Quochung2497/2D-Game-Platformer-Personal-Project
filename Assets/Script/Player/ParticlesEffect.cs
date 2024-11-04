@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParticlesEffect : MonoBehaviour
 {
+    [Header("MovementVfx")]
+    public ParticleSystem moveVfx;
     [Header("Slash")]
     public ParticleSystem SwordSlashForward;
     public ParticleSystem SwordSlashUp;
@@ -24,6 +26,9 @@ public class ParticlesEffect : MonoBehaviour
     public GameObject dashEffect;
     [Header("WingVfx")]
     public GameObject DoubleJumpWing;
+    [Header("Spellvfx")]
+    public GameObject StartSideCastVfx;
+
 
     [Header("LeafVfx")]
     public ParticleSystem leafVfx;
@@ -32,5 +37,5 @@ public class ParticlesEffect : MonoBehaviour
     public int spawnTo;
 
     [Header("HitObjectEffect")]
-    public ParticleSystem EnemyVfx;
+    public GameObject enemyVfx;
 }

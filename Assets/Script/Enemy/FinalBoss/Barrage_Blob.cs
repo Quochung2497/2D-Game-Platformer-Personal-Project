@@ -8,25 +8,25 @@ public class Barrage_Blob : MonoBehaviour
     [SerializeField] float turnSpeed = 0.5f;
     public GameObject hitGroundsfx;
 
-    Rigidbody2D rb;
+    Rigidbody2D finalbossRb;
     SpriteRenderer sr;
     CircleCollider2D circle;
     public LayerMask excludeLayers;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        finalbossRb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         circle = GetComponent<CircleCollider2D>();
         excludeLayers = LayerMask.GetMask("Player");
         Destroy(gameObject, 6f);
-        rb.AddForce(transform.right * Random.Range(startForceMinMax.x, startForceMinMax.y), ForceMode2D.Impulse);
+        finalbossRb.AddForce(transform.right * Random.Range(startForceMinMax.x, startForceMinMax.y), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
-        var _dir = rb.velocity;
+        var _dir = finalbossRb.velocity;
 
         if (_dir != Vector2.zero)
         {
@@ -72,7 +72,7 @@ public class Barrage_Blob : MonoBehaviour
 
     IEnumerator hitGround()
     {
-        rb.velocity = new Vector3(0, 0, 0);
+        finalbossRb.velocity = new Vector3(0, 0, 0);
         hitGroundsfx.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         hitGroundsfx.SetActive(false);
