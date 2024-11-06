@@ -28796,6 +28796,10 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4550796989415121664, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: StartUpCastVfx
+      value: 
+      objectReference: {fileID: 2687840321149421290, guid: bdbda0e9e4c282a4da340d137efcc4b3, type: 3}
     - target: {fileID: 7244107649504953331, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: m_FlipX
       value: 1

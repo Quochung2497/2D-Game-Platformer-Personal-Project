@@ -38,4 +38,5 @@ public class ParticlesEffect : MonoBehaviour
 
     [Header("HitObjectEffect")]
     public GameObject enemyVfx;
+    public GameObject HitEnemySplashEffect;
 }

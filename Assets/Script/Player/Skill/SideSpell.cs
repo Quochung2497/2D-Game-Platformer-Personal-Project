@@ -9,8 +9,7 @@ public class SideSpell : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float lifetime = 1f;
     [Header("HitObjectVfx")]
-    [SerializeField] GameObject HitEnemySplashEffect;
-    [SerializeField] GameObject HitObjectSplashEffect;
+    [SerializeField] private GameObject HitObjectSplashEffect;
 
     void Start()
     {
@@ -46,7 +45,7 @@ public class SideSpell : MonoBehaviour
             enemy.EnemyGetsHit(damage, hitDirection, -hitForce);
         }
 
-        HandleCollision(HitEnemySplashEffect);
+        HandleCollision(HitObjectSplashEffect);
     }
     private void HandleCollision(GameObject effect)
     {

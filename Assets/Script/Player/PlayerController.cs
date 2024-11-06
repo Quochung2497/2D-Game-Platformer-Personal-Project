@@ -279,6 +279,16 @@ public class PlayerController : MonoBehaviour
             ResetToDefault();
         }
     }
+
+    private int GetDirection()
+    {
+        return pState.lookingRight ? 1 : -1;
+    }
+
+    private int onWallDirection()
+    {
+        return !pState.lookingRight ? 1 : -1;
+    }
     #endregion
     #region Input
     private void GetInput()
@@ -439,11 +449,6 @@ public class PlayerController : MonoBehaviour
         InputEnable = true;
         attackable = true;
         StartCoroutine(DashCooldown());
-    }
-
-    private int GetDirection()
-    {
-        return pState.lookingRight? 1 : -1;
     }
 
     private void PlayDashEffects()
@@ -1000,7 +1005,7 @@ public class PlayerController : MonoBehaviour
         HandleGravity(true);
         Instantiate(sideSpell, attackForwardPoint.position, rotation);
 
-        yield return CompleteCasting("CastingSide");
+        yield return CompleteCasting("CastingSide", 0.35f);
     }
 
     IEnumerator CastUpSpell()
@@ -1008,11 +1013,11 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
         anim.SetBool("isCastingUp", true);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         HandleGravity(true);
-        Instantiate(upSpell, UpAttackPoint.transform);
+        Instantiate(upSpell, transform);
 
-        yield return CompleteCasting("isCastingUp");
+        yield return CompleteCasting("isCastingUp",0.5f);
     }
 
     IEnumerator CastDownSpell()
@@ -1024,13 +1029,13 @@ public class PlayerController : MonoBehaviour
         downSpell.SetActive(true);
         downSpellEffect.SetActive(true);
 
-        yield return CompleteCasting("CastingDown");
+        yield return CompleteCasting("CastingDown", 0.35f);
     }
 
-    IEnumerator CompleteCasting(string animationBoolName)
+    IEnumerator CompleteCasting(string animationBoolName, float delay)
     {
         InputEnable = false;
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(delay);
         InputEnable = true;
         pState.casting = false;
         anim.SetBool(animationBoolName, false);
@@ -1061,8 +1066,17 @@ public class PlayerController : MonoBehaviour
         if (_other.GetComponent<Enemy>() != null && pState.casting)
         {
             _other.GetComponent<Enemy>().EnemyGetsHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
+            Vector3 hitPosition = _other.transform.position;
+            StartCoroutine(SpawnEffectWithDelay(_other.transform.position, 0.2f));
         }
     }
+
+    private IEnumerator SpawnEffectWithDelay(Vector3 position, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Instantiate(playerEffect.HitEnemySplashEffect, position, Quaternion.identity);
+    }
+
     #endregion
     #region Vertical Movement
     private void isFalling()
@@ -1256,11 +1270,6 @@ public class PlayerController : MonoBehaviour
 
             TimeSinceLastJump = wallJumpingDuration;
         }
-    }
-    
-    private int onWallDirection()
-    {
-        return !pState.lookingRight ? 1 : -1;
     }
 
     #endregion
