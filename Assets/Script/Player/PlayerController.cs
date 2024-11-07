@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using UnityEngine.VFX;
 using System.IO;
 using static Unity.VisualScripting.Member;
+using System.Runtime.CompilerServices;
+using Cinemachine;
+using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class PlayerController : MonoBehaviour
 {
@@ -96,8 +99,10 @@ public class PlayerController : MonoBehaviour
     float timeSinceCast;
     [SerializeField] float spellDamage; //upspellexplosion and downspell
     [SerializeField] float downSpellForce; // desolate dive only
-    [SerializeField] GameObject sideSpell, upSpell, downSpell, downSpellEffect;
+    [SerializeField] GameObject sideSpell, upSpell, diveExplosion, diveFireVfx;
+    [SerializeField] private GameObject chargeOrb_Point, chargeOrb_EndPoint;
     private float castOrHealTimer;
+    [SerializeField] private CameraShakeProfile downSpellShake_profile;
     [Space(5)]
     [Header("Camera Stuff")]
     [SerializeField] private float playerFallSpeedThreshold = -10;
@@ -142,6 +147,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     [HideInInspector] public PlayerStateList pState;
     private bool canFlash = true;
+    private CinemachineImpulseSource impulseSource;
 
 
     void Start()
@@ -173,6 +179,7 @@ public class PlayerController : MonoBehaviour
     private void CharacterStart()
     {
         GameObject.DontDestroyOnLoad(this.gameObject);
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentFallSpeed = 0.0f;
@@ -197,6 +204,7 @@ public class PlayerController : MonoBehaviour
         if (pState.cutscenes) return;
         RestoreTimeScale();
         FlashWhileInvincible();
+        
         UpdateCameraYDampForPlayerFall();
         if (pState.dashing || !pState.alive) { return; }
         if (InputEnable && pState.alive)
@@ -229,7 +237,7 @@ public class PlayerController : MonoBehaviour
             {
                 CastSpell();
             }
-            isFalling(); 
+            isFalling();
             Attack();
             Recoil();
         }
@@ -370,7 +378,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Nếu có thể di chuyển
-        if (canMove)
+        if (canMove && !pState.casting)
         {
             // Đặt vận tốc ngang của nhân vật dựa trên đầu vào, giữ nguyên vận tốc dọc
             rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
@@ -531,7 +539,7 @@ public class PlayerController : MonoBehaviour
             comboStep = 0;
         }
     }
-    private void attackForward(int comboStep)
+    public void attackForward(int comboStep)
     {
         float finalDamageMultiplier = 1.0f; // Hệ số sát thương mặc định cho đòn đầu tiên
         float recoilSpeedMultiplier = 1.0f; // Hệ số hồi phản lực mặc định cho đòn đầu tiên
@@ -561,12 +569,12 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Sat thuong gay ra la " + finalDamage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
-    private void attackUp()
+    public void attackUp()
     {
         Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed,damage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
-    private void attackDown()
+    public void attackDown()
     {
         Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed, damage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
@@ -748,7 +756,7 @@ public class PlayerController : MonoBehaviour
 
     private void FlashWhileInvincible()
     {
-        if (pState.Invincible && !pState.cutscenes)
+        if (pState.Invincible && !pState.cutscenes && !pState.casting)
         {
             if (Time.timeScale > 0.2 && canFlash)
             {
@@ -946,7 +954,7 @@ public class PlayerController : MonoBehaviour
     #region CastSpell
     void CastSpell()
     {
-        if (Input.GetButtonDown("CastSpell") && castOrHealTimer <= 0.05f && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !Walled())
+        if (Input.GetButtonDown("CastSpell") && castOrHealTimer <= 0.05f && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !Walled() && !pState.casting)
         {
             pState.casting = true;
             timeSinceCast = 0;
@@ -960,21 +968,13 @@ public class PlayerController : MonoBehaviour
         {
             castOrHealTimer = 0;
         }
-        if (Grounded())
-        {
-            //disable downspell if on the ground
-            DisableDownSpell();
-        }
-        //if down spell is active, force player down until grounded
-        if (downSpell.activeInHierarchy)
-        {
-            rb.velocity += downSpellForce * Vector2.down;
-        }
     }
 
     IEnumerator CastCoroutine()
     {
         Mana -= manaSpellCost;
+        pState.Invincible = true;
+        canMove = false;
         if (IsCastingSideSpell())
         {
             yield return CastSideSpell();
@@ -994,58 +994,60 @@ public class PlayerController : MonoBehaviour
 
     private bool IsCastingDownSpell() => yAxis < 0 && !Grounded();
 
-    IEnumerator CastSideSpell()
+    private IEnumerator CastSideSpell()
     {
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[6]);
         anim.SetBool("CastingSide", true);
         int direction = GetDirection();
         Quaternion rotation = direction == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
-        Instantiate(playerEffect.StartSideCastVfx,wallCheckPoint.position,rotation);
+        Instantiate(playerEffect.startSideCastVfx,wallCheckPoint.position,rotation);
         yield return new WaitForSeconds(0.2f);
         HandleGravity(true);
         Instantiate(sideSpell, attackForwardPoint.position, rotation);
-
         yield return CompleteCasting("CastingSide", 0.35f);
     }
 
-    IEnumerator CastUpSpell()
+    private IEnumerator CastUpSpell()
     {
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
         anim.SetBool("isCastingUp", true);
-
         yield return new WaitForSeconds(0.1f);
         HandleGravity(true);
         Instantiate(upSpell, transform);
-
         yield return CompleteCasting("isCastingUp",0.5f);
     }
 
-    IEnumerator CastDownSpell()
+    private IEnumerator CastDownSpell()
     {
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[7]);
         anim.SetBool("CastingDown", true);
-        yield return new WaitForSeconds(0.15f);
-
-        downSpell.SetActive(true);
-        downSpellEffect.SetActive(true);
-
-        yield return CompleteCasting("CastingDown", 0.35f);
+        HandleGravity(true);
+        yield return new WaitForSeconds(0.5f);
+        HandleGravity(false);
+        GameObject diveVfx = Instantiate(playerEffect.diveVfx, FootCheckPoint.transform);
+        while (!Grounded())
+        {
+            rb.velocity += downSpellForce * Vector2.down;
+            yield return null;
+        }
+        Destroy(diveVfx);
+        anim.SetBool("CastingDown", false);
+        anim.SetBool("DownSpellGround", true);
+        CameraManager.instance.CameraShakeFromProfile(downSpellShake_profile, impulseSource);
+        diveExplosion.SetActive(true);
+        yield return CompleteCasting("DownSpellGround", 0.35f);
     }
 
     IEnumerator CompleteCasting(string animationBoolName, float delay)
     {
         InputEnable = false;
         yield return new WaitForSeconds(delay);
+        pState.Invincible = false;
         InputEnable = true;
+        canMove = true;
         pState.casting = false;
         anim.SetBool(animationBoolName, false);
         HandleGravity(false);
-    }
-
-    private void DisableDownSpell()
-    {
-        downSpell.SetActive(false);
-        downSpellEffect.SetActive(false);
     }
 
     private void HandleGravity(bool disableGravity)
@@ -1075,6 +1077,32 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Instantiate(playerEffect.HitEnemySplashEffect, position, Quaternion.identity);
+    }
+
+    public void ChargeOrb()
+    {
+        GameObject orb = Instantiate(playerEffect.chargeOrbVfx, chargeOrb_Point.transform);
+        StartCoroutine(MoveOrbToEndPoint(orb));
+    }
+
+    private IEnumerator MoveOrbToEndPoint(GameObject orb)
+    {
+        yield return new WaitForSeconds(0.15f);
+        while (orb != null && Vector3.Distance(orb.transform.position, chargeOrb_EndPoint.transform.position) > 0.1f)
+        {
+            orb.transform.position = Vector3.MoveTowards(orb.transform.position, chargeOrb_EndPoint.transform.position, dashSpeed * Time.deltaTime);
+
+            yield return null;
+        }
+    }
+
+    public void ChargeOrbExplode()
+    {
+        Instantiate(playerEffect.chargeOrbExplosionVfx, FootCheckPoint.transform);
+    }
+    public void DiveFireExplode()
+    {
+        diveFireVfx.SetActive(true);
     }
 
     #endregion
@@ -1175,7 +1203,9 @@ public class PlayerController : MonoBehaviour
 
                 anim.SetTrigger("DoubleJump");
 
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+                float doubleJumpForce = jumpForce + 5;
+
+                rb.velocity = new Vector3(rb.velocity.x, doubleJumpForce);
 
                 PlayerParticles.WingVfx();
 

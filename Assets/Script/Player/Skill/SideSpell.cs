@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,15 +11,19 @@ public class SideSpell : MonoBehaviour
     [SerializeField] float lifetime = 1f;
     [Header("HitObjectVfx")]
     [SerializeField] private GameObject HitObjectSplashEffect;
+    [SerializeField] private CameraShakeProfile shakeProfile;
+
+    private CinemachineImpulseSource impulseSource;
 
     void Start()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+        StartCoroutine(ShakeCamera());
         Destroy(gameObject, lifetime);
     }
 
     private void FixedUpdate()
     {
-        // Di chuyển đạn với tốc độ đã được điều chỉnh theo thời gian thực
         transform.position += (speed * Time.fixedDeltaTime * transform.right);
     }
 
@@ -37,7 +42,6 @@ public class SideSpell : MonoBehaviour
     }
     private void HandleCollisionWithEnemy(Collider2D enemyCollider)
     {
-        // Đảm bảo rằng Enemy có script với phương thức EnemyGetsHit phù hợp
         Enemy enemy = enemyCollider.GetComponent<Enemy>();
         if (enemy != null)
         {
@@ -49,18 +53,22 @@ public class SideSpell : MonoBehaviour
     }
     private void HandleCollision(GameObject effect)
     {
-        // Kích hoạt hiệu ứng và hủy đạn khi đụng tường hoặc mặt đất
         ActiveEffect(effect);
         Destroy(gameObject);
     }
 
     private void ActiveEffect(GameObject effect)
     {
-        // Xác định hướng và góc quay của HitEnemySplashEffect dựa trên hướng của đạn
         Quaternion rotation = transform.right.x > 0
-            ? Quaternion.Euler(0, 180, 0)          // Nếu đạn bắn từ trái sang phải
-            : Quaternion.Euler(0, 0, 0);       // Nếu đạn bắn từ phải sang trái
+            ? Quaternion.Euler(0, 180, 0)         
+            : Quaternion.Euler(0, 0, 0);       
 
         Instantiate(effect, transform.position, rotation);
+    }
+
+    private IEnumerator ShakeCamera()
+    {
+        yield return new WaitForSeconds(0.2f);
+        CameraManager.instance.CameraShakeFromProfile(shakeProfile, impulseSource);
     }
 }

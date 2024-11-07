@@ -3875,11 +3875,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!66 &327524499 stripped
-CompositeCollider2D:
-  m_CorrespondingSourceObject: {fileID: 4749627856215145948, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
-  m_PrefabInstance: {fileID: 5376352826969122673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &334652061
 GameObject:
   m_ObjectHideFlags: 0
@@ -13478,37 +13473,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1050412731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7160640090447497407, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
-  m_PrefabInstance: {fileID: 5376352826969122673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1050412732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8293126709058239136, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
   m_PrefabInstance: {fileID: 5376352826969122673}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050412731}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1050412734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050412731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 327524499}
-  m_Damping: 0.5
-  m_MaxWindowSize: -1
 --- !u!1 &1067400892
 GameObject:
   m_ObjectHideFlags: 0
@@ -27942,8 +27917,8 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 307694729142394162, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
-    - {fileID: 8634021796780958742, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+    - {fileID: 349442779308899917, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+    - {fileID: 3982763704923280015, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -27953,9 +27928,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4507983992922883454, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2009600037}
-    - targetCorrespondingSourceObject: {fileID: 7160640090447497407, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1050412734}
   m_SourcePrefab: {fileID: 100100000, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
 --- !u!1 &5376352826969122674 stripped
 GameObject:
@@ -28695,6 +28667,10 @@ PrefabInstance:
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: fallThreshold
       value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
+      propertyPath: manaSpellCost
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 3366252868761052746, guid: e31a9e84c538200478fdeabadc2d8053, type: 3}
       propertyPath: manaDrainSpeed

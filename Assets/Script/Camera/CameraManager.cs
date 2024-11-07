@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] CinemachineVirtualCamera[] allVirtualCameras;
+    [SerializeField] private CinemachineVirtualCamera[] allVirtualCameras;
+
 
     private CinemachineVirtualCamera currentCamera;
     private CinemachineFramingTransposer framingTransposer;
@@ -18,6 +20,7 @@ public class CameraManager : MonoBehaviour
     public bool isLerpingYDamping;
     public bool hasLerpedYDamping;
 
+    private CinemachineImpulseDefinition impulseDefinition;
     private float normalYDamp;
 
     void Awake()
@@ -33,6 +36,11 @@ public class CameraManager : MonoBehaviour
                 currentCamera = allVirtualCameras[i];
 
                 framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            }
+            var impulseListener = allVirtualCameras[i].GetComponent<CinemachineImpulseListener>();
+            if (impulseListener == null)
+            {
+                impulseListener = allVirtualCameras[i].gameObject.AddComponent<CinemachineImpulseListener>();
             }
         }
         normalYDamp = framingTransposer.m_YDamping;
@@ -74,5 +82,35 @@ public class CameraManager : MonoBehaviour
             yield return null;
         }
         isLerpingYDamping = false;
+    }
+    public void CameraShakeFromProfile(CameraShakeProfile profile, CinemachineImpulseSource impulseSource)
+    {
+        //apply settings
+        SetupCameraShakeSettings(profile, impulseSource);
+        //camerashake
+        impulseSource.GenerateImpulseWithForce(profile.impactForce);
+    }
+    private void SetupCameraShakeSettings(CameraShakeProfile profile, CinemachineImpulseSource impulseSource)
+    {
+        impulseDefinition = impulseSource.m_ImpulseDefinition;
+        //change impulse source settings
+        impulseDefinition.m_ImpulseDuration = profile.impactTime;
+        impulseSource.m_DefaultVelocity = profile.defaultVelocity;
+        impulseDefinition.m_CustomImpulseShape = profile.impulseCurve;
+
+        //change impulse listener settings
+        foreach (var virtualCamera in allVirtualCameras)
+        {
+            if (virtualCamera.enabled)
+            {
+                var impulseListener = virtualCamera.GetComponent<CinemachineImpulseListener>();
+                if (impulseListener != null)
+                {
+                    impulseListener.m_ReactionSettings.m_AmplitudeGain = profile.listenerAmplitude;
+                    impulseListener.m_ReactionSettings.m_FrequencyGain = profile.listenerFrequency;
+                    impulseListener.m_ReactionSettings.m_Duration = profile.listenerDuration;
+                }
+            }
+        }
     }
 }

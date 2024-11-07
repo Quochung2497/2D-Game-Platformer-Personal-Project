@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 107218659
   m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -361311743, guid: 68c6a518e3ef69340b45882780570f40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   detectDistance: 5
   destroyDelay: 3
   scoreValue: 1
-  rb: {fileID: 0}
+  enemyRb: {fileID: 0}
   _animator: {fileID: 0}
   flipWaitTime: 1
   ledgeCheckX: 1.2

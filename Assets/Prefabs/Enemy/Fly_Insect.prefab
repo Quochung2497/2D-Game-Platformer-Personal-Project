@@ -99,7 +99,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 107218659
   m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -388551280, guid: c855c1900337cb84d9e5cb9e5260e7fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
   detectDistance: 8
   destroyDelay: 3
   scoreValue: 1
-  rb: {fileID: 0}
+  enemyRb: {fileID: 0}
   _animator: {fileID: 0}
   stunDuration: 0.5
 --- !u!114 &1152903824045391442

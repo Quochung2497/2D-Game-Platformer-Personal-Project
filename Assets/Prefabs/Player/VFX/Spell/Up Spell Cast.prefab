@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8789788584289437887}
   - component: {fileID: 5978851071490984165}
   - component: {fileID: 8797972265364497544}
+  - component: {fileID: 8356702901897179911}
   m_Layer: 0
   m_Name: Up Spell Cast
   m_TagString: Untagged
@@ -157,6 +158,7 @@ MonoBehaviour:
   splashVfx: {fileID: 2687840321149421290, guid: bdbda0e9e4c282a4da340d137efcc4b3, type: 3}
   bubblevfx: {fileID: 1223622441185392553, guid: f2f790e07d93dd94e950be7ac397f172, type: 3}
   delay: 0.01
+  shakeProfile: {fileID: 11400000, guid: fa26ca628fc52b849bb5edf33e6837f2, type: 2}
 --- !u!114 &5978851071490984165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +203,59 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011306448, y: 1.4863057}
+  m_Offset: {x: 0.03375225, y: 1.6434262}
   serializedVersion: 2
-  m_Radius: 1.3540941
+  m_Radius: 1.3840221
+--- !u!114 &8356702901897179911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018520124437891003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 3
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.3
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}

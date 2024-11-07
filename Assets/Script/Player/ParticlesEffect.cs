@@ -27,8 +27,10 @@ public class ParticlesEffect : MonoBehaviour
     [Header("WingVfx")]
     public GameObject DoubleJumpWing;
     [Header("Spellvfx")]
-    public GameObject StartSideCastVfx;
-
+    public GameObject startSideCastVfx;
+    public GameObject chargeOrbVfx;
+    public GameObject chargeOrbExplosionVfx;
+    public GameObject diveVfx;
 
     [Header("LeafVfx")]
     public ParticleSystem leafVfx;

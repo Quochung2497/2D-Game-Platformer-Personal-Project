@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: f9e123e63aaa09541bc1a94eb911a397
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dive_Vfx_4
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 4313
+        width: 206
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f56ed010df7e94e9f9a7f3ac1a925f
+      internalID: -840372488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_5
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 4345
+        width: 204
+        height: 395
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd2c9952d80f6b438358bea4beb1625
+      internalID: -1172951044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_7
+      rect:
+        serializedVersion: 2
+        x: 2408
+        y: 4332
+        width: 214
+        height: 349
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b487039eb9662d54a9d8434505ddc110
+      internalID: 1466913174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_12
+      rect:
+        serializedVersion: 2
+        x: 3331
+        y: 4343
+        width: 361
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b7e8da0598ace4fbad9e5d27f549c1
+      internalID: 2023778863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_13
+      rect:
+        serializedVersion: 2
+        x: 4328
+        y: 4345
+        width: 346
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62801388c036584caf8179b026609f3
+      internalID: 898967879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_17
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 3419
+        width: 288
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e05be02f2567704e88f83b7f36b9b04
+      internalID: -1415998489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_18
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 3423
+        width: 329
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1018ce897b9008b4cadc58c2df0bd010
+      internalID: 1245251131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_20
+      rect:
+        serializedVersion: 2
+        x: 4315
+        y: 3385
+        width: 391
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a721ddd85450034b867c62baf242c2d
+      internalID: -1647381978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_22
+      rect:
+        serializedVersion: 2
+        x: 2343
+        y: 3375
+        width: 383
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed273fd0d65d62b4e847d0d2c52ff994
+      internalID: 1399089777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_23
+      rect:
+        serializedVersion: 2
+        x: 3341
+        y: 3367
+        width: 366
+        height: 98
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc1f37ede171a047b699cd332e732c3
+      internalID: -1065725295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_31
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2399
+        width: 387
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b307e27022d9b54fb4fc762444805a2
+      internalID: -2037073217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_32
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 2369
+        width: 302
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0ebc14dd96b0a458b4bb518ceddd52
+      internalID: 587180607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_34
+      rect:
+        serializedVersion: 2
+        x: 4347
+        y: 2359
+        width: 307
+        height: 235
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2a8ac009d37104992c5085810d4dd2
+      internalID: 1724045796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_39
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 2357
+        width: 391
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcef58413d71cc1409add5eb65492d8b
+      internalID: 1772541594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_40
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 2371
+        width: 372
+        height: 98
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a47de1209165bd479b9b9b439bafce0
+      internalID: 1074050734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_54
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1343
+        width: 314
+        height: 287
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d40921c769f1a5439571f3e482e3ab3
+      internalID: 1030654151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_55
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1329
+        width: 325
+        height: 274
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b47a694cbf723745b121566bec5aeb7
+      internalID: -780005624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_58
+      rect:
+        serializedVersion: 2
+        x: 2343
+        y: 1300
+        width: 357
+        height: 278
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2e4258e9cdcff4d92a7d93ba37c0c6
+      internalID: 669234295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_61
+      rect:
+        serializedVersion: 2
+        x: 3241
+        y: 1281
+        width: 361
+        height: 289
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f26825a5c528444e94b6140083d5922
+      internalID: 2127065785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_63
+      rect:
+        serializedVersion: 2
+        x: 4304
+        y: 1318
+        width: 340
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce7ff0f14eaa6147ae8fe3f989cf16a
+      internalID: -1141305557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_99
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 400
+        width: 355
+        height: 182
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9610527e41458b14097c50d9495b4ec5
+      internalID: -1719490003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dive_Vfx_104
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 370
+        width: 360
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef55a1c22e286884d95bc71a01d7a5de
+      internalID: 620374021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Dive_Vfx_0: -309531329
+      Dive_Vfx_1: -48444323
+      Dive_Vfx_10: 302677821
+      Dive_Vfx_100: -1784247248
+      Dive_Vfx_101: -684147910
+      Dive_Vfx_102: 1470727630
+      Dive_Vfx_103: 1920352601
+      Dive_Vfx_104: 620374021
+      Dive_Vfx_105: -2080974238
+      Dive_Vfx_106: -1633479639
+      Dive_Vfx_107: -573852298
+      Dive_Vfx_108: 568320115
+      Dive_Vfx_109: -481566639
+      Dive_Vfx_11: -1123917436
+      Dive_Vfx_12: 2023778863
+      Dive_Vfx_13: 898967879
+      Dive_Vfx_14: -2067190677
+      Dive_Vfx_15: 1151434178
+      Dive_Vfx_16: 708525756
+      Dive_Vfx_17: -1415998489
+      Dive_Vfx_18: 1245251131
+      Dive_Vfx_19: 1038443835
+      Dive_Vfx_2: 16856977
+      Dive_Vfx_20: -1647381978
+      Dive_Vfx_21: 1765719402
+      Dive_Vfx_22: 1399089777
+      Dive_Vfx_23: -1065725295
+      Dive_Vfx_24: -264871376
+      Dive_Vfx_25: -1328937756
+      Dive_Vfx_26: -273398009
+      Dive_Vfx_27: 844281570
+      Dive_Vfx_28: 1721453976
+      Dive_Vfx_29: -1509809477
+      Dive_Vfx_3: -820406308
+      Dive_Vfx_30: 1179572059
+      Dive_Vfx_31: -2037073217
+      Dive_Vfx_32: 587180607
+      Dive_Vfx_33: 319002869
+      Dive_Vfx_34: 1724045796
+      Dive_Vfx_35: 1595905192
+      Dive_Vfx_36: 1843500898
+      Dive_Vfx_37: 1793886065
+      Dive_Vfx_38: 1743792749
+      Dive_Vfx_39: 1772541594
+      Dive_Vfx_4: -840372488
+      Dive_Vfx_40: 1074050734
+      Dive_Vfx_41: 1443138628
+      Dive_Vfx_42: 191111183
+      Dive_Vfx_43: 57150170
+      Dive_Vfx_44: 917618095
+      Dive_Vfx_45: 331736146
+      Dive_Vfx_46: -554651571
+      Dive_Vfx_47: 1351332161
+      Dive_Vfx_48: -1943243021
+      Dive_Vfx_49: 1378261332
+      Dive_Vfx_5: -1172951044
+      Dive_Vfx_50: 412255109
+      Dive_Vfx_51: 1855652603
+      Dive_Vfx_52: -1283624244
+      Dive_Vfx_53: 1716621480
+      Dive_Vfx_54: 1030654151
+      Dive_Vfx_55: -780005624
+      Dive_Vfx_56: -228021264
+      Dive_Vfx_57: -1789135023
+      Dive_Vfx_58: 669234295
+      Dive_Vfx_59: 334321567
+      Dive_Vfx_6: -1409705769
+      Dive_Vfx_60: 1032312066
+      Dive_Vfx_61: 2127065785
+      Dive_Vfx_62: -2121476042
+      Dive_Vfx_63: -1141305557
+      Dive_Vfx_64: -1875955611
+      Dive_Vfx_65: -2031450730
+      Dive_Vfx_66: -449484826
+      Dive_Vfx_67: 794157776
+      Dive_Vfx_68: -56286695
+      Dive_Vfx_69: 1681551411
+      Dive_Vfx_7: 1466913174
+      Dive_Vfx_70: 2073744738
+      Dive_Vfx_71: -1895479083
+      Dive_Vfx_72: -1573354074
+      Dive_Vfx_73: 28468524
+      Dive_Vfx_74: 355934924
+      Dive_Vfx_75: -951563429
+      Dive_Vfx_76: 1405970131
+      Dive_Vfx_77: -364062126
+      Dive_Vfx_78: -1717620811
+      Dive_Vfx_79: 1494972236
+      Dive_Vfx_8: -99877031
+      Dive_Vfx_80: -646244756
+      Dive_Vfx_81: 1562035367
+      Dive_Vfx_82: -29562352
+      Dive_Vfx_83: -761518585
+      Dive_Vfx_84: 1298728180
+      Dive_Vfx_85: 1671353622
+      Dive_Vfx_86: 1095231630
+      Dive_Vfx_87: 839686402
+      Dive_Vfx_88: 1989762191
+      Dive_Vfx_89: -1166673111
+      Dive_Vfx_9: -1990998566
+      Dive_Vfx_90: 389318159
+      Dive_Vfx_91: 1145999006
+      Dive_Vfx_92: -588402159
+      Dive_Vfx_93: -834321721
+      Dive_Vfx_94: 1374306683
+      Dive_Vfx_95: 1348385914
+      Dive_Vfx_96: -1252197332
+      Dive_Vfx_97: -415646943
+      Dive_Vfx_98: 1515088695
+      Dive_Vfx_99: -1719490003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

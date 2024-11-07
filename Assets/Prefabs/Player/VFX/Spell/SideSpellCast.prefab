@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2307602720812486679}
   - component: {fileID: 6093135140181278961}
   - component: {fileID: 2635873197908345544}
+  - component: {fileID: 392231955011150009}
   m_Layer: 0
   m_Name: SideSpellCast
   m_TagString: Untagged
@@ -170,8 +171,8 @@ MonoBehaviour:
   hitForce: 3
   speed: 25
   lifetime: 2
-  HitEnemySplashEffect: {fileID: 3227951610469796732, guid: 76074f652c92c3441bbf9e8d5bb5319b, type: 3}
   HitObjectSplashEffect: {fileID: 6271839846001733634, guid: 8a97a3d4f3cc4284fbf3acd24efa8138, type: 3}
+  shakeProfile: {fileID: 11400000, guid: 93188b5ef9a0bcb41a66dd319fedc1ca, type: 2}
 --- !u!50 &2635873197908345544
 Rigidbody2D:
   serializedVersion: 4
@@ -199,3 +200,56 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &392231955011150009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161203769496979086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
