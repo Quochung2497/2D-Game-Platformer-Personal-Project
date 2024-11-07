@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float FootCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private LayerMask WhatIsWater;
+    [SerializeField] private LayerMask WhatIsEnemy;
     [Space(5)]
 
     [Header("Dash Settings")]
@@ -102,6 +103,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject sideSpell, upSpell, diveExplosion, diveFireVfx;
     [SerializeField] private GameObject chargeOrb_Point, chargeOrb_EndPoint;
     private float castOrHealTimer;
+    private bool hitEnemyDuringSpell = false;
     [SerializeField] private CameraShakeProfile downSpellShake_profile;
     [Space(5)]
     [Header("Camera Stuff")]
@@ -400,6 +402,10 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.ResetTrigger("StopTrigger"); // Thiết lập lại trigger dừng nếu đang di chuyển
+        }
+        if(IsOnEnemy())
+        {
+            rb.velocity = new Vector2(walkSpeed * 2, rb.velocity.y);
         }
     }
     #endregion
@@ -888,6 +894,19 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+    public bool IsOnEnemy()
+    {
+        if (Physics2D.Raycast(FootCheckPoint.position, Vector2.down, FootCheckY, WhatIsEnemy)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsEnemy)
+            || Physics2D.Raycast(FootCheckPoint.position + new Vector3(-FootCheckY, 0, 0), Vector2.down, FootCheckY, WhatIsEnemy))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     private bool Walled()
     {
         return Physics2D.OverlapCircle(wallCheckPoint.position, 0.2f, wallLayer);
@@ -1025,7 +1044,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         HandleGravity(false);
         GameObject diveVfx = Instantiate(playerEffect.diveVfx, FootCheckPoint.transform);
-        while (!Grounded())
+        hitEnemyDuringSpell = false;
+        while (!Grounded() && !hitEnemyDuringSpell)
         {
             rb.velocity += downSpellForce * Vector2.down;
             yield return null;
@@ -1070,6 +1090,10 @@ public class PlayerController : MonoBehaviour
             _other.GetComponent<Enemy>().EnemyGetsHit(spellDamage, (_other.transform.position - transform.position).normalized, -recoilYSpeed);
             Vector3 hitPosition = _other.transform.position;
             StartCoroutine(SpawnEffectWithDelay(_other.transform.position, 0.2f));
+            if (anim.GetBool("CastingDown"))
+            {
+                hitEnemyDuringSpell = true;
+            }
         }
     }
 

@@ -577,6 +577,9 @@ MonoBehaviour:
   WhatIsWater:
     serializedVersion: 2
     m_Bits: 4112
+  WhatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 64
   dashSpeed: 20
   dashTime: 0.2
   dashCooldown: 0.4
