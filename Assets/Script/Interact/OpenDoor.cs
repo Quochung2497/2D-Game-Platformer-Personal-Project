@@ -13,7 +13,8 @@ public class OpenDoor : MonoBehaviour
         if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             PlayerController.Instance.Interact();
-            Door.OpeningDoor();
+            //Door.OpeningDoor();
+            Door.OpenDoor();
             PlayerController.Instance.WalkIntoDoor();
         }
     }

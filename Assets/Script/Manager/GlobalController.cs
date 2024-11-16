@@ -15,7 +15,7 @@ public class GlobalController : MonoBehaviour
     public Vector2 platformingRespawnPoint;
     public Vector2 respawnPoint;
     [SerializeField] Vector2 defaultRespawnPoint;
-    [SerializeField] Bench bench;
+    private Bench bench;
 
     //private Bench currentBench;
     public static GlobalController instance { get; private set; }
@@ -38,9 +38,8 @@ public class GlobalController : MonoBehaviour
         {
             instance = this;
         }
-        SaveScene();
-
         DontDestroyOnLoad(gameObject);
+        SaveScene();
         if (PlayerController.Instance != null)
         {
             if (PlayerController.Instance.halfMana)
@@ -86,7 +85,6 @@ public class GlobalController : MonoBehaviour
     IEnumerator OpenTeleportationPoint()
     {
         yield return new WaitForSeconds(1);
-        OpenDoorFromBack.Instance.Enable();
         SecretSceneTranstition.Instance.Enable();
     }
 

@@ -166,7 +166,8 @@ public class ChargeEnemy : Enemy
                 yield return null;
             }
         }
-        Destroy(gameObject);
+        ResetStats();
+        ChargeEnemyPool.Instance.ReturnEnemyToPool(gameObject);
     }
     public override void TrapHit(float _damageDone)
     {
@@ -182,6 +183,11 @@ public class ChargeEnemy : Enemy
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
-
+    public override void ResetStats()
+    {
+        base.ResetStats();
+        timer = 0;
+        isFacingPlayer = false;
+    }
 }
 

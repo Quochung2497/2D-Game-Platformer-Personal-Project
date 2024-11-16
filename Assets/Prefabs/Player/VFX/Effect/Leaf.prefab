@@ -106,9 +106,9 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -677,7 +677,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 180, y: 0, z: 0}
@@ -760,7 +760,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2
+      value: 1.4
       mode: 0
       spread: 0
       speed:
@@ -990,7 +990,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 3
-        minScalar: 1
+        minScalar: 2
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1054,12 +1054,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: -0.040712357
-          outSlope: -0.040712357
+          value: 0
+          inSlope: 7.8255563
+          outSlope: 7.8255563
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.12778644
+          value: 1
+          inSlope: -0.01881957
+          outSlope: -0.01881957
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.7
@@ -2500,7 +2509,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2663,7 +2672,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2717,7 +2726,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0
+    dampen: 0.004
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -4884,7 +4893,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 107218659
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: -30
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

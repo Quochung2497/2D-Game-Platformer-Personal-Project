@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &83166383
 GameObject:
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &99729129 stripped
 GameObject:
@@ -5226,6 +5226,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7071573480994942507, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
   m_PrefabInstance: {fileID: 5296679078234626728}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &99729133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99729129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxMultiplier: {x: 0.1, y: 0.1}
+  InfiniteScrolling: 0
 --- !u!20 &100965067 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
@@ -6150,7 +6164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.8, y: 0.8}
+  parallaxMultiplier: {x: 0.9, y: 0.9}
   InfiniteScrolling: 0
 --- !u!1 &512371729
 GameObject:
@@ -7270,7 +7284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &880560614
 GameObject:
@@ -7444,7 +7458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &897365303
 GameObject:
@@ -12304,8 +12318,8 @@ Transform:
   m_GameObject: {fileID: 916462197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.38, y: 1.1321, z: 0}
-  m_LocalScale: {x: 5, y: 0.32157385, z: 1}
+  m_LocalPosition: {x: 0.38, y: 1.08, z: 0}
+  m_LocalScale: {x: 11.37, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122588416}
@@ -12369,12 +12383,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1579492591
-  m_SortingLayer: 5
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a550899388076bb4fa098ab03de71044, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.28235295}
-  m_FlipX: 0
+  m_SortingLayerID: 107218659
+  m_SortingLayer: 2
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 00a2360f47a3c9e4fb1bf796baaaed75, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 40, y: 0.62}
@@ -12419,14 +12433,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 0.62}
+    oldSize: {x: 3.47, y: 0.47}
     newSize: {x: 40, y: 0.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.62}
+  m_Size: {x: 3.47, y: 0.47}
   m_EdgeRadius: 0
 --- !u!224 &929376393 stripped
 RectTransform:
@@ -12530,7 +12544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.8, y: 0.8}
+  parallaxMultiplier: {x: 0.9, y: 0.9}
   InfiniteScrolling: 0
 --- !u!1 &969913883
 GameObject:
@@ -13416,7 +13430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1147253885
 GameObject:
@@ -13839,7 +13853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1223743124
 GameObject:
@@ -14104,7 +14118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.8, y: 0.8}
+  parallaxMultiplier: {x: 0.9, y: 0.9}
   InfiniteScrolling: 0
 --- !u!4 &1287108216 stripped
 Transform:
@@ -14208,7 +14222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1315051684
 GameObject:
@@ -14381,13 +14395,29 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].Y
       value: -26227398
       objectReference: {fileID: 0}
+    - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1270226462592587654, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5938377
+      value: 7.777977
       objectReference: {fileID: 0}
     - target: {fileID: 1270226462592587654, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.3793497
+      value: 4.20331
       objectReference: {fileID: 0}
     - target: {fileID: 1376081668641444404, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: allVirtualCameras.Array.size
@@ -14891,7 +14921,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1586185933}
   - component: {fileID: 1586185934}
-  - component: {fileID: 1586185935}
   m_Layer: 12
   m_Name: DistortionEffect
   m_TagString: Untagged
@@ -14966,20 +14995,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1586185935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586185932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.1, y: 0.1}
-  InfiniteScrolling: 0
 --- !u!1 &1694892184
 GameObject:
   m_ObjectHideFlags: 0
@@ -15243,7 +15258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.8, y: 0.8}
+  parallaxMultiplier: {x: 0.9, y: 0.9}
   InfiniteScrolling: 0
 --- !u!1 &1771343573
 GameObject:
@@ -15320,7 +15335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1889927716}
   - component: {fileID: 1889927717}
-  - component: {fileID: 1889927718}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -15395,20 +15409,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1889927718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889927715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0, y: 0}
-  InfiniteScrolling: 0
 --- !u!1 &1964731767
 GameObject:
   m_ObjectHideFlags: 0
@@ -15506,7 +15506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca359107e5765441a642fa1b93f4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMultiplier: {x: 0.2, y: 0.1}
+  parallaxMultiplier: {x: 0.4, y: 0.1}
   InfiniteScrolling: 0
 --- !u!1 &1974244398
 GameObject:
@@ -16060,9 +16060,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 4579460230924698134, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7071573480994942507, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.38
+      value: -9.35
       objectReference: {fileID: 0}
     - target: {fileID: 7071573480994942507, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16103,7 +16107,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4579460230924698134, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 99729133}
   m_SourcePrefab: {fileID: 100100000, guid: 06603c7d1f1ffac4996df64d19ebb3d5, type: 3}
 --- !u!198 &6374833881605424584 stripped
 ParticleSystem:

@@ -93,7 +93,6 @@ public class PatrolEnemy : Enemy
             }
         }
     }
-    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
@@ -102,7 +101,6 @@ public class PatrolEnemy : Enemy
             ChangeState(EnemyStates.Patrol_Idle);
         }
         _playerEnemyDistance = _playerTransform.position.x - _transform.position.x;
-
     }
 
     void Flip()
@@ -154,6 +152,7 @@ public class PatrolEnemy : Enemy
         {
             _isMovable = false;
             die();
+            
             yield return null;
         }
         else
@@ -186,7 +185,6 @@ public class PatrolEnemy : Enemy
         while (destroyDelay > 0)
         {
             destroyDelay -= Time.deltaTime;
-
             if (_spriteRenderer.color.a > 0)
             {
                 Color newColor = _spriteRenderer.color;
@@ -195,8 +193,8 @@ public class PatrolEnemy : Enemy
                 yield return null;
             }
         }
-
-        Destroy(gameObject);
+        ResetStats();
+        PatrolEnemyPool.Instance.ReturnEnemyToPool(gameObject);
     }
 
     public override void AttackPlayer()
@@ -208,5 +206,11 @@ public class PatrolEnemy : Enemy
     public override void Turn()
     {
         ChangeState(EnemyStates.Patrol_Flip);
+    }
+    public override void ResetStats()
+    {
+        base.ResetStats();
+        _isMovable = true;
+        timer = 0;
     }
 }

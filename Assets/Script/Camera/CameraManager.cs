@@ -22,9 +22,9 @@ public class CameraManager : MonoBehaviour
 
     private CinemachineImpulseDefinition impulseDefinition;
     private float normalYDamp;
-
+    private CameraTarget target;
     void Awake()
-        {
+    {
         if (instance == null)
         {
             instance = this;
@@ -47,11 +47,15 @@ public class CameraManager : MonoBehaviour
     }
     private void Start()
     {
+        target = GetComponentInChildren<CameraTarget>();
         for (int i = 0; i < allVirtualCameras.Length; i++)
         {
-            allVirtualCameras[i].Follow = PlayerController.Instance.transform;
+                //allVirtualCameras[i].Follow = PlayerController.Instance.transform;
+                allVirtualCameras[i].Follow = target.transform;
         }
     }
+
+
     public void SwapCamera(CinemachineVirtualCamera _newCam)
     {
         currentCamera.enabled = false;

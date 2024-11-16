@@ -45,14 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdbb34e2a12d0948a6b6dcbf4683837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScore: 0
+  playerName: 
   transitionedFromScene: 
   platformingRespawnPoint: {x: 0, y: 0}
   respawnPoint: {x: 0, y: 0}
   defaultRespawnPoint: {x: 0, y: 0}
-  bench: {fileID: 0}
   player: {fileID: 0}
   shade: {fileID: 0}
-  requiredKills: 2
+  requiredKills: 1
 --- !u!114 &9161216305491683915
 MonoBehaviour:
   m_ObjectHideFlags: 0

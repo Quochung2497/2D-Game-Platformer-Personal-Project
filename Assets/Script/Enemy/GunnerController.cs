@@ -119,7 +119,8 @@ public class GunnerController : Enemy
                 yield return null;
             }
         }
-        Destroy(gameObject);
+        ResetStats();
+        GunnerEnemyPool.Instance.ReturnEnemyToPool(gameObject);
     }
 
     protected override void ChangeCurrentAnimation()

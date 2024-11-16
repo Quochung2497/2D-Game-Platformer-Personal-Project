@@ -293,7 +293,7 @@ MonoBehaviour:
   Hitsound: {fileID: 8300000, guid: 3ad0d0357b7c2684a90bca4e01f8848b, type: 3}
   deathSound: {fileID: 8300000, guid: 6ead9d391f053744f8f4c3ebce009c75, type: 3}
   detectDistance: 8
-  destroyDelay: 3
+  destroyDelay: 2
   scoreValue: 1
   enemyRb: {fileID: 0}
   _animator: {fileID: 0}

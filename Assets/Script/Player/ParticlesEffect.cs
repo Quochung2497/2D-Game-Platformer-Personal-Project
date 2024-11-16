@@ -23,12 +23,12 @@ public class ParticlesEffect : MonoBehaviour
     public GameObject landEffect;
     [Header("DashVfx")]
     public GameObject startDashEffect;
-    public GameObject dashEffect;
     [Header("WingVfx")]
     public GameObject DoubleJumpWing;
     [Header("Spellvfx")]
     public GameObject startSideCastVfx;
     public GameObject chargeOrbVfx;
+    public GameObject chargeOrbParticles;
     public GameObject chargeOrbExplosionVfx;
     public GameObject diveVfx;
 

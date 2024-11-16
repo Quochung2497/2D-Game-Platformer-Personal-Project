@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
         }
+
         DontDestroyOnLoad(gameObject);
 
         sceneFader = GetComponentInChildren<ScreenFader>();

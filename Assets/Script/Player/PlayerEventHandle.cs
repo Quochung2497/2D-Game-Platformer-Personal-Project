@@ -28,4 +28,15 @@ public class PlayerEventHandle : MonoBehaviour
     {
         PlayerController.Instance.DiveFireExplode();
     }
+    public void ChargeOrbPartciles(int index)
+    {
+        if (index == 1)
+        { 
+            PlayerController.Instance.ChargeOrbParticles(true); 
+        }
+        if (index == 0)
+        {
+            PlayerController.Instance.ChargeOrbParticles(false);
+        }
+    }
 }

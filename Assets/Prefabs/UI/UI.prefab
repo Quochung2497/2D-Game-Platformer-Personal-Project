@@ -166,9 +166,8 @@ GameObject:
   - component: {fileID: 9029566342152364134}
   - component: {fileID: 7960163706850598466}
   - component: {fileID: 5860781955264799936}
-  - component: {fileID: 6011799991966836792}
   - component: {fileID: 8687907074154128782}
-  - component: {fileID: 8481416817524595061}
+  - component: {fileID: 6011799991966836792}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -335,6 +334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460ddc02d35a714fbccaeb6a7e40928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8687907074154128782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119677571689902281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9f27252f56e744d8c0273afbe15d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 8300000, guid: 937ec9fc174b8ea4fa8bf11532cd5404, type: 3}
 --- !u!82 &6011799991966836792
 AudioSource:
   m_ObjectHideFlags: 0
@@ -431,31 +443,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8687907074154128782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119677571689902281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9f27252f56e744d8c0273afbe15d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  click: {fileID: 8300000, guid: 937ec9fc174b8ea4fa8bf11532cd5404, type: 3}
---- !u!114 &8481416817524595061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119677571689902281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d43052ddcb68dc45835fdc9af5ae48b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &133046195723154623
 GameObject:
   m_ObjectHideFlags: 0

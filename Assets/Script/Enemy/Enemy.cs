@@ -30,7 +30,6 @@ public abstract class Enemy : MonoBehaviour
 
     public delegate void OnHealthChanged();
     public OnHealthChanged onHealthChangedCallback;
-    // Start is called before the first frame update
     protected enum EnemyStates
     {
         //Patrol
@@ -90,6 +89,14 @@ public abstract class Enemy : MonoBehaviour
         _animator = gameObject.GetComponent<Animator>();
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        health = maxHealth;
+    }
+    public virtual void ResetStats()
+    {
+        health = maxHealth;
+        isRecoiling = false;
+        gameObject.layer = LayerMask.NameToLayer("Attackable");
+        _spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
     protected virtual void Update()

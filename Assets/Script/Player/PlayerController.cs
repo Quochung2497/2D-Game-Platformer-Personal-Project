@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown;
     public bool canDash = true, dashed;
     private float gravity;
+
     [Space(5)]
 
     [Header("Attack Settings")]
@@ -104,10 +105,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject chargeOrb_Point, chargeOrb_EndPoint;
     private float castOrHealTimer;
     private bool hitEnemyDuringSpell = false;
-    [SerializeField] private CameraShakeProfile downSpellShake_profile;
+    
     [Space(5)]
     [Header("Camera Stuff")]
     [SerializeField] private float playerFallSpeedThreshold = -10;
+    //public Transform cameraTarget;
 
     [Header("Wall Jump Settings")]
     [SerializeField] private float wallSlidingSpeed = 2f;
@@ -117,7 +119,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 wallJumpingPower;
     private float wallJumpingDirection;
     private float TimeSinceLastJump = 0;
-
     [Space(5)]
 
     [Header("Audio")]
@@ -126,7 +127,10 @@ public class PlayerController : MonoBehaviour
     [Header("VFX")]
     private ParticlesController PlayerParticles;
     private ParticlesEffect playerEffect;
-    [Header("")]
+
+    [Header("CameraShake")]
+    [SerializeField] private CameraShakeProfile downSpellShake_profile;
+    [SerializeField] private CameraShakeProfile lastAttackShake_profile;
 
     //unlocking 
     public bool unlockedWallJump;
@@ -150,6 +154,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public PlayerStateList pState;
     private bool canFlash = true;
     private CinemachineImpulseSource impulseSource;
+    private PlayerAfterImage _playerAfterImage;
 
 
     void Start()
@@ -189,6 +194,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         PlayerParticles = GetComponentInChildren<ParticlesController>();
         playerEffect = GetComponent<ParticlesEffect>();
+        _playerAfterImage = GetComponent<PlayerAfterImage>();
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = Mana;
@@ -206,7 +212,6 @@ public class PlayerController : MonoBehaviour
         if (pState.cutscenes) return;
         RestoreTimeScale();
         FlashWhileInvincible();
-        
         UpdateCameraYDampForPlayerFall();
         if (pState.dashing || !pState.alive) { return; }
         if (InputEnable && pState.alive)
@@ -216,6 +221,11 @@ public class PlayerController : MonoBehaviour
                 Heal();
             }
             if (!canMove || pState.healing) { return; }
+            if (unlockedWallJump)
+            {
+                WallSlide();
+                WallJump();
+            }
             GetInput();
             ToggleMap();
             if (!pState.isWallJumping && !pState.isWallSliding)
@@ -226,12 +236,8 @@ public class PlayerController : MonoBehaviour
                 UpdateJumpVariables();
             }
             if (openMap) { return; }
-            if (unlockedWallJump)
-            {
-                WallSlide();
-                WallJump();
-            }
-            if (unlockedDash)
+
+            if (unlockedDash && !pState.casting)
             {
                 StartDash();
             }
@@ -256,6 +262,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CameraManager.instance.LerpYDamping(false));
         }
     }
+
     private void CheckMana()
     {
         if (halfMana)
@@ -303,39 +310,33 @@ public class PlayerController : MonoBehaviour
     #region Input
     private void GetInput()
     {
-        xAxis = Input.GetAxisRaw("Horizontal"); // Nhận đầu vào di chuyển ngang (trái: -1, phải: 1, không có đầu vào: 0).
-        yAxis = Input.GetAxisRaw("Vertical"); // Nhận đầu vào di chuyển dọc (tương tự ngang).
-        attack = Input.GetButtonDown("Attack"); // Kiểm tra nếu nút "Attack" vừa được nhấn.
-        openMap = Input.GetKey(KeyCode.M); // Kiểm tra nếu phím "M" (mở bản đồ) đang được giữ.
+        xAxis = Input.GetAxisRaw("Horizontal"); 
+        yAxis = Input.GetAxisRaw("Vertical"); 
+        attack = Input.GetButtonDown("Attack");
+        openMap = Input.GetKey(KeyCode.M); 
 
-        // Tăng thời gian đếm nếu nhấn nút cast hoặc heal
         if (Input.GetButtonDown("CastSpell") || Input.GetButtonDown("Healing"))
         {
-            castOrHealTimer += Time.deltaTime; // Tăng thời gian đếm theo thời gian mỗi khung hình.
+            castOrHealTimer += Time.deltaTime; 
         }
     }
     #endregion
     #region Horizontal Movement
-    // Phương thức đảo hướng của nhân vật dựa trên đầu vào
     public void Flip()
     {
-        // Nếu di chuyển sang trái trong khi đang đối diện sang phải, lật hướng của nhân vật
         if (xAxis < 0 && isFacingRight)
         {
-            Turn(); // Gọi phương thức để lật hướng
+            Turn();
 
-            // Nếu nhân vật đang đứng trên mặt đất, kích hoạt hoạt ảnh xoay
             if (Grounded())
             {
                 anim.SetTrigger("Rotating");
             }
         }
-        // Nếu di chuyển sang phải trong khi đang đối diện sang trái, lật hướng của nhân vật
         else if (xAxis > 0 && !isFacingRight)
         {
             Turn();
 
-            // Kích hoạt hoạt ảnh xoay nếu nhân vật đang đứng trên mặt đất
             if (Grounded())
             {
                 anim.SetTrigger("Rotating");
@@ -343,65 +344,53 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Phương thức thực hiện xoay nhân vật theo chiều ngang
     private void Turn()
     {
-        // Kiểm tra nếu nhân vật đang đối diện sang phải
         if (isFacingRight)
         {
-            // Xoay nhân vật sang trái (180 độ trên trục Y)
             Vector3 rotator = new Vector3(transform.rotation.x, 180, transform.rotation.z);
             Rotation(rotator);
-            pState.lookingRight = false; // Cập nhật trạng thái hướng của nhân vật
+            pState.lookingRight = false; 
         }
         else
         {
-            // Xoay nhân vật sang phải (0 độ trên trục Y)
             Vector3 rotator = new Vector3(transform.rotation.x, 0, transform.rotation.z);
             Rotation(rotator);
             pState.lookingRight = true;
         }
     }
 
-    // Áp dụng xoay và cập nhật trạng thái hướng của nhân vật
     private void Rotation(Vector3 rotator)
     {
-        transform.rotation = Quaternion.Euler(rotator); // Thực hiện xoay nhân vật.
-        isFacingRight = !isFacingRight; // Đảo hướng của nhân vật
+        transform.rotation = Quaternion.Euler(rotator); 
+        isFacingRight = !isFacingRight;
     }
 
-    // Điều khiển chuyển động của nhân vật dựa trên đầu vào và trạng thái hiện tại
     private void Move()
     {
-        // Nếu đang hồi máu hoặc không thể di chuyển, dừng chuyển động theo cả hai chiều
         if (pState.healing || !canMove || pState.casting)
         {
-            rb.velocity = new Vector2(0, 0); // Đặt vận tốc về 0.
+            rb.velocity = new Vector2(0, 0); 
         }
 
-        // Nếu có thể di chuyển
         if (canMove && !pState.casting)
         {
-            // Đặt vận tốc ngang của nhân vật dựa trên đầu vào, giữ nguyên vận tốc dọc
             rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
 
-            // Nếu nhân vật đang di chuyển và đứng trên mặt đất, bật hoạt ảnh đi bộ
             anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
 
-            // Kích hoạt hiệu ứng hạt (particle) khi đi trên nước hoặc trên đất
             PlayerParticles.FootPrint();
         }
 
-        // Nếu không có đầu vào di chuyển ngang, dừng hoạt ảnh đi bộ và thiết lập lại các trigger
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            anim.SetTrigger("StopTrigger"); // Kích hoạt hoạt ảnh dừng
-            anim.ResetTrigger("Rotating"); // Thiết lập lại trigger xoay
-            anim.SetBool("Walking", false); // Tắt hoạt ảnh đi bộ
+            anim.SetTrigger("StopTrigger"); 
+            anim.ResetTrigger("Rotating"); 
+            anim.SetBool("Walking", false);
         }
         else
         {
-            anim.ResetTrigger("StopTrigger"); // Thiết lập lại trigger dừng nếu đang di chuyển
+            anim.ResetTrigger("StopTrigger"); 
         }
         if(IsOnEnemy())
         {
@@ -429,6 +418,7 @@ public class PlayerController : MonoBehaviour
 
         ExecuteDash();
 
+
         StartCoroutine(EndDash());
     }
 
@@ -449,8 +439,7 @@ public class PlayerController : MonoBehaviour
         int dashDirection = GetDirection();
         rb.gravityScale = 0;
         rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
-        Debug.Log("Dash started - gravityScale: " + rb.gravityScale);
-        Instantiate(playerEffect.dashEffect, transform);
+        //Instantiate(playerEffect.dashEffect, transform);
     }
 
     private IEnumerator EndDash()
@@ -458,10 +447,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashTime);
         ChangeLayer("Player");
         rb.gravityScale = gravity;
-        Debug.Log("Dash ended - gravityScale: " + rb.gravityScale);
         pState.dashing = false;
         InputEnable = true;
         attackable = true;
+        _playerAfterImage.Generate = false;
         StartCoroutine(DashCooldown());
     }
 
@@ -471,6 +460,7 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.PlaySfx(AudioManager.instance.sfx[1]);
         Quaternion rotation = vfxDirection == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
         PlayerParticles.StartDashEffect(rotation);
+        _playerAfterImage.Generate = true;
     }
 
     private void ChangeLayer(string layerName)
@@ -547,42 +537,39 @@ public class PlayerController : MonoBehaviour
     }
     public void attackForward(int comboStep)
     {
-        float finalDamageMultiplier = 1.0f; // Hệ số sát thương mặc định cho đòn đầu tiên
-        float recoilSpeedMultiplier = 1.0f; // Hệ số hồi phản lực mặc định cho đòn đầu tiên
+        float finalDamageMultiplier = 1.0f; 
+        float recoilSpeedMultiplier = 1.0f; 
 
-        // Thiết lập hệ số sát thương và hệ số hồi phản lực cho từng bước combo
-        if (comboStep == 1) // Đòn thứ nhất
+        if (comboStep == 1) 
         {
-            finalDamageMultiplier = 1.0f;  // 100% sát thương
-            recoilSpeedMultiplier = 1.0f;  // Hệ số phản lực thông thường (không thay đổi)
+            finalDamageMultiplier = 1.0f;  
+            recoilSpeedMultiplier = 1.0f;  
         }
-        else if (comboStep == 2) // Đòn thứ hai
+        else if (comboStep == 2)
         {
-            finalDamageMultiplier = 1.25f;  // 125% sát thương
-            recoilSpeedMultiplier = 2.0f;   // Tăng tốc độ hồi phản lực (gấp đôi so với đòn đầu)
+            finalDamageMultiplier = 1.25f;  
+            recoilSpeedMultiplier = 2.0f;   
         }
-        else if (comboStep == 3) // Đòn thứ ba
+        else if (comboStep == 3) 
         {
-            finalDamageMultiplier = 1.5f;  // 150% sát thương
-            recoilSpeedMultiplier = 4.0f;  // Tăng hồi phản lực rất mạnh (gấp 4 lần so với đòn đầu)
+            finalDamageMultiplier = 1.5f;  
+            recoilSpeedMultiplier = 4.0f;  
         }
-
-        // Tăng sát thương dựa trên hệ số
-        float finalDamage = damage * finalDamageMultiplier; // Tính toán sát thương cuối cùng dựa trên hệ số combo
-        float recoilFinalSpeed = recoilXSpeed * recoilSpeedMultiplier; // Tính toán tốc độ hồi phản lực cuối cùng
+        float finalDamage = damage * finalDamageMultiplier; 
+        float recoilFinalSpeed = recoilXSpeed * recoilSpeedMultiplier; 
         int _recoilLeftOrRight = GetDirection();
-        Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilFinalSpeed, finalDamage);
+        Hit(attackForwardPoint, SideAttackRange, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilFinalSpeed, finalDamage, comboStep);
         //Debug.Log("Sat thuong gay ra la " + finalDamage);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     public void attackUp()
     {
-        Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed,damage);
+        Hit(UpAttackPoint, UpAttackRange, ref pState.recoilingY ,Vector2.up, recoilYSpeed,damage, 1);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
     public void attackDown()
     {
-        Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed, damage);
+        Hit(DownAttackPoint, DownAttackRange, ref pState.recoilingY, Vector2.down, recoilYSpeed, damage, 1);
         StartCoroutine(attackCoroutine(attackeffectdelay, AtkInterval));
     }
 
@@ -594,7 +581,7 @@ public class PlayerController : MonoBehaviour
         attackable = true;
     }
 
-    void Hit(Transform _attackTransform, float _attackrange, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrength, float damage)
+    void Hit(Transform _attackTransform, float _attackrange, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrength, float damage, int comboStep)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapCircleAll(_attackTransform.position, _attackrange, attackableLayer);
         List<Enemy> hitEnemies = new List<Enemy>();
@@ -617,6 +604,10 @@ public class PlayerController : MonoBehaviour
                     int randomZrotation = Random.Range(5, 25);
                     Quaternion rotation = direction == 1 ? Quaternion.Euler(0, 0, randomZrotation) : Quaternion.Euler(0, 180, randomZrotation);
                     Instantiate(playerEffect.enemyVfx, _attackTransform.position, rotation);
+                    if (comboStep == 3)
+                    {
+                        CameraManager.instance.CameraShakeFromProfile(lastAttackShake_profile, impulseSource);
+                    }
                 }
             }
             else if(obj)
@@ -628,6 +619,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 
     private void OnDrawGizmosSelected()
     {
@@ -1055,7 +1048,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("DownSpellGround", true);
         CameraManager.instance.CameraShakeFromProfile(downSpellShake_profile, impulseSource);
         diveExplosion.SetActive(true);
-        yield return CompleteCasting("DownSpellGround", 0.35f);
+        yield return CompleteCasting("DownSpellGround", 0.8f);
     }
 
     IEnumerator CompleteCasting(string animationBoolName, float delay)
@@ -1129,6 +1122,11 @@ public class PlayerController : MonoBehaviour
         diveFireVfx.SetActive(true);
     }
 
+    public void ChargeOrbParticles(bool On)
+    {
+        playerEffect.chargeOrbParticles.SetActive(On);
+    }
+
     #endregion
     #region Vertical Movement
     private void isFalling()
@@ -1200,7 +1198,7 @@ public class PlayerController : MonoBehaviour
             pState.Jumping = false;
             isFalling();
         }
-        if (!pState.Jumping)
+        if (!pState.Jumping && !pState.isWallJumping)
         {
             if (JumpBufferCounter > 0 && CoyoteTimeCounter > 0)
             {
@@ -1236,8 +1234,11 @@ public class PlayerController : MonoBehaviour
                 Instantiate(playerEffect.doubleJumpEffect, transform);
 
             }
+            if (!pState.isWallJumping)
+            {
+                anim.SetBool("Jumping", !Grounded());
+            }
         }
-        anim.SetBool("Jumping", !Grounded());
     }
     private void UpdateJumpVariables()
     {
@@ -1289,28 +1290,27 @@ public class PlayerController : MonoBehaviour
             TimeSinceLastJump -= Time.deltaTime;
             pState.isWallJumping = false;
         }
-        if (pState.isWallSliding)
-        {
-            pState.isWallJumping = false;                 // Tắt trạng thái nhảy tường
-            wallJumpingDirection = onWallDirection(); // Xác định hướng nhảy tường dựa trên hướng nhìn của nhân vật
-        }
-
-        // Khi nhấn phím nhảy trong khi trượt tường
         if (Input.GetButtonDown("Jump") && pState.isWallSliding && TimeSinceLastJump <= 0)
         {
-            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]); // Phát âm thanh nhảy
+            AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]); 
 
-            pState.isWallJumping = true;                  // Đặt trạng thái nhảy tường
+            pState.isWallJumping = true;
 
-            anim.SetBool("isWallJump", true);      // Bật hoạt ảnh nhảy tường
+            anim.SetBool("isWallJump", true);
+
+            wallJumpingDirection = onWallDirection();
 
             Vector2 force = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
 
-            if (Mathf.Sign(rb.velocity.x) != Mathf.Sign(force.x))  // Ngược chiều di chuyển so với lực nhảy tường
+            if (Mathf.Sign(rb.velocity.x) != Mathf.Sign(force.x))
+            {
                 force.x -= rb.velocity.x;
+            }
 
-            if (rb.velocity.y < 0)  // Nếu đang rơi, điều chỉnh lực nhảy tường để đảm bảo đủ độ cao
-                force.y -= rb.velocity.y;
+            if (rb.velocity.y < 0)
+            { 
+                force.y -= rb.velocity.y; 
+            }
 
             rb.AddForce(force, ForceMode2D.Impulse);
 
@@ -1320,7 +1320,9 @@ public class PlayerController : MonoBehaviour
 
             Instantiate(playerEffect.wallJumpVfx, wallCheckPoint.transform.position, rotation);
 
-            dashed = false;                        // Đặt lại trạng thái đã nhảy
+            dashed = false;
+
+            Debug.Log("WallJump");
 
             TimeSinceLastJump = wallJumpingDuration;
         }

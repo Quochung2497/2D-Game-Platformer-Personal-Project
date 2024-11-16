@@ -13,7 +13,6 @@ public class TutorialCtrl : MonoBehaviour
 
     private Animator anim;
     private Rigidbody2D rb;
-    // Start is called before the first frame update
     void Awake()
     {
         tut = GetComponentInParent<TutorialManager>();
@@ -21,7 +20,6 @@ public class TutorialCtrl : MonoBehaviour
         rb = PlayerController.Instance.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         tut.ClosePopup();

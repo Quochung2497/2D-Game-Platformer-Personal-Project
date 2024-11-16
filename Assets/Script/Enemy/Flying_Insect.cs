@@ -94,7 +94,8 @@ public class Flying_Insect : Enemy
                 yield return null;
             }
         }
-        Destroy(gameObject);
+        ResetStats();
+        FlyingEnemyPool.Instance.ReturnEnemyToPool(gameObject);
     }
 
     protected override void ChangeCurrentAnimation()
@@ -137,7 +138,6 @@ public class Flying_Insect : Enemy
             enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
         }
     }
-    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
@@ -145,7 +145,7 @@ public class Flying_Insect : Enemy
         {
             ChangeState(EnemyStates.Insect_Idle);
         }
-    _playerEnemyDistance = _playerTransform.position.x - _transform.position.x;
+        _playerEnemyDistance = _playerTransform.position.x - _transform.position.x;
     }
 
     public override void AttackPlayer()
@@ -156,5 +156,10 @@ public class Flying_Insect : Enemy
     public override void Turn()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+    }
+    public override void ResetStats()
+    {
+        base.ResetStats();
+        timer = 0;
     }
 }

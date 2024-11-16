@@ -221,7 +221,7 @@ MonoBehaviour:
   transitionTo: Map 2
   startPoint: {fileID: 9160206902473049056}
   exitDirection: {x: 1, y: 0}
-  exitTime: 0.5
+  exitTime: 0.1
 --- !u!114 &2520987356989719115
 MonoBehaviour:
   m_ObjectHideFlags: 0
