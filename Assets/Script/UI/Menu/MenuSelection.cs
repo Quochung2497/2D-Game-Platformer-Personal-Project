@@ -210,7 +210,11 @@ public class MenuSelection : MonoBehaviour
             canvasGroup.alpha -= Time.unscaledDeltaTime / _seconds;
             yield return null;
         }
-        if (currentIndex == 2)
+        if(currentIndex == 0)
+        {
+            MenuController.instance.InGameMenu();
+        }
+        else if (currentIndex == 2)
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(OptionMenuFirst);
@@ -218,7 +222,6 @@ public class MenuSelection : MonoBehaviour
         }
         left.SetBool("Click", false);
         right.SetBool("Click", false);
-        //CheckMenuState();
         yield return null;
     }
 

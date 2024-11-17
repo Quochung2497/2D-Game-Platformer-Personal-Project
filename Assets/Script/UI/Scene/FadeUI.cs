@@ -10,12 +10,12 @@ public class FadeUI : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
     }
-    public void FadeUIIn(float _seconds)
+    public virtual void FadeUIIn(float _seconds)
     {
         StartCoroutine(FadeIn(_seconds));
     }
 
-    public void FadeUIOut(float _seconds)
+    public virtual void FadeUIOut(float _seconds)
     {
         StartCoroutine(FadeOut(_seconds));
     }

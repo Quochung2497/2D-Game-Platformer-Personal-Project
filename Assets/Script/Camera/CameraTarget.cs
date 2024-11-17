@@ -8,19 +8,19 @@ public class CameraTarget : MonoBehaviour
     private Camera cam;
     private Transform player;
     private Rigidbody2D playerRb;
+
     [SerializeField] private float boundX = 5f;
     [SerializeField] private float boundY = 3f;
     [SerializeField] private float mouseSpeed = 2f;
     [SerializeField] private float movementThreshold = 0.1f;
     [SerializeField] private float canLook = 1f;
-    private float timeCanLook;
 
+    private float timeCanLook;
     private bool isPlayerMoving;
 
     void Start()
     {
-        playerRb = PlayerController.Instance.GetComponent<Rigidbody2D>();
-        player = PlayerController.Instance.transform;
+        InitializePlayerReference();
         cam = Camera.main;
         FollowPlayer();
     }
@@ -28,6 +28,11 @@ public class CameraTarget : MonoBehaviour
     void Update()
     {
         if (cam == null) return;
+        if (PlayerController.Instance == null || player == null || playerRb == null)
+        {
+            MoveToCameraCenter();
+            return;
+        }
         isPlayerMoving = playerRb.velocity.sqrMagnitude > movementThreshold * movementThreshold;
         timeCanLook += Time.deltaTime;
         if (!isPlayerMoving)
@@ -42,6 +47,14 @@ public class CameraTarget : MonoBehaviour
             FollowPlayer();
         }
     }
+    private void InitializePlayerReference()
+    {
+        if (PlayerController.Instance != null)
+        {
+            player = PlayerController.Instance.transform;
+            playerRb = PlayerController.Instance.GetComponent<Rigidbody2D>();
+        }
+    }
 
     private void LookAtMouse()
     {
@@ -53,26 +66,22 @@ public class CameraTarget : MonoBehaviour
 
         Vector3 targetPos = CalculateTargetPos(player.position, worldMousePos);
 
-        //transform.position = targetPos;
         transform.position = Vector3.Lerp(transform.position, targetPos, mouseSpeed * Time.deltaTime);
     }
 
     private void FollowPlayer()
     {
-        /*Vector3 targetPos = Vector3.Lerp(transform.position, new Vector3(player.position.x, player.position.y, transform.position.z), followSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(player.position.x, player.position.y)) <= snapThreshold)
-        {
-            targetPos = new Vector3(player.position.x, player.position.y, transform.position.z);
-        }
-        transform.position = targetPos;
-        timeCanLook = 0;*/
-
+        if (PlayerController.Instance == null) return;
         Vector3 targetPos = CalculateTargetPos(player.position, transform.position);
-        //transform.position = Vector3.Lerp(transform.position, targetPos, followSpeed * Time.deltaTime);
         transform.position = targetPos;
 
         timeCanLook = 0;
+    }
+    private void MoveToCameraCenter()
+    {
+        Vector3 cameraCenter = cam.transform.position;
+        cameraCenter.z = transform.position.z;
+        transform.position = cameraCenter;
     }
     private Vector3 CalculateTargetPos(Vector3 playerPos, Vector3 objPos)
     {

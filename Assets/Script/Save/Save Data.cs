@@ -35,15 +35,15 @@ public struct SaveData
 
     public void Initialize()
     {
-        if (!File.Exists(Application.persistentDataPath + "/save.bench.data")) //if file doesnt exist, well create the file
+        if (!File.Exists(Application.persistentDataPath + "/save.bench.data")) 
         {
             BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.bench.data"));
         }
-        if (!File.Exists(Application.persistentDataPath + "/save.player.data")) //if file doesnt exist, well create the file
+        if (!File.Exists(Application.persistentDataPath + "/save.player.data")) 
         {
             BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.player.data"));
         }
-        if (!File.Exists(Application.persistentDataPath + "/save.shade.data")) //if file doesnt exist, well create the file
+        if (!File.Exists(Application.persistentDataPath + "/save.shade.data"))
         {
             BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.shade.data"));
         }
@@ -73,7 +73,7 @@ public struct SaveData
                 benchSceneName = reader.ReadString();
                 benchPos = new Vector2(reader.ReadSingle(), reader.ReadSingle());
             }
-            UnityEngine.Debug.Log("Loaded Bench data: " + benchSceneName + " at " + benchPos);
+            //UnityEngine.Debug.Log("Loaded Bench data: " + benchSceneName + " at " + benchPos);
         }
         else
         {
@@ -86,58 +86,44 @@ public struct SaveData
     {
         using (BinaryWriter writer = new BinaryWriter(File.OpenWrite(Application.persistentDataPath + "/save.player.data")))
         {
-            // Lưu dữ liệu sức khỏe của người chơi
             int playerHealth = PlayerController.Instance.Health;
             writer.Write(playerHealth);
 
-            // Lưu dữ liệu sức khỏe tối đa của người chơi
             int playerMaxHealth = PlayerController.Instance.maxHealth;
             writer.Write(playerMaxHealth);
 
-            // Lưu số lượng mảnh trái tim người chơi đã thu thập
             int playerHeartShards = PlayerController.Instance.heartShards;
             writer.Write(playerHeartShards);
 
-            // Lưu lượng mana của người chơi
             float playerMana = PlayerController.Instance.Mana;
             writer.Write(playerMana);
 
-            // Lưu trạng thái nửa mana của người chơi
             bool playerHalfMana = PlayerController.Instance.halfMana;
             writer.Write(playerHalfMana);
 
-            // Lưu trạng thái đã mở khả năng nhảy tường của người chơi
             bool playerUnlockedWallJump = PlayerController.Instance.unlockedWallJump;
             writer.Write(playerUnlockedWallJump);
 
-            // Lưu trạng thái đã mở khả năng dash của người chơi
             bool playerUnlockedDash = PlayerController.Instance.unlockedDash;
             writer.Write(playerUnlockedDash);
 
-            // Lưu trạng thái đã mở khả năng nhảy biến đổi của người chơi
             bool playerUnlockedVarJump = PlayerController.Instance.unlockedVarJump;
             writer.Write(playerUnlockedVarJump);
 
-            // Lưu trạng thái đã mở khả năng hồi phục của người chơi
             bool playerUnlockedHeal = PlayerController.Instance.unlockedHeal;
             writer.Write(playerUnlockedHeal);
 
-            // Lưu trạng thái đã mở khả năng phép thuật của người chơi
             bool playerUnlockedCast = PlayerController.Instance.unlockedCastSpell;
             writer.Write(playerUnlockedCast);
 
-            // Lưu vị trí của người chơi
             Vector3 playerPosition = PlayerController.Instance.transform.position;
             writer.Write(playerPosition.x);
             writer.Write(playerPosition.y);
 
-            // Lưu tên của scene cuối cùng người chơi đã chơi
             string lastScene = SceneManager.GetActiveScene().name;
             writer.Write(lastScene);
         }
-       // UnityEngine.Debug.Log("Đã lưu dữ liệu người chơi");
-
-
+        //UnityEngine.Debug.Log("Saved player data");
     }
     public void LoadPlayerData()
     {
@@ -146,50 +132,34 @@ public struct SaveData
         {
             using (BinaryReader reader = new BinaryReader(File.OpenRead(Application.persistentDataPath + "/save.player.data")))
             {
-
-                // Đọc dữ liệu sức khỏe của người chơi
                 int playerHealth = reader.ReadInt32();
 
-                // Đọc dữ liệu sức khỏe tối đa của người chơi
                 int playerMaxHealth = reader.ReadInt32();
 
-                // Đọc số lượng mảnh trái tim người chơi đã thu thập
                 int playerHeartShards = reader.ReadInt32();
 
-                // Đọc lượng mana của người chơi
                 float playerMana = reader.ReadSingle();
 
-                // Đọc trạng thái nửa mana của người chơi
                 bool playerHalfMana = reader.ReadBoolean();
 
-                // Đọc trạng thái đã mở khả năng nhảy tường của người chơi
                 bool playerUnlockedWallJump = reader.ReadBoolean();
 
-                // Đọc trạng thái đã mở khả năng dash của người chơi
                 bool playerUnlockedDash = reader.ReadBoolean();
 
-                // Đọc trạng thái đã mở khả năng nhảy biến đổi của người chơi
                 bool playerUnlockedVarJump = reader.ReadBoolean();
 
-                // Đọc trạng thái đã mở khả năng hồi phục của người chơi
                 bool playerUnlockedHeal = reader.ReadBoolean();
 
-                // Đọc trạng thái đã mở khả năng phép thuật của người chơi
                 bool playerUnlockedCast = reader.ReadBoolean();
 
-                // Đọc vị trí của người chơi
                 Vector3 playerPosition = new Vector3(reader.ReadSingle(), reader.ReadSingle(), 0);
 
-                // Đọc tên của scene cuối cùng người chơi đã chơi
                 string lastScene = reader.ReadString();
 
-                // Load scene cuối cùng mà người chơi đã chơi
                 SceneManager.LoadScene(lastScene);
 
-                // Thiết lập vị trí của người chơi
                 PlayerController.Instance.transform.position = playerPosition;
 
-                // Thiết lập lại trạng thái của người chơi
                 PlayerController.Instance.Health = playerHealth;
                 PlayerController.Instance.maxHealth = playerMaxHealth;
                 PlayerController.Instance.heartShards = playerHeartShards;
@@ -201,28 +171,13 @@ public struct SaveData
                 PlayerController.Instance.unlockedHeal = playerUnlockedHeal;
                 PlayerController.Instance.unlockedCastSpell = playerUnlockedCast;
 
-                //UnityEngine.Debug.Log("Đã tải dữ liệu người chơi thành công");
                 GlobalController.instance.LoadPlayerScore();
             }
         }
         else
         {
-            UnityEngine.Debug.Log("Không tìm thấy tệp dữ liệu người chơi");
-
-            // Thiết lập lại dữ liệu người chơi về mặc định nếu không tìm thấy tệp
+            UnityEngine.Debug.Log("Can't find player data");
             PlayerController.Instance.ResetToDefault();
-            /*
-            PlayerController.Instance.halfMana = false;
-            PlayerController.Instance.Health = PlayerController.Instance.maxHealth;
-            PlayerController.Instance.Mana = 0.5f;
-            PlayerController.Instance.heartShards = 0;
-
-            PlayerController.Instance.unlockedWallJump = false;
-            PlayerController.Instance.unlockedDash = false;
-            PlayerController.Instance.unlockedVarJump = false;
-            PlayerController.Instance.unlockedHeal = false;
-            PlayerController.Instance.unlockedCastSpell = false;
-            */
         }
     }
 
@@ -263,11 +218,10 @@ public struct SaveData
                 float rotationW = reader.ReadSingle();
                 shadeRot = new Quaternion(rotationX, rotationY, rotationZ, rotationW);
             }
-            //UnityEngine.Debug.Log("Saved Bench data");
         }
         else
         {
-            UnityEngine.Debug.Log("Shade doeesn't exit");
+            UnityEngine.Debug.Log("Shade doesn't exit");
         }
     }
     #endregion

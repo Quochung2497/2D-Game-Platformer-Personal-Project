@@ -17,7 +17,6 @@ public class UnlockDash : MonoBehaviour
     {
         if (PlayerController.Instance != null)
         {
-            // Nếu đã mở khóa Dash, hủy GameObject
             if (PlayerController.Instance.unlockedDash)
             {
                 Destroy(gameObject);
@@ -25,7 +24,6 @@ public class UnlockDash : MonoBehaviour
         }
         else
         {
-            // Nếu PlayerController.Instance chưa được khởi tạo, in ra thông báo cảnh báo
             Debug.LogWarning("PlayerController.Instance is not initialized yet!");
         }
         initialPosition = transform.position;

@@ -12,11 +12,9 @@ public class DestroyCamera : MonoBehaviour
     }
     private void isDestroy()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Destroy(gameObject);
-        }
-        if (SceneManager.GetActiveScene().buildIndex == 7)
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int[] destroyScenes = { 1, 3, 8 };
+        if (System.Array.Exists(destroyScenes, scene => scene == currentScene))
         {
             Destroy(gameObject);
         }

@@ -58,9 +58,11 @@ public class CameraManager : MonoBehaviour
 
     public void SwapCamera(CinemachineVirtualCamera _newCam)
     {
+        currentCamera.Priority = 0;
         currentCamera.enabled = false;
         currentCamera = _newCam;
         currentCamera.enabled = true;
+        currentCamera.Priority = 10;
     }
     public IEnumerator LerpYDamping(bool _isPlayerFalling)
     {

@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialCtrl : MonoBehaviour
 {
     public TutorialManager tut;
     public TutorialBoard Board;
-    [SerializeField] private GameObject nextScene;
     [SerializeField] private GameObject canvasUI;
+    [SerializeField] private string nextScene;
     [SerializeField] private GameObject Effect;
+    [SerializeField] private TutorialFadeUI tutFadeUI;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -58,7 +60,8 @@ public class TutorialCtrl : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
-        nextScene.SetActive(true);
+        yield return tutFadeUI.FadeIn();
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
         rb.simulated = true;
     }
     private IEnumerator MoveInPortal()

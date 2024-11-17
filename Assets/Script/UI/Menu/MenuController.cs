@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour
     
     private MenuState currentMenuState;
     private MenuState previousState;
-    // Start is called before the first frame update
+
     void Start()
     {
         // Khởi tạo trạng thái ban đầu của Menu
@@ -45,7 +45,6 @@ public class MenuController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
         HandleInput();
@@ -56,9 +55,12 @@ public class MenuController : MonoBehaviour
         {
             case MenuState.MainMenu:
                 // Kiểm tra nếu menuSelection đang hoạt động
-                if (Menu != null && mainMenuCanvasGroup.alpha == 1 || PressAnyCanvasGroup.alpha == 1 || CreditCanvasGroup.alpha == 1)
+                if (Menu != null)
                 {
-                    Menu.HandleInput();  // Xử lý input cho MenuSelection
+                    if (mainMenuCanvasGroup != null && mainMenuCanvasGroup.alpha == 1 || PressAnyCanvasGroup != null && PressAnyCanvasGroup.alpha == 1 || CreditCanvasGroup!= null && CreditCanvasGroup.alpha == 1)
+                    {
+                        Menu.HandleInput();  // Xử lý input cho MenuSelection
+                    }
                 }
                 break;
 

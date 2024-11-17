@@ -23,6 +23,14 @@ public class ScreenFader : MonoBehaviour
     {
         StartCoroutine(FadeAndLoadScene(FadeDirection.In, _sceneToLoad));
     }
+    public IEnumerator FadeAndLoadScene(FadeDirection _fadeDirection, string _sceneToLoad)
+    {
+        fadeOutUIImage.enabled = true;
+
+        yield return Fade(_fadeDirection);
+
+        SceneManager.LoadScene(_sceneToLoad, LoadSceneMode.Single);
+    }
     public IEnumerator Fade(FadeDirection _fadeDirection)
     {
         float _alpha = _fadeDirection == FadeDirection.Out ? 1 : 0;
@@ -51,15 +59,7 @@ public class ScreenFader : MonoBehaviour
             }
         }
     }
-    public IEnumerator FadeAndLoadScene(FadeDirection _fadeDirection, string _sceneToLoad)
-    {
-        fadeOutUIImage.enabled = true;
-
-        yield return Fade(_fadeDirection);
-
-        SceneManager.LoadScene(_sceneToLoad,LoadSceneMode.Single);
-    }
-    void SetColorImage(ref float _alpha, FadeDirection _fadeDirection)
+    private void SetColorImage(ref float _alpha, FadeDirection _fadeDirection)
     {
         fadeOutUIImage.color = new Color(fadeOutUIImage.color.r, fadeOutUIImage.color.g, fadeOutUIImage.color.b, _alpha);
 
