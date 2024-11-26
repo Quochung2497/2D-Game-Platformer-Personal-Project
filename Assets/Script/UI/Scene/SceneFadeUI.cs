@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialFadeUI : FadeUI
+public class SceneFadeUI : FadeUI
 {
     [SerializeField] private float fadeTime;
 

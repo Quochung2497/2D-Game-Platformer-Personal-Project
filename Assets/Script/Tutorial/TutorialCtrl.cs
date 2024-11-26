@@ -11,7 +11,7 @@ public class TutorialCtrl : MonoBehaviour
     [SerializeField] private GameObject canvasUI;
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject Effect;
-    [SerializeField] private TutorialFadeUI tutFadeUI;
+    [SerializeField] private SceneFadeUI tutFadeUI;
 
     private Animator anim;
     private Rigidbody2D rb;
