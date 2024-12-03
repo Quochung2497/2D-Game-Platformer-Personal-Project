@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1688302159805868963, guid: 4fe8e26dd7ead98429d695012eda9122, type: 3}
-  canvasUI: {fileID: 3461505121524568606}
+  heartFillUI: {fileID: 0}
   Sound: {fileID: 8300000, guid: a12c45a00e3f4a44fbf9d5352f53cae6, type: 3}
   heartShards: {fileID: 7641958717513427328}
   amplitude: 0.3

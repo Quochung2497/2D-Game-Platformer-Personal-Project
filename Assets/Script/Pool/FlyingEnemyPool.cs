@@ -19,6 +19,7 @@ public class FlyingEnemyPool : EnemyPoolBase
             Destroy(gameObject);
         }
         GrowPool();
+        DontDestroyOnLoad(gameObject);
     }
 
     protected override GameObject CreateEnemy()

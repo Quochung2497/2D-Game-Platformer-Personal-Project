@@ -90,7 +90,8 @@ public class SettingsMenu : MonoBehaviour
             {
                 if (!onSubPanel)
                 {
-                    MenuController.instance.ReturnToPreviousState();
+                    //MenuController.instance.ReturnToPreviousState();
+                    MenuController.instance.MainMenuState();
                 }
                 else
                 {

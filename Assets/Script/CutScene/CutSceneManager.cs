@@ -17,10 +17,39 @@ public class CutSceneManager : MonoBehaviour
     [Header("Video Clips")]
     [SerializeField] private VideoClip[] videoClips;
 
+    private Coroutine cutsceneCoroutine;
     private void Start()
     {
-        StartCoroutine(CutsceneSequence());
+        cutsceneCoroutine = StartCoroutine(CutsceneSequence());
     }
+
+    /*private void Update()
+    {
+        if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.JoystickButton0))
+        {
+            skipTimer += Time.deltaTime;
+            Debug.Log("timer = " + skipTimer);
+            if (skipTimer >= skipThreshold)
+            {
+                SkipCutScene();
+            }
+        }
+        else
+        {
+            skipTimer = Mathf.Max(skipTimer - Time.deltaTime, 0);
+        }
+    }*/
+
+    public void SkipCutScene()
+    {
+        StopCoroutine(cutsceneCoroutine);
+        if (videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop();
+        }
+        StartCoroutine(MoveToNextScene());
+    }
+
 
     private IEnumerator CutsceneSequence()
     {
@@ -34,9 +63,7 @@ public class CutSceneManager : MonoBehaviour
         {
             yield return PlayVideosSequentially();
         }
-        yield return FadeUI.FadeIn(delay);
-        Debug.Log("Gameplay started!");
-        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+        StartCoroutine(MoveToNextScene());
     }
 
     private IEnumerator StorySequence()
@@ -82,6 +109,13 @@ public class CutSceneManager : MonoBehaviour
             Debug.Log($"Finished playing clip {i}: {videoClips[i].name}");
         }
 
+    }
+
+    private IEnumerator MoveToNextScene()
+    {
+        yield return FadeUI.FadeIn(delay);
+        Debug.Log("Gameplay started!");
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
     }
 }
 

@@ -18,10 +18,6 @@ public class HeartShards : MonoBehaviour
         fill.enabled = false;
     }
 
-    void Update()
-    {
-
-    }
     public IEnumerator LerpFill()
     {
         float elapsedTime = 0f;
@@ -51,7 +47,6 @@ public class HeartShards : MonoBehaviour
     }
     void PlayFillAnimation(float fillAmount)
     {
-        // Assuming you have setup your AnimationClips with these names
         if (fillAmount == 0.25f)
         {
             heartAnimator.Play("Fill_25");

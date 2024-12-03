@@ -19,6 +19,7 @@ public class GunnerEnemyPool : EnemyPoolBase
             Destroy(gameObject);
         }
         GrowPool();
+        DontDestroyOnLoad(gameObject);
     }
 
     protected override GameObject CreateEnemy()

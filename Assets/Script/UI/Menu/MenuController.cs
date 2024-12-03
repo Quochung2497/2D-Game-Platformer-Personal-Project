@@ -54,33 +54,24 @@ public class MenuController : MonoBehaviour
         switch (currentMenuState)
         {
             case MenuState.MainMenu:
-                // Kiểm tra nếu menuSelection đang hoạt động
-                if (Menu != null)
-                {
-                    if (mainMenuCanvasGroup != null && mainMenuCanvasGroup.alpha == 1 || PressAnyCanvasGroup != null && PressAnyCanvasGroup.alpha == 1 || CreditCanvasGroup!= null && CreditCanvasGroup.alpha == 1)
-                    {
-                        Menu.HandleInput();  // Xử lý input cho MenuSelection
-                    }
-                }
+                Menu?.HandleInput();
                 break;
 
             case MenuState.Settings:
-                // Kiểm tra nếu settingsMenu đang hoạt động
-                if (settingMenu != null && settingsMenuCanvasGroup.alpha == 1)
-                {
-                    settingMenu.HandleInput();  // Xử lý input cho SettingsMenu
-                }
+                settingMenu?.HandleInput();  
                 break;
 
             case MenuState.InGame:
-                // Khi đang trong game,tạm thời không cần xử lý menu
                 
                 break;
         }
     }
     public void MainMenuState()
     {
-        previousState = currentMenuState;
+        if (currentMenuState != MenuState.MainMenu)
+        {
+            previousState = currentMenuState;
+        }
         currentMenuState = MenuState.MainMenu;
         MenuSelection.instance.FadeToMenu();
     }
@@ -95,15 +86,16 @@ public class MenuController : MonoBehaviour
     }
     public void ReturnToPreviousState()
     {
+        Debug.Log("ReturnToPreviousState Called. PreviousState: " + previousState);
         currentMenuState = previousState;
         if (previousState == MenuState.InGame)
         {
-            
+            // Logic cho InGame state
         }
         else if (previousState == MenuState.MainMenu)
         {
             MenuSelection.instance.FadeToMenu();
-            Debug.Log("Ve MainMenu");
+            Debug.Log("Returned to MainMenu");
         }
     }
 }

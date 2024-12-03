@@ -7,7 +7,7 @@ using UnityEngine;
 public class IncreaseMaxHealth : MonoBehaviour
 {
     [SerializeField] GameObject particles;
-    [SerializeField] GameObject canvasUI;
+    [SerializeField] GameObject heartFillUI;
     [SerializeField] AudioClip Sound;
     [SerializeField] HeartShards heartShards;
 
@@ -55,7 +55,7 @@ public class IncreaseMaxHealth : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
-        canvasUI.SetActive(true);
+        heartFillUI.SetActive(true);
         heartShards.initialFillAmount = PlayerController.Instance.heartShards * 0.25f;
         PlayerController.Instance.heartShards++;
         heartShards.targetFillAmount = PlayerController.Instance.heartShards * 0.25f;
@@ -65,7 +65,7 @@ public class IncreaseMaxHealth : MonoBehaviour
 
 
         SaveData.Instance.SavePlayerData();
-        canvasUI.SetActive(false);
+        heartFillUI.SetActive(false);
         Destroy(gameObject);
     }
 }

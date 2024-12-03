@@ -22,6 +22,7 @@ public class PlayerAfterImagesPool : MonoBehaviour
             Destroy(gameObject);
         }
         GrowPool();
+        DontDestroyOnLoad(gameObject);
     }
 
     private void GrowPool()
