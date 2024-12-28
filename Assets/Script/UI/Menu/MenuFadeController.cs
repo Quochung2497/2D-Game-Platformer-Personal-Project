@@ -8,12 +8,12 @@ public class MenuFadeController : MonoBehaviour
 {
     private FadeUI fadeUI;
     [SerializeField] private float fadeTime;
+    [SerializeField] private CanvasGroup canvasGroup;
 
-    // Start is called before the first frame update
     void Start()
     {
         fadeUI = GetComponent<FadeUI>();
-        fadeUI.FadeUIOut(fadeTime);
+        fadeUI.FadeUIOut(canvasGroup, fadeTime);
     }
     public void CallFadeAndStartGame(string _sceneToLoad)
     {
@@ -22,7 +22,7 @@ public class MenuFadeController : MonoBehaviour
 
     IEnumerator FadeAndStartGame(string _sceneToLoad)
     {
-        fadeUI.FadeUIIn(fadeTime);
+        fadeUI.FadeUIIn(canvasGroup, fadeTime);
         PlayerPrefs.DeleteKey("playerScore");
         PlayerPrefs.Save();
         string playerDataPath = Application.persistentDataPath + "/save.player.data";

@@ -9,19 +9,17 @@ public class PauseMenuUI : MonoBehaviour
     public bool GameIsPaused = false;
 
     [SerializeField] FadeUI pauseMenu,OptionMenu;
+    [SerializeField] private CanvasGroup pausePanel, optionPanel;
     [SerializeField] float fadeTime;
     void Awake()
     {
-        // Check if there's already an instance of this object
         if (Instance == null)
         {
-            // If not, set this as the instance and mark it as DontDestroyOnLoad
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            // If there's already an instance, destroy this object to prevent duplicates
             Destroy(gameObject);
         }
         if (pauseMenu != null)
@@ -34,10 +32,9 @@ public class PauseMenuUI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void Pause()
     {
-        pauseMenu.FadeUIIn(fadeTime);
+        pauseMenu.FadeUIIn(pausePanel, fadeTime);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -47,19 +44,19 @@ public class PauseMenuUI : MonoBehaviour
     }
     public void Resume()
     {
-        pauseMenu.FadeUIOut(fadeTime);
+        pauseMenu.FadeUIOut(pausePanel, fadeTime);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     public void Option()
     {
-        pauseMenu.FadeUIOut(fadeTime);
-        OptionMenu.FadeUIIn(fadeTime);
+        pauseMenu.FadeUIOut(pausePanel, fadeTime);
+        OptionMenu.FadeUIIn(optionPanel,fadeTime);
     }
     public void Back()
     {
-        OptionMenu.FadeUIOut(fadeTime);
-        pauseMenu.FadeUIIn(fadeTime);
+        OptionMenu.FadeUIOut(optionPanel, fadeTime);
+        pauseMenu.FadeUIIn(pausePanel, fadeTime);
     }
     public void Quit()
     {

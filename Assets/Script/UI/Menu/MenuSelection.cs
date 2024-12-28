@@ -188,10 +188,6 @@ public class MenuSelection : MonoBehaviour
 
     IEnumerator FadeOut(CanvasGroup canvasGroup, float _seconds)
     {
-        /*if(currentIndex == 0)
-        {
-            MenuController.instance.InGameMenu();
-        }*/
         if (currentIndex == 2)
         {
             EventSystem.current.SetSelectedGameObject(null);

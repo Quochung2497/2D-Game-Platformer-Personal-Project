@@ -4,44 +4,47 @@ using UnityEngine;
 
 public class FadeUI : MonoBehaviour
 {
-    CanvasGroup canvasGroup;
-
-    private void Awake()
+    public enum FadeDirection
     {
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
-    public virtual void FadeUIIn(float _seconds)
-    {
-        StartCoroutine(FadeIn(_seconds));
+        In,
+        Out
     }
 
-    public virtual void FadeUIOut(float _seconds)
+    public virtual void FadeUIIn(CanvasGroup canvasGroup,float _seconds)
     {
-        StartCoroutine(FadeOut(_seconds));
+        StartCoroutine(Fade(canvasGroup, FadeDirection.In, _seconds));
     }
 
-    IEnumerator FadeOut(float _seconds)
+    public virtual void FadeUIOut(CanvasGroup canvasGroup,float _seconds)
     {
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.alpha = 1;
-        while (canvasGroup.alpha > 0)
+        StartCoroutine(Fade(canvasGroup, FadeDirection.Out, _seconds));
+    }
+    private IEnumerator Fade(CanvasGroup canvasGroup, FadeDirection fadeDirection, float fadeTime)
+    {
+        float startAlpha = fadeDirection == FadeDirection.In ? 0f : 1f;
+        float endAlpha = fadeDirection == FadeDirection.In ? 1f : 0f;
+        float fadeStep = (Time.unscaledDeltaTime / fadeTime) * (fadeDirection == FadeDirection.In ? 1 : -1);
+
+        if (fadeDirection == FadeDirection.In)
         {
-            canvasGroup.alpha -= Time.unscaledDeltaTime / _seconds;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        }
+
+        while ((fadeDirection == FadeDirection.Out && startAlpha > endAlpha) ||
+          (fadeDirection == FadeDirection.In && startAlpha < endAlpha))
+        {
+            canvasGroup.alpha = startAlpha;
+            startAlpha += fadeStep;
             yield return null;
         }
-        yield return null;
-    }
-    IEnumerator FadeIn(float _seconds)
-    {
-        canvasGroup.alpha = 0;
-        while (canvasGroup.alpha < 1)
+
+        canvasGroup.alpha = endAlpha;
+
+        if (fadeDirection == FadeDirection.Out)
         {
-            canvasGroup.alpha += Time.unscaledDeltaTime / _seconds;
-            yield return null;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-        yield return null;
     }
 }

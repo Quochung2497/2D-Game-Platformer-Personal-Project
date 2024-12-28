@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int JumpBufferFrames;
     private float CoyoteTimeCounter = 0;
     [SerializeField] private float coyoteTime;
-    public int AirJumpCounter = 0;
+    [HideInInspector] public int AirJumpCounter = 0;
     [SerializeField] private int maxAirJumps;
     [Space(5)]
 
@@ -607,6 +607,7 @@ public class PlayerController : MonoBehaviour
                     if (comboStep == 3)
                     {
                         CameraManager.instance.CameraShakeFromProfile(lastAttackShake_profile, impulseSource);
+                        PlayerController.Instance.HitStopTime(0f, 10, 0.25f); ;
                     }
                 }
             }
@@ -702,6 +703,7 @@ public class PlayerController : MonoBehaviour
         if (pState.alive)
         {
             AudioManager.instance.PlaySfx(AudioManager.instance.sfx[2]);
+            Instantiate(HurtEffect, transform.position, Quaternion.identity);
             Health -= Mathf.RoundToInt(_damage);
             if (Health <= 0)
             {
@@ -786,7 +788,7 @@ public class PlayerController : MonoBehaviour
     public void HitStopTime(float _newTimeScale, int _restoreSpeed, float _delay)
     {
         restoreTimeSpeed = _restoreSpeed;
-        Instantiate(HurtEffect, transform.position, Quaternion.identity);
+
         if (_delay > 0)
         {
             StartCoroutine(StartTimeAgain(_delay));

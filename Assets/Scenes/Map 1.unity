@@ -8309,6 +8309,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!225 &666805562 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 172868994478385801, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
+  m_PrefabInstance: {fileID: 7688795242554923442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669692774
 GameObject:
   m_ObjectHideFlags: 0
@@ -14862,6 +14867,11 @@ SpriteRenderer:
 --- !u!1 &1199451267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1559334163742535499, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
+  m_PrefabInstance: {fileID: 7688795242554923442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1210615383 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 9174845890631779173, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
   m_PrefabInstance: {fileID: 7688795242554923442}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1226103334 stripped
@@ -68980,6 +68990,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7960163706850598466, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 666805562}
+    - target: {fileID: 7960163706850598466, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
+      propertyPath: optionPanel
+      value: 
+      objectReference: {fileID: 1210615383}
     - target: {fileID: 8264406928668101500, guid: 40e59451b4ebe98409b150bda2e5dfd9, type: 3}
       propertyPath: m_IsActive
       value: 1

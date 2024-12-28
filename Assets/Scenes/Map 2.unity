@@ -2885,7 +2885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: field of view
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1076559893493091883, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: far clip plane
@@ -3149,7 +3149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8293126709058239136, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: m_Lens.FieldOfView
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8629226268536826657, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: m_Priority
@@ -3157,7 +3157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8629226268536826657, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
       propertyPath: m_Lens.FieldOfView
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8634021796780958742, guid: ae7027ff4b9fdb142b36b4f7591ca084, type: 3}
@@ -28404,7 +28404,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000

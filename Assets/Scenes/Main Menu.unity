@@ -1673,7 +1673,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1779635449}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
         m_MethodName: FadeUIIn
         m_Mode: 4
@@ -2239,7 +2239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1779635449}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
         m_MethodName: FadeUIIn
         m_Mode: 4
@@ -7458,6 +7458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.75
+  canvasGroup: {fileID: 1147902413}
 --- !u!114 &1147902412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8460,25 +8461,25 @@ MonoBehaviour:
           m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1779635449}
-        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
-        m_MethodName: FadeUIOut
-        m_Mode: 4
+      - m_Target: {fileID: 1316706577}
+        m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
+        m_MethodName: FadeOutPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1779635450}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727216237}
-        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
-        m_MethodName: FadeUIIn
-        m_Mode: 4
+      - m_Target: {fileID: 1316706577}
+        m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
+        m_MethodName: FadeInPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1727216238}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.5
           m_StringArgument: 
@@ -11799,7 +11800,6 @@ GameObject:
   - component: {fileID: 1779635448}
   - component: {fileID: 1779635447}
   - component: {fileID: 1779635450}
-  - component: {fileID: 1779635449}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -11873,18 +11873,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779635445}
   m_CullTransparentMesh: 1
---- !u!114 &1779635449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779635445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035dff6c8f02f514cb2bc9f5f74343bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &1779635450
 CanvasGroup:
   m_ObjectHideFlags: 0

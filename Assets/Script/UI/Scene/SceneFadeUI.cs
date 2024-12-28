@@ -5,14 +5,16 @@ using UnityEngine;
 public class SceneFadeUI : FadeUI
 {
     [SerializeField] private float fadeTime;
+    private CanvasGroup sceneFadeCanvas;
 
     void Start()
     {
-        FadeUIOut(fadeTime);
+        sceneFadeCanvas = GetComponent<CanvasGroup>();
+        FadeUIOut(sceneFadeCanvas, fadeTime);
     }
     public IEnumerator FadeIn()
     {
-        FadeUIIn(fadeTime);
+        FadeUIIn(sceneFadeCanvas,fadeTime);
         yield return new WaitForSeconds(fadeTime);
     }
 }
