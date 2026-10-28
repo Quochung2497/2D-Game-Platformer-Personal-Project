@@ -35,7 +35,7 @@ public class Shade : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Shade_Idle:
-                    enemyRb.velocity = new Vector2(0, 0);
+                    enemyRb.linearVelocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Shade_Chase);
@@ -51,7 +51,7 @@ public class Shade : Enemy
                     else
                     {
                         Flip();
-                        enemyRb.velocity = new Vector2 (0, 0);
+                        enemyRb.linearVelocity = new Vector2 (0, 0);
                     }
                     if (_dist > detectDistance)
                     {
@@ -82,7 +82,7 @@ public class Shade : Enemy
             Instantiate(HurtEffect, transform.position, Quaternion.identity);
             GameObject _orangeBlood = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(_orangeBlood, 2.5f);
-            enemyRb.velocity = _hitForce * recoilFactor * _hitDirection;
+            enemyRb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
             isRecoiling = true;
         }
         if (health > 0)
@@ -149,7 +149,7 @@ public class Shade : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(-speed, enemyRb.linearVelocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -157,7 +157,7 @@ public class Shade : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(speed, enemyRb.linearVelocity.y);
         }
     }
     // Update is called once per frame

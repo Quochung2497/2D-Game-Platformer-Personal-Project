@@ -24,7 +24,7 @@ public class ParticlesController : MonoBehaviour
     public void FootPrint()
     {
         FootEffectDelay += Time.deltaTime;
-        if (PlayerController.Instance.rb.velocity.x != 0 && PlayerController.Instance.Grounded() && FootEffectDelay >= 0.2f)
+        if (PlayerController.Instance.rb.linearVelocity.x != 0 && PlayerController.Instance.Grounded() && FootEffectDelay >= 0.2f)
         {
             if (PlayerController.Instance.IsOnWater())
             {
@@ -50,7 +50,7 @@ public class ParticlesController : MonoBehaviour
     }
     public void JumpVfx(Quaternion rotation)
     {
-        if (PlayerController.Instance.rb.velocity.y > 0)
+        if (PlayerController.Instance.rb.linearVelocity.y > 0)
         {
             if (JumpEffectCounted == 0)
             {
@@ -65,7 +65,7 @@ public class ParticlesController : MonoBehaviour
                 JumpEffectCounted++;
             }
         }
-        else if (PlayerController.Instance.Grounded() && PlayerController.Instance.rb.velocity.y == 0)
+        else if (PlayerController.Instance.Grounded() && PlayerController.Instance.rb.linearVelocity.y == 0)
         {
             JumpEffectCounted = 0;
         }
@@ -73,7 +73,7 @@ public class ParticlesController : MonoBehaviour
 
     public void WingVfx()
     {
-        if(!PlayerController.Instance.Grounded() && PlayerController.Instance.rb.velocity.y > 0)
+        if(!PlayerController.Instance.Grounded() && PlayerController.Instance.rb.linearVelocity.y > 0)
         {
             if (DoubleJumpVfxCounted == 0)
             {

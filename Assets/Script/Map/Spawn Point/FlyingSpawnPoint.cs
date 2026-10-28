@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyingSpawnPoint : SpawnPointBase
 {
-    private void Awake()
+    private void Start()
     {
         enemyPool = FlyingEnemyPool.Instance.GetComponent<FlyingEnemyPool>();
     }

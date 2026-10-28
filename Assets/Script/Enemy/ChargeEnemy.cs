@@ -50,23 +50,23 @@ public class ChargeEnemy : Enemy
                 }
                 if (transform.localScale.x > 0)
                 {
-                    enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
+                    enemyRb.linearVelocity = new Vector2(speed, enemyRb.linearVelocity.y);
                 }
                 else
                 {
-                    enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
+                    enemyRb.linearVelocity = new Vector2(-speed, enemyRb.linearVelocity.y);
                 }
                 break;
             case EnemyStates.Charger_Detect:
                 if (!PlayerController.Instance.pState.Invincible)
                 {
-                    enemyRb.velocity = new Vector2(0, jumpForce);
+                    enemyRb.linearVelocity = new Vector2(0, jumpForce);
 
                     ChangeState(EnemyStates.Charger_Charge);
                 }
                 else
                 {
-                    enemyRb.velocity = new Vector2(0, 0);
+                    enemyRb.linearVelocity = new Vector2(0, 0);
                     ChangeState(EnemyStates.Charger_Idle);
                 }
                 break;
@@ -79,16 +79,16 @@ public class ChargeEnemy : Enemy
                     {
                         if (transform.localScale.x > 0)
                         {
-                            enemyRb.velocity = new Vector2(speed * chargeSpeedMultiplier, enemyRb.velocity.y);
+                            enemyRb.linearVelocity = new Vector2(speed * chargeSpeedMultiplier, enemyRb.linearVelocity.y);
                         }
                         else
                         {
-                            enemyRb.velocity = new Vector2(-speed * chargeSpeedMultiplier, enemyRb.velocity.y);
+                            enemyRb.linearVelocity = new Vector2(-speed * chargeSpeedMultiplier, enemyRb.linearVelocity.y);
                         }
                     }
                     else
                     {
-                        enemyRb.velocity = new Vector2(0, enemyRb.velocity.y);
+                        enemyRb.linearVelocity = new Vector2(0, enemyRb.linearVelocity.y);
                     }
                 }
                 else
@@ -143,7 +143,7 @@ public class ChargeEnemy : Enemy
             Vector2 newVelocity;
             newVelocity.x = 0;
             newVelocity.y = 0;
-            enemyRb.velocity = newVelocity;
+            enemyRb.linearVelocity = newVelocity;
             _animator.SetTrigger("isDeath");
             audioSource.PlayOneShot(deathSound);
             gameObject.layer = LayerMask.NameToLayer("Decoration");

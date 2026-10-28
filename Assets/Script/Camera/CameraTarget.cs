@@ -33,7 +33,7 @@ public class CameraTarget : MonoBehaviour
             MoveToCameraCenter();
             return;
         }
-        isPlayerMoving = playerRb.velocity.sqrMagnitude > movementThreshold * movementThreshold;
+        isPlayerMoving = playerRb.linearVelocity.sqrMagnitude > movementThreshold * movementThreshold;
         timeCanLook += Time.deltaTime;
         if (!isPlayerMoving)
         {

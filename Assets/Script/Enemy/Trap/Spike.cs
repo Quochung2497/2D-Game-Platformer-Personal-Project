@@ -24,7 +24,7 @@ public class Spike : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         PlayerController.Instance.pState.cutscenes = true;
         PlayerController.Instance.pState.Invincible = true;
-        PlayerController.Instance.rb.velocity = Vector2.zero;
+        PlayerController.Instance.rb.linearVelocity = Vector2.zero;
         Time.timeScale = 0f;
         StartCoroutine(UIManager.Instance.sceneFader.Fade(ScreenFader.FadeDirection.In));
         PlayerController.Instance.TakeDamage(1);

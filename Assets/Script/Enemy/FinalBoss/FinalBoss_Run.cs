@@ -34,7 +34,7 @@ public class FinalBoss_Run : StateMachineBehaviour
         }
         else
         {
-            finalbossRb.velocity = new Vector2(finalbossRb.velocity.x, -25); //if knight is not grounded, fall to ground
+            finalbossRb.linearVelocity = new Vector2(finalbossRb.linearVelocity.x, -25); //if knight is not grounded, fall to ground
         }
         if (Vector2.Distance(PlayerController.Instance.transform.position, finalbossRb.position) <= FinalBoss.Instance.attackRange)
         {

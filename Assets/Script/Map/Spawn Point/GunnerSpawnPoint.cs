@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunnerSpawnPoint : SpawnPointBase
 {
-    private void Awake()
+    private void Start()
     {
         enemyPool = GunnerEnemyPool.Instance.GetComponent<GunnerEnemyPool>();
     }

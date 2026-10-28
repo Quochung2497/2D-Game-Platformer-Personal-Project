@@ -32,7 +32,7 @@ public class GunnerController : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Gunner_Idle:
-                    enemyRb.velocity = new Vector2(0, 0);
+                    enemyRb.linearVelocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Gunner_Attack);
@@ -93,7 +93,7 @@ public class GunnerController : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(-speed, enemyRb.linearVelocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -101,7 +101,7 @@ public class GunnerController : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(speed, enemyRb.linearVelocity.y);
         }
     }
     private IEnumerator fadeCoroutine()

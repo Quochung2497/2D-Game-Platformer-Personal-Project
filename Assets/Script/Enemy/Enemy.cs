@@ -132,7 +132,7 @@ public abstract class Enemy : MonoBehaviour
             audioSource.PlayOneShot(hurtSound);
             GameObject _orangeBlood = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(_orangeBlood, 2.5f);
-            enemyRb.velocity = _hitForce * recoilFactor * _hitDirection;
+            enemyRb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
             isRecoiling = true;
         }
     }

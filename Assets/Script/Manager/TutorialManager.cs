@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
             PlayerController player = PlayerController.Instance;
             if (currentPanel == Popup[0])
             {
-                if (player.rb.velocity.x != 0 || player.rb.velocity.y != 0)
+                if (player.rb.linearVelocity.x != 0 || player.rb.linearVelocity.y != 0)
                 {
                     StartCoroutine(Close(currentPanel, Popup[1]));
                 }
@@ -35,7 +35,7 @@ public class TutorialManager : MonoBehaviour
             }
             else if(currentPanel == Popup[2])
             {
-                if (player.rb.velocity.y != 0)
+                if (player.rb.linearVelocity.y != 0)
                 {
                     StartCoroutine(Close(currentPanel));
                     finishTutorial = true;

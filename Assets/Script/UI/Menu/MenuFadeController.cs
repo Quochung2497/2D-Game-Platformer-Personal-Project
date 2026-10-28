@@ -62,6 +62,7 @@ public class MenuFadeController : MonoBehaviour
             Debug.Log("File not found: " + shadeDataPath);
         }
         yield return new WaitForSeconds(fadeTime);
+        MenuController.instance.InGameMenu();
         SceneManager.LoadScene(_sceneToLoad);
     }
 }

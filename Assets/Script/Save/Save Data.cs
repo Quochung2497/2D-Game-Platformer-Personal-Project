@@ -35,18 +35,7 @@ public struct SaveData
 
     public void Initialize()
     {
-        if (!File.Exists(Application.persistentDataPath + "/save.bench.data")) 
-        {
-            BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.bench.data"));
-        }
-        if (!File.Exists(Application.persistentDataPath + "/save.player.data")) 
-        {
-            BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.player.data"));
-        }
-        if (!File.Exists(Application.persistentDataPath + "/save.shade.data"))
-        {
-            BinaryWriter writer = new BinaryWriter(File.Create(Application.persistentDataPath + "/save.shade.data"));
-        }
+        Directory.CreateDirectory(Application.persistentDataPath);
         if (sceneNames == null)
         {
             sceneNames = new HashSet<string>();
@@ -66,7 +55,7 @@ public struct SaveData
     public void LoadBench()
     {
         string filepath = Application.persistentDataPath + "/save.bench.data";
-        if (File.Exists(filepath))
+        if (File.Exists(filepath) && new FileInfo(filepath).Length > 0)
         {
             using (BinaryReader reader = new BinaryReader(File.OpenRead(Application.persistentDataPath + "/save.bench.data")))
             {
@@ -128,7 +117,7 @@ public struct SaveData
     public void LoadPlayerData()
     {
         string filePath = Application.persistentDataPath + "/save.player.data";
-        if (File.Exists(filePath))
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
             using (BinaryReader reader = new BinaryReader(File.OpenRead(Application.persistentDataPath + "/save.player.data")))
             {
@@ -204,9 +193,10 @@ public struct SaveData
     }
     public void LoadShadeData()
     {
-        if (File.Exists(Application.persistentDataPath + "/save.shade.data"))
+        string filePath = Application.persistentDataPath + "/save.shade.data";
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            using (BinaryReader reader = new BinaryReader(File.OpenRead(Application.persistentDataPath + "/save.shade.data")))
+            using (BinaryReader reader = new BinaryReader(File.OpenRead(filePath)))
             {
                 sceneWithShade = reader.ReadString();
                 shadePos.x = reader.ReadSingle();

@@ -10,6 +10,17 @@ public class FadeUI : MonoBehaviour
         Out
     }
 
+    // Inspector callbacks pass the duration for the CanvasGroup on this object.
+    public void FadeUIIn(float seconds)
+    {
+        FadeUIIn(GetComponent<CanvasGroup>(), seconds);
+    }
+
+    public void FadeUIOut(float seconds)
+    {
+        FadeUIOut(GetComponent<CanvasGroup>(), seconds);
+    }
+
     public virtual void FadeUIIn(CanvasGroup canvasGroup,float _seconds)
     {
         StartCoroutine(Fade(canvasGroup, FadeDirection.In, _seconds));
