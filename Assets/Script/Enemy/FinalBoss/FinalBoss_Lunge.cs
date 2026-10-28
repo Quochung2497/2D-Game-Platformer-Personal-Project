@@ -16,7 +16,7 @@ public class FinalBoss_Lunge : StateMachineBehaviour
     {
         finalbossRb.gravityScale = 0;
         int _dir = FinalBoss.Instance.facingRight ? 1 : -1;
-        finalbossRb.velocity = new Vector2(_dir * (FinalBoss.Instance.speed * 5), 0f);
+        finalbossRb.linearVelocity = new Vector2(_dir * (FinalBoss.Instance.speed * 5), 0f);
 
         if (Vector2.Distance(PlayerController.Instance.transform.position, finalbossRb.position) <= FinalBoss.Instance.attackRange &&
             !FinalBoss.Instance.damagedPlayer && !PlayerController.Instance.pState.Invincible)
@@ -30,7 +30,7 @@ public class FinalBoss_Lunge : StateMachineBehaviour
         }
         if(FinalBoss.Instance.TouchedWall())
         {
-            finalbossRb.velocity = new Vector2 (0,0);
+            finalbossRb.linearVelocity = new Vector2 (0,0);
             animator.SetBool("Lunge", false);
             FinalBoss.Instance.damagedPlayer = false;
             FinalBoss.Instance.Flip();

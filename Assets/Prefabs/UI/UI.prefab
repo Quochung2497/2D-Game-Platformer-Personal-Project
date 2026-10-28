@@ -321,6 +321,8 @@ MonoBehaviour:
   GameIsPaused: 0
   pauseMenu: {fileID: 8634077329167162240}
   OptionMenu: {fileID: 3714764954847867135}
+  pausePanel: {fileID: 172868994478385801}
+  optionPanel: {fileID: 9174845890631779173}
   fadeTime: 0.5
 --- !u!114 &5860781955264799936
 MonoBehaviour:

@@ -26,7 +26,7 @@ public class Barrage_Blob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var _dir = finalbossRb.velocity;
+        var _dir = finalbossRb.linearVelocity;
 
         if (_dir != Vector2.zero)
         {
@@ -72,7 +72,7 @@ public class Barrage_Blob : MonoBehaviour
 
     IEnumerator hitGround()
     {
-        finalbossRb.velocity = new Vector3(0, 0, 0);
+        finalbossRb.linearVelocity = new Vector3(0, 0, 0);
         hitGroundsfx.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         hitGroundsfx.SetActive(false);

@@ -21,7 +21,7 @@ public class Flying_Insect : Enemy
             switch (GetCurrentEnemyState)
             {
                 case EnemyStates.Insect_Idle:
-                    enemyRb.velocity = new Vector2(0, 0);
+                    enemyRb.linearVelocity = new Vector2(0, 0);
                     if (_dist < detectDistance)
                     {
                         ChangeState(EnemyStates.Insect_Chase);
@@ -37,7 +37,7 @@ public class Flying_Insect : Enemy
                     else
                     {
                         Flip();
-                        enemyRb.velocity = new Vector2(0, 0);
+                        enemyRb.linearVelocity = new Vector2(0, 0);
                     }
                     if (_dist > detectDistance)
                     {
@@ -127,7 +127,7 @@ public class Flying_Insect : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(-speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(-speed, enemyRb.linearVelocity.y);
         }
         else if (playerPosX > enemyPosX)
         {
@@ -135,7 +135,7 @@ public class Flying_Insect : Enemy
             {
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             }
-            enemyRb.velocity = new Vector2(speed, enemyRb.velocity.y);
+            enemyRb.linearVelocity = new Vector2(speed, enemyRb.linearVelocity.y);
         }
     }
     protected override void Update()

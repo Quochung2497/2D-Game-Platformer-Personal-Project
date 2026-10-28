@@ -14,7 +14,7 @@ public class FinalBoss_Idle : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        finabossRb.velocity = Vector2.zero;
+        finabossRb.linearVelocity = Vector2.zero;
         RunToPlayer(animator);
 
         if (FinalBoss.Instance.attackCountdown <= 0)
@@ -25,7 +25,7 @@ public class FinalBoss_Idle : StateMachineBehaviour
 
         if (!FinalBoss.Instance.Grounded())
         {
-            finabossRb.velocity = new Vector2(finabossRb.velocity.x, -25); //if knight is not grounded, fall to ground
+            finabossRb.linearVelocity = new Vector2(finabossRb.linearVelocity.x, -25); //if knight is not grounded, fall to ground
         }
     }
     void RunToPlayer(Animator animator)

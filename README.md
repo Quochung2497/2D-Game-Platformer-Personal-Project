@@ -16,7 +16,7 @@ The game is currently in development, and this repository contains the project f
 - Basic Audio design: dynamic background music for different levels.
 -------------
 ### Technologies & Tool used
-- Unity LTS version 2022.3.24f1.
+- Unity 6.3 LTS (6000.3.22f1).
 - C#: Programming language for gameplay mechanics.
 - Aseprite: Sprite design and animation.
 - Adobe Photoshop: Image editing and asset creation.
@@ -42,7 +42,9 @@ The game is currently in development, and this repository contains the project f
     ```
     git clone https://github.com/Quochung2497/2D-Game-Platformer-Personal-Project.git
     ```
-  - Open project in Unity LTS 2022.3.24f1.
+  - Open project in Unity 6.3 LTS (6000.3.22f1).
+  - Let Unity restore the packages, then choose **Window > TextMeshPro > Import TMP Essential Resources** and import the package before entering Play Mode or building.
+  - The generated `Assets/TextMesh Pro` folder is local and ignored by Git. Project-specific fonts are versioned separately in `Assets/ProjectFonts`; keep their `.meta` files to preserve UI references.
   - Press Play in Unity Editor
 - **Install:**
   - **Itch.io:** [download](https://quochung020497.itch.io/)

@@ -41,7 +41,7 @@ public class Projectile : Trap
     public override void trigger()
     {
         Vector2 newVelocity = direction.normalized * movingSpeed;
-        gameObject.GetComponent<Rigidbody2D>().velocity = newVelocity;
+        gameObject.GetComponent<Rigidbody2D>().linearVelocity = newVelocity;
         StartCoroutine(destroyCoroutine(destroyTime));
     }
 

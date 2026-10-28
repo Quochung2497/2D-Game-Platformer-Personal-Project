@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -252,11 +252,11 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateCameraYDampForPlayerFall()
     {
-        if (rb.velocity.y < playerFallSpeedThreshold && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.hasLerpedYDamping)
+        if (rb.linearVelocity.y < playerFallSpeedThreshold && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.hasLerpedYDamping)
         {
             StartCoroutine(CameraManager.instance.LerpYDamping(true));
         }
-        if (rb.velocity.y >= 0 && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.hasLerpedYDamping)
+        if (rb.linearVelocity.y >= 0 && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.hasLerpedYDamping)
         {
             CameraManager.instance.hasLerpedYDamping = false;
             StartCoroutine(CameraManager.instance.LerpYDamping(false));
@@ -370,14 +370,14 @@ public class PlayerController : MonoBehaviour
     {
         if (pState.healing || !canMove || pState.casting)
         {
-            rb.velocity = new Vector2(0, 0); 
+            rb.linearVelocity = new Vector2(0, 0);
         }
 
         if (canMove && !pState.casting)
         {
-            rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
+            rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
 
-            anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+            anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
 
             PlayerParticles.FootPrint();
         }
@@ -394,7 +394,7 @@ public class PlayerController : MonoBehaviour
         }
         if(IsOnEnemy())
         {
-            rb.velocity = new Vector2(walkSpeed * 2, rb.velocity.y);
+            rb.linearVelocity = new Vector2(walkSpeed * 2, rb.linearVelocity.y);
         }
     }
     #endregion
@@ -438,7 +438,7 @@ public class PlayerController : MonoBehaviour
     {
         int dashDirection = GetDirection();
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(dashDirection * dashSpeed, 0);
+        rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0);
         //Instantiate(playerEffect.dashEffect, transform);
     }
 
@@ -639,11 +639,11 @@ public class PlayerController : MonoBehaviour
         {
             if (pState.lookingRight)
             {
-                rb.velocity = new Vector2(-recoilXSpeed, 0);
+                rb.linearVelocity = new Vector2(-recoilXSpeed, 0);
             }
             else
             {
-                rb.velocity = new Vector2(recoilXSpeed, 0);
+                rb.linearVelocity = new Vector2(recoilXSpeed, 0);
             }
         }
 
@@ -652,11 +652,11 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 0;
             if (yAxis < 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, recoilYSpeed);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, recoilYSpeed);
             }
             else
             {
-                rb.velocity = new Vector2(rb.velocity.x, -recoilYSpeed);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -recoilYSpeed);
             }
             AirJumpCounter = 0;
         }
@@ -928,7 +928,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Healing") && castOrHealTimer <= 0.05f && Health < maxHealth && Grounded() && !pState.dashing && !pState.Invincible && canMove && Mana >= manaDrainSpeed && !Walled())
         {
             pState.healing = true;
-            rb.velocity = new Vector2(0, 0);
+            rb.linearVelocity = new Vector2(0, 0);
             anim.SetBool("isHealing", true);
             HealingEffect.SetActive(true);
             //healing
@@ -1042,7 +1042,7 @@ public class PlayerController : MonoBehaviour
         hitEnemyDuringSpell = false;
         while (!Grounded() && !hitEnemyDuringSpell)
         {
-            rb.velocity += downSpellForce * Vector2.down;
+            rb.linearVelocity += downSpellForce * Vector2.down;
             yield return null;
         }
         Destroy(diveVfx);
@@ -1067,10 +1067,10 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGravity(bool disableGravity)
     {
-        if(true)
+        if(disableGravity)
         {
             rb.gravityScale = 0;
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
         else
         {
@@ -1133,7 +1133,7 @@ public class PlayerController : MonoBehaviour
     #region Vertical Movement
     private void isFalling()
     {
-        if (rb.velocity.y < fallThreshold && !Grounded())
+        if (rb.linearVelocity.y < fallThreshold && !Grounded())
         {
             pState.Falling = true;
             anim.SetBool("Landing", true);
@@ -1182,12 +1182,12 @@ public class PlayerController : MonoBehaviour
         {
             currentFallSpeed = _maxFallSpeed;
         }
-        rb.velocity = new Vector2(rb.velocity.x, currentFallSpeed);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, currentFallSpeed);
     }
     private IEnumerator LandingDelayCoroutine()
     {
         canMove = false;
-        rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         Instantiate(playerEffect.landEffect, FootCheckPoint.transform.position,Quaternion.identity);
         yield return new WaitForSecondsRealtime(0.1f);
         canMove = true;
@@ -1195,7 +1195,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Jump()
     {
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
         {
             pState.Jumping = false;
             isFalling();
@@ -1214,7 +1214,7 @@ public class PlayerController : MonoBehaviour
 
                 PlayerParticles.JumpVfx(rotation);
 
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
 
             }
             else if (!Grounded() && AirJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && unlockedVarJump && !Walled())
@@ -1229,7 +1229,7 @@ public class PlayerController : MonoBehaviour
 
                 float doubleJumpForce = jumpForce + 5;
 
-                rb.velocity = new Vector3(rb.velocity.x, doubleJumpForce);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, doubleJumpForce);
 
                 PlayerParticles.WingVfx();
 
@@ -1275,7 +1275,7 @@ public class PlayerController : MonoBehaviour
         {
             pState.isWallSliding = true;
             currentFallSpeed = 0;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
             anim.SetBool("isWallJump", false);
             anim.SetBool("isWallSlide", true);
         }
@@ -1304,14 +1304,14 @@ public class PlayerController : MonoBehaviour
 
             Vector2 force = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
 
-            if (Mathf.Sign(rb.velocity.x) != Mathf.Sign(force.x))
+            if (Mathf.Sign(rb.linearVelocity.x) != Mathf.Sign(force.x))
             {
-                force.x -= rb.velocity.x;
+                force.x -= rb.linearVelocity.x;
             }
 
-            if (rb.velocity.y < 0)
+            if (rb.linearVelocity.y < 0)
             { 
-                force.y -= rb.velocity.y; 
+                force.y -= rb.linearVelocity.y;
             }
 
             rb.AddForce(force, ForceMode2D.Impulse);
@@ -1336,7 +1336,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Grounded() && Input.GetKeyDown(KeyCode.E) && !pState.casting && !pState.Falling && !pState.Jumping && !pState.Invincible  && !pState.dashing && !pState.healing)
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             anim.SetTrigger("isInteract");
             InputEnable = false;
             StartCoroutine(AnimationDelay());
@@ -1360,12 +1360,12 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Decoration");
         yield return new WaitForSeconds(1.5f);
         InputEnable = false;
-        rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
-        anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+        rb.linearVelocity = new Vector2(walkSpeed, rb.linearVelocity.y);
+        anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
         yield return new WaitForSeconds(1.2f);
         gameObject.layer = LayerMask.NameToLayer("Player");
         pState.cutscenes = false;
-        rb.velocity = new Vector3(0, 0, 0);
+        rb.linearVelocity = new Vector3(0, 0, 0);
         Move();
         InputEnable = true;
     }
@@ -1380,7 +1380,7 @@ public class PlayerController : MonoBehaviour
         if (Grounded() && Input.GetKeyDown(KeyCode.E) && !pState.casting && !pState.Falling && !pState.Jumping && !pState.Invincible && !pState.dashing && !pState.healing)
         {
             pState.cutscenes = true;
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             //gravity = 0;
             InputEnable = false;
             anim.SetTrigger("Ending");
@@ -1404,7 +1404,7 @@ public class PlayerController : MonoBehaviour
         //If exit direction is upwards
         if (_exitDir.y > 0)
         {
-            rb.velocity = jumpForce * _exitDir;
+            rb.linearVelocity = jumpForce * _exitDir;
         }
 
         //If exit direction requires horizontal movement

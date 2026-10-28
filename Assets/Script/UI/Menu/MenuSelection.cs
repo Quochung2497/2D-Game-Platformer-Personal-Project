@@ -244,7 +244,8 @@ public class MenuSelection : MonoBehaviour
     {
         string playerDataPath = Application.persistentDataPath + "/save.player.data";
         string benchDataPath = Application.persistentDataPath + "/save.bench.data";
-        if (File.Exists(playerDataPath) && File.Exists(benchDataPath))
+        if (File.Exists(playerDataPath) && new FileInfo(playerDataPath).Length > 0 &&
+            File.Exists(benchDataPath) && new FileInfo(benchDataPath).Length > 0)
         { 
             SaveData.Instance.LoadPlayerData(); 
         }
