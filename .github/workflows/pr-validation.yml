@@ -1,0 +1,202 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      upload-build:
+        description: Upload the verified Windows build for the release workflow.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository-checks:
+    name: Repository Checks
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Check conflict markers, metadata, GUIDs and JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          import subprocess
+          from pathlib import Path, PurePosixPath
+
+          # Python accepts NaN/Infinity by default; reject them because they are not valid JSON.
+          def invalid_constant(value):
+              raise ValueError(f'Invalid JSON constant: {value}')
+
+          # Validate the full tracked checkout; ignored TMP resources are imported from UGUI before the build.
+          files = set(subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')) - {''}
+          # Match opening/closing/diff3 conflict markers; separator-only lines also occur in licenses.
+          markers = re.compile(r'^(?:<{7,}(?:\s.*)?|>{7,}(?:\s.*)?|\|{7,}(?:\s.*)?)$')
+          # Collect all errors, record the owner of each GUID and track asset folder ancestors.
+          errors, guids, folders = [], {}, set()
+          for name in sorted(files):
+              data, text = Path(name).read_bytes(), ''
+              # Scan readable UTF-8 text (with or without a BOM); skip binary/non-UTF-8 marker scans.
+              if b'\0' not in data:
+                  try:
+                      text = data.decode('utf-8-sig')
+                  except UnicodeDecodeError:
+                      pass
+              # Report each conflict marker with its file path and line number.
+              for line_number, line in enumerate(text.splitlines(), 1):
+                  if markers.fullmatch(line):
+                      errors.append(f'{name}:{line_number}: unresolved conflict marker')
+              # Unity input actions and assembly definitions/references also contain JSON.
+              if Path(name).suffix.lower() in {'.json', '.inputactions', '.asmdef', '.asmref'}:
+                  try:
+                      json.loads(data.decode('utf-8-sig'), parse_constant=invalid_constant)
+                  except ValueError as error:
+                      errors.append(f'{name}: invalid JSON: {error}')
+              # Only files inside Assets require Unity metadata and asset GUID checks.
+              if not name.startswith('Assets/'):
+                  continue
+              # Unity does not import dotfiles such as the package-generated .sample.json marker.
+              # Their JSON is still checked above, but the importer does not create asset metadata.
+              if PurePosixPath(name).name.startswith('.'):
+                  continue
+              # Every tracked asset folder needs its own .meta; the Assets root is excluded.
+              folders.update(str(p) for p in PurePosixPath(name).parents if str(p) not in {'.', 'Assets'})
+              # The matching .meta must be committed, not merely present on a developer's machine.
+              if not name.endswith('.meta'):
+                  if name + '.meta' not in files:
+                      errors.append(f'{name}: missing tracked .meta file')
+                  continue
+              # Each .meta must contain one 32-digit hexadecimal GUID, unique across tracked Assets.
+              # Compare GUIDs without case differences and include the other file in duplicate errors.
+              values = re.findall(r'^guid:[ \t]*(\S+)[ \t]*\r?$', text, re.MULTILINE)
+              if len(values) != 1 or not re.fullmatch(r'[0-9a-fA-F]{32}', values[0]):
+                  errors.append(f'{name}: expected exactly one valid GUID')
+              elif values[0].lower() in guids:
+                  errors.append(f'{name}: GUID also used by {guids[values[0].lower()]}')
+              else:
+                  guids[values[0].lower()] = name
+          # Check folder metadata after collecting all ancestors, then fail with all findings at once.
+          errors.extend(f'{folder}: missing tracked folder .meta file' for folder in sorted(folders) if folder + '.meta' not in files)
+          if errors:
+              raise SystemExit('\n'.join(errors))
+          print(f'Repository checks passed: {len(files)} tracked files, {len(guids)} unique asset GUIDs.')
+          PY
+
+  validate:
+    name: Windows Build
+    needs: repository-checks
+    runs-on: windows-2022
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Enable long asset paths
+        run: git config --global core.longpaths true
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Check Unity credentials
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          foreach ($setting in @('UNITY_EMAIL', 'UNITY_PASSWORD')) {
+            if ([string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable($setting))) {
+              throw "Configure $setting in Settings > Secrets and variables > Actions. Fork PRs do not receive repository secrets."
+            }
+          }
+
+      - name: Cache Unity imports
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: Library
+          key: Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-
+
+      # Mono desktop support ships with the Windows Editor; skip additional IL2CPP modules.
+      - name: Install Unity 6000.3.22f1
+        uses: buildalon/unity-setup@30fcbcb56c10ea5d64298e970d952b8d29bc268b # v2
+        with:
+          unity-version: 6000.3.22f1
+          build-targets: None
+          hub-version: '3.19.5'
+          cache-installation: true
+
+      - name: Activate Unity Personal license
+        uses: buildalon/activate-unity-license@e0d245d0787b7b9931b56ccbde3b508f6b70f1af # v2
+        with:
+          license: personal
+          username: ${{ secrets.UNITY_EMAIL }}
+          password: ${{ secrets.UNITY_PASSWORD }}
+
+      # Wait for the GUI-subsystem process explicitly, including when Unity runs in batch mode.
+      - name: Import project and resolve packages
+        run: |
+          $log = Join-Path $env:RUNNER_TEMP 'unity-import.log'
+          $arguments = @('-batchmode', '-nographics', '-quit', '-projectPath', ('"' + $env:GITHUB_WORKSPACE + '"'), '-buildTarget', 'StandaloneWindows64', '-logFile', ('"' + $log + '"'))
+          $process = Start-Process -FilePath $env:UNITY_EDITOR_PATH -ArgumentList $arguments -Wait -PassThru -WindowStyle Hidden
+          if (Test-Path -LiteralPath $log) { Get-Content -LiteralPath $log }
+          if ($process.ExitCode -ne 0) { throw "Unity import failed with exit code $($process.ExitCode)." }
+
+      - name: Import TMP Essential Resources
+        run: |
+          $package = Get-ChildItem -LiteralPath 'Library/PackageCache' -Filter 'TMP Essential Resources.unitypackage' -File -Recurse |
+            Where-Object { $_.FullName -match '[\\/]com\.unity\.ugui[^\\/]*[\\/]Package Resources[\\/]' } |
+            Select-Object -First 1
+          if ($null -eq $package) { throw 'The UGUI package did not provide TMP Essential Resources.' }
+          $log = Join-Path $env:RUNNER_TEMP 'unity-tmp-import.log'
+          $arguments = @('-batchmode', '-nographics', '-quit', '-projectPath', ('"' + $env:GITHUB_WORKSPACE + '"'), '-buildTarget', 'StandaloneWindows64', '-importPackage', ('"' + $package.FullName + '"'), '-logFile', ('"' + $log + '"'))
+          $process = Start-Process -FilePath $env:UNITY_EDITOR_PATH -ArgumentList $arguments -Wait -PassThru -WindowStyle Hidden
+          if (Test-Path -LiteralPath $log) { Get-Content -LiteralPath $log }
+          if ($process.ExitCode -ne 0) { throw "TMP import failed with exit code $($process.ExitCode)." }
+          if (!(Test-Path -LiteralPath 'Assets/TextMesh Pro/Resources/TMP Settings.asset' -PathType Leaf)) {
+            throw 'TMP Settings.asset was not restored.'
+          }
+
+      - name: Build Windows 64-bit
+        run: |
+          $log = Join-Path $env:RUNNER_TEMP 'unity-windows-build.log'
+          $output = Join-Path $env:GITHUB_WORKSPACE 'build/Windows64/Metroidvania.exe'
+          $arguments = @('-batchmode', '-nographics', '-projectPath', ('"' + $env:GITHUB_WORKSPACE + '"'), '-buildTarget', 'StandaloneWindows64', '-executeMethod', 'Metroidvania.Editor.CiBuild.BuildWindows64', '-customBuildPath', ('"' + $output + '"'), '-logFile', ('"' + $log + '"'))
+          $process = Start-Process -FilePath $env:UNITY_EDITOR_PATH -ArgumentList $arguments -Wait -PassThru -WindowStyle Hidden
+          if (Test-Path -LiteralPath $log) { Get-Content -LiteralPath $log }
+          if ($process.ExitCode -ne 0) { throw "Windows build failed with exit code $($process.ExitCode)." }
+
+      - name: Verify build output
+        run: |
+          foreach ($path in @('build/Windows64/Metroidvania.exe', 'build/Windows64/UnityPlayer.dll', 'build/Windows64/Metroidvania_Data/globalgamemanagers', 'build/Windows64/Metroidvania_Data/Managed/Assembly-CSharp.dll')) {
+            if (!(Test-Path -LiteralPath $path -PathType Leaf) -or (Get-Item -LiteralPath $path).Length -eq 0) {
+              throw "Missing or empty build output: $path"
+            }
+          }
+          if (!(Test-Path -LiteralPath 'build/Windows64/MonoBleedingEdge' -PathType Container)) {
+            throw 'The Windows Mono runtime is missing.'
+          }
+
+      - name: Upload verified Windows build
+        if: inputs.upload-build
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: windows64-build
+          path: |
+            build/Windows64
+            !build/Windows64/*_BurstDebugInformation_DoNotShip/**
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+          overwrite: true

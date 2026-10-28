@@ -49,6 +49,28 @@ The game is currently in development, and this repository contains the project f
 - **Install:**
   - **Itch.io:** [download](https://quochung020497.itch.io/)
 -------------
+### Commit message checks
+Use `type: description`, with an optional scope and breaking-change `!`, for example `fix(player): restore jump input`. Accepted types are `feat`, `fix`, `chore`, `doc`, `docs`, `refactor`, `test`, `ci`, `build`, `perf`, `style` and `revert` (case-insensitive). Actual merge commits keep Git's generated subject.
+
+Install the shared hook once per clone from Git Bash, and repeat after updating `.githooks/commit-msg`:
+
+```bash
+cp .githooks/commit-msg "$(git rev-parse --git-common-dir)/hooks/commit-msg"
+chmod +x "$(git rev-parse --git-common-dir)/hooks/commit-msg"
+git config --local core.hooksPath "$(git rev-parse --path-format=absolute --git-common-dir)/hooks"
+```
+
+The installed hook remains available when switching branches. The **Commit Message** workflow applies the same hook to non-merge commits in pull requests targeting `master`; a manual run validates the latest non-merge commit.
+-------------
+### Automated Windows builds
+- **Target:** Windows 64-bit, Mono, Unity 6.3 LTS (6000.3.22f1). The build includes all nine enabled scenes, starting with Intro.
+- **Render pipeline:** desktop builds retain the existing URP Compatibility Mode through the `URP_COMPATIBILITY_MODE` scripting define.
+- **PR Validation:** pull requests targeting `master` run repository metadata/GUID/JSON checks and a Windows desktop build. A manual validation run is also available in Actions.
+- **Unity credentials:** configure repository Actions secrets `UNITY_EMAIL` and `UNITY_PASSWORD` with the Unity account used for CI. Fork PRs do not receive these secrets.
+- **TMP:** CI imports TMP Essential Resources from the restored UGUI package before building. The generated resources stay outside Git; custom fonts remain in `Assets/ProjectFonts`.
+- **Release:** pushing a tag matching `build-v*` (for example, `build-v0.1.0`) reuses validation and publishes `Metroidvania-<tag>-Windows64.zip` as a GitHub Release asset. Rerunning the same tag replaces its ZIP.
+- **Run the demo:** extract the entire ZIP and launch `Metroidvania.exe`. Keep `Metroidvania_Data`, `UnityPlayer.dll`, `MonoBleedingEdge` and the other packaged files beside the executable.
+-------------
 ### Future Plans & Updates
 - **Combat System Update:**
   - Introduce a talisman system that provides various buffs, debuffs, or special abilities.

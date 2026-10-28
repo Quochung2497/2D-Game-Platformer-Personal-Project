@@ -8,7 +8,6 @@ using System.IO;
 using static Unity.VisualScripting.Member;
 using System.Runtime.CompilerServices;
 using Cinemachine;
-using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class PlayerController : MonoBehaviour
 {

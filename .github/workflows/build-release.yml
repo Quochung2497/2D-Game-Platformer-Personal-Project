@@ -1,0 +1,61 @@
+name: Build and Release
+
+on:
+  push:
+    tags: ['build-v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Windows 64-bit
+    uses: ./.github/workflows/pr-validation.yml
+    with:
+      upload-build: true
+    secrets: inherit
+
+  publish:
+    name: Publish Desktop Release
+    needs: build
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    concurrency:
+      group: desktop-release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - name: Download verified Windows build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: windows64-build
+          path: build/Windows64
+
+      # Include the .exe, data folder, UnityPlayer.dll and Mono runtime together.
+      - name: Package Windows release
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          test -s build/Windows64/Metroidvania.exe
+          test -s build/Windows64/UnityPlayer.dll
+          test -d build/Windows64/Metroidvania_Data
+          test -d build/Windows64/MonoBleedingEdge
+          zip_path="$RUNNER_TEMP/Metroidvania-${RELEASE_TAG}-Windows64.zip"
+          cd build/Windows64
+          zip -q -r "$zip_path" .
+          unzip -tq "$zip_path"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          zip_path="$RUNNER_TEMP/Metroidvania-${RELEASE_TAG}-Windows64.zip"
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "$zip_path" --clobber
+          else
+            gh release create "$RELEASE_TAG" "$zip_path" \
+              --verify-tag --title "$RELEASE_TAG" --generate-notes
+          fi
