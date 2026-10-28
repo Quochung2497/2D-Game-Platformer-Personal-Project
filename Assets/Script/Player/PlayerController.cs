@@ -60,8 +60,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float comboResetTime = 0.8f;
 
     //Receive damage
-    private bool restoreTime;
-    private float restoreTimeSpeed;
+    private bool _isRestoringTimeScale;
+    private float _timeScaleRestoreSpeed;
+    private Coroutine _restoreDelayCoroutine;
     [Space(5)]
 
     [Header("Recoil Settings:")]
@@ -606,7 +607,10 @@ public class PlayerController : MonoBehaviour
                     if (comboStep == 3)
                     {
                         CameraManager.instance.CameraShakeFromProfile(lastAttackShake_profile, impulseSource);
-                        PlayerController.Instance.HitStopTime(0f, 10, 0.25f); ;
+                        HitStopTime(
+                            targetTimeScale: 0f,
+                            restoreSpeed: 10,
+                            holdDuration: 0.25f);
                     }
                 }
             }
@@ -769,40 +773,49 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void HitStopTime(
+        float targetTimeScale,
+        int restoreSpeed,
+        float holdDuration)
+    {
+        if (_restoreDelayCoroutine != null)
+        {
+            StopCoroutine(_restoreDelayCoroutine);
+            _restoreDelayCoroutine = null;
+        }
+
+        _isRestoringTimeScale = false;
+        _timeScaleRestoreSpeed = restoreSpeed;
+        Time.timeScale = targetTimeScale;
+
+        if (holdDuration <= 0f)
+        {
+            _isRestoringTimeScale = true;
+            return;
+        }
+
+        _restoreDelayCoroutine =
+            StartCoroutine(BeginRestoreAfterDelay(holdDuration));
+    }
+
+    private IEnumerator BeginRestoreAfterDelay(float holdDuration)
+    {
+        yield return new WaitForSecondsRealtime(holdDuration);
+
+        _restoreDelayCoroutine = null;
+        _isRestoringTimeScale = true;
+    }
+
     private void RestoreTimeScale()
     {
-        if (restoreTime)
-        {
-            if (Time.timeScale < 1)
-            {
-                Time.timeScale += Time.unscaledDeltaTime * restoreTimeSpeed;
-            }
-            else
-            {
-                Time.timeScale = 1;
-                restoreTime = false;
-            }
-        }
-    }
-    public void HitStopTime(float _newTimeScale, int _restoreSpeed, float _delay)
-    {
-        restoreTimeSpeed = _restoreSpeed;
+        if (!_isRestoringTimeScale) return;
 
-        if (_delay > 0)
-        {
-            StartCoroutine(StartTimeAgain(_delay));
-        }
-        else
-        {
-            restoreTime = true;
-        }
-        Time.timeScale = _newTimeScale;
-    }
+        Time.timeScale = Mathf.MoveTowards(
+            Time.timeScale,
+            1f,
+            _timeScaleRestoreSpeed * Time.unscaledDeltaTime);
 
-    private IEnumerator StartTimeAgain(float _delay)
-    {
-        yield return new WaitForSecondsRealtime(_delay);
-        restoreTime = true;
+        _isRestoringTimeScale = Time.timeScale < 1f;
     }
     public void Respawned()
     {
