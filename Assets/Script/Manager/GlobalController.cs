@@ -84,8 +84,12 @@ public class GlobalController : MonoBehaviour
     }
     IEnumerator OpenTeleportationPoint()
     {
+        var transition = SecretSceneTranstition.Instance;
         yield return new WaitForSeconds(1);
-        SecretSceneTranstition.Instance.Enable();
+        if (transition != null)
+        {
+            transition.Enable();
+        }
     }
 
     public void SavePlayerScore()

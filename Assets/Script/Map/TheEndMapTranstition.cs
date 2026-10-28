@@ -24,6 +24,7 @@ public class TheEndMapTranstition : MonoBehaviour
     public float amplitude = 0.25f;
     public float frequency = 1f;
     private Vector2 initialPosition;
+    private bool endingStarted;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -38,8 +39,9 @@ public class TheEndMapTranstition : MonoBehaviour
 
     private void Update()
     {
-        if(!FinalBoss.Instance.alive)
+        if (!endingStarted && FinalBoss.Instance != null && !FinalBoss.Instance.alive)
         {
+            endingStarted = true;
             Debug.Log("Starting Ending coroutine");
             StartCoroutine(Ending());
         }

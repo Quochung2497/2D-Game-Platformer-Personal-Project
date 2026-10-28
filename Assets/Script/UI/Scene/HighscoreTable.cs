@@ -11,7 +11,7 @@ public class HighscoreTable : MonoBehaviour
     private Transform entryContainer;
     private Transform entryTemplate;
     [SerializeField] private TMP_InputField playerNameInput;
-    private List<Transform> highscoreEntryTransformList;
+    private List<Transform> highscoreEntryTransformList = new List<Transform>();
 
     private void Awake()
     {
@@ -23,14 +23,12 @@ public class HighscoreTable : MonoBehaviour
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-        if (highscores == null)
+        if (highscores == null || highscores.highscoreEntryList == null)
         {
-            // There's no stored table, initialize
-            Debug.Log("Initializing table with default values...");
-            AddHighscoreEntry();
-            // Reload
-            jsonString = PlayerPrefs.GetString("highscoreTable");
-            highscores = JsonUtility.FromJson<Highscores>(jsonString);
+            highscores = new Highscores
+            {
+                highscoreEntryList = new List<HighscoreEntry>()
+            };
         }
 
         // Sort entry list by Score
@@ -48,7 +46,6 @@ public class HighscoreTable : MonoBehaviour
             }
         }
 
-        highscoreEntryTransformList = new List<Transform>();
         int maxEntries = Mathf.Min(highscores.highscoreEntryList.Count, 10);
         for (int i = 0; i < maxEntries; i++)
         {
@@ -147,7 +144,7 @@ public class HighscoreTable : MonoBehaviour
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-        if (highscores == null)
+        if (highscores == null || highscores.highscoreEntryList == null)
         {
             // Nếu chưa có bảng điểm, khởi tạo
             highscores = new Highscores
@@ -186,11 +183,13 @@ public class HighscoreTable : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        highscoreEntryTransformList.Clear();
+
         // Tải lại dữ liệu và cập nhật UI
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-        if (highscores == null)
+        if (highscores == null || highscores.highscoreEntryList == null)
         {
             Debug.LogWarning("No highscore data found.");
             return;
@@ -198,8 +197,6 @@ public class HighscoreTable : MonoBehaviour
 
         // Sắp xếp lại danh sách theo điểm số giảm dần
         highscores.highscoreEntryList.Sort((x, y) => y.score.CompareTo(x.score));
-
-        highscoreEntryTransformList.Clear();
 
         // Tạo lại các entry dựa trên danh sách điểm cao mới
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
