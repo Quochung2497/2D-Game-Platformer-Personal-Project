@@ -1,0 +1,28 @@
+#!/bin/sh
+# Install per clone (Git Bash); repeat after updating this shared hook:
+# cp .githooks/commit-msg "$(git rev-parse --git-common-dir)/hooks/commit-msg"
+# chmod +x "$(git rev-parse --git-common-dir)/hooks/commit-msg"
+# git config --local core.hooksPath "$(git rev-parse --path-format=absolute --git-common-dir)/hooks"
+# The installed copy stays available when switching to older branches.
+# Git passes the proposed commit message file as the first argument.
+
+# Actual merge commits keep Git's generated subject without requiring a type.
+if test -f "$(git rev-parse --git-path MERGE_HEAD)"; then
+    exit 0
+fi
+
+# Read only the subject; the body and footers are unrestricted.
+subject=
+IFS= read -r subject < "$1" || :
+subject=$(printf '%s' "$subject" | tr -d '\r')
+
+# Require type: description, with optional (scope) and !; types are case-insensitive.
+pattern='^(feat|fix|chore|doc|docs|refactor|test|ci|build|perf|style|revert)(\([^()[:space:]]+\))?!?: [^[:space:]].*$'
+if printf '%s\n' "$subject" | grep -Eiq "$pattern"; then
+    exit 0
+fi
+
+# A nonzero exit aborts the commit so the subject can be corrected and retried.
+printf '%s\n' 'Invalid commit subject. Use type: description or type(scope): description.' >&2
+printf '%s\n' 'Types: feat, fix, chore, doc, docs, refactor, test, ci, build, perf, style, revert.' >&2
+exit 1

@@ -1,0 +1,45 @@
+name: Commit Message
+
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: commit-message-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  commit-message:
+    name: Commit Message
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      # Reuse the local hook so both entry points enforce the same subject format.
+      - name: Validate commit subjects
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if [ "$EVENT_NAME" = pull_request ]; then
+            commits=$(git rev-list --reverse --no-merges "$PR_BASE..$PR_HEAD")
+          else
+            commits=$(git rev-list --no-merges -n 1 HEAD)
+          fi
+          failed=0
+          for commit in $commits; do
+            git show -s --format=%B "$commit" > "$RUNNER_TEMP/commit-message.txt"
+            if ! sh .githooks/commit-msg "$RUNNER_TEMP/commit-message.txt"; then
+              echo "::error::Invalid commit subject at $commit."
+              failed=1
+            fi
+          done
+          exit "$failed"
