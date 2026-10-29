@@ -1,11 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class SkipCutScene : MonoBehaviour
 {
@@ -13,17 +9,15 @@ public class SkipCutScene : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private TextMeshProUGUI fillText;
 
-    private List<ISkipCondition> skipConditions = new List<ISkipCondition>();
-    private Coroutine fadeCoroutine;
+    private readonly List<ISkipCondition> skipConditions = new List<ISkipCondition>();
     private CutSceneManager cutsceneManager;
-    private float skipTimer = 0f;
+    private float skipTimer;
     private const float skipThreshold = 2f;
-    private bool isSkipped;
+    private bool waitForRelease;
 
-    void Start()
+    private void Awake()
     {
         cutsceneManager = GetComponent<CutSceneManager>();
-        isSkipped = false;
         foreach (var behaviour in skipConditionBehaviours)
         {
             if (behaviour is ISkipCondition condition)
@@ -35,105 +29,96 @@ public class SkipCutScene : MonoBehaviour
                 Debug.LogError($"The assigned behaviour {behaviour} does not implement ISkipCondition!");
             }
         }
-
-        if (fill != null)
-        {
-            fill.fillAmount = 0f;
-            if(fillText != null)
-            {
-                Color textColor = fillText.color;
-                textColor.a = 0;
-                fillText.color = textColor;
-            }
-        }
     }
 
-    void Update()
+    private void OnEnable()
     {
-        bool isSkipping = skipConditions.Any(condition => condition.ShouldSkip());
+        cutsceneManager.SegmentChanged += OnSegmentChanged;
+        OnSegmentChanged();
+        SetHintAlpha(0f);
+    }
 
-        if (isSkipping)
+    private void OnDisable()
+    {
+        cutsceneManager.SegmentChanged -= OnSegmentChanged;
+        ResetProgress();
+        SetHintAlpha(0f);
+    }
+
+    private void Update()
+    {
+        bool isHeld = IsSkipHeld();
+
+        if (!cutsceneManager.CanSkip)
         {
-            skipTimer += Time.deltaTime;
-            skipTimer = Mathf.Clamp(skipTimer, 0, skipThreshold);
-            StartCoroutine(SetAlpha(1f, 0.2f, targetText: fillText));
+            waitForRelease |= isHeld;
+            ResetProgress();
+        }
+        else if (waitForRelease)
+        {
+            waitForRelease = isHeld;
+            ResetProgress();
+        }
+        else if (isHeld)
+        {
+            skipTimer = Mathf.Min(skipTimer + Time.unscaledDeltaTime, skipThreshold);
             if (fill != null)
             {
                 fill.fillAmount = skipTimer / skipThreshold;
             }
 
-            if (Mathf.Approximately(fill.fillAmount, 1f))
+            if (skipTimer >= skipThreshold)
             {
-                //StopCoroutine(fadeCoroutine);
-                isSkipped = true;
-                StartCoroutine(SkipScene());
+                waitForRelease = true;
+                ResetProgress();
+                cutsceneManager.SkipCutScene();
             }
         }
         else
         {
-            if (!isSkipped)
-            {
-                skipTimer = Mathf.Max(skipTimer - Time.deltaTime, 0);
-                if (fill != null)
-                {
-                    fill.fillAmount = skipTimer / skipThreshold;
-                    if(fill.fillAmount == 0f)
-                    {
-                        fadeCoroutine = StartCoroutine(SetAlpha(0f, 0.5f, targetText: fillText));
-                    }
-                }
-            }
+            ResetProgress();
+        }
+
+        bool showHint = isHeld && !waitForRelease && cutsceneManager.CanSkip;
+        if (fillText != null)
+        {
+            float targetAlpha = showHint ? 1f : 0f;
+            float fadeSpeed = showHint ? 5f : 2f;
+            SetHintAlpha(Mathf.MoveTowards(fillText.color.a, targetAlpha, Time.unscaledDeltaTime * fadeSpeed));
         }
     }
 
-    private IEnumerator SkipScene()
+    private bool IsSkipHeld()
     {
-        yield return SetAlpha(0f, 1f, targetImage: fill, targetText: fillText);
-        cutsceneManager.SkipCutScene();
+        foreach (var condition in skipConditions)
+        {
+            if (condition.ShouldSkip()) return true;
+        }
+
+        return false;
     }
 
-    private IEnumerator SetAlpha(float targetAlpha, float duration, Image targetImage = null, TextMeshProUGUI targetText = null)
+    private void OnSegmentChanged()
     {
-        float startAlphaImage = targetImage != null ? targetImage.color.a : 0f;
-        float startAlphaText = targetText != null ? targetText.color.a : 0f;
+        ResetProgress();
+        waitForRelease = IsSkipHeld();
+    }
 
-        float alphaTimer = 0f;
-
-        while (alphaTimer < duration)
+    private void ResetProgress()
+    {
+        skipTimer = 0f;
+        if (fill != null)
         {
-            alphaTimer += Time.deltaTime;
-            float newAlphaImage = Mathf.Lerp(startAlphaImage, targetAlpha, alphaTimer / duration);
-            float newAlphaText = Mathf.Lerp(startAlphaText, targetAlpha, alphaTimer / duration);
-
-            if (targetImage != null)
-            {
-                Color imageColor = targetImage.color;
-                imageColor.a = newAlphaImage;
-                targetImage.color = imageColor;
-            }
-
-            if (targetText != null)
-            {
-                Color textColor = targetText.color;
-                textColor.a = newAlphaText;
-                targetText.color = textColor;
-            }
-
-            yield return null;
+            fill.fillAmount = 0f;
         }
+    }
 
-        if (targetImage != null)
-        {
-            Color imageColor = targetImage.color;
-            imageColor.a = targetAlpha;
-            targetImage.color = imageColor;
-        }
+    private void SetHintAlpha(float alpha)
+    {
+        if (fillText == null) return;
 
-        if (targetText != null)
-        {
-            Color textColor = targetText.color;
-            textColor.a = targetAlpha;
-            targetText.color = textColor;
-        }
+        Color color = fillText.color;
+        color.a = alpha;
+        fillText.color = color;
     }
 }

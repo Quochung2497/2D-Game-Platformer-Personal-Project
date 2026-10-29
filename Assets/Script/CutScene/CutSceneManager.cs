@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
@@ -18,38 +17,42 @@ public class CutSceneManager : MonoBehaviour
     [SerializeField] private VideoClip[] videoClips;
 
     private Coroutine cutsceneCoroutine;
+    private bool skipRequested;
+    private bool segmentActive;
+    private bool videoFinished;
+    private bool isTransitioning;
+
+    public event Action SegmentChanged;
+    public bool CanSkip => segmentActive && !skipRequested && !isTransitioning;
+
+    private void OnEnable()
+    {
+        videoPlayer.loopPointReached += OnVideoFinished;
+    }
+
     private void Start()
     {
         cutsceneCoroutine = StartCoroutine(CutsceneSequence());
     }
 
-    /*private void Update()
+    private void OnDisable()
     {
-        if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.JoystickButton0))
+        videoPlayer.loopPointReached -= OnVideoFinished;
+        segmentActive = false;
+
+        if (cutsceneCoroutine != null)
         {
-            skipTimer += Time.deltaTime;
-            Debug.Log("timer = " + skipTimer);
-            if (skipTimer >= skipThreshold)
-            {
-                SkipCutScene();
-            }
+            StopCoroutine(cutsceneCoroutine);
+            cutsceneCoroutine = null;
         }
-        else
-        {
-            skipTimer = Mathf.Max(skipTimer - Time.deltaTime, 0);
-        }
-    }*/
+    }
 
     public void SkipCutScene()
     {
-        StopCoroutine(cutsceneCoroutine);
-        if (videoPlayer.isPlaying)
-        {
-            videoPlayer.Stop();
-        }
-        StartCoroutine(MoveToNextScene());
-    }
+        if (!CanSkip) return;
 
+        skipRequested = true;
+    }
 
     private IEnumerator CutsceneSequence()
     {
@@ -59,11 +62,14 @@ public class CutSceneManager : MonoBehaviour
             yield return StorySequence();
         }
 
-        if (videoClips != null && videoClips.Length > 0 && !storyManager.activeInHierarchy)
+        int firstVideoIndex = storyManager != null ? 1 : 0;
+        if (videoClips != null && videoClips.Length > firstVideoIndex)
         {
-            yield return PlayVideosSequentially();
+            yield return PlayVideosSequentially(firstVideoIndex);
         }
-        StartCoroutine(MoveToNextScene());
+
+        yield return MoveToNextScene();
+        cutsceneCoroutine = null;
     }
 
     private IEnumerator StorySequence()
@@ -72,50 +78,67 @@ public class CutSceneManager : MonoBehaviour
         videoPlayer.clip = videoClips[0];
         videoPlayer.Prepare();
         yield return new WaitUntil(() => videoPlayer.isPrepared);
-        videoPlayer.Play(); 
+        videoPlayer.Play();
         yield return new WaitUntil(() => videoPlayer.isPlaying);
         yield return FadeUI.FadeOut(delay);
+
         storyManager.SetActive(true);
-        yield return new WaitUntil(() => StoryManagerCompleted());
+        BeginSegment();
+        yield return new WaitUntil(() => skipRequested || StoryManagerCompleted());
+        segmentActive = false;
         storyManager.SetActive(false);
     }
 
     private bool StoryManagerCompleted()
     {
         StoryManager manager = storyManager.GetComponent<StoryManager>();
-        if (manager != null)
+        return manager != null && manager.IsCompleted();
+    }
+
+    private IEnumerator PlayVideosSequentially(int firstVideoIndex)
+    {
+        for (int i = firstVideoIndex; i < videoClips.Length; i++)
         {
-            return manager.IsCompleted();
-        }
-        else
-        {
-            return false; 
+            videoPlayer.Stop();
+            videoPlayer.isLooping = false;
+            videoPlayer.clip = videoClips[i];
+            videoFinished = false;
+            BeginSegment();
+
+            videoPlayer.Prepare();
+            yield return new WaitUntil(() => skipRequested || videoPlayer.isPrepared);
+            if (!skipRequested)
+            {
+                videoPlayer.Play();
+                yield return new WaitUntil(() => skipRequested || videoFinished);
+            }
+
+            segmentActive = false;
+            videoPlayer.Stop();
         }
     }
 
-    private IEnumerator PlayVideosSequentially()
+    private void BeginSegment()
     {
-        for (int i = 1; i < videoClips.Length; i++)
+        skipRequested = false;
+        segmentActive = true;
+        SegmentChanged?.Invoke();
+    }
+
+    private void OnVideoFinished(VideoPlayer source)
+    {
+        if (!source.isLooping)
         {
-            videoPlayer.isLooping = false;
-            videoPlayer.clip = videoClips[i];
-            videoPlayer.Prepare();
-            yield return new WaitUntil(() => videoPlayer.isPrepared);
-            videoPlayer.Play();
-
-            Debug.Log($"Playing clip {i}: {videoClips[i].name}");
-            yield return new WaitUntil(() => !videoPlayer.isPlaying);
-
-            Debug.Log($"Finished playing clip {i}: {videoClips[i].name}");
+            videoFinished = true;
         }
-
     }
 
     private IEnumerator MoveToNextScene()
     {
+        if (isTransitioning) yield break;
+
+        isTransitioning = true;
         yield return FadeUI.FadeIn(delay);
-        Debug.Log("Gameplay started!");
         SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
     }
 }
-

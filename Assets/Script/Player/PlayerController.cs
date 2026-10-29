@@ -232,8 +232,8 @@ public class PlayerController : MonoBehaviour
             {
                 Move();
                 Flip();
-                Jump();
                 UpdateJumpVariables();
+                Jump();
             }
             if (openMap) { return; }
 
@@ -609,8 +609,8 @@ public class PlayerController : MonoBehaviour
                         CameraManager.instance.CameraShakeFromProfile(lastAttackShake_profile, impulseSource);
                         HitStopTime(
                             targetTimeScale: 0f,
-                            restoreSpeed: 10,
-                            holdDuration: 0.25f);
+                            restoreSpeed: 5,
+                            holdDuration: 0.30f);
                     }
                 }
             }
@@ -1216,6 +1216,7 @@ public class PlayerController : MonoBehaviour
         {
             if (JumpBufferCounter > 0 && CoyoteTimeCounter > 0)
             {
+                ConsumeJumpInput();
                 pState.Jumping = true;
 
                 AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
@@ -1224,13 +1225,14 @@ public class PlayerController : MonoBehaviour
 
                 Quaternion rotation = direction == 1 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
 
-                PlayerParticles.JumpVfx(rotation);
-
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+
+                PlayerParticles.JumpVfx(rotation);
 
             }
             else if (!Grounded() && AirJumpCounter < maxAirJumps && Input.GetButtonDown("Jump") && unlockedVarJump && !Walled())
             {
+                ConsumeJumpInput();
                 pState.Jumping = true;
 
                 AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]);
@@ -1254,6 +1256,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    private void ConsumeJumpInput()
+    {
+        JumpBufferCounter = 0;
+        CoyoteTimeCounter = 0;
+    }
     private void UpdateJumpVariables()
     {
         if (Grounded())
@@ -1264,6 +1271,7 @@ public class PlayerController : MonoBehaviour
 
             AirJumpCounter = 0;
 
+            PlayerParticles.JumpEffectCounted = 0;
             PlayerParticles.DoubleJumpVfxCounted = 0;
 
             //JumpEffectCreated = 0;
@@ -1306,6 +1314,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && pState.isWallSliding && TimeSinceLastJump <= 0)
         {
+            ConsumeJumpInput();
             AudioManager.instance.PlaySfx(AudioManager.instance.sfx[4]); 
 
             pState.isWallJumping = true;

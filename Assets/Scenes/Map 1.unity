@@ -68443,11 +68443,11 @@ PrefabInstance:
       objectReference: {fileID: 722821591}
     - target: {fileID: 5797880178983713182, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Size.x
-      value: 49.370907
+      value: 65.55756
       objectReference: {fileID: 0}
     - target: {fileID: 5797880178983713182, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Offset.x
-      value: 0.53183746
+      value: 8.625164
       objectReference: {fileID: 0}
     - target: {fileID: 6543978869765942073, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Name
@@ -68752,6 +68752,14 @@ PrefabInstance:
       propertyPath: enemyPool
       value: 
       objectReference: {fileID: 3395042068935789961}
+    - target: {fileID: 732301754869473755, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
+      propertyPath: m_Size.x
+      value: 65.74638
+      objectReference: {fileID: 0}
+    - target: {fileID: 732301754869473755, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
+      propertyPath: m_Offset.x
+      value: 12.049438
+      objectReference: {fileID: 0}
     - target: {fileID: 4102772342966497257, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.32
