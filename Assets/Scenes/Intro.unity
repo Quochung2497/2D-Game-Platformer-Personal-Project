@@ -284,9 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hi\u1EC7n v\u1EABn trong giai \u0111o\u1EA1n ph\xE1t tri\u1EC3n v\xE0
-    t\u01B0\u01A1ng lai s\u1EBD t\xEDch h\u1EE3p th\xEAm \u0111i\u1EC1u khi\u1EC3n
-    cho tay c\u1EA7m"
+  m_text: "Currently in development.\nController support is planned for a future update"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5839754001420b74396a33f914f0b753, type: 2}
   m_sharedMaterial: {fileID: 1407728260462230126, guid: 5839754001420b74396a33f914f0b753, type: 2}
@@ -904,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Test ki\u1EC3u popup"
+  m_text: "Popup test"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5839754001420b74396a33f914f0b753, type: 2}
   m_sharedMaterial: {fileID: 1407728260462230126, guid: 5839754001420b74396a33f914f0b753, type: 2}

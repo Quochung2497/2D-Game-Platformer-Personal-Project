@@ -55,27 +55,21 @@ public class UnlockCastSpell : MonoBehaviour
         Destroy(_particles, 0.5f);
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        UISideSpell.SetActive(true);
-        Time.timeScale = 0;
-        PauseMenuUI.Instance.GameIsPaused = true;
-        yield return new WaitForSecondsRealtime(3f);
-        PauseMenuUI.Instance.GameIsPaused = false;
-        Time.timeScale = 1;
-        UISideSpell.SetActive(false);
-        UIUpSpell.SetActive(true);
-        Time.timeScale = 0;
-        PauseMenuUI.Instance.GameIsPaused = true;
-        yield return new WaitForSecondsRealtime(3f);
-        PauseMenuUI.Instance.GameIsPaused = false;
-        Time.timeScale = 1;
-        UIUpSpell.SetActive(false);
-        UIDownSpell.SetActive(true);
-        Time.timeScale = 0;
-        PauseMenuUI.Instance.GameIsPaused = true;
-        yield return new WaitForSecondsRealtime(3f);
-        PauseMenuUI.Instance.GameIsPaused = false;
-        Time.timeScale = 1;
-        UIDownSpell.SetActive(false);
+        UISideSpell.GetComponent<AbilityUnlockPopup>().Show(ShowUpSpell);
+    }
+
+    private void ShowUpSpell()
+    {
+        UIUpSpell.GetComponent<AbilityUnlockPopup>().Show(ShowDownSpell);
+    }
+
+    private void ShowDownSpell()
+    {
+        UIDownSpell.GetComponent<AbilityUnlockPopup>().Show(CompleteUnlock);
+    }
+
+    private void CompleteUnlock()
+    {
         PlayerController.Instance.unlockedCastSpell = true;
         SaveData.Instance.SavePlayerData();
         Destroy(gameObject);
