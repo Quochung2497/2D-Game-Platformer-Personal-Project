@@ -53,15 +53,13 @@ public class UnlockDoubleJump : MonoBehaviour
         Destroy(_particles, 0.5f);
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        CanvasUI.SetActive(true);
-        Time.timeScale = 0;
-        PauseMenuUI.Instance.GameIsPaused = true;
-        yield return new WaitForSecondsRealtime(3f);
-        PauseMenuUI.Instance.GameIsPaused = false;
-        Time.timeScale = 1;
+        CanvasUI.GetComponent<AbilityUnlockPopup>().Show(CompleteUnlock);
+    }
+
+    private void CompleteUnlock()
+    {
         PlayerController.Instance.unlockedVarJump = true;
         SaveData.Instance.SavePlayerData();
-        CanvasUI.SetActive(false);
         Destroy(gameObject);
     }
 }

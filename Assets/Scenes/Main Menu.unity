@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ch\u1EE9c n\u0103ng \u0111ang \u0111\u01B0\u1EE3c ph\xE1t tri\u1EC3n"
+  m_text: "Feature under development"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -314,9 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "S\u1EA3n ph\u1EA9m \u0111\u01B0\u1EE3c l\xE0m b\u1EDFi sinh vi\xEAn \nTr\u1EA7n
-    Qu\u1ED1c H\u01B0ng\nT\xE0i nguy\xEAn trong game \u0111\u01B0\u1EE3c d\xF9ng\ncho
-    m\u1EE5c \u0111\xEDch h\u1ECDc t\u1EADp."
+  m_text: "A student project by\nTr\u1ea7n Qu\u1ed1c H\u01b0ng\nGame assets are used\nfor educational purposes."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4092,7 +4090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ch\u1EE9c n\u0103ng \u0111ang \u0111\u01B0\u1EE3c ph\xE1t tri\u1EC3n"
+  m_text: "Feature under development"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4873,7 +4871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Phi\xEAu L\u01B0u"
+  m_text: "Adventure Game"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7f05dd242eed6a469e91508c3fc098a, type: 2}
   m_sharedMaterial: {fileID: 7927826930647043795, guid: b7f05dd242eed6a469e91508c3fc098a, type: 2}
@@ -6703,7 +6701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B\u1EA5m n\xFAt b\u1EA5t k\u1EF3 \u0111\u1EC3 ti\u1EBFp t\u1EE5c"
+  m_text: "Press any button to continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92743723ddc90c94aa7fcfbdd4fc67b4, type: 2}
   m_sharedMaterial: {fileID: -4860362540525569283, guid: 92743723ddc90c94aa7fcfbdd4fc67b4, type: 2}
@@ -9244,7 +9242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Di chuy\u1EC3n sang tr\xE1i"
+  m_text: "Move left"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9962,7 +9960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xC2m l\u01B0\u1EE3ng"
+  m_text: "Volume"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10530,7 +10528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kh\xF4ng t\xECm th\u1EA5y d\u1EEF li\u1EC7u l\u01B0u tr\u1EEF"
+  m_text: "No save data found"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10845,7 +10843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "H\xECnh \u1EA3nh"
+  m_text: "Graphics"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12111,7 +12109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Full m\xE0n h\xECnh"
+  m_text: "Fullscreen"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
