@@ -1,1 +1,9 @@
+# Keep text files consistent with Unity's serializer across platforms.
+* text=auto eol=lf
+
+# Preserve native line endings for Windows batch scripts.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Existing file-specific rules override the text default below.
 *.mp4 filter=lfs diff=lfs merge=lfs -text
