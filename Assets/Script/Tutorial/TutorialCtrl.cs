@@ -15,7 +15,7 @@ public class TutorialCtrl : MonoBehaviour
 
     private Animator anim;
     private Rigidbody2D rb;
-    void Awake()
+    void Start()
     {
         tut = GetComponentInParent<TutorialManager>();
         anim = PlayerController.Instance.GetComponent<Animator>();
