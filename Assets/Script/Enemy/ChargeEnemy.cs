@@ -16,10 +16,19 @@ public class ChargeEnemy : Enemy
 
     float timer;
     private bool isFacingPlayer = false;
+    private Collider2D enemyCollider;
+    private ContactFilter2D playerDetectionFilter;
+    private readonly RaycastHit2D[] playerDetectionHits = new RaycastHit2D[1];
+    private int attackableLayerIndex;
+    private const float groundProbeOffset = 0.05f;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        enemyCollider = GetComponent<Collider2D>();
+        attackableLayerIndex = LayerMask.NameToLayer("Attackable");
+        playerDetectionFilter.SetLayerMask(Physics2D.DefaultRaycastLayers);
+        playerDetectionFilter.useTriggers = false;
         ChangeState(EnemyStates.Charger_Idle);
     }
     protected override void Update()
@@ -32,30 +41,34 @@ public class ChargeEnemy : Enemy
     }
     protected override void UpdateEnemyStates()
     {
-        Vector3 _ledgeCheckStart = transform.localScale.x > 0 ? new Vector3(ledgeCheckX, 0) : new Vector3(-ledgeCheckX, 0);
-        Vector2 _wallCheckDir = transform.localScale.x > 0 ? transform.right : -transform.right;
+        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
         switch (GetCurrentEnemyState)
         {
             case EnemyStates.Charger_Idle:
-                if (!Physics2D.Raycast(transform.position + _ledgeCheckStart, Vector2.down, ledgeCheckY, whatIsGround)
-                 || Physics2D.Raycast(transform.position, _wallCheckDir, ledgeCheckX, whatIsGround))
+                Bounds bounds = enemyCollider.bounds;
+                bool canPatrol = true;
+                bool isGrounded = Physics2D.Raycast(bounds.center, Vector2.down, ledgeCheckY, whatIsGround);
+                if (isGrounded && (!HasGroundAhead(bounds, direction) || HasWallAhead(bounds, direction)))
                 {
-                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                    Vector2 reverseDirection = -direction;
+                    if (HasGroundAhead(bounds, reverseDirection) && !HasWallAhead(bounds, reverseDirection))
+                    {
+                        Turn();
+                        direction = reverseDirection;
+                    }
+                    else
+                    {
+                        canPatrol = false;
+                    }
                 }
-                RaycastHit2D _hit = Physics2D.Raycast(transform.position + _ledgeCheckStart, _wallCheckDir, ledgeCheckX * 7);
-                if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Player"))
+
+                if (DetectPlayer(direction))
                 {
                     isFacingPlayer = true;
                     ChangeState(EnemyStates.Charger_Detect);
                 }
-                if (transform.localScale.x > 0)
-                {
-                    enemyRb.linearVelocity = new Vector2(speed, enemyRb.linearVelocity.y);
-                }
-                else
-                {
-                    enemyRb.linearVelocity = new Vector2(-speed, enemyRb.linearVelocity.y);
-                }
+
+                enemyRb.linearVelocity = new Vector2(canPatrol ? direction.x * speed : 0f, enemyRb.linearVelocity.y);
                 break;
             case EnemyStates.Charger_Detect:
                 if (!PlayerController.Instance.pState.Invincible)
@@ -105,6 +118,47 @@ public class ChargeEnemy : Enemy
             case EnemyStates.Charger_Death:
 
                 break;
+        }
+    }
+
+    private bool HasGroundAhead(Bounds bounds, Vector2 direction)
+    {
+        Vector2 origin = (Vector2)bounds.center + direction * (bounds.extents.x + groundProbeOffset);
+        return Physics2D.Raycast(origin, Vector2.down, ledgeCheckY, whatIsGround);
+    }
+
+    private bool HasWallAhead(Bounds bounds, Vector2 direction)
+    {
+        return Physics2D.Raycast(bounds.center, direction, bounds.extents.x + groundProbeOffset, whatIsGround);
+    }
+
+    private bool DetectPlayer(Vector2 direction)
+    {
+        Vector2 origin = (Vector2)transform.position + direction * ledgeCheckX;
+        int hitCount = Physics2D.Raycast(origin, direction, playerDetectionFilter, playerDetectionHits, ledgeCheckX * 7);
+        return hitCount > 0 && playerDetectionHits[0].collider.CompareTag("Player");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (health <= 0 || collision.collider.gameObject.layer != attackableLayerIndex) return;
+
+        Vector2 direction = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            if (Vector2.Dot(collision.GetContact(i).normal, direction) < -0.5f)
+            {
+                Turn();
+                return;
+            }
+        }
+    }
+
+    protected override void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer != attackableLayerIndex)
+        {
+            base.OnCollisionStay2D(collision);
         }
     }
 

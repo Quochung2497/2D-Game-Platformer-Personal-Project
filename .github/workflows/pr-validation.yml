@@ -108,6 +108,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
+          lfs: true
 
       - name: Check Unity credentials
         env:
@@ -124,9 +125,9 @@ jobs:
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: Library
-          key: Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: Library-Windows-LFS-H264-6000.3.22f1-StandaloneWindows64-Mono-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-
+            Library-Windows-LFS-H264-6000.3.22f1-StandaloneWindows64-Mono-
 
       # Mono desktop support ships with the Windows Editor; skip additional IL2CPP modules.
       - name: Install Unity 6000.3.22f1
@@ -143,6 +144,22 @@ jobs:
           license: personal
           username: ${{ secrets.UNITY_EMAIL }}
           password: ${{ secrets.UNITY_PASSWORD }}
+
+      # The menu source videos use HEVC, which the Windows Server runner cannot decode.
+      - name: Convert menu videos to H.264
+        run: |
+          python -m pip install --disable-pip-version-check --no-deps --only-binary=:all: imageio-ffmpeg==0.7.0
+          if ($LASTEXITCODE -ne 0) { throw 'FFmpeg setup failed.' }
+          $ffmpeg = python -c "import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())"
+          if ($LASTEXITCODE -ne 0) { throw 'FFmpeg could not be located.' }
+          $videoDirectory = Join-Path $env:GITHUB_WORKSPACE 'Assets/Art/Hollow Knight all menu styles'
+          Get-ChildItem -LiteralPath $videoDirectory -Filter '*.mp4' -File | ForEach-Object {
+            Write-Output ("Converting video: " + $_.Name)
+            $convertedVideo = Join-Path $env:RUNNER_TEMP ("h264-" + $_.Name)
+            & $ffmpeg -hide_banner -loglevel error -nostdin -y -i $_.FullName -map 0:v:0 -map '0:a?' -c:v libx264 -preset fast -crf 18 -profile:v high -pix_fmt yuv420p -c:a copy -movflags '+faststart' $convertedVideo
+            if ($LASTEXITCODE -ne 0) { throw "Video conversion failed: $($_.Name)" }
+            Move-Item -LiteralPath $convertedVideo -Destination $_.FullName -Force
+          }
 
       # Wait for the GUI-subsystem process explicitly, including when Unity runs in batch mode.
       - name: Import project and resolve packages

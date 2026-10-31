@@ -5302,7 +5302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ": T\u1EA5n C\xF4ng, nh\u1EA5n 3 l\u1EA7n \u0111\u1EC3 combo"
+  m_text: ": Attack. Click 3 times for a combo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0111\u1EC3 ti\u1EBFp t\u1EE5c"
+  m_text: "to continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6263,7 +6263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ": Nh\u1EA5n \u0111\u1EC3 nh\u1EA3y"
+  m_text: ": Press to jump"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6771,7 +6771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nh\u1EA5n c\xE1c ph\xEDm sau \u0111\u1EC3 di chuy\u1EC3n"
+  m_text: "Use these keys to move"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9cd72abaac3f043b4016b5f1e4bd17, type: 2}
   m_sharedMaterial: {fileID: -8388739880021105928, guid: 6c9cd72abaac3f043b4016b5f1e4bd17, type: 2}
@@ -12526,7 +12526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nh\u1EA5n"
+  m_text: "Press"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -149,7 +149,7 @@ public abstract class Enemy : MonoBehaviour
     {
         string layerName = LayerMask.LayerToName(collision.collider.gameObject.layer);
 
-        if (layerName == "Player" && !PlayerController.Instance.pState.Invincible && !PlayerController.Instance.pState.cutscenes && health > 0)
+        if (layerName == "Player" && PlayerController.Instance.pState.alive && !PlayerController.Instance.pState.Invincible && !PlayerController.Instance.pState.cutscenes && health > 0)
         {
             AttackPlayer();
             if (PlayerController.Instance.pState.alive)

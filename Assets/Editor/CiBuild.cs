@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace Metroidvania.Editor
 {
@@ -35,6 +36,14 @@ namespace Metroidvania.Editor
                         "Assets/TextMesh Pro/Resources/TMP Settings.asset") == null)
                     throw new InvalidOperationException(
                         "Import TMP Essential Resources with -importPackage before invoking the CI build.");
+
+                // A successful player build can still omit videos that failed to import.
+                foreach (var videoPath in AssetDatabase.GetAllAssetPaths().Where(path =>
+                             path.StartsWith("Assets/") && path.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase)))
+                {
+                    if (AssetDatabase.LoadAssetAtPath<VideoClip>(videoPath) == null)
+                        throw new InvalidOperationException($"Video failed to import: {videoPath}. Check Git LFS checkout and the Unity import log.");
+                }
 
                 // Windows Mono support is included in the Windows Editor installation.
                 PlayerSettings.SetScriptingBackend(NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);

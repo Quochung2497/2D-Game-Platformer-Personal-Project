@@ -9381,7 +9381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B\u1EA5m [E] \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c"
+  m_text: "Press [E] to interact"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17706,7 +17706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B\u1EA5m [E] \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c"
+  m_text: "Press [E] to interact"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -68443,11 +68443,11 @@ PrefabInstance:
       objectReference: {fileID: 722821591}
     - target: {fileID: 5797880178983713182, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Size.x
-      value: 49.370907
+      value: 65.55756
       objectReference: {fileID: 0}
     - target: {fileID: 5797880178983713182, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Offset.x
-      value: 0.53183746
+      value: 8.625164
       objectReference: {fileID: 0}
     - target: {fileID: 6543978869765942073, guid: af7b9365883d61748b92140355f77fcb, type: 3}
       propertyPath: m_Name
@@ -68752,6 +68752,14 @@ PrefabInstance:
       propertyPath: enemyPool
       value: 
       objectReference: {fileID: 3395042068935789961}
+    - target: {fileID: 732301754869473755, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
+      propertyPath: m_Size.x
+      value: 65.74638
+      objectReference: {fileID: 0}
+    - target: {fileID: 732301754869473755, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
+      propertyPath: m_Offset.x
+      value: 12.049438
+      objectReference: {fileID: 0}
     - target: {fileID: 4102772342966497257, guid: 6cf4fe857eb43f34e9adda70ba54fad1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.32
@@ -71086,6 +71094,18 @@ PrefabInstance:
     - target: {fileID: 295874207772758137, guid: 7fe30809354ed7041b7c2166b73b9b27, type: 3}
       propertyPath: m_Name
       value: ChargeEnemySpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935670394813309271, guid: 7fe30809354ed7041b7c2166b73b9b27, type: 3}
+      propertyPath: m_Size.x
+      value: 37.09493
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935670394813309271, guid: 7fe30809354ed7041b7c2166b73b9b27, type: 3}
+      propertyPath: m_Offset.x
+      value: -5.823061
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935670394813309271, guid: 7fe30809354ed7041b7c2166b73b9b27, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6433897
       objectReference: {fileID: 0}
     - target: {fileID: 6876756899535750869, guid: 7fe30809354ed7041b7c2166b73b9b27, type: 3}
       propertyPath: m_LocalPosition.x
