@@ -293,7 +293,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // TODO: Remove this fresh-save override after portfolio recording.
+            // Also disable unlockedCastSpell on Player.prefab to restore normal progression.
+            bool initialCastSpellUnlock = unlockedCastSpell;
             ResetToDefault();
+            unlockedCastSpell = initialCastSpellUnlock;
         }
     }
 
