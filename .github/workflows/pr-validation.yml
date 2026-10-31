@@ -108,6 +108,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
+          lfs: true
 
       - name: Check Unity credentials
         env:
@@ -124,9 +125,9 @@ jobs:
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: Library
-          key: Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: Library-Windows-LFS-6000.3.22f1-StandaloneWindows64-Mono-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-Windows-6000.3.22f1-StandaloneWindows64-Mono-
+            Library-Windows-LFS-6000.3.22f1-StandaloneWindows64-Mono-
 
       # Mono desktop support ships with the Windows Editor; skip additional IL2CPP modules.
       - name: Install Unity 6000.3.22f1
